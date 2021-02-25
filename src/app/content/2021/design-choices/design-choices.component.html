@@ -1,0 +1,15 @@
+  <h1>~$ Website Design Choices</h1>
+<app-by-when [date]="[2021, 01, 23]"></app-by-when>
+<app-tag-viewer [tags]="this.post.tags"></app-tag-viewer>
+
+<p>I've gotten a few comments on the "look and feel" of this website, and I wanted to clarify why a so-called experienced software developer would choose to have such an 80's style website.</p>
+
+<p>This style is implemented by choice. The aesthetic of the website is definitely a subset of the "computer terminal" / "hacker" style, with a major focus as to making the content as easily accessible as possible, such as for example making the great majority of text on the website is high-contrast to improve legibility.</p>
+
+<p>Another factor that I took into account during the design phase is that I wanted as little clutter as possible: no ads, no cookies, no logins, no sessions or anything. When you load a page, you get the content you loaded, it's styles and the procedurally generated JavaScript that allows for interactions.</p>
+
+<p>As such, I develop the website using the Angular Framework, as well as the Bootstrap front-end framework. This enables me to continuously update it with new posts without having to rebuild the entire website, as I am then just adding an element in a predefined layout.</p>
+
+<p>In the end, it is also about ease of maintenance. I use server emulation to prerender the content before uploading it, and thus new content is only a few operations away from being available for all to see.</p>
+
+

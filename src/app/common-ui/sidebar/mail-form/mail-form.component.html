@@ -1,0 +1,32 @@
+<h4>~$ Send me an email</h4>
+
+<div class="media-container">
+  <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <div *ngIf="!FormData.controls['email'].pristine && FormData.controls['email'].invalid" class="alert alert-danger m-0 mb-1 p-2 text-center">This email address is invalid</div>
+      <input type="email" class="form-control" name="email" aria-describedby="contactHelp" placeholder="Enter your contact information..." formControlName="email">
+      <small id="contactHelp" class="form-text text-muted text-center">I'll never share your contact details with other people.</small>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <div *ngIf="!FormData.controls['message'].pristine && FormData.controls['message'].invalid" class="alert alert-danger m-0 mb-1 p-2 text-center">Please write me somthing :)</div>
+      <textarea class="form-control" formControlName="message" name="message" placeholder="Your message...">
+      </textarea>
+    </div>
+
+    <div *ngIf="this.windowDefined" id="captcha-container" class="form-group media-container">
+      <ngx-recaptcha2 #captchaElem
+        [siteKey]="this.site_key"
+        (reset)="handleReset()"
+        (expire)="handleExpire()"
+        (load)="handleLoad()"
+        (success)="handleSuccess($event)"
+        [useGlobalDomain]="false"
+        [size]="'normal'"
+        formControlName="recaptcha">
+      </ngx-recaptcha2>
+    </div>
+    <button type="submit" class="btn btn-success w-100" [disabled]="!FormData.valid">Send</button>
+  </form>
+</div>

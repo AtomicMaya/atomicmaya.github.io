@@ -1,0 +1,4 @@
+<button type="button" class="collapsible-controller" (click)="toggleCollapsible()">{{ this.buttonText }}</button>
+<div class="collapsible" [class.active]="this.active">
+  <ng-content></ng-content>
+</div>

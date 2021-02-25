@@ -1,0 +1,23 @@
+$color : #000000;
+
+input, textarea {
+  background-color: #c4c4c4;
+  color: $color;
+}
+
+label {
+  color: #b5e853;
+}
+
+::placeholder {
+  color: $color;
+}
+
+#captcha-container ::ng-deep div {
+  height: auto !important;
+  max-height: 80px;
+}
+#captcha-container ::ng-deep iframe {
+  height: auto !important;
+  max-height: 80px;
+}
