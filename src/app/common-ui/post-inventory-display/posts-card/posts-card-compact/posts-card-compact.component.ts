@@ -37,8 +37,7 @@ export class PostsCardCompactComponent implements OnInit {
    */
   goToPost(path: string) {
     if (this.browserRec.isBrowser) {
-      window.location.replace(path);
+      window.location.href = path;
     }
-
   }
 }

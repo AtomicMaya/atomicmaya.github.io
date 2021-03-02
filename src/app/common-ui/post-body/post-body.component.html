@@ -1,5 +1,5 @@
 <h1>~$ {{ this.post.title }}</h1>
-<app-when [date]="[2020, 10, 15]"></app-when>
+<app-when [date]="this.date" [edited]="this.edited"></app-when>
 <app-tag-viewer [tags]="this.post.tags"></app-tag-viewer>
 <div>
     <ng-content></ng-content>

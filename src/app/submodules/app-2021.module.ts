@@ -13,6 +13,7 @@ import { Jan2021DefconWorcesterTalkComponent } from '../content/2021/210131-defc
 import { Feb2021ConDeploymentComponent } from '../content/2021/210201-con-deployment/con-deployment.component';
 import { Feb2021ConSiteComponent } from '../content/2021/210206-con-site/con-site.component';
 import { Feb2021TracelabsWithHacksouthComponent } from '../content/2021/210222-tracelabs-with-hacksouth/tracelabs-with-hacksouth.component';
+import { Feb2021PasswordManagementComponent } from '../content/2021/210307-password-management/password-management.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { Feb2021TracelabsWithHacksouthComponent } from '../content/2021/210222-t
     Feb2021ConDeploymentComponent,
     Feb2021ConSiteComponent,
     Feb2021TracelabsWithHacksouthComponent,
+    Feb2021PasswordManagementComponent,
   ],
   imports: [
     CommonModule,

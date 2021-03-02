@@ -132,12 +132,12 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_02_22+TraceLabs-CTF-With-Hacksouth',
+    path: '2021_02_26+TraceLabs-CTF-With-Hacksouth',
     component: Feb2021TracelabsWithHacksouthComponent,
     data: {
       title: 'Participating in the TraceLabs OSINT CTF with HackSouth',
       authors: [ authorList['AtomicNicos'] ],
-      description: 'A small write-up on my participation in the TraceLabs OSINT CTF.',
+      description: 'A write-up on my participation in the TraceLabs OSINT CTF.',
       tags: [ TAG_OSINT, TAG_CTF ]
     }
   }
