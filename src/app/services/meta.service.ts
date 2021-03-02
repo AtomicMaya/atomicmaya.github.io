@@ -23,7 +23,7 @@ export class MetaService {
       { name: 'og:title', content: `${title} | AtomicNicos\'s Blog` },
       { name: 'og:description', content: `${description ?? title + ': A post on \'AtomicNicos\'s Blog at the end of the universe, talking all things infosec, IoT, development and personal.'}` },
       { name: 'og:image', content: (imgUrl !== undefined) ? `${BASE_URL}${imgUrl}` : `${BASE_URL}/assets/images/cover.jpg` },
-      { name: 'description', content: `'${title}': A post on 'AtomicNicos's Blog at the end of the universe, talking all things infosec, IoT, development and personal'` },
+      { name: 'description', content: `${description ?? title + ': A post on \'AtomicNicos\'s Blog at the end of the universe, talking all things infosec, IoT, development and personal.'}` },
       { name: 'keywords', content: ['atomicnicos', 'osint', 'infosec', 'security', 'cybersec', 'cybersecurity', ...keywords].join(', ') },
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:url', content: `${BASE_URL}${url}` },
