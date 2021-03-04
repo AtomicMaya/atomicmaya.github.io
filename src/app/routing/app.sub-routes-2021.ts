@@ -17,6 +17,7 @@ import { Jan2021DefconWorcesterTalkComponent } from '../content/2021/210131-defc
 import { Feb2021ConDeploymentComponent } from '../content/2021/210201-con-deployment/con-deployment.component';
 import { Feb2021ConSiteComponent } from '../content/2021/210206-con-site/con-site.component';
 import { Feb2021TracelabsWithHacksouthComponent } from '../content/2021/210222-tracelabs-with-hacksouth/tracelabs-with-hacksouth.component';
+import { Feb2021PasswordManagementComponent } from '../content/2021/210307-password-management/password-management.component';
 
 export const subroutes2021: Routes = [
   {
@@ -139,6 +140,16 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'A write-up on my participation in the TraceLabs OSINT CTF.',
       tags: [ TAG_OSINT, TAG_CTF ]
+    }
+  },
+  {
+    path: '2021_03_07+Much-Ado-About-Passwords',
+    component: Feb2021PasswordManagementComponent,
+    data: {
+      title: 'A much ado about passwords and password management',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'Going over various (non-)solutions people use to store their passwords and the appeal of password management solutions.',
+      tags: [ TAG_INFOSEC ]
     }
   }
 ];

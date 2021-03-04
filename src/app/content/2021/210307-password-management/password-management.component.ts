@@ -15,7 +15,7 @@ export class Feb2021PasswordManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2021/2021_03_07+A-Password-Management-Adventure', this.post.title,
+    this.meta.setTags('/postx/2021/2021_03_07+Much-Ado-About-Passwords', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['article', 'password', 'management']);
   }
