@@ -49,4 +49,5 @@ export const ROUTES = [
   '/postx/2021/2021_02_01+Organising-a-conference',
   '/postx/2021/2021_02_06+Building-DOs-Website',
   '/postx/2021/2021_02_26+TraceLabs-CTF-With-Hacksouth',
+  '/postx/2021/2021_03_07+Much-Ado-About-Passwords'
 ];
