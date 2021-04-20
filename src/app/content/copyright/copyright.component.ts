@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-copyright',
   templateUrl: './copyright.component.html',
-  styleUrls: ['./copyright.component.scss']
+  styleUrls: []
 })
 export class CopyrightComponent implements OnInit {
-  tags: Tag[] = []
+  tags: Tag[] = [];
 
   constructor(private meta: MetaService, private route: ActivatedRoute) { }
 

@@ -1,5 +1,5 @@
 import { BrowserRecognitionService } from 'src/app/services/browser-recognition.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Post } from 'src/app/interfaces/post';
 import { stringify } from 'src/app/utils/listing-utils';
 
@@ -13,7 +13,7 @@ import { stringify } from 'src/app/utils/listing-utils';
   templateUrl: './posts-card-compact.component.html',
   styleUrls: ['./posts-card-compact.component.scss']
 })
-export class PostsCardCompactComponent implements OnInit {
+export class PostsCardCompactComponent {
   /** The post to display. */
   @Input() post: Post;
 
@@ -27,8 +27,6 @@ export class PostsCardCompactComponent implements OnInit {
    */
   constructor(private browserRec: BrowserRecognitionService) { }
 
-  /** Initialises the component. */
-  ngOnInit(): void { }
 
   /**
    * URL moves to post.

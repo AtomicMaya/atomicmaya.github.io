@@ -10,8 +10,6 @@ import { countTags } from 'src/app/utils/route-generation-functions';
 export class ListTagCountComponent implements OnInit {
   tagCount: TagCount[];
 
-  constructor() { }
-
   ngOnInit(): void {
     this.tagCount = countTags();
   }

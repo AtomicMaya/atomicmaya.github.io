@@ -1,7 +1,7 @@
 // tslint:disable: no-string-literal
 import { Routes } from '@angular/router';
 import { TAG_COMMUNITY, TAG_PERSONAL, TAG_TALKS, TAG_OSINT, TAG_INFOSEC, TAG_PRIVACY,
-  TAG_MEDIA, TAG_DEVELOPMENT, TAG_WEB, TAG_IOT, TAG_CYBERSEC, TAG_CTF } from 'src/app/utils/tags';
+  TAG_MEDIA, TAG_DEVELOPMENT, TAG_WEB, TAG_IOT, TAG_CYBERSEC, TAG_CTF, TAG_WRITEUP } from 'src/app/utils/tags';
 import { Jan2021Goodbye2020NewYearPartyComponent } from 'src/app/content/2021/210102-goodbye2020-new-year-party/goodbye2020-new-year-party.component';
 
 import { Jan2021WhatsappEncaInterviewComponent } from 'src/app/content/2021/210119-whatsapp-enca-interview/whatsapp-enca-interview.component';
@@ -18,6 +18,10 @@ import { Feb2021ConDeploymentComponent } from '../content/2021/210201-con-deploy
 import { Feb2021ConSiteComponent } from '../content/2021/210206-con-site/con-site.component';
 import { Feb2021TracelabsWithHacksouthComponent } from '../content/2021/210222-tracelabs-with-hacksouth/tracelabs-with-hacksouth.component';
 import { Feb2021PasswordManagementComponent } from '../content/2021/210307-password-management/password-management.component';
+import { Apr2021CentralInfosecCtfAllComponent } from '../content/2021/210420-central-infosec-ctf-all/central-infosec-ctf-all.component';
+import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-central-infosec-ctf-python/central-infosec-ctf-python.component';
+import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
+import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-maze-hard/central-infosec-ctf-hack-the-maze-hard.component';
 
 export const subroutes2021: Routes = [
   {
@@ -151,5 +155,49 @@ export const subroutes2021: Routes = [
       description: 'Going over various (non-)solutions people use to store their passwords and the appeal of password management solutions.',
       tags: [ TAG_INFOSEC ]
     }
+  },
+  {
+    path: '2021_04_20+Central-Infosec-CTF-All',
+    component: Apr2021CentralInfosecCtfAllComponent,
+    data: {
+      title: 'Participating in the Central-Infosec CTF!',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'The Central Infosec CTF! I didn\'t do much of it, but here\'s my takeaways.',
+      tags: [ TAG_INFOSEC, TAG_CTF ],
+      imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png'
+    }
+  },
+  {
+    path: '2021_04_20+Central-Infosec-CTF-Python',
+    component: Apr2021CentralInfosecCtfPythonComponent,
+    data: {
+      title: 'Dissecting the Central-Infosec Python challenges',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'The Central Infosec CTF! A write-up on solving the Python challenges.',
+      tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
+      imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png'
+    }
+  },
+  {
+    path: '2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard',
+    component: Apr2021CentralInfosecCtfHackTheStaticHardComponent,
+    data: {
+      title: 'Dissecting the Central-Infosec Static Code Analysis challenge',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'The Central Infosec CTF! A write-up on solving the "Hack The Static: Hard" challenge.',
+      tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
+      imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png'
+    }
+  },
+  {
+    path: '2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard',
+    component: Apr2021CentralInfosecCtfHackTheMazeHardComponent,
+    data: {
+      title: 'Dissecting the Central-Infosec Game Exploitation challenge',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'The Central Infosec CTF! A write-up on solving the "Hack The Maze: Hard" challenge.',
+      tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
+      imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png'
+    },
   }
 ];

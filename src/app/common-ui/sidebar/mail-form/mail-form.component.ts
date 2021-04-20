@@ -24,25 +24,28 @@ export class MailFormComponent implements OnInit {
       email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
       message: new FormControl('', [Validators.required]),
       recaptcha: new FormControl('', [Validators.required])
-    })
+    });
   }
 
   async onSubmit(FormData: any): Promise<void> {
-    console.log(FormData)
+    console.log(FormData);
     this.formSuccess = await this.contact.postMessage(FormData);
     console.log(this.formSuccess);
   }
 
   handleReset() {
+    // Intentional WIP
   }
 
   handleSuccess(event: Event) {
+    // Intentional WIP
   }
 
   handleExpire() {
+    // Intentional WIP
   }
 
   handleLoad() {
-
+    // Intentional WIP
   }
 }

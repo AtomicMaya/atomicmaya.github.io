@@ -6,7 +6,6 @@ import { PostMap } from 'src/app/interfaces/post-map';
 import { groupBy, keyDescOrder } from 'src/app/utils/listing-utils';
 import { ServiceLocator } from 'src/app/utils/service.locator';
 import { BrowserRecognitionService } from 'src/app/services/browser-recognition.service';
-import { BASE_URL } from 'src/app/data/url';
 
 /**
  * Loads up posts and displays them. Comes in card and list-tile views.
@@ -62,7 +61,9 @@ export class PostInventoryDisplayComponent implements OnInit {
   }
 
   /** Set the page metadata information. */
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    // Used for super construction.
+  }
 
   /**
    * Loads a number of posts and assigns them to an object.

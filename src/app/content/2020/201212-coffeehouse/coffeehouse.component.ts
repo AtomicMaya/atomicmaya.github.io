@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-coffeehouse',
   templateUrl: './coffeehouse.component.html',
-  styleUrls: ['./coffeehouse.component.scss']
+  styleUrls: []
 })
 export class Dec2020CoffeehouseComponent implements OnInit {
   post: Post;

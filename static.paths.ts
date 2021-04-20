@@ -27,6 +27,7 @@ export const ROUTES = [
   '/tags/Programming',
   '/tags/Talks',
   '/tags/Web',
+  '/tags/Write-Up',
 
   '/postx/2020/2020_10_15+Hello-world',
   '/postx/2020/2020_10_19+I-participated-in-the-CONINT-CTF',
@@ -49,5 +50,9 @@ export const ROUTES = [
   '/postx/2021/2021_02_01+Organising-a-conference',
   '/postx/2021/2021_02_06+Building-DOs-Website',
   '/postx/2021/2021_02_26+TraceLabs-CTF-With-Hacksouth',
-  '/postx/2021/2021_03_07+Much-Ado-About-Passwords'
+  '/postx/2021/2021_03_07+Much-Ado-About-Passwords',
+  '/postx/2021/2021_04_20+Central-Infosec-CTF-All',
+  '/postx/2021/2021_04_20+Central-Infosec-CTF-Python',
+  '/postx/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard',
+  '/postx/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard'
 ];

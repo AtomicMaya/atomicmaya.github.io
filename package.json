@@ -29,7 +29,9 @@
     "bootstrap": "^4.5.3",
     "express": "^4.17.1",
     "ngx-captcha": "^8.0.1",
+    "ngx-markdown": "^11.1.2",
     "ngx-tweet": "^2.0.3",
+    "prismjs": "^1.23.0",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-whatsapp-privacy-policy-analysis',
   templateUrl: './whatsapp-privacy-policy-analysis.component.html',
-  styleUrls: ['./whatsapp-privacy-policy-analysis.component.scss']
+  styleUrls: []
 })
 export class Jan2021WhatsappPrivacyPolicyAnalysisComponent implements OnInit {
   post: Post;

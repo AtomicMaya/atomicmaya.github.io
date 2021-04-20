@@ -6,7 +6,7 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-feb-con-deployment',
   templateUrl: './con-deployment.component.html',
-  styleUrls: ['./con-deployment.component.scss']
+  styleUrls: []
 })
 export class Feb2021ConDeploymentComponent implements OnInit {
   post: Post;

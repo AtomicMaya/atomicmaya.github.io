@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-2020-bsides-islamabad',
   templateUrl: './bsides-islamabad.component.html',
-  styleUrls: ['./bsides-islamabad.component.scss']
+  styleUrls: []
 })
 export class Nov2020BsidesIslamabadComponent implements OnInit {
   post: Post;

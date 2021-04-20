@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-privacy-policy',
   templateUrl: './privacy-policy.component.html',
-  styleUrls: ['./privacy-policy.component.scss']
+  styleUrls: []
 })
 export class PrivacyPolicyComponent implements OnInit {
-  tags: Tag[] = []
+  tags: Tag[] = [];
 
   constructor(private meta: MetaService, private route: ActivatedRoute) { }
 

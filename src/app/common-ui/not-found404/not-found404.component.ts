@@ -1,16 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { MetaService } from 'src/app/services/meta.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-not-found404',
   templateUrl: './not-found404.component.html',
-  styleUrls: ['./not-found404.component.scss']
+  styleUrls: []
 })
-export class NotFound404Component implements OnInit {
-
-  constructor(private meta: MetaService) { }
-
-  ngOnInit(): void {
-  }
-
+export class NotFound404Component {
 }

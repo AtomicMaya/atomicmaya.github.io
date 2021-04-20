@@ -26,9 +26,7 @@ export class PostsNoFilterComponent extends PostInventoryDisplayComponent implem
   /** Set the page metadata information. */
   ngOnInit(): void {
     this.title = `All posts`;
-    this.route.params.subscribe(_ => {
-      this.loadPosts();
-    });
+    this.route.params.subscribe(() => this.loadPosts());
     super.ngOnInit();
   }
 

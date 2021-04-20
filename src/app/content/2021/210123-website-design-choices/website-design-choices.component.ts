@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-design-choices',
   templateUrl: './website-design-choices.component.html',
-  styleUrls: ['./website-design-choices.component.scss']
+  styleUrls: []
 })
 export class Jan2021DesignChoicesComponent implements OnInit {
   post: Post;

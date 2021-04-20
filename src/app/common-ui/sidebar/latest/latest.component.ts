@@ -6,12 +6,10 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-latest',
   templateUrl: './latest.component.html',
-  styleUrls: ['./latest.component.scss']
+  styleUrls: []
 })
 export class LatestComponent implements OnInit {
   latest: Post[];
-
-  constructor() { }
 
   ngOnInit(): void {
     this.latest = generatePostRoutes().slice(0, 7);

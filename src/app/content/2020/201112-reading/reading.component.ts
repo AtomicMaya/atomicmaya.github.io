@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-2020-reading',
   templateUrl: './reading.component.html',
-  styleUrls: ['./reading.component.scss']
+  styleUrls: []
 })
 export class Nov2020ReadingComponent implements OnInit {
   post: Post;

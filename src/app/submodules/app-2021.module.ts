@@ -14,6 +14,11 @@ import { Feb2021ConDeploymentComponent } from '../content/2021/210201-con-deploy
 import { Feb2021ConSiteComponent } from '../content/2021/210206-con-site/con-site.component';
 import { Feb2021TracelabsWithHacksouthComponent } from '../content/2021/210222-tracelabs-with-hacksouth/tracelabs-with-hacksouth.component';
 import { Feb2021PasswordManagementComponent } from '../content/2021/210307-password-management/password-management.component';
+import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-maze-hard/central-infosec-ctf-hack-the-maze-hard.component';
+import { Apr2021CentralInfosecCtfAllComponent } from '../content/2021/210420-central-infosec-ctf-all/central-infosec-ctf-all.component';
+import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-central-infosec-ctf-python/central-infosec-ctf-python.component';
+import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -30,10 +35,15 @@ import { Feb2021PasswordManagementComponent } from '../content/2021/210307-passw
     Feb2021ConSiteComponent,
     Feb2021TracelabsWithHacksouthComponent,
     Feb2021PasswordManagementComponent,
+    Apr2021CentralInfosecCtfHackTheMazeHardComponent,
+    Apr2021CentralInfosecCtfAllComponent,
+    Apr2021CentralInfosecCtfPythonComponent,
+    Apr2021CentralInfosecCtfHackTheStaticHardComponent,
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    MarkdownModule.forChild()
   ],
   providers: [],
   bootstrap: [],

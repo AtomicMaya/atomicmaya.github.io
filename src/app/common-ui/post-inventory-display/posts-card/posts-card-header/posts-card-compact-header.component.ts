@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 /**
  * A Post Card.
@@ -10,10 +10,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './posts-card-compact-header.component.html',
   styleUrls: ['./posts-card-compact-header.component.scss']
 })
-export class PostsCardCompactHeaderComponent implements OnInit {
-  /** Creates an instance of PostsCardCompactHeaderComponent. */
-  constructor() { }
+export class PostsCardCompactHeaderComponent {
 
-  /** Initialises the component. */
-  ngOnInit(): void { }
 }

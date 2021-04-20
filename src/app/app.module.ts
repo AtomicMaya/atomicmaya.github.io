@@ -32,7 +32,6 @@ import { PostsFilteredByAuthorComponent } from './common-ui/post-inventory-displ
     FooterComponent,
     MainBodyComponent,
     WhoamiComponent,
-    CollapsibleComponent,
     SidebarComponent,
     SocialsComponent,
     LatestComponent,

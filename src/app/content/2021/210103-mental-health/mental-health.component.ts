@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-mental-health-v1',
   templateUrl: './mental-health.component.html',
-  styleUrls: ['./mental-health.component.scss']
+  styleUrls: []
 })
 export class Jan2021MentalHealthComponent implements OnInit {
   post: Post;

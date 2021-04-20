@@ -7,7 +7,7 @@
       <h1 class="text-center">{{ this.title }}<br *ngIf="this.subtitle"/><span *ngIf="this.subtitle">{{ this.subtitle }}</span></h1>
     </div>
     <div class="col-sm-3 mb-3">
-      <div class="btn btn-primary d-flex flex-column" (click)="this.toggleCompactView()"><span>Compact View</span><i class="fas fa-angle-double-right"></i></div>
+      <div class="btn btn-primary d-flex flex-column" (click)="this.toggleCompactView()"><span>Compact View</span><em class="fas fa-angle-double-right"></em></div>
     </div>
   </div>
   <div *ngFor="let item of this.postsByYear | keyvalue: keyDescOrder" class="mt-1 year-section">
@@ -31,7 +31,7 @@
       <h1 class="text-center">{{ this.title }}<br *ngIf="this.subtitle"/><span *ngIf="this.subtitle">{{ this.subtitle }}</span></h1>
     </div>
     <div class="col-sm-3 mb-3">
-      <div class="btn btn-primary d-flex flex-column" (click)="this.toggleCompactView()"><span>Card View</span><i class="fas fa-angle-double-down"></i></div>
+      <div class="btn btn-primary d-flex flex-column" (click)="this.toggleCompactView()"><span>Card View</span><em class="fas fa-angle-double-down"></em></div>
     </div>
   </div>
   <hr/>

@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-gateway-osint-talk',
   templateUrl: './gateway-osint-talk.component.html',
-  styleUrls: ['./gateway-osint-talk.component.scss']
+  styleUrls: []
 })
 export class Jan2021GatewayOsintTalkComponent implements OnInit {
   post: Post;

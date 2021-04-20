@@ -6,7 +6,7 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-feb-password-management',
   templateUrl: './password-management.component.html',
-  styleUrls: ['./password-management.component.scss']
+  styleUrls: []
 })
 export class Feb2021PasswordManagementComponent implements OnInit {
   post: Post;

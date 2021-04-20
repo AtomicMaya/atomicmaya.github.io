@@ -1,5 +1,5 @@
 import { authorList } from './../../data/authors';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Author } from 'src/app/interfaces/author';
 
 @Component({
@@ -7,15 +7,11 @@ import { Author } from 'src/app/interfaces/author';
   templateUrl: './by-when.component.html',
   styleUrls: ['./by-when.component.scss']
 })
-export class ByWhenComponent implements OnInit {
+export class ByWhenComponent {
   // tslint:disable-next-line: no-string-literal
   @Input() authors: Author[] = [ authorList['AtomicNicos'] ];
   @Input() date: number[];
   @Input() edited: number[];
-
-  constructor() { }
-
-  ngOnInit(): void { }
 
   getMonth(index: number): string {
     return ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'][index - 1];

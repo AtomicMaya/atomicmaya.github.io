@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-whatsapp-enca-interview',
   templateUrl: './whatsapp-enca-interview.component.html',
-  styleUrls: ['./whatsapp-enca-interview.component.scss']
+  styleUrls: []
 })
 export class Jan2021WhatsappEncaInterviewComponent implements OnInit {
   post: Post;

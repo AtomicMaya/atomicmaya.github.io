@@ -6,7 +6,7 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-feb-tracelabs-with-hacksouth',
   templateUrl: './tracelabs-with-hacksouth.component.html',
-  styleUrls: ['./tracelabs-with-hacksouth.component.scss']
+  styleUrls: []
 })
 export class Feb2021TracelabsWithHacksouthComponent implements OnInit {
   post: Post;

@@ -6,7 +6,7 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-jan-leeds-ehs-talk',
   templateUrl: './leeds-ehs-talk.component.html',
-  styleUrls: ['./leeds-ehs-talk.component.scss']
+  styleUrls: []
 })
 export class Jan2021LeedsEhsTalkComponent implements OnInit {
   post: Post;

@@ -37,6 +37,8 @@ export class PostsFilteredByAuthorComponent extends PostInventoryDisplayComponen
       }
       this.loadPosts();
     });
+
+    this.titleService.setTitle(`Posts written by '${this.author}'`);
     super.ngOnInit();
   }
 

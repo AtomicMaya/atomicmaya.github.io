@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-2020-beercon2',
   templateUrl: './beercon2.component.html',
-  styleUrls: ['./beercon2.component.scss']
+  styleUrls: []
 })
 export class Nov2020Beercon2Component implements OnInit {
   post: Post;

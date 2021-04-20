@@ -1,5 +1,5 @@
 import { Tag } from './../../interfaces/tag';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tag-viewer',
@@ -8,7 +8,4 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TagViewerComponent {
   @Input() tags: Tag[] = [];
-
-  constructor() {  }
-
 }

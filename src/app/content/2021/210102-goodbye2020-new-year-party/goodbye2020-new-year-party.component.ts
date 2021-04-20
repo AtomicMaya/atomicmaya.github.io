@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-goodbye2020-new-year-party',
   templateUrl: './goodbye2020-new-year-party.component.html',
-  styleUrls: ['./goodbye2020-new-year-party.component.scss']
+  styleUrls: []
 })
 export class Jan2021Goodbye2020NewYearPartyComponent implements OnInit {
   post: Post;

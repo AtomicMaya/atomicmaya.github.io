@@ -1,5 +1,5 @@
 import { authorList } from '../../data/authors';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Author } from 'src/app/interfaces/author';
 import { getDay, getMonth } from 'src/app/utils/listing-utils';
 
@@ -8,7 +8,7 @@ import { getDay, getMonth } from 'src/app/utils/listing-utils';
   templateUrl: './when.component.html',
   styleUrls: ['./when.component.scss']
 })
-export class WhenComponent implements OnInit {
+export class WhenComponent {
   // tslint:disable-next-line: no-string-literal
   @Input() authors: Author[] = [ authorList['AtomicNicos'] ];
   @Input() date: number[];
@@ -16,8 +16,4 @@ export class WhenComponent implements OnInit {
 
   getDay = getDay;
   getMonth = getMonth;
-
-  constructor() { }
-
-  ngOnInit(): void { }
 }

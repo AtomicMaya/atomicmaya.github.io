@@ -1,7 +1,7 @@
 import { stringify, getMonth, getDay } from 'src/app/utils/listing-utils';
 import { Post } from 'src/app/interfaces/post';
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * A Post Card.
@@ -13,7 +13,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './posts-card-normal.component.html',
   styleUrls: ['./posts-card-normal.component.scss']
 })
-export class PostsCardNormalComponent implements OnInit {
+export class PostsCardNormalComponent {
   /** The post to represent. */
   @Input() post: Post;
 
@@ -25,10 +25,4 @@ export class PostsCardNormalComponent implements OnInit {
 
   /** Local copy */
   getDay = getDay;
-
-  /** Creates an instance of PostsCardNormalComponent. */
-  constructor() { }
-
-  /** Initialises the component. */
-  ngOnInit(): void { }
 }

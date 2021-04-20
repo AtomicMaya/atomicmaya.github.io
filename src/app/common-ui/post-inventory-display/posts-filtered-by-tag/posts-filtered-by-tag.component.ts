@@ -37,6 +37,7 @@ export class PostsFilteredByTagComponent extends PostInventoryDisplayComponent i
       }
       this.loadPosts();
     });
+    this.titleService.setTitle(`Posts tagged '${this.tag}'`);
     super.ngOnInit();
   }
 

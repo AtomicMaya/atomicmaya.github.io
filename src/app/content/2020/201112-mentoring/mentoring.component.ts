@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-2020-mentoring',
   templateUrl: './mentoring.component.html',
-  styleUrls: ['./mentoring.component.scss']
+  styleUrls: []
 })
 export class Nov2020MentoringComponent implements OnInit {
   post: Post;

@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-2020-conint',
   templateUrl: './conint.component.html',
-  styleUrls: ['./conint.component.scss']
+  styleUrls: []
 })
 export class Oct2020ConintComponent implements OnInit {
   post: Post;

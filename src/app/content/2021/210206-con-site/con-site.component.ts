@@ -6,7 +6,7 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-feb-con-site',
   templateUrl: './con-site.component.html',
-  styleUrls: ['./con-site.component.scss']
+  styleUrls: []
 })
 export class Feb2021ConSiteComponent implements OnInit {
   post: Post;

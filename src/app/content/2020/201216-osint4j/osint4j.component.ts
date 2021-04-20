@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-osint4j',
   templateUrl: './osint4j.component.html',
-  styleUrls: ['./osint4j.component.scss']
+  styleUrls: []
 })
 export class Dec2020Osint4jComponent implements OnInit {
   post: Post;

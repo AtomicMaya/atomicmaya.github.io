@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-socials',
   templateUrl: './socials.component.html',
-  styleUrls: ['./socials.component.scss']
+  styleUrls: []
 })
-export class SocialsComponent implements OnInit {
+export class SocialsComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

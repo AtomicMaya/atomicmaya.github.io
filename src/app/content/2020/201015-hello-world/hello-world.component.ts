@@ -6,7 +6,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-2020-hello-world',
   templateUrl: './hello-world.component.html',
-  styleUrls: ['./hello-world.component.scss']
+  styleUrls: []
 })
 export class Oct2020HelloWorldComponent implements OnInit {
   post: Post;

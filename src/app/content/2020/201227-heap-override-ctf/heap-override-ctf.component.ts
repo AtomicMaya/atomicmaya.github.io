@@ -7,7 +7,7 @@ import { Post } from 'src/app/interfaces/post';
 @Component({
   selector: 'app-heap-override-ctf',
   templateUrl: './heap-override-ctf.component.html',
-  styleUrls: ['./heap-override-ctf.component.scss']
+  styleUrls: []
 })
 export class Dec2020HeapOverrideCTFComponent implements OnInit {
   post: Post;

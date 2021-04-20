@@ -1,5 +1,7 @@
 .card-title {
   text-overflow: ellipsis;
+  font-weight: bolder;
+  font-size: large;
 }
 .card-read-more {
   text-align: right;
@@ -41,18 +43,4 @@
   .card-author {
     background-color: #818181;
   }
-
-}
-
-.card-title {
-  font-weight: bolder;
-  font-size: large;
-}
-
-
-@media screen and (max-width: 768px) {
-}
-
-
-@media screen and (max-width: 400px) {
 }

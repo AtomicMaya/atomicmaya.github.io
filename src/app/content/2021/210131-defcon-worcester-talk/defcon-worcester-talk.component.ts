@@ -6,7 +6,7 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-jan-defcon-worcester-talk',
   templateUrl: './defcon-worcester-talk.component.html',
-  styleUrls: ['./defcon-worcester-talk.component.scss']
+  styleUrls: []
 })
 export class Jan2021DefconWorcesterTalkComponent implements OnInit {
   post: Post;
