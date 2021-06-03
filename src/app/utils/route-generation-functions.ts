@@ -39,7 +39,6 @@ export function countTags(): TagCount[] {
  * @param r The route for which the corresponding {@link Post | Post} should be determined.
  */
 function routeToPost(r: Route): Post {
-  console.log(r.path);
   return {
     path: r.path.slice(0),
     date: [Number.parseInt(r.path.slice(0, 4), 10), Number.parseInt(r.path.slice(5, 7), 10), Number.parseInt(r.path.slice(8, 10), 10)],
