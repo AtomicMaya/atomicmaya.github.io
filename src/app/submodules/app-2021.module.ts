@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MarkdownModule } from 'ngx-markdown';
+
 import { Jan2021Goodbye2020NewYearPartyComponent } from '../content/2021/210102-goodbye2020-new-year-party/goodbye2020-new-year-party.component';
 import { Jan2021MentalHealthComponent } from '../content/2021/210103-mental-health/mental-health.component';
 import { Jan2021GatewayOsintTalkComponent } from '../content/2021/210105-gateway-osint-talk/gateway-osint-talk.component';
@@ -18,7 +20,8 @@ import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/202
 import { Apr2021CentralInfosecCtfAllComponent } from '../content/2021/210420-central-infosec-ctf-all/central-infosec-ctf-all.component';
 import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-central-infosec-ctf-python/central-infosec-ctf-python.component';
 import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
-import { MarkdownModule } from 'ngx-markdown';
+import { Apr2021DigitalOverdoseConferenceComponent } from '../content/210429-digital-overdose-conference/digital-overdose-conference.component';
+import { Jun2021TheStackOverflowConundrumComponent } from '../content/210603-the-stack-overflow-conundrum/jun2021-the-stack-overflow-conundrum.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { MarkdownModule } from 'ngx-markdown';
     Apr2021CentralInfosecCtfAllComponent,
     Apr2021CentralInfosecCtfPythonComponent,
     Apr2021CentralInfosecCtfHackTheStaticHardComponent,
+    Apr2021DigitalOverdoseConferenceComponent,
+    Jun2021TheStackOverflowConundrumComponent,
   ],
   imports: [
     CommonModule,

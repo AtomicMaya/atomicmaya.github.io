@@ -1,7 +1,7 @@
 <div class="card align-self-stretch align-items-stretch justify-content-between">
   <img *ngIf="post.imageUrl" class="card-img-top" src="{{ post.imageUrl }}" alt="Card image">
   <div class="card-body">
-    <h6 class="card-title mb-1"><em>{{ getMonth(+post.path.slice(5,7)) }} {{getDay(+post.path.slice(8, 10))}}, {{ post.year }}</em></h6>
+    <h6 class="card-title mb-1"><em>{{ getMonth(post.date[1]) }} {{getDay(post.date[2])}}, {{ post.date[0] }}</em></h6>
 
     <h4 class="card-title">{{ post.title }}</h4>
     <div class="d-flex flex-row card-link-container align-items-center mb-2">
@@ -19,7 +19,7 @@
     </div>
     <br/>
     <div class="d-flex flex-row justify-content-end">
-      <a class="card-read-more" href="postx/{{ post.year }}/{{ post.path }}">&gt;&gt;&gt; Read More</a>
+      <a class="card-read-more" href="postx/{{ post.date[0] }}/{{ post.path }}">&gt;&gt;&gt; Read More</a>
     </div>
   </div>
 </div>

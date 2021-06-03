@@ -20,7 +20,8 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'The first post on AtomicNicos\' Blog. Wow!',
       imageUrl: '/assets/images/2020/hello-world/hw.png',
-      tags: [ TAG_PERSONAL ]
+      tags: [ TAG_PERSONAL ],
+      date: [2021, 10, 15]
     }
   },
   {
@@ -31,7 +32,8 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'Discussing my participation in the conINT TraceLabs OSINT capture the flag event.',
       imageUrl: '/assets/images/2020/conint/conint_logo.png',
-      tags: [ TAG_CONVENTION, TAG_CTF, TAG_OSINT ]
+      tags: [ TAG_CONVENTION, TAG_CTF, TAG_OSINT ],
+      date: [2021, 10, 19]
     }
   },
   {
@@ -42,7 +44,8 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'I gave a talk at BeerCon2, a rookie infosec conference.',
       imageUrl: '/assets/images/2020/beercon2/bc2_zoombg.png',
-      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONVENTION ]
+      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONVENTION ],
+      date: [2021, 11, 2]
     }
   },
   {
@@ -53,7 +56,8 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'I gave a talk at BSides Islamabad, Pakistan\'s first cybersecurity conference.',
       imageUrl: '/assets/images/2020/bsides-islamabad/card.png',
-      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONVENTION ]
+      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONVENTION ],
+      date: [2021, 11, 9]
     }
   },
   {
@@ -63,7 +67,8 @@ export const subroutes2020: Routes = [
       title: 'Mentoring!',
       authors: [ authorList['AtomicNicos'] ],
       description: 'I want to help you with your endeavors.',
-      tags: [ TAG_PERSONAL, TAG_COMMUNITY ]
+      tags: [ TAG_PERSONAL, TAG_COMMUNITY ],
+      date: [2021, 11, 12]
     }
   },
   {
@@ -73,7 +78,8 @@ export const subroutes2020: Routes = [
       title: 'Reading Materials!',
       authors: [ authorList['AtomicNicos'] ],
       description: 'Some books I plan on reading.',
-      tags: [ TAG_INFOSEC, TAG_PERSONAL ]
+      tags: [ TAG_INFOSEC, TAG_PERSONAL ],
+      date: [2021, 11, 12]
     }
   },
   {
@@ -84,7 +90,8 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'I participated in James Bore\'s Security CoffeeHouse!',
       imageUrl: '/assets/images/2020/coffeehouse/coffeehouse_backdrop.png',
-      tags: [ TAG_COMMUNITY, TAG_CONVENTION ]
+      tags: [ TAG_COMMUNITY, TAG_CONVENTION ],
+      date: [2021, 12, 12]
     }
   },
   {
@@ -94,7 +101,8 @@ export const subroutes2020: Routes = [
       title: 'OSINT: Software Development Ideas',
       authors: [ authorList['AtomicNicos'] ],
       description: 'Some software ideas for OSINT.',
-      tags: [ TAG_OSINT, TAG_PROGRAMMING ]
+      tags: [ TAG_OSINT, TAG_PROGRAMMING ],
+      date: [2021, 12, 16]
     }
   },
   /*

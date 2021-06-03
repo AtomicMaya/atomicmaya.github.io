@@ -1,6 +1,6 @@
-<div class="card d-flex flex-row flex-wrap py-1 my-0 align-items-center" (click)="goToPost('/postx/' + post.year + '/' + post.path)">
+<div class="card d-flex flex-row flex-wrap py-1 my-0 align-items-center" (click)="goToPost('/postx/' + post.date[0] + '/' + post.path)">
   <div class="col-md-6 d-flex flex-column justify-content-center align-items-begin">
-    <em>{{ post.path.slice(8, 10) }}/{{ post.path.slice(5,7) }}/{{ post.year }}</em>
+    <em>{{ ('' + post.date[2]).padStart(2, '0') }}/{{ ('' + post.date[1]).padStart(2, '0') }}/{{ post.date[0] }}</em>
     <div class="card-title my-0">{{ this.stringify(post.title) }}</div>
   </div>
   <div class="d-flex flex-row col-md-3 card-link-container">
