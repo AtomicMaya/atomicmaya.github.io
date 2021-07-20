@@ -21,7 +21,7 @@ import { Apr2021CentralInfosecCtfAllComponent } from '../content/2021/210420-cen
 import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-central-infosec-ctf-python/central-infosec-ctf-python.component';
 import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
 import { Apr2021DigitalOverdoseConferenceComponent } from '../content/210429-digital-overdose-conference/digital-overdose-conference.component';
-import { Jun2021TheStackOverflowConundrumComponent } from '../content/210603-the-stack-overflow-conundrum/jun2021-the-stack-overflow-conundrum.component';
+import { July2021TheHalfwayMarkComponent } from '../content/210720-the-2021-halfway-mark/the-halfway-mark.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { Jun2021TheStackOverflowConundrumComponent } from '../content/210603-the
     Apr2021CentralInfosecCtfPythonComponent,
     Apr2021CentralInfosecCtfHackTheStaticHardComponent,
     Apr2021DigitalOverdoseConferenceComponent,
-    Jun2021TheStackOverflowConundrumComponent,
+    July2021TheHalfwayMarkComponent,
   ],
   imports: [
     CommonModule,

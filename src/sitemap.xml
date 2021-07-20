@@ -157,6 +157,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://atomicnicos.me/postx/2021/2021_07_20+The-2021-Halfway-Mark</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://atomicnicos.me/tags/CTF/</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>

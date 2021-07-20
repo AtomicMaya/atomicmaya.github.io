@@ -23,7 +23,7 @@ import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-
 import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
 import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-maze-hard/central-infosec-ctf-hack-the-maze-hard.component';
 import { Apr2021DigitalOverdoseConferenceComponent } from '../content/210429-digital-overdose-conference/digital-overdose-conference.component';
-import { Jun2021TheStackOverflowConundrumComponent } from '../content/210603-the-stack-overflow-conundrum/jun2021-the-stack-overflow-conundrum.component';
+import { July2021TheHalfwayMarkComponent } from '../content/210720-the-2021-halfway-mark/the-halfway-mark.component';
 
 export const subroutes2021: Routes = [
   {
@@ -230,16 +230,15 @@ export const subroutes2021: Routes = [
       date: [2021, 4, 29]
     },
   },
-  /*
   {
-    path: '2021_06_03+The_StackOverflow_Conundrum',
-    component: Jun2021TheStackOverflowConundrumComponent,
+    path: '2021_07_20+The-2021-Halfway-Mark',
+    component: July2021TheHalfwayMarkComponent,
     data: {
-      title: 'The StackOverflow Conundrum',
+      title: 'Halfway through 2021: A brief recap of what I\'ve been up to',
       authors: [ authorList['AtomicNicos'] ],
-      description: 'StackOverflow has sold to Prosus for 1.8B dollars. Are all of our contributions going to go up in smoke?',
-      tags: [ TAG_INFOSEC, TAG_DEVELOPMENT, TAG_WEB, TAG_PROGRAMMING ],
-      date: [2021, 6, 3]
+      description: 'Going over the timeline for the last few months, seeing what has been accomplished.',
+      tags: [ TAG_PERSONAL ],
+      date: [2021, 7, 20]
     },
-  }*/
+  }
 ];

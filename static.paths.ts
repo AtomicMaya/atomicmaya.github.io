@@ -55,5 +55,6 @@ export const ROUTES = [
   '/postx/2021/2021_04_20+Central-Infosec-CTF-Python',
   '/postx/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard',
   '/postx/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard',
-  '/postx/2021/2021_04_29+Digital-Overdose-Conference'
+  '/postx/2021/2021_04_29+Digital-Overdose-Conference',
+  '/postx/2021/2021_07_20+The-2021-Halfway-Mark'
 ];
