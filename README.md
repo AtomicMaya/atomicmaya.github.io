@@ -1,6 +1,10 @@
-# Atomicnicosme
+# AtomicNicos.me
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+
+## Adding a component
+
+`ng g c content/<year>/title --module=app-<year>`
 
 ## Actually prerendering the files
 

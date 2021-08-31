@@ -22,8 +22,9 @@ import { Apr2021CentralInfosecCtfAllComponent } from '../content/2021/210420-cen
 import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-central-infosec-ctf-python/central-infosec-ctf-python.component';
 import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
 import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-maze-hard/central-infosec-ctf-hack-the-maze-hard.component';
-import { Apr2021DigitalOverdoseConferenceComponent } from '../content/210429-digital-overdose-conference/digital-overdose-conference.component';
-import { July2021TheHalfwayMarkComponent } from '../content/210720-the-2021-halfway-mark/the-halfway-mark.component';
+import { Apr2021DigitalOverdoseConferenceComponent } from '../content/2021/210429-digital-overdose-conference/digital-overdose-conference.component';
+import { July2021TheHalfwayMarkComponent } from '../content/2021/210720-the-2021-halfway-mark/the-halfway-mark.component';
+import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/210831-enumerating-the-lightshot-cdn/enumerating-the-lightshot-cdn.component';
 
 export const subroutes2021: Routes = [
   {
@@ -240,5 +241,16 @@ export const subroutes2021: Routes = [
       tags: [ TAG_PERSONAL ],
       date: [2021, 7, 20]
     },
+  },
+  {
+    path: '2021_08_31+Enumerating-the-LightShot-CDN',
+    component: Aug2021EnumeratingTheLightshotCdnComponent,
+    data: {
+      title: 'Enumerating the Lightshot CDN',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'How I went from the premise of an open CDN to exploiting it as a proof of concept',
+      tags: [ TAG_INFOSEC, TAG_DEVELOPMENT, TAG_PRIVACY ],
+      date: [2021, 8, 31]
+    }
   }
 ];

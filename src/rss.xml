@@ -17,6 +17,13 @@
       <link>https://www.atomicnicos.me</link>
     </image>
     <item>
+      <title>Enumerating the Lightshot CDN</title>
+      <link>https://atomicnicos.me/postx/2021/2021_08_31%2BEnumerating-the-LightShot-CDN</link>
+      <description>How I went from the premise of an open CDN to exploiting it as a proof of concept.</description>
+      <guid>https://atomicnicos.me/postx-2021-19</guid>
+      <pubDate>Tue, Aug. 31st, 2021</pubDate>
+    </item>
+    <item>
       <title>Halfway through 2021: A brief recap of what I've been up to</title>
       <link>https://atomicnicos.me/postx/2021/2021_07_20+The-2021-Halfway-Mark</link>
       <description>Going over the timeline for the last few months, seeing what has been accomplished.</description>
