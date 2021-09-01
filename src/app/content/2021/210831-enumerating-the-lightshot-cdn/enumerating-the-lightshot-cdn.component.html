@@ -33,11 +33,15 @@
 
   <p>We can thus see there are approximately 659 URL segments between both of my uploads (uploads excluded), which comes down to approximately 26.5 images per second. That's a lot of images (in my best Phil Swift tone).</p>
 
+  <p>But how many images could that represent? Well using bad math, I would have told you "at least 27M images", which would be completely wrong. Someone who has been doing math for a living mentioned that just for the 7 character segment - considering that the segment cannot start with a 0 (from experimentation) - we need <code>35 * 36^6 ~= 76.12e9</code> or about 76.12 Billion possibilities. Summing up for character segments of size 1 to 7, we thus get <code>35 * 36^6 + 35 * 36^5 + 35 * 36^4 + 35 * 36^3 + 35 * 36^2 + 35 * 36 + 36 ~= 78.36e9</code> or about 78.36 Billion possibilities. That is a lot. Thankfully we seem to be at <code>1qxxxxx</code> which is somewhere at the beginning of the 7 character space (relatively to 78.36 Billion possibilities).</p>
+
   <p>For each of these URL segments, my initial impression of parsing that URL is that the page takes a few seconds to load, loading the image asynchroneously, thus requiring a more roundabout automated collection method. The image is available 1 of two ways, either in the image source, or as a data blob:</p>
 
   <div class="media-container">
-    <img src="assets/images/2021/210831-lightshot/0-page-code.png" alt=""/>
+    <img src="assets/images/2021/210831-lightshot/0-page-code.png" alt="The code of LightShot's page"/>
   </div>
+
+  <br/>
 
   <p>To automate this, I turned to my favorite language: Python. Also in my quiver were the Selenium WebDriver library, BeautifulSoup4 and Multiprocess.</p>
 
@@ -50,16 +54,20 @@
 
   <p>Meta tags. Apparently the LightShot page uses the <code>&lt;meta property="og:image" content="x"&gt;</code> tag, which contains a link to an image... which can be scraped using the <code>urllib</code> library. Thanks <a target="_blank" href="https://twitter.com/bugbot4" rel="noopener"><em class="fab fa-twitter-square"></em> Night</a> for pointing that out.</p>
 
-  <p>By refactoring my code to include this modification, it became much easier and faster and less expensive to use. You can find it <a href="https://gist.github.com/AtomicNicos/077c84c8c6ff1d431c5e3e7c050f9fd0"> here</a>.</p>
+  <p>By refactoring my code to include this modification, it became much easier and faster and less expensive to use, due to Selenium and BS4 being made redundant. You can find it <a href="https://gist.github.com/AtomicNicos/077c84c8c6ff1d431c5e3e7c050f9fd0"> here</a>.</p>
 
-  <p>I had not removed parallel processing, and this method is "so" efficient, that it tripped CloudFlare's DOS mitigation (or, as CloudFlare claims, the owner banned my IP specifically). Oops, I apologize. However, CloudFlare <strong>is</strong> protecting a service used to share non-consensual pornography, scams and PII (regardless of own ToS) which would make a GDPR-specialized risk management firm sweat. I "fixed" it to continue my "research" and everything was nice and functional.</p>
+  <p>I had not removed parallel processing on my first try, and this method is "so" efficient, that it tripped CloudFlare's DOS mitigation (or, as CloudFlare claims, the owner banned my IP specifically, see below). Oops, I apologize. However, CloudFlare <strong>is</strong> protecting a service used to share non-consensual pornography, scams and PII (regardless of own ToS) which would make a GDPR-specialized risk management firm sweat. I "fixed" it to continue my "research" and everything was nice and functional.</p>
+
+  <div class="media-container">
+    <img src="assets/images/2021/210831-lightshot/3-beaned.png" alt="CloudFlare's message"/>
+  </div>
   <br/>
 
   <h3>PII farming</h3>
   <p>I did just mention scams, NCP and PII, so here are some (heavily redacted) examples!</p>
 
   <div class="media-container">
-    <img src="assets/images/2021/210831-lightshot/1-example-0.png" height="300" alt="Cryptocurrency platform credentials and PII"/>
+    <img src="assets/images/2021/210831-lightshot/1-example-0.png" alt="Cryptocurrency platform credentials and PII"/>
   </div>
   <div class="media-container">
     <caption class="text-align-center">Cryptocurrency platform credentials and PII</caption>
@@ -67,7 +75,7 @@
 
   <br/>
   <div class="media-container">
-    <img src="assets/images/2021/210831-lightshot/1-example-1.jpg" height="300" alt="Cryptocurrency platform credentials"/>
+    <img src="assets/images/2021/210831-lightshot/1-example-1.jpg" alt="Cryptocurrency platform credentials"/>
   </div>
   <div class="media-container">
     <caption class="text-align-center">Cryptocurrency platform credentials</caption>
@@ -75,7 +83,7 @@
 
   <br/>
   <div class="media-container">
-    <img src="assets/images/2021/210831-lightshot/1-example-2.jpg" height="300" alt="Cryptocurrency platform credentials"/>
+    <img src="assets/images/2021/210831-lightshot/1-example-2.jpg" alt="Cryptocurrency platform credentials"/>
   </div>
   <div class="media-container">
     <caption class="text-align-center">Cryptocurrency platform credentials</caption>
@@ -84,7 +92,7 @@
   <br/>
 
   <div class="media-container">
-    <img src="assets/images/2021/210831-lightshot/1-example-3.jpg" height="300" alt="Cryptocurrency platform credentials, PII + Credit card information"/>
+    <img src="assets/images/2021/210831-lightshot/1-example-3.jpg" alt="Cryptocurrency platform credentials, PII + Credit card information"/>
   </div>
   <div class="media-container">
     <caption class="text-align-center">Cryptocurrency platform credentials, PII + Credit card information</caption>
@@ -95,10 +103,10 @@
   <p>It's a literal goldmine for people that wish to be malicious.</p>
   <p>To the question about why I am not going through vulnerability disclosure processes? Because the idea of scraping LightShot has been going on for a while (see below) and no one at LightShot seems to care.</p>
   <div class="media-container">
-    <img src="assets/images/2021/210831-lightshot/2-so.jpg" height="300" alt="A post on stack overflow about scraping LightShot from April 25th 2017"/>
+    <img src="assets/images/2021/210831-lightshot/2-so.jpg" alt="A post on stack overflow about scraping LightShot from April 25th, 2017"/>
   </div>
   <div class="media-container">
-    <caption class="text-align-center">A post on Stack Overflow about scraping LightShot from April 25th 2017</caption>
+    <caption class="text-align-center">A post on Stack Overflow about scraping LightShot from April 25th, 2017</caption>
   </div>
 
   <p>In conclusion, this is a case of *le big sigh*. Hope you've enjoyed, see you around.</p>

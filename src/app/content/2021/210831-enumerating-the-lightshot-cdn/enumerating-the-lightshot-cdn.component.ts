@@ -6,6 +6,9 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-enumerating-the-lightshot-cdn',
   templateUrl: './enumerating-the-lightshot-cdn.component.html',
+  styles: [
+    'img { max-height: 300px !important }'
+  ]
 })
 export class Aug2021EnumeratingTheLightshotCdnComponent implements OnInit {
   post: Post;
