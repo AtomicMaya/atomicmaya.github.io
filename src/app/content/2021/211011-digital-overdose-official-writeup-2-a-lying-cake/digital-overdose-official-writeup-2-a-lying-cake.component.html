@@ -1,0 +1,87 @@
+<app-post-body [post]="this.post" [date]="this.post.date">
+  <p>This is the official developer writeup for the challenge "A door by any other name" that was created for the <a target="_blank" href="https://digitaloverdose.tech/ctf/2021-autumn"><em class="fas fa-external-link-square-alt"></em> Digital Overdose Autumn 2021 CTF</a>.</p>
+
+  <p>The two other writeups published for this event are:</p>
+  <ul>
+    <li><a target="_blank" href="/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage"><em class="fas fa-external-link-square-alt"></em> Outage - The usual suspect</a></li>
+    <!--<li><a target="_blank" href="/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4"><em class="fas fa-external-link-square-alt"></em> C1 - I think this should be C4</a></li>-->
+  </ul>
+
+
+<h3>Summary</h3>
+
+<ul>
+  <li><a class='no-underline' routerLink='.' fragment='desc'>Challenge description and statistics</a></li>
+  <li><a class='no-underline' routerLink='.' fragment='context'>Context</a></li>
+  <li><a class='no-underline' routerLink='.' fragment='writeup'>Writeup</a></li>
+</ul>
+<hr/>
+
+<br/>
+
+<h3 id='desc'>Challenge description and statistics</h3>
+<div class='media-container'>
+  <img src='/assets/images/2021/211011-ctf/portal/description.png' alt='Challenge description on RACTF'>
+</div>
+
+<p>The text reads:</p>
+
+<p>Description Intentionally Left Blank</p>
+
+<p>Out of the 41 correct submissions (First blood by BTeam), this challenge was rated 100% by all contestants.</p>
+<hr/>
+<br/>
+<h3 id='context'>Context</h3>
+<p>I sometimes take inspiration from games for ideas. This time, I was inspired to make a steganography challenge.</p>
+
+<p>The basis for the challenge was the catchphrase "The cake is a lie", which is a very popular phrase from the game Portal, released in 2007.</p>
+<p>It is seen in various areas in the game and is intended to warn the player that one of the game's supporting characters is in fact deceiving them. Perfect, I though, for a steganography challenge.</p>
+
+<hr/>
+<br/>
+<h3 id='writeup'>Writeup</h3>
+
+<p>The challenge page itself has no description (as it was marked "Intentionally Left Blank"). The title however, tells players to look for synonyms of the word door ("A door by any other name"). Among those synonyms is the word "Portal".</p>
+
+<p>Two kinds of players then exist, those that immediately identified the game and were then able to find the actual challenge locaction, and those that didn't who were then prompted to look around the platform.</p>
+
+<p>The category description was "T​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​h​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​c​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​k​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​s​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​l​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e"</p>
+
+<p>Well, do you not see what is going on in this text? No? That is intended, perhaps you need to look at what you don't see. This, helpfully, can be viewed by inspecting the concerned element:</p>
+
+<div class='media-container'>
+  <img src='/assets/images/2021/211011-ctf/portal/hint.png' alt='ZWS in the code'>
+</div>
+
+<br/>
+<p>There exist a number of very interesting characters called "Zero-width space" characters, which can be found in unicode: <code>U+200B</code>, <code>U+200C</code>, <code>U+2060</code> and <code>U+FEFF</code>.</p>
+
+<p>By pasting the text into a notepad, or a scripting language terminal, we can then work with the zero-width spaces in this text.</p>
+
+<p>Informatively, there are 17 alphabetic characters (including " ") in the sentence.</p>
+<p>The set of characters used for flags always contains visible print characters.</p>
+
+<p>To solve this challenge, one can either manually count the special characters and then convert each number to the equivalent ASCII character, or one can script the behavior, which is what we'll do below.</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers >
+```py
+text = "T​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​h​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​c​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​k​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​s​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​l​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e"
+result = []
+alphabet = list(range(ord('a'), ord('z') + 1)) + list(range(ord('A'), ord('Z') + 1)) + [ord(" ")]
+for i in range(len(text)):
+	if ord(text[i]) in alphabet and i < len(text):
+		result += [0]
+	else:
+		result[-1] += 1
+
+print("".join([chr(a) for a in result]))
+```
+  </markdown>
+</div>
+
+<p>This prints out <code>DO{{ '{' }}1$_1NV1$1BL3{{ '}' }}\x00</code></p>
+<p>Which makes the flag <code>DO{{ '{' }}1$_1NV1$1BL3{{ '}' }}</code></p>
+
+<br/>
+</app-post-body>

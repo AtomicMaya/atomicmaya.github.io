@@ -157,4 +157,14 @@
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://atomicnicos.me/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-2-a-lying-cake</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>

@@ -1,7 +1,7 @@
 // tslint:disable: no-string-literal
 import { Routes } from '@angular/router';
 import { TAG_COMMUNITY, TAG_PERSONAL, TAG_TALKS, TAG_OSINT, TAG_INFOSEC, TAG_PRIVACY,
-  TAG_MEDIA, TAG_DEVELOPMENT, TAG_WEB, TAG_IOT, TAG_CYBERSEC, TAG_CTF, TAG_WRITEUP, TAG_CONVENTION, TAG_PROGRAMMING } from 'src/app/utils/tags';
+  TAG_MEDIA, TAG_DEVELOPMENT, TAG_WEB, TAG_IOT, TAG_CYBERSEC, TAG_CTF, TAG_WRITEUP, TAG_CONVENTION, TAG_PROGRAMMING, TAG_CRYPTOGRAPHY } from 'src/app/utils/tags';
 import { Jan2021Goodbye2020NewYearPartyComponent } from 'src/app/content/2021/210102-goodbye2020-new-year-party/goodbye2020-new-year-party.component';
 
 import { Jan2021WhatsappEncaInterviewComponent } from 'src/app/content/2021/210119-whatsapp-enca-interview/whatsapp-enca-interview.component';
@@ -25,6 +25,9 @@ import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/202
 import { Apr2021DigitalOverdoseConferenceComponent } from '../content/2021/210429-digital-overdose-conference/digital-overdose-conference.component';
 import { July2021TheHalfwayMarkComponent } from '../content/2021/210720-the-2021-halfway-mark/the-halfway-mark.component';
 import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/210831-enumerating-the-lightshot-cdn/enumerating-the-lightshot-cdn.component';
+import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
+import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
+import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011-digital-overdose-official-writeup-3-c4/digital-overdose-official-writeup-3-c4.component';
 
 export const subroutes2021: Routes = [
   {
@@ -252,5 +255,42 @@ export const subroutes2021: Routes = [
       tags: [ TAG_INFOSEC, TAG_DEVELOPMENT, TAG_PRIVACY ],
       date: [2021, 8, 31]
     }
-  }
+  },
+  {
+    path: '2021_10_11+digital-overdose-official-writeup-1-outage',
+    component: Oct2021DigitalOverdoseWriteupOutageComponent,
+    data: {
+      title: 'Digital Overdose CTF Official Writeup #1 - Outage',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'Official challenge developer writeup for "Outage - The usual suspect", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
+      tags: [ TAG_CTF, TAG_WRITEUP ],
+      date: [2021, 10, 11],
+      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
+    }
+  },
+  {
+    path: '2021_10_11+digital-overdose-official-writeup-2-a-lying-cake',
+    component: Oct2021DigitalOverdoseWriteupCakeComponent,
+    data: {
+      title: 'Digital Overdose CTF Official Writeup #2 - A door by any other name',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'Official challenge developer writeup for "A door by any other name", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
+      tags: [ TAG_CTF, TAG_WRITEUP, TAG_CRYPTOGRAPHY ],
+      date: [2021, 10, 11],
+      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
+    }
+  },
+  /*
+  {
+    path: '2021_10_11+digital-overdose-official-writeup-3-c4',
+    component: Oct2021DigitalOverdoseWriteupC4Component,
+    data: {
+      title: 'Digital Overdose CTF Official Writeup #3 - C1 - I think this should be C4',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'Official challenge developer writeup for "C1 - I think this should be C4", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
+      tags: [ TAG_CTF, TAG_WRITEUP, TAG_DEVELOPMENT, TAG_WEB ],
+      date: [2021, 10, 11],
+      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
+    }
+  }*/
 ];

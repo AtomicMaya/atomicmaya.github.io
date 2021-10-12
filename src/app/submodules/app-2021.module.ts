@@ -23,6 +23,9 @@ import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2
 import { Apr2021DigitalOverdoseConferenceComponent } from '../content/2021/210429-digital-overdose-conference/digital-overdose-conference.component';
 import { July2021TheHalfwayMarkComponent } from '../content/2021/210720-the-2021-halfway-mark/the-halfway-mark.component';
 import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/210831-enumerating-the-lightshot-cdn/enumerating-the-lightshot-cdn.component';
+import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
+import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
+import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011-digital-overdose-official-writeup-3-c4/digital-overdose-official-writeup-3-c4.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/2108
     Apr2021DigitalOverdoseConferenceComponent,
     July2021TheHalfwayMarkComponent,
     Aug2021EnumeratingTheLightshotCdnComponent,
+    Oct2021DigitalOverdoseWriteupOutageComponent,
+    Oct2021DigitalOverdoseWriteupCakeComponent,
+    Oct2021DigitalOverdoseWriteupC4Component
   ],
   imports: [
     CommonModule,
