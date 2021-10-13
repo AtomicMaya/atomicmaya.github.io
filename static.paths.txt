@@ -57,5 +57,6 @@
 /postx/2021/2021_04_29+Digital-Overdose-Conference
 /postx/2021/2021_07_20+The-2021-Halfway-Mark
 /postx/2021/2021_08_31+Enumerating-the-LightShot-CDN
-/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage
-/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-2-a-lying-cake
+/postx/2021/2021_10_11+digital-overdose-official-writeup-1-outage
+/postx/2021/2021_10_11+digital-overdose-official-writeup-2-a-lying-cake
+/postx/2021/2021_10_11+digital-overdose-official-writeup-3-c4

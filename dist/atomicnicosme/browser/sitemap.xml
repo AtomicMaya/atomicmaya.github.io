@@ -167,4 +167,9 @@
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://atomicnicos.me/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>

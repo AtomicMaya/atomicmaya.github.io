@@ -280,7 +280,6 @@ export const subroutes2021: Routes = [
       imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
     }
   },
-  /*
   {
     path: '2021_10_11+digital-overdose-official-writeup-3-c4',
     component: Oct2021DigitalOverdoseWriteupC4Component,
@@ -292,5 +291,5 @@ export const subroutes2021: Routes = [
       date: [2021, 10, 11],
       imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
     }
-  }*/
+  }
 ];

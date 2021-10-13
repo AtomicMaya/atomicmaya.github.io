@@ -20,12 +20,348 @@
 <br/>
 
 <h3 id='desc'>Challenge description and statistics</h3>
+<div class='media-container'>
+  <img src='/assets/images/2021/211011-ctf/portal/description.png' alt='Challenge description on RACTF'>
+</div>
+
+<p>The text reads:</p>
+
+<p>(but naming conventions)</p>
+
+<p>Go to the challenge website, find the correct password, submit it as flag, <em>difficult, difficult, lemon difficult</em></p>
+
+<p>Out of the 5 correct submissions (First blood by Ruy-Lopez), this challenge was rated 100% by all contestants.</p>
 <hr/>
 <br/>
 <h3 id='context'>Context</h3>
+<p>For a while now I have been producing source analysis / reversal challenges at various CTFs, be it AppSecVillage@RSACon, AppSecVillage@DefCon29, ShellConLA, or others.</p>
+
+<p>The premise for these challeneges is always the same: the user must find the password, which is the flag.</p>
+
+<p>However, this is not steganography, and some work is involved.</p>
 <hr/>
 <br/>
 <h3 id='writeup'>Writeup</h3>
+<p>The challenge is provided in the form of 4 files:</p>
+<ul>
+  <li><code>index.html</code>: The core markup file, it deals with setting up the various challenge elements.</li>
+  <li><code>styles.css</code>: The styles sheet, which can be safely ignored.</li>
+  <li><code>f0.js</code>: The main script, it deals with reacting to user input and providing <code>m</code> - an empty dictionary - to the ecosystem.</li>
+  <li><code>f1.js</code>: Adds an anonymous namespace into m and calls the comparison function therein. This file is the big fish, and is heavily obfuscated.</li>
+</ul>
 
+<h4>Deobfuscation</h4>
+<p>The code, as partially seen below, is heavily obfuscated using something called JSFuck. JSFuck is an esoteric language that is composed of the characters <code>[]()!+</code>. For issues of content size (and to mess up automatic deobfuscators) I have also added the <code>*</code>.</p>
+
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers >
+```js
+((Φ, ...Ξ)=>[][Φ[(+!+[]+!+[])**(+![])+(+!+[]+!+[])**(+!+[])+(+!+[]+!+[])**(+!+[]+!+[]+!+[])+(+!+[]+!+[])**(+!+[]+!+[]+!+[]+!+[])]+Φ[
+...
+(+!+[]+!+[])**(+!+[]+!+[]+!+[]+!+[])]](Ξ))('UvSgI5/_M26b{{ "<" }}z]Ks+e)rn!l{{ "}" }}1=p 0Z$`3A.kf^jD{{ ">" }}a{{ "{" }}yBC(4Y|9;c-G%N?8xho,7:t[iWmuF&"d*LE', m)
+```
+  </markdown>
+</div>
+
+<p>So, what is going on here? That... is an excellent question.</p>
+
+<p>Let us start with <code>Φ</code> and <code>Ξ</code>:</p>
+
+<ul>
+  <li><code>Φ</code> is a string. Specifically it is the string "<code>UvSgI5/_M26b{{ "<" }}z]Ks+e)rn!l{{ "}" }}1=p 0Z$`3A.kf^jD{{ ">" }}a{{ "{" }}yBC(4Y|9;c-G%N?8xho,7:t[iWmuF&"d*LE</code>". Like with any other array-like type in JS, you can then use <code>Φ[i]</code> to access the character at index <code>i</code>.</li>
+  <li><code>Ξ</code> is an empty dictionary. By applying the unpack operator (<code>...</code>) in front of it, we can use it as an element in a new array, thus helping it maintain state.</li>
+</ul>
+
+<p>Now what about the <code>(+!+[]+!+[])**(+![])</code> and similar things?</p>
+
+<p>Well, if you try out these patterns in the console, you'll get the following results:</p>
+
+<ul>
+  <li><code>+![]</code> is equal to <code>0</code></li>
+  <li><code>+!+[]</code> is equal to <code>1</code></li>
+</ul>
+
+<p>So <code>(+!+[]+!+[])</code> is equal to <code>1+1</code> and thus <code>2</code>.</p>
+
+<p>The <code>**</code> operator is the power operator, as in <code>a ** b</code> is equal to <code>a</code>, to the power of <code>b</code>.</p>
+
+<p>So our current pattern is regularly <code>2**(n)</code>. Why is that?</p>
+
+<p>This may remind people of binary notation of numbers, but for those that have missed it, the way to write in binary is to decompose the number into a sum of powers of 2.</p>
+
+<p><code>0b10100111 = 2**7+2**5+2**2+2**1+2**0 = 167</code>. It is much shorter to write then <code>1+1+1+1+1+1+1+1...+1+1</code> (167 times) and as such is lighter than the   default JSFuck implementation and also harder to automatically deobfuscate using a tool.</p>
+
+<p>Afterwards, since you access characters in <code>Φ</code>, and are appending them one to another, you are producing a new string, which is then a method in JavaScript.</p>
+
+<p>If you didn't want to deobfuscate manually however, you could have used a breakpoint at the correct line to possibly bypass this step.</p>
+
+<p>Once deobfuscated, the code looks like this:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers >
+```js
+((Φ, ...Ξ)=>[]['pop']['constructor']('const _=[0xf4,0x39,0xd1,0xc0,0x55,0x84,0x36,0x28,0xd7,0x2a,0xb9,0x93,0x2a,0x18,0xb1,0x72,0x6c,0xcd,0xcf,0x4b,0xd4,0x4c,
+0x7d,0xe4,0xab,0xf0,0x23,0x53,0x24,0x5c,0x2a,0x42,0xf8,0x0e,0x26,0xfc,0xd4,0x5c,0xc1,0x71,0xef,0xa9,0x82,0x3d,0x7b,0x49,0xa2,0xdc];
+get__s=(__s_n)={{ '>' }}__s_n.map(x={{ '>' }}[0x63,0x7C,0x77,0x7B,0xF2,0x6B,0x6F,0xC5,0x30,0x01,0x67,0x2B,0xFE,0xD7,0xAB,0x76,0xCA,
+0x82,0xC9,0x7D,0xFA,0x59,0x47,0xF0,0xAD,0xD4,0xA2,0xAF,0x9C,0xA4,0x72,0xC0,0xB7,0xFD,0x93,0x26,0x36,0x3F,0xF7,0xCC,0x34,0xA5,0xE5,
+0xF1,0x71,0xD8,0x31,0x15,0x04,0xC7,0x23,0xC3,0x18,0x96,0x05,0x9A,0x07,0x12,0x80,0xE2,0xEB,0x27,0xB2,0x75,0x09,0x83,0x2C,0x1A,0x1B,
+0x6E,0x5A,0xA0,0x52,0x3B,0xD6,0xB3,0x29,0xE3,0x2F,0x84,0x53,0xD1,0x00,0xED,0x20,0xFC,0xB1,0x5B,0x6A,0xCB,0xBE,0x39,0x4A,0x4C,0x58,
+0xCF,0xD0,0xEF,0xAA,0xFB,0x43,0x4D,0x33,0x85,0x45,0xF9,0x02,0x7F,0x50,0x3C,0x9F,0xA8,0x51,0xA3,0x40,0x8F,0x92,0x9D,0x38,0xF5,0xBC,
+0xB6,0xDA,0x21,0x10,0xFF,0xF3,0xD2,0xCD,0x0C,0x13,0xEC,0x5F,0x97,0x44,0x17,0xC4,0xA7,0x7E,0x3D,0x64,0x5D,0x19,0x73,0x60,0x81,0x4F,
+0xDC,0x22,0x2A,0x90,0x88,0x46,0xEE,0xB8,0x14,0xDE,0x5E,0x0B,0xDB,0xE0,0x32,0x3A,0x0A,0x49,0x06,0x24,0x5C,0xC2,0xD3,0xAC,0x62,0x91,
+0x95,0xE4,0x79,0xE7,0xC8,0x37,0x6D,0x8D,0xD5,0x4E,0xA9,0x6C,0x56,0xF4,0xEA,0x65,0x7A,0xAE,0x08,0xBA,0x78,0x25,0x2E,0x1C,0xA6,0xB4,
+0xC6,0xE8,0xDD,0x74,0x1F,0x4B,0xBD,0x8B,0x8A,0x70,0x3E,0xB5,0x66,0x48,0x03,0xF6,0x0E,0x61,0x35,0x57,0xB9,0x86,0xC1,0x1D,0x9E,0xE1,
+0xF8,0x98,0x11,0x69,0xD9,0x8E,0x94,0x9B,0x1E,0x87,0xE9,0xCE,0x55,0x28,0xDF,0x8C,0xA1,0x89,0x0D,0xBF,0xE6,0x42,0x68,0x41,0x99,0x2D,
+0x0F,0xB0,0x54,0xBB,0x16][x]);u=(u_m)={{ '>' }}Array.from(u_m).map(u_x={{ '>' }}u_x.charCodeAt(0));e=(e_m)={{ '>' }}{{ '{' }}e_k=[
+0xAC,0x46,0x4C,0x41,0x47,0x7B,0x54,0x48,0x31,0x24,0x5F,0x31,0x24,0x5F,0x42,0x31,0x54,0x5F,0x54,0x34,0x4E,0x47,0x30,0x7D];
+e_gfm=((bm_bl)={{ '>' }}{{ '{' }}bm_n=[];for(bm_j=0;bm_j{{ '<' }}4;bm_j++){{ '{' }}bm_n.push([]);for(bm_i=0;bm_i{{ '<' }}4;bm_i++)
+bm_n[bm_j].push(bm_bl[bm_i*4+bm_j]);{{ '}' }};return bm_n{{ '}' }})([0x02,0x01,0x01,0x03,0x03,0x02,0x01,0x01,0x01,0x03,0x02,0x01,
+0x01,0x01,0x03,0x02]);e_sk=((gsk_k)={{ '>' }}{{ '{' }}gsk_N=((n_k)={{ '>' }}[4,6,8][n_k.length*2/16-2])(gsk_k);gsk_K=((sk_k)={{ '>' }}{{ '{' }}
+sk_bl=[];for(sk_i=0;sk_i{{ '<' }}sk_k.length/4;sk_i++){{ '{' }}sk_bl.push(sk_k.slice(sk_i*4,(sk_i+1)*4)){{ '}' }};return sk_bl})(gsk_k);
+gsk_W=[];for(gsk_i=0;gsk_i{{ '<' }}(((r_k)={{ '>' }}[10,12,14][r_k.length*2/16-2])(gsk_k)+1)*4;gsk_i++){{ '{' }}gsk_W.push([]);(gsk_i{{ '<' }}gsk_N)?
+gsk_W[gsk_W.length-1]=gsk_K[gsk_i].slice():((gsk_i{{ '>' }}=gsk_N&&gsk_i%gsk_N==0)?gsk_W[gsk_W.length-1]=((...xr_v)={{ '>' }}{{ '{' }}xr_n=
+xr_v[0].slice();for(xr_i=1;xr_i{{ '<' }}xr_v.length;xr_i++){{ '{' }}for(xr_j=0;xr_j{{ '<' }}xr_v[xr_i].length;xr_j++){{ '{' }}xr_n[xr_j]^=
+xr_v[xr_i][xr_j];}};return xr_n{{ '}' }})(gsk_W[gsk_i-gsk_N],get__s(((sk_n,sk_l)={{ '>' }}(sk_l?[sk_n[1],sk_n[2],sk_n[3],sk_n[0]]:
+[sk_n[3],sk_n[0],sk_n[1],sk_n[2]]))(gsk_W[gsk_i-1].slice(),true)),  ((rcon_i)={{ '>' }}[[0x00,0x01,0x02,0x04,0x08,0x10,0x20,0x40,
+0x80,0x1B,0x36][rcon_i],0x00,0x00,0x00])((gsk_i/gsk_N)|0)).slice():((gsk_i{{ '>' }}=gsk_N&&gsk_i%4==0)?gsk_W[gsk_W.length-1]=
+((...xr_v)={{ '>' }}{{ '{' }}xr_n=xr_v[0].slice();for(xr_i=1;xr_i{{ '<' }}xr_v.length;xr_i++){{ '{' }}for(xr_j=0;xr_j{{ '<' }}xr_v
+[xr_i].length;xr_j++){{ '{' }}xr_n[xr_j]^=xr_v[xr_i][xr_j];}};return xr_n{{ '}' }})(gsk_W[gsk_i-gsk_N],get__s(gsk_W[gsk_i-1])).slice()
+:gsk_W[gsk_W.length-1]=((...xr_v)={{ '>' }}{{ '{' }}xr_n=xr_v[0].slice();for(xr_i=1;xr_i{{ '<' }}xr_v.length;xr_i++){{ '{' }}for(xr_j=0;xr_j{{ '<' }}xr_v[xr_i].length;xr_j++){{ '{' }}
+xr_n[xr_j]^=xr_v[xr_i][xr_j];}};return xr_n{{ '}' }})(gsk_W[gsk_i-gsk_N],gsk_W[gsk_i-1]).slice()));};gsk_n=[];for(gsk_j=0;gsk_j{{ '<' }}gsk_W.length;gsk_j++){{ '{' }}if(gsk_j%4==0)gsk_n.push([]);
+gsk_n[gsk_n.length-1].push(...gsk_W[gsk_j].slice());{{ '}' }};return gsk_n{{ '}' }})(e_k);bs=((stb_bl)={{ '>' }}{{ '{' }}
+stb_n=[];for(stb_i=0;stb_i{{ '<' }}stb_bl.length/16;stb_i++)stb_n.push(stb_bl.slice(stb_i*16,(stb_i+1)*16));return stb_n{{ '}' }})(((p_bl)={{ '>' }}{{ '{' }}p_n=p_bl.slice(0);p_mi=16-(p_n.length%16);
+for(let i=0;i{{ '<' }}p_mi;i++){{ '{' }}p_n.push(p_mi){{ '}' }};return p_n{{ '}' }})(e_m));for(e_i=0;e_i{{ '<' }}
+bs.length;e_i++){{ '{' }}bs[e_i]=((...xr_v)={{ '>' }}{{ '{' }}xr_n=xr_v[0].slice();for(xr_i=1;xr_i{{ '<' }}xr_v.length;xr_i++){{ '{' }}for(xr_j=0;xr_j{{ '<' }}xr_v[xr_i].length;xr_j++){{ '{' }}xr_n[xr_j]^=
+xr_v[xr_i][xr_j];}};return xr_n{{ '}' }})(bs[e_i],e_sk[0]).slice();for(e_s=1;e_s{{ '<' }}e_sk.length;e_s++){{ '{' }}bs[e_i]=
+((sr_m,sr_l)={{ '>' }}{{ '{' }}sr_n=[];for(sr_i=0;sr_i{{ '<' }}sr_m.length;sr_i++){{ '{' }}sr_n[sr_i]=sr_m[sr_i].slice();
+for(sr_j=1;sr_j{{ '<' }}sr_i+1;sr_j++)sr_n[sr_i]=((sk_n,sk_l)={{ '>' }}sk_l?[sk_n[1],sk_n[2],sk_n[3],sk_n[0]]:[sk_n[3],
+sk_n[0],sk_n[1],sk_n[2]])(sr_n[sr_i].slice(),sr_l).slice();{{ '}' }}return sr_n{{ '}' }})(((bm_bl)={{ '>' }}{{ '{' }}
+bm_n=[];for(bm_j=0;bm_j{{ '<' }}4;bm_j++){{ '{' }}bm_n.push([]);for(bm_i=0;bm_i{{ '<' }}4;bm_i++)bm_n[bm_j].push(
+  bm_bl[bm_i*4+bm_j]);{{ '}' }};return bm_n{{ '}' }})(get__s(bs[e_i]).slice()).slice(),true).slice();if(e_s!=e_sk.length-1)
+  bs[e_i]=((mc_fm,mc_m)={{ '>' }}{{ '{' }}mc_tm=((tsm_m)={{ '>' }}{{ '{' }}tsm_n=[];for(tsm_i=0;tsm_i{{ '<' }}tsm_m.length;tsm_i++){{ '{' }}tsm_n.push([]);for (tsm_j = 0; tsm_j {{ '<' }} tsm_m[tsm_i].length; tsm_j++)
+  tsm_n[tsm_i].push(tsm_m[tsm_j][tsm_i]);{{ '}' }}return tsm_n{{ '}' }})(mc_m);mc_n=[];for(mc_i=0;mc_i{{ '<' }}4;mc_i++)
+  {{ '{' }}mc_n[mc_i]=[];for(mc_j=0;mc_j{{ '<' }}4;mc_j++){{ '{' }}mc_z=((zip_a,zip_b)={{ '>' }}{{ '{' }}zip_n=[];
+  for(zip_i=0;zip_i{{ '<' }}zip_a.length;zip_i++)zip_n[zip_i]={{ '{' }}1:zip_a[zip_i],2:zip_b[zip_i]{{ '}' }};return zip_n{{ '}' }})(mc_fm[mc_i],mc_tm[mc_j]);mc_gf=[];for(mc_k=0;mc_k{{ '<' }}mc_z.length;mc_k++)
+  mc_gf.push(((gm_a, gm_b)={{ '>' }}{{ '{' }}gm_p=0;gm_a_=gm_a;gm_b_=gm_b;for(gm_i=0;gm_i{{ '<' }}8;gm_i++){{ '{' }}
+  gm_p^=(gm_a_&1)*gm_b_;gm_b_=(gm_b_{{ '<' }}{{ '<' }}1)^((gm_b_{{ '>' }}{{ '>' }}7)*0x11b);gm_a_{{ '>' }}{{ '>' }}=1;
+  {{ '}' }}return gm_p{{ '}' }})(mc_z[mc_k][1],mc_z[mc_k][2]));mc_x=mc_gf[0];for(mc_l=1;mc_l{{ '<' }}mc_gf.length;mc_l++)
+  mc_x^=mc_gf[mc_l];mc_n[mc_i].push(mc_x);{{ '}' }}{{ '}' }}return mc_n;{{ '}' }})(e_gfm,bs[e_i]).slice();bs[e_i]=
+  ((...xr_v)={{ '>' }}{{ '{' }}xr_n=xr_v[0].slice();for(xr_i=1;xr_i{{ '<' }}xr_v.length;xr_i++){{ '{' }}for(xr_j=0;xr_j{{ '<' }}
+  xr_v[xr_i].length;xr_j++){{ '{' }}xr_n[xr_j]^=xr_v[xr_i][xr_j];}};return xr_n{{ '}' }})(((mb_m)={{ '>' }}{{ '{' }}
+  mb_n=[];for(mb_i = 0; mb_i {{ '<' }} 4; mb_i++){{ '{' }}for(mb_j = 0; mb_j {{ '<' }} 4; mb_j++)mb_n.push(mb_m[mb_j][mb_i]);{{ '}' }}return mb_n;{{ '}' }})(bs[e_i]).slice(),e_sk[e_s]).slice();}};return bs.flat()
+  {{ '}' }};h=(t)={{ '>' }}{{ '{' }}return t.map(t={{ '>' }}{{ '{' }}const n=t.toString(16);return 1==n.length?`0${{ '{' }}n{{ '}' }}`:
+  `${{ '{' }}n{{ '}' }}`{{ '}' }}).join(""){{ '}' }};t=(t)={{ '>' }}{{ '{' }}return (t=h(e(((message)={{ '>' }}Array.from(message).map(x={{ '>' }}x.charCodeAt(0)))(t)))
+  ==h(_));{{ '}' }};const c=(n,e)={{ '>' }}{{ '{' }}if(document.getElementById("rGZsYWd7UzFLM30=")&&n.length%3==0)
+  {{ '{' }}if(t(n)) return e({{ '{' }}status:!0,flag:n{{ '}' }}),!0{{ '}' }}else e({{ '{' }}status:!1{{ '}' }});
+  return !1;{{ '}' }};this[0][0]=c;')['call'](Ξ))('UvSgI5/_M26b{{ "<" }}z]Ks+e)rn!l{{ "}" }}1=p 0Z$`3A.kf^jD{{ ">" }}a{{ "{" }}yBC(4Y|9;c-G%N?8xho,7:t[iWmuF&"d*LE', m)
+```
+  </markdown>
+</div>
+
+<p>At this point, you are probably thinking something along the lines of <em>"What the hell, Nicos?"</em>... and I wouldn't blame you if you did.</p>
+
+<p>So, what is going on here? One thing that gave a few people an idea to start with was the <code>get__s</code> method. Why? Because it is instantly recognizeable as Rijndael's SBox, a permutation table used in the AES algorithm.</p>
+
+<p>This knowledge was not advantageous though, because the algorithm written here is not perfect. There is in fact an intentional mistake when it comes to the generation of subkeys, which breaks tools used for the decryption of the encrypted message.</p>
+
+<p>Another point is that although the AES algoritm implements many steps, most of them can be inserted in secondary functions. This was done here, but most of those functions were then added back as anonymous functions (read: an unnamed function that exists in a namespace and that is then called on the spot).</p>
+
+<p>So, what does the "unclumped" algorithm look like? See below.</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers >
+```js
+const _ = [0xAC, 0x46, 0x4C, 0x41, 0x47, 0x7B, 0x54, 0x48, 0x31, 0x24, 0x5F, 0x31, 0x24, 0x5F, 0x42, 0x31, 0x54, 0x5F,
+ 0x54, 0x34, 0x4E, 0x47, 0x30, 0x7D]
+
+const __ = [0xf4, 0x39, 0xd1, 0xc0, 0x55, 0x84, 0x36, 0x28, 0xd7, 0x2a, 0xb9, 0x93, 0x2a, 0x18, 0xb1, 0x72, 0x6c, 0xcd,
+ 0xcf, 0x4b, 0xd4, 0x4c, 0x7d, 0xe4, 0xab, 0xf0, 0x23, 0x53, 0x24, 0x5c, 0x2a, 0x42, 0xf8, 0x0e, 0x26, 0xfc, 0xd4, 0x5c,
+  0xc1, 0x71, 0xef, 0xa9, 0x82, 0x3d, 0x7b, 0x49, 0xa2, 0xdc]
+
+p=(p_bl)={{ '>' }}{{ '{' }}p_n=p_bl.slice(0);p_mi=16-(p_n.length%16);for(let i=0;i{{ '<' }}
+  p_mi;i++){{ '{' }}p_n.push(p_mi){{ '}' }};return p_n{{ '}' }};
+
+u=(message)={{ '>' }}Array.from(message).map(x={{ '>' }}x.charCodeAt(0));
+
+stb=(stb_bl)={{ '>' }}{{ '{' }}stb_n=[];for(stb_i=0;stb_i{{ '<' }}stb_bl.length/16;stb_i++)
+  stb_n.push(stb_bl.slice(stb_i*16,(stb_i+1)*16));return stb_n{{ '}' }};
+
+get__s=(__s_n)={{ '>' }}__s_n.map(x={{ '>' }}[0x63,0x7C,0x77,0x7B,0xF2,0x6B,0x6F,0xC5,0x30,0x01,0x67,0x2B,0xFE,0xD7,0xAB,0x76,0xCA,
+	0x82,0xC9,0x7D,0xFA,0x59,0x47,0xF0,0xAD,0xD4,0xA2,0xAF,0x9C,0xA4,0x72,0xC0,0xB7,0xFD,0x93,0x26,0x36,0x3F,0xF7,0xCC,0x34,0xA5,0xE5,
+	0xF1,0x71,0xD8,0x31,0x15,0x04,0xC7,0x23,0xC3,0x18,0x96,0x05,0x9A,0x07,0x12,0x80,0xE2,0xEB,0x27,0xB2,0x75,0x09,0x83,0x2C,0x1A,0x1B,
+	0x6E,0x5A,0xA0,0x52,0x3B,0xD6,0xB3,0x29,0xE3,0x2F,0x84,0x53,0xD1,0x00,0xED,0x20,0xFC,0xB1,0x5B,0x6A,0xCB,0xBE,0x39,0x4A,0x4C,0x58,
+	0xCF,0xD0,0xEF,0xAA,0xFB,0x43,0x4D,0x33,0x85,0x45,0xF9,0x02,0x7F,0x50,0x3C,0x9F,0xA8,0x51,0xA3,0x40,0x8F,0x92,0x9D,0x38,0xF5,0xBC,
+	0xB6,0xDA,0x21,0x10,0xFF,0xF3,0xD2,0xCD,0x0C,0x13,0xEC,0x5F,0x97,0x44,0x17,0xC4,0xA7,0x7E,0x3D,0x64,0x5D,0x19,0x73,0x60,0x81,0x4F,
+	0xDC,0x22,0x2A,0x90,0x88,0x46,0xEE,0xB8,0x14,0xDE,0x5E,0x0B,0xDB,0xE0,0x32,0x3A,0x0A,0x49,0x06,0x24,0x5C,0xC2,0xD3,0xAC,0x62,0x91,
+	0x95,0xE4,0x79,0xE7,0xC8,0x37,0x6D,0x8D,0xD5,0x4E,0xA9,0x6C,0x56,0xF4,0xEA,0x65,0x7A,0xAE,0x08,0xBA,0x78,0x25,0x2E,0x1C,0xA6,0xB4,
+	0xC6,0xE8,0xDD,0x74,0x1F,0x4B,0xBD,0x8B,0x8A,0x70,0x3E,0xB5,0x66,0x48,0x03,0xF6,0x0E,0x61,0x35,0x57,0xB9,0x86,0xC1,0x1D,0x9E,0xE1,
+	0xF8,0x98,0x11,0x69,0xD9,0x8E,0x94,0x9B,0x1E,0x87,0xE9,0xCE,0x55,0x28,0xDF,0x8C,0xA1,0x89,0x0D,0xBF,0xE6,0x42,0x68,0x41,0x99,0x2D,
+	0x0F,0xB0,0x54,0xBB,0x16][x]);
+
+xr=(...xr_v)={{ '>' }}{{ '{' }}xr_n=xr_v[0].slice();for(xr_i=1;xr_i{{ '<' }}xr_v.length;xr_i++)
+  {{ '{' }}for(xr_j=0;xr_j{{ '<' }}xr_v[xr_i].length;xr_j++){{ '{' }}xr_n[xr_j]^=xr_v[xr_i][xr_j];}};return xr_n{{ '}' }};
+
+rcon=(rcon_i)={{ '>' }}[[0x00,0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80,0x1B,0x36][rcon_i],0x00,0x00,0x00];
+
+n=(n_k)={{ '>' }}[4,6,8][n_k.length*2/16-2];
+
+r=(r_k)={{ '>' }}[10,12,14][r_k.length*2/16-2];
+
+sk=(sk_k)={{ '>' }}{{ '{' }}sk_bl=[];for(sk_i=0;sk_i{{ '<' }}sk_k.length/4;sk_i++){{ '{' }}
+  sk_bl.push(sk_k.slice(sk_i*4,(sk_i+1)*4)){{ '}' }};return sk_bl{{ '}' }};
+
+ro=(sk_n, sk_l)={{ '>' }}sk_l?[sk_n[1],sk_n[2],sk_n[3],sk_n[0]]:[sk_n[3],sk_n[0],sk_n[1],sk_n[2]];
+gsk=(gsk_k)={{ '>' }}{{ '{' }}gsk_N=n(gsk_k);gsk_K=sk(gsk_k);gsk_W=[];for(gsk_i=0;gsk_i{{ '<' }}(r(gsk_k)+1)*4;gsk_i++)
+  {{ '{' }}gsk_W.push([]);(gsk_i{{ '<' }}gsk_N)?gsk_W[gsk_W.length-1]=gsk_K[gsk_i].slice():
+  ((gsk_i{{ '>' }}=gsk_N&&gsk_i%gsk_N==0)?gsk_W[gsk_W.length-1]=xr(gsk_W[gsk_i-gsk_N],get__s(ro(gsk_W[gsk_i-1].slice(),true)),rcon((gsk_i/gsk_N)|0)).slice():
+  ((gsk_i{{ '>' }}=gsk_N&&gsk_i%4==0)?gsk_W[gsk_W.length-1]=xr(gsk_W[gsk_i-gsk_N],get__s(gsk_W[gsk_i-1])).slice():
+  gsk_W[gsk_W.length-1]=xr(gsk_W[gsk_i-gsk_N],gsk_W[gsk_i-1]).slice()));
+  {{ '}' }};gsk_n = [];for(gsk_j=0;gsk_j{{ '<' }}gsk_W.length;gsk_j++){{ '{' }}if(gsk_j%4==0)gsk_n.push([]);
+  gsk_n[gsk_n.length-1].push(...gsk_W[gsk_j].slice());{{ '}' }};return gsk_n{{ '}' }};
+
+bm=(bm_bl)={{ '>' }}{{ '{' }}bm_n=[];for(bm_j=0;bm_j{{ '<' }}4;bm_j++){{ '{' }}bm_n.push([]);for(bm_i=0;bm_i{{ '<' }}4;bm_i++)bm_n[bm_j].push(bm_bl[bm_i*4+bm_j]);{{ '}' }};return bm_n{{ '}' }};
+
+mb=(mb_m)={{ '>' }}{{ '{' }}mb_n=[];for(mb_i = 0; mb_i {{ '<' }} 4; mb_i++){{ '{' }}for(mb_j = 0; mb_j {{ '<' }} 4; mb_j++)mb_n.push(mb_m[mb_j][mb_i]);{{ '}' }}return mb_n;{{ '}' }};
+
+tsm=(tsm_m)={{ '>' }}{{ '{' }}tsm_n=[];for(tsm_i=0;tsm_i{{ '<' }}tsm_m.length;tsm_i++){{ '{' }}tsm_n.push([]);for (tsm_j = 0; tsm_j {{ '<' }} tsm_m[tsm_i].length; tsm_j++)tsm_n[tsm_i].push(tsm_m[tsm_j][tsm_i]);{{ '}' }}return tsm_n{{ '}' }};
+
+sr=(sr_m,sr_l)={{ '>' }}{{ '{' }}sr_n=[];for(sr_i=0;sr_i{{ '<' }}sr_m.length;sr_i++){{ '{' }}sr_n[sr_i]=sr_m[sr_i].slice();for(sr_j=1;sr_j{{ '<' }}sr_i+1;sr_j++)sr_n[sr_i]=ro(sr_n[sr_i].slice(),sr_l).slice();{{ '}' }}return sr_n{{ '}' }};
+
+gm=(gm_a, gm_b)={{ '>' }}{{ '{' }}gm_p=0;gm_a_=gm_a;gm_b_=gm_b;for(gm_i=0;gm_i{{ '<' }}8;gm_i++){{ '{' }}gm_p^=(gm_a_&1)*gm_b_;gm_b_=(gm_b_{{ '<' }}{{ '<' }}1)^((gm_b_{{ '>' }}{{ '>' }}7)*0x11b);gm_a_{{ '>' }}{{ '>' }}=1;{{ '}' }}return gm_p{{ '}' }};
+
+zip=(zip_a,zip_b)={{ '>' }}{{ '{' }}zip_n=[];for(zip_i=0;zip_i{{ '<' }}zip_a.length;zip_i++)zip_n[zip_i]={{ '{' }}1:zip_a[zip_i],2:zip_b[zip_i]{{ '}' }};return zip_n{{ '}' }};
+
+mc=(mc_fm, mc_m)={{ '>' }}{{ '{' }}mc_tm=tsm(mc_m);mc_n=[];for(mc_i=0;mc_i{{ '<' }}4;mc_i++){{ '{' }}mc_n[mc_i]=[];for(mc_j=0;mc_j{{ '<' }}4;mc_j++){{ '{' }}mc_z=zip(mc_fm[mc_i],mc_tm[mc_j])
+mc_gf=[];for(mc_k=0;mc_k{{ '<' }}mc_z.length;mc_k++)mc_gf.push(gm(mc_z[mc_k][1],mc_z[mc_k][2]));mc_x=mc_gf[0];
+for(mc_l=1;mc_l{{ '<' }}mc_gf.length;mc_l++)mc_x^=mc_gf[mc_l];mc_n[mc_i].push(mc_x);}}return mc_n;{{ '}' }};
+
+e=(e_m)={{ '>' }}{{ '{' }}
+  e_k=[0xAC,0x46,0x4C,0x41,0x47,0x7B,0x54,0x48,0x31,0x24,0x5F,0x31,0x24,0x5F,0x42,0x31,0x54,0x5F,0x54,0x34,0x4E,0x47,0x30,0x7D];
+  e_gfm=bm([0x02,0x01,0x01,0x03,0x03,0x02,0x01,0x01,0x01,0x03,0x02,0x01,0x01,0x01,0x03,0x02]);e_sk=gsk(e_k);bs=stb(p(e_m));
+  for(e_i=0;e_i{{ '<' }}bs.length;e_i++){{ '{' }}bs[e_i]=xr(bs[e_i],e_sk[0]).slice();for(e_s=1;e_s{{ '<' }}e_sk.length;e_s++)
+  {{ '{' }}bs[e_i]=sr(bm(get__s(bs[e_i]).slice()).slice(),true).slice();if(e_s!=e_sk.length-1)bs[e_i]=mc(e_gfm,bs[e_i]).slice();
+  bs[e_i]=xr(mb(bs[e_i]).slice(),e_sk[e_s]).slice();}};return bs.flat(){{ '}' }};
+
+h=(t)={{ '>' }}{{ '{' }}return t.map(t={{ '>' }}{{ '{' }}const n=t.toString(16);
+  return 1==n.length?`0${{ '{' }}n{{ '}' }}`:`${{ '{' }}n{{ '}' }}`{{ '}' }}).join(""){{ '}' }};
+
+t=(t)={{ '>' }}{{ '{' }}return (t=h(e(u(t)))==h(_));{{ '}' }};
+
+const c=(n,e)={{ '>' }}{{ '{' }}if(document.getElementById("rGZsYWd7UzFLM30=")&&n.length%2==0){{ '{' }}if(t(n)) return e({{ '{' }}status:!0,flag:n{{ '}' }}),!0{{ '}' }}
+  else e({{ '{' }}status:!1{{ '}' }});return !1;{{ '}' }};
+
+this[0][0]=c;
+```
+  </markdown>
+</div>
+
+<p>Well. This doesn't really help. Let's break it down.</p>
+
+<ul>
+  <li><code>_</code>: The 192-bit AES key, which -- unhelpfully -- spells out <code>¬FLAG{{ '{' }}TH1$_1$_B1T_T4NG0{{ '}' }}</code> (a false flag, <em>because of course</em>).</li>
+  <li><code>__</code>: The encrypted flag.</li>
+  <li><code>p</code>: A function that pads a provided message to a length divisible by 16 (128-bit). It is reversible because the X newly added elements are all of value X.</li>
+  <li><code>u</code>: Converts a string into the list of ASCII values it is composed of.</li>
+  <li><code>stb</code>: Converts a list of all the values to a list of blocks, that are 128-bit.</li>
+  <li><code>get__s</code>: Gets the permutated values using Rijndael's SBOX.</li>
+  <li><code>xr</code>: Performs a linear XOR on a set of lists.<br/>
+    <code>xr([1,2,3,4], [9,8,7,6]) ={{ '>' }} [1^9, 2^8, 3^7, 4^6]</code></li>
+  <li><code>rcon</code>: The round constant used.</li>
+  <li><code>n</code>: Number of 32-bit words composing the key.</li>
+  <li><code>r</code>: Number of rounds for the algorithm.</li>
+  <li><code>sk</code>: Split key into blocks of 4 32-bit words.</li>
+  <li><code>ro</code>: Rotate a 32-bit word, either to the left or to the right.</li>
+  <li><code>gsk</code>: Generate the subkey array for encryption/decryption</li>
+  <li><code>bm</code>: Converts a block (a list of 16 elements / a 128-bit word) into a matrix (a list of 4 lists of 4 elements / of 32-bit words)</li>
+  <li><code>mb</code>: Converts a matrix into a block.</li>
+  <li><code>tsm</code>: Transposes a matrix of size (n*n)</li>
+  <li><code>sr</code>: Shifts the rows of a matrix (row 1 is untouched, row 2 is rotated once, row 3 is rotated twice and row 4 is rotated thrice).</li>
+  <li><code>gm</code>: Perfoms the GF2 (Gallois Field 2) multiplication of 2 numbers.</li>
+  <li><code>zip</code>: Zips two lists together based on index.<br/><code>zip([1,2,3,4], [9,8,7,6]) ={{ '>' }} [[1,9], [2,8], [3,7], [4,6]]</code></li>
+  <li><code>mc</code>: Performs the mix column operation on the matrix.</li>
+  <li><code>e</code>: The encryption function.</li>
+  <li><code>h</code>: A "hashing" function, which just converts a list of numbers into a string of their hexadecimal representations, because JavaScript isn't good at comparing lists.</li>
+  <li><code>t</code>: The test function, which takes user input, converts it to a list, pads it, encrypts it and checks the "hash" with the hash of the stored encrypted flag.</li>
+  <li><code>c</code>: The constant interface to the code, returns the status of the function execution.</li>
+</ul>
+
+<p>Once we have the code broken down, the decryption function can be written as such:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers >
+```js
+
+function unpad(block) {{ '{' }}
+  return block.slice(0, block.length-block[block.length-1])
+{{ '}' }}
+
+var s__ = [
+  0x52, 0x09, 0x6A, 0xD5, 0x30, 0x36, 0xA5, 0x38, 0xBF, 0x40, 0xA3, 0x9E, 0x81, 0xF3, 0xD7, 0xFB,
+  0x7C, 0xE3, 0x39, 0x82, 0x9B, 0x2F, 0xFF, 0x87, 0x34, 0x8E, 0x43, 0x44, 0xC4, 0xDE, 0xE9, 0xCB,
+  0x54, 0x7B, 0x94, 0x32, 0xA6, 0xC2, 0x23, 0x3D, 0xEE, 0x4C, 0x95, 0x0B, 0x42, 0xFA, 0xC3, 0x4E,
+  0x08, 0x2E, 0xA1, 0x66, 0x28, 0xD9, 0x24, 0xB2, 0x76, 0x5B, 0xA2, 0x49, 0x6D, 0x8B, 0xD1, 0x25,
+  0x72, 0xF8, 0xF6, 0x64, 0x86, 0x68, 0x98, 0x16, 0xD4, 0xA4, 0x5C, 0xCC, 0x5D, 0x65, 0xB6, 0x92,
+  0x6C, 0x70, 0x48, 0x50, 0xFD, 0xED, 0xB9, 0xDA, 0x5E, 0x15, 0x46, 0x57, 0xA7, 0x8D, 0x9D, 0x84,
+  0x90, 0xD8, 0xAB, 0x00, 0x8C, 0xBC, 0xD3, 0x0A, 0xF7, 0xE4, 0x58, 0x05, 0xB8, 0xB3, 0x45, 0x06,
+  0xD0, 0x2C, 0x1E, 0x8F, 0xCA, 0x3F, 0x0F, 0x02, 0xC1, 0xAF, 0xBD, 0x03, 0x01, 0x13, 0x8A, 0x6B,
+  0x3A, 0x91, 0x11, 0x41, 0x4F, 0x67, 0xDC, 0xEA, 0x97, 0xF2, 0xCF, 0xCE, 0xF0, 0xB4, 0xE6, 0x73,
+  0x96, 0xAC, 0x74, 0x22, 0xE7, 0xAD, 0x35, 0x85, 0xE2, 0xF9, 0x37, 0xE8, 0x1C, 0x75, 0xDF, 0x6E,
+  0x47, 0xF1, 0x1A, 0x71, 0x1D, 0x29, 0xC5, 0x89, 0x6F, 0xB7, 0x62, 0x0E, 0xAA, 0x18, 0xBE, 0x1B,
+  0xFC, 0x56, 0x3E, 0x4B, 0xC6, 0xD2, 0x79, 0x20, 0x9A, 0xDB, 0xC0, 0xFE, 0x78, 0xCD, 0x5A, 0xF4,
+  0x1F, 0xDD, 0xA8, 0x33, 0x88, 0x07, 0xC7, 0x31, 0xB1, 0x12, 0x10, 0x59, 0x27, 0x80, 0xEC, 0x5F,
+  0x60, 0x51, 0x7F, 0xA9, 0x19, 0xB5, 0x4A, 0x0D, 0x2D, 0xE5, 0x7A, 0x9F, 0x93, 0xC9, 0x9C, 0xEF,
+  0xA0, 0xE0, 0x3B, 0x4D, 0xAE, 0x2A, 0xF5, 0xB0, 0xC8, 0xEB, 0xBB, 0x3C, 0x83, 0x53, 0x99, 0x61,
+  0x17, 0x2B, 0x04, 0x7E, 0xBA, 0x77, 0xD6, 0x26, 0xE1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0C, 0x7D,
+]
+
+function gets__(n) {{ '{' }}
+  return n.map(x ={{ '>' }} s__[x])
+{{ '}' }}
+
+function decrypt(msg, key) {{ '{' }}
+	gfBlock = [0x0e, 0x09, 0x0d, 0x0b, 0x0b, 0x0e, 0x09, 0x0d, 0x0d, 0x0b, 0x0e, 0x09, 0x09, 0x0d, 0x0b, 0x0e]
+	gfMatrix = bm(gfBlock)
+
+	subkeys = gsk(key)
+
+	blocks = sb(msg)
+
+	for (let ____i = 0; ____i {{ '<' }} blocks.length; ____i++) {{ '{' }}
+		for (let s = subkeys.length - 1; s {{ '>' }} 0; s--) {{ '{' }}
+			xoredSubkey = xr(blocks[____i], subkeys[s])
+
+			blocks[____i] = xoredSubkey.slice()
+			matrix = bm(blocks[____i])
+			blocks[____i] = matrix.slice()
+
+			if (s != subkeys.length-1) {{ '{' }}
+				mixed = mc(gfMatrix, blocks[____i])
+				blocks[____i] = mixed.slice()
+			{{ '}' }}
+
+			shiftedRow = sr(blocks[____i], false)
+
+			blocks[____i] = shiftedRow.slice()
+			block = mb(blocks[____i])
+
+			blocks[____i] = block.slice()
+			blocks[____i] = gets__(blocks[____i])
+		{{ '}' }}
+
+		xored = xr(blocks[____i], subkeys[0])
+		blocks[____i] = xored.slice()
+	{{ '}' }}
+
+
+	result = blocks.flat()
+
+	return unpad(result)
+{{ '}' }}
+```
+  </markdown>
+</div>
+
+<p>So... yeah... this produces the flag: <code>DO{{ '{' }}Y0UVE_JU$T_D34LT_W1TH_AES-ECB{{ '}' }}</code>. It may have been slightly <em>too</em> hard, not too sorry about that.</p>
 <br/>
 </app-post-body>
