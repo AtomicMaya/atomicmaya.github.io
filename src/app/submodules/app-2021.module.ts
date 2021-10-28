@@ -26,6 +26,7 @@ import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/2108
 import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
 import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
 import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011-digital-overdose-official-writeup-3-c4/digital-overdose-official-writeup-3-c4.component';
+import { Oct2021MetaIsTheNewBuzzwordComponent } from '../content/2021/211028-meta-is-the-new-buzzword/meta-is-the-new-buzzword.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011
     Aug2021EnumeratingTheLightshotCdnComponent,
     Oct2021DigitalOverdoseWriteupOutageComponent,
     Oct2021DigitalOverdoseWriteupCakeComponent,
-    Oct2021DigitalOverdoseWriteupC4Component
+    Oct2021DigitalOverdoseWriteupC4Component,
+    Oct2021MetaIsTheNewBuzzwordComponent
   ],
   imports: [
     CommonModule,

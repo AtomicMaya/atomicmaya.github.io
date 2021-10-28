@@ -1,3 +1,4 @@
+import { TAG_OPINION } from './../utils/tags';
 // tslint:disable: no-string-literal
 import { Routes } from '@angular/router';
 import { TAG_COMMUNITY, TAG_PERSONAL, TAG_TALKS, TAG_OSINT, TAG_INFOSEC, TAG_PRIVACY,
@@ -28,6 +29,7 @@ import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/2108
 import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
 import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
 import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011-digital-overdose-official-writeup-3-c4/digital-overdose-official-writeup-3-c4.component';
+import { Oct2021MetaIsTheNewBuzzwordComponent } from '../content/2021/211028-meta-is-the-new-buzzword/meta-is-the-new-buzzword.component';
 
 export const subroutes2021: Routes = [
   {
@@ -290,6 +292,18 @@ export const subroutes2021: Routes = [
       tags: [ TAG_CTF, TAG_WRITEUP, TAG_DEVELOPMENT, TAG_WEB ],
       date: [2021, 10, 11],
       imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
+    }
+  },
+  {
+    path: '2021_10_28+who-can-be-more-meta-in-a-world-of-buzzwords',
+    component: Oct2021MetaIsTheNewBuzzwordComponent,
+    data: {
+      title: 'Who can be more meta in a world of buzzwords? - OpEd',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'Facebook changed its name to Meta: What does this mean for the optics, the userbase and it\'s the extended universe',
+      tags: [ TAG_OPINION, TAG_PRIVACY ],
+      date: [2021, 10, 28],
+      imageUrl: 'assets/images/2021/211028-meta-is-the-new-buzzword/simspons.png'
     }
   }
 ];

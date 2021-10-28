@@ -11,6 +11,7 @@ export const TAG_INFOSEC: Tag = { name: 'Information Security' };
 export const TAG_IOT: Tag = { name: 'IOT' };
 export const TAG_MEDIA: Tag = { name: 'Media' };
 export const TAG_MOBILE: Tag = { name: 'Mobile' };
+export const TAG_OPINION: Tag = { name: 'Opinion' };
 export const TAG_OSINT: Tag = { name: 'OSINT' };
 export const TAG_PERSONAL: Tag = { name: 'Personal' };
 export const TAG_PRIVACY: Tag = { name: 'Privacy' };
