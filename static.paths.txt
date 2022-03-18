@@ -9,8 +9,9 @@
 /authors/AtomicNicos
 
 /tags
+/tags/Application%20Security
 /tags/Community
-/tags/Convention
+/tags/Conference
 /tags/Cryptocurrency
 /tags/Cryptography
 /tags/CTF

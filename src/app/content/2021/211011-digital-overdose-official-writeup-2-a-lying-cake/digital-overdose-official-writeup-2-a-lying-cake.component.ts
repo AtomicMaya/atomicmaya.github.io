@@ -17,7 +17,7 @@ export class Oct2021DigitalOverdoseWriteupCakeComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2021/2021_10_11+digital-overdose-official-writeup-2-a-lying-cake', this.post.title,
+    this.meta.setTags('/post/2021/2021_10_11+digital-overdose-official-writeup-2-a-lying-cake', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['ctf', 'digital', 'overdose', 'ctftime', 'writeup'],
                       this.post.description);

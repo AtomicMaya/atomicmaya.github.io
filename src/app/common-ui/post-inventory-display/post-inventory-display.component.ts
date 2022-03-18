@@ -73,6 +73,7 @@ export class PostInventoryDisplayComponent implements OnInit {
   loadPosts(postsToLoad?: Post[]): void {
     this.maximumPostsLoaded = this.numberPostsToLoad >= postsToLoad.length;
     this.posts = this.compactView ? postsToLoad : postsToLoad.slice(0, this.numberPostsToLoad);
+    this.posts.forEach(p => p.year = p.date[0].toString());
     this.postsByYear = groupBy(this.posts, 'year');
   }
 

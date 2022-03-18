@@ -15,7 +15,7 @@ export class Jan2021DefconWorcesterTalkComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2021/2021_01_31+Talking-at-DEFCON-Worcester', this.post.title,
+    this.meta.setTags('/post/2021/2021_01_31+Talking-at-DEFCON-Worcester', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['talk', 'defcon', 'worcester', '441905', 'iot', 'enisa']);
   }

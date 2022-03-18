@@ -7,8 +7,10 @@ import { Tag } from './tag';
  * @export
  */
 export interface Post {
-  /** The year this Post was published on. */
   date: number[];
+
+  /** The year this Post was published on. */
+  year?: string;
 
   /** The URL of the site, stripped of it's domain. */
   path: string;

@@ -1,7 +1,7 @@
 // tslint:disable: no-string-literal
 import { Routes } from '@angular/router';
 import { TAG_COMMUNITY, TAG_PERSONAL, TAG_TALKS, TAG_OSINT, TAG_INFOSEC, TAG_PRIVACY,
-  TAG_MEDIA, TAG_DEVELOPMENT, TAG_WEB, TAG_IOT, TAG_CYBERSEC, TAG_CTF, TAG_WRITEUP, TAG_CONVENTION, TAG_PROGRAMMING, TAG_CRYPTOGRAPHY } from 'src/app/utils/tags';
+  TAG_MEDIA, TAG_DEVELOPMENT, TAG_WEB, TAG_IOT, TAG_CYBERSEC, TAG_CTF, TAG_WRITEUP, TAG_CONFERENCE, TAG_PROGRAMMING, TAG_CRYPTOGRAPHY, TAG_APPSEC } from 'src/app/utils/tags';
 import { Jan2021Goodbye2020NewYearPartyComponent } from 'src/app/content/2021/210102-goodbye2020-new-year-party/goodbye2020-new-year-party.component';
 
 import { Jan2021WhatsappEncaInterviewComponent } from 'src/app/content/2021/210119-whatsapp-enca-interview/whatsapp-enca-interview.component';
@@ -28,6 +28,9 @@ import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/2108
 import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
 import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
 import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011-digital-overdose-official-writeup-3-c4/digital-overdose-official-writeup-3-c4.component';
+import { Nov2021conINTComponent } from '../content/2021/211125-conint-2021/conint2021.component';
+import { Nov2021HappyBirthday } from '../content/2021/211115-happy-birthday/happybirthday.component';
+import { Oct2021Beercon3Component } from '../content/2021/211030-beercon3/beercon3.component';
 
 export const subroutes2021: Routes = [
   {
@@ -230,7 +233,7 @@ export const subroutes2021: Routes = [
       title: 'The 2021 Digital Overdose Conference: Tales and Takeaways',
       authors: [ authorList['AtomicNicos'] ],
       description: 'Speaking a bit more about my experiences surrounding and during the Digital Overdose Conference.',
-      tags: [ TAG_INFOSEC, TAG_COMMUNITY, TAG_CONVENTION ],
+      tags: [ TAG_INFOSEC, TAG_COMMUNITY, TAG_CONFERENCE ],
       date: [2021, 4, 29]
     },
   },
@@ -291,5 +294,39 @@ export const subroutes2021: Routes = [
       date: [2021, 10, 11],
       imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
     }
-  }
+  },
+  // MODIFY UNDER HERE
+  {
+    path: '2021_10_30+beercon3',
+    component: Oct2021Beercon3Component,
+    data: {
+      title: 'Speaking at BeerCon 3!',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'I spoke at BeerCon 3, mainly about how JavaScript and Application Security don\'t really mesh well together.',
+      tags: [ TAG_CONFERENCE, TAG_INFOSEC, TAG_APPSEC, TAG_PROGRAMMING, TAG_TALKS ],
+      date: [2021, 10, 30]
+    }
+  },
+  {
+    path: '2021_11_15+happy-birthday-to-this-blog',
+    component: Nov2021HappyBirthday,
+    data: {
+      title: 'Happy birthday to this blog!',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'Marking the first year of this blog\'s existence.',
+      tags: [ TAG_PERSONAL ],
+      date: [2021, 11, 15]
+    }
+  },
+  {
+    path: '2021_11_25+speaking-at-conint',
+    component: Nov2021conINTComponent,
+    data: {
+      title: 'Speaking about communities at conINT',
+      authors: [ authorList['AtomicNicos'] ],
+      description: 'I took a stab at taking one year of experience in managing a community of hackers, and trying to discuss the benefits of Intelligence when it comes to keeping its members safe.',
+      tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_OSINT ],
+      date: [2021, 11, 25]
+    }
+  },
 ];

@@ -16,7 +16,7 @@ export class Dec2020Osint4jComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2020/2020_12_16%2BOSINT-Software-Development-Ideas', this.post.title,
+    this.meta.setTags('/post/2020/2020_12_16%2BOSINT-Software-Development-Ideas', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['tool', 'ctf', 'software', 'development']);
   }

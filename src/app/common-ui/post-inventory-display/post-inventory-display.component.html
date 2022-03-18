@@ -11,7 +11,7 @@
     </div>
   </div>
   <div *ngFor="let item of this.postsByYear | keyvalue: keyDescOrder" class="mt-1 year-section">
-    <h2>Posts of {{ item.key }}</h2>
+    <h2 *ngIf="item.key !== undefined">Posts of {{ item.key }}</h2>
     <hr/>
     <!-- Container -->
     <div class="d-flex flex-row flex-wrap">

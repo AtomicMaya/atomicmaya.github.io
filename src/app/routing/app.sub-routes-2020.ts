@@ -6,7 +6,7 @@ import { Nov2020MentoringComponent } from '../content/2020/201112-mentoring/ment
 import { Nov2020BsidesIslamabadComponent } from '../content/2020/201109-bsides-islamabad/bsides-islamabad.component';
 import { Nov2020Beercon2Component } from '../content/2020/201102-beercon2/beercon2.component';
 import { Oct2020ConintComponent } from '../content/2020/201019-conint/conint.component';
-import { TAG_PERSONAL, TAG_CONVENTION, TAG_CTF, TAG_OSINT, TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_COMMUNITY, TAG_PROGRAMMING } from '../utils/tags';
+import { TAG_PERSONAL, TAG_CONFERENCE, TAG_CTF, TAG_OSINT, TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_COMMUNITY, TAG_PROGRAMMING } from '../utils/tags';
 import { Oct2020HelloWorldComponent } from '../content/2020/201015-hello-world/hello-world.component';
 import { Routes } from '@angular/router';
 import { authorList } from '../data/authors';
@@ -32,7 +32,7 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'Discussing my participation in the conINT TraceLabs OSINT capture the flag event.',
       imageUrl: '/assets/images/2020/conint/conint_logo.png',
-      tags: [ TAG_CONVENTION, TAG_CTF, TAG_OSINT ],
+      tags: [ TAG_CONFERENCE, TAG_CTF, TAG_OSINT ],
       date: [2021, 10, 19]
     }
   },
@@ -44,7 +44,7 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'I gave a talk at BeerCon2, a rookie infosec conference.',
       imageUrl: '/assets/images/2020/beercon2/bc2_zoombg.png',
-      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONVENTION ],
+      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
       date: [2021, 11, 2]
     }
   },
@@ -56,7 +56,7 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'I gave a talk at BSides Islamabad, Pakistan\'s first cybersecurity conference.',
       imageUrl: '/assets/images/2020/bsides-islamabad/card.png',
-      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONVENTION ],
+      tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
       date: [2021, 11, 9]
     }
   },
@@ -90,7 +90,7 @@ export const subroutes2020: Routes = [
       authors: [ authorList['AtomicNicos'] ],
       description: 'I participated in James Bore\'s Security CoffeeHouse!',
       imageUrl: '/assets/images/2020/coffeehouse/coffeehouse_backdrop.png',
-      tags: [ TAG_COMMUNITY, TAG_CONVENTION ],
+      tags: [ TAG_COMMUNITY, TAG_CONFERENCE ],
       date: [2021, 12, 12]
     }
   },

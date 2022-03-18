@@ -18,100 +18,100 @@
     </image>
     <item>
       <title>Digital Overdose 2021 Autumn CTF - C1 - I think this should be C4 - Official Writeup</title>
-      <link>https://atomicnicos.me/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4</link>
+      <link>https://atomicnicos.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4</link>
       <description>Official developer writeup for the challenge 'C1 - I think this should be C4' that was created for the Digital Overdose Autumn 2021 CTF</description>
-      <guid>https://atomicnicos.me/postx-2021-22</guid>
+      <guid>https://atomicnicos.me/post-2021-22</guid>
       <pubDate>Mon, Oct. 11th, 2021</pubDate>
     </item>
     <item>
       <title>Digital Overdose 2021 Autumn CTF - A door by any other name - Official Writeup</title>
-      <link>https://atomicnicos.me/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-2-a-lying-cake</link>
+      <link>https://atomicnicos.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-2-a-lying-cake</link>
       <description>Official developer writeup for the challenge 'A door by any other name' that was created for the Digital Overdose Autumn 2021 CTF</description>
-      <guid>https://atomicnicos.me/postx-2021-21</guid>
+      <guid>https://atomicnicos.me/post-2021-21</guid>
       <pubDate>Mon, Oct. 11th, 2021</pubDate>
     </item>
     <item>
       <title>Digital Overdose 2021 Autumn CTF - Outage - Official Writeup</title>
-      <link>https://atomicnicos.me/postx/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage</link>
+      <link>https://atomicnicos.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage</link>
       <description>Official developer writeup for the challenge 'Outage - The usual suspect' that was created for the Digital Overdose Autumn 2021 CTF</description>
-      <guid>https://atomicnicos.me/postx-2021-20</guid>
+      <guid>https://atomicnicos.me/post-2021-20</guid>
       <pubDate>Mon, Oct. 11th, 2021</pubDate>
     </item>
     <item>
       <title>Enumerating the Lightshot CDN</title>
-      <link>https://atomicnicos.me/postx/2021/2021_08_31%2BEnumerating-the-LightShot-CDN</link>
+      <link>https://atomicnicos.me/post/2021/2021_08_31%2BEnumerating-the-LightShot-CDN</link>
       <description>How I went from the premise of an open CDN to exploiting it as a proof of concept.</description>
-      <guid>https://atomicnicos.me/postx-2021-19</guid>
+      <guid>https://atomicnicos.me/post-2021-19</guid>
       <pubDate>Tue, Aug. 31st, 2021</pubDate>
     </item>
     <item>
       <title>Halfway through 2021: A brief recap of what I've been up to</title>
-      <link>https://atomicnicos.me/postx/2021/2021_07_20+The-2021-Halfway-Mark</link>
+      <link>https://atomicnicos.me/post/2021/2021_07_20+The-2021-Halfway-Mark</link>
       <description>Going over the timeline for the last few months, seeing what has been accomplished.</description>
-      <guid>https://atomicnicos.me/postx-2021-18</guid>
+      <guid>https://atomicnicos.me/post-2021-18</guid>
       <pubDate>Tue, July. 20th, 2021</pubDate>
     </item>
     <item>
       <title>The 2021 Digital Overdose Conference: Tales and Takeaways</title>
-      <link>https://atomicnicos.me/postx/2021/2021_04_29+Digital-Overdose-Conference</link>
+      <link>https://atomicnicos.me/post/2021/2021_04_29+Digital-Overdose-Conference</link>
       <description>Speaking a bit more about my experiences surrounding and during the Digital Overdose Conference.</description>
-      <guid>https://atomicnicos.me/postx-2021-17</guid>
+      <guid>https://atomicnicos.me/post-2021-17</guid>
       <pubDate>Tue, April. 29th, 2021</pubDate>
     </item>
     <item>
       <title>Dissecting the Central-Infosec Python challenges</title>
-      <link>https://atomicnicos.me/postx/2021/2021_04_20+Central-Infosec-CTF-Python</link>
+      <link>https://atomicnicos.me/post/2021/2021_04_20+Central-Infosec-CTF-Python</link>
       <description>This is a write-up of the "07. Reversing: Code Analysis (CIS-WEBSRV01)" series of challenges in the context of the  Central Infosec CTF.</description>
-      <guid>https://atomicnicos.me/postx-2021-16</guid>
+      <guid>https://atomicnicos.me/post-2021-16</guid>
       <pubDate>Tue, April. 20th, 2021</pubDate>
     </item>
     <item>
       <title>Dissecting the Central-Infosec Static Code Analysis challenge</title>
-      <link>https://atomicnicos.me/postx/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard</link>
+      <link>https://atomicnicos.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard</link>
       <description>This is a write-up for the hardest of the "14. Web Exploitation: Advanced (CIS-WEBSRV01)" series of challenges in the context of the  Central Infosec CTF.</description>
-      <guid>https://atomicnicos.me/postx-2021-15</guid>
+      <guid>https://atomicnicos.me/post-2021-15</guid>
       <pubDate>Tue, April. 20th, 2021</pubDate>
     </item>
     <item>
       <title>Dissecting the Central-Infosec Game Exploitation challenge</title>
-      <link>https://atomicnicos.me/postx/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard</link>
+      <link>https://atomicnicos.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard</link>
       <description>This is a write-up for the hardest of the "13. Web Exploitation: Games (CIS-WEBSRV01)" series of challenges in the context of the  Central Infosec CTF.</description>
-      <guid>https://atomicnicos.me/postx-2021-14</guid>
+      <guid>https://atomicnicos.me/post-2021-14</guid>
       <pubDate>Tue, April. 20th, 2021</pubDate>
     </item>
     <item>
       <title>Central-Infosec CTF: The story, and the links!</title>
-      <link>https://atomicnicos.me/postx/2021/2021_04_20+Central-Infosec-CTF-All</link>
+      <link>https://atomicnicos.me/post/2021/2021_04_20+Central-Infosec-CTF-All</link>
       <description>This is a recap of my participation in the Central Infosec CTF with "Advanced Persistent Team".</description>
-      <guid>https://atomicnicos.me/postx-2021-13</guid>
+      <guid>https://atomicnicos.me/post-2021-13</guid>
       <pubDate>Tue, April. 20th, 2021</pubDate>
     </item>
     <item>
       <title>A much ado about passwords and password management</title>
-      <link>https://atomicnicos.me/postx/2021/2021_03_07+Much-Ado-About-Passwords</link>
+      <link>https://atomicnicos.me/post/2021/2021_03_07+Much-Ado-About-Passwords</link>
       <description>Going over various (non-)solutions people use to store their passwords and the appeal of password management solutions.</description>
-      <guid>https://atomicnicos.me/postx-2021-12</guid>
+      <guid>https://atomicnicos.me/post-2021-12</guid>
       <pubDate>Sun, March. 7th, 2021</pubDate>
     </item>
     <item>
       <title>Participating in the TraceLabs OSINT CTF with HackSouth</title>
-      <link>https://atomicnicos.me/postx/2021/2021_02_26%2BTraceLabs-CTF-With-Hacksouth</link>
+      <link>https://atomicnicos.me/post/2021/2021_02_26%2BTraceLabs-CTF-With-Hacksouth</link>
       <description>A write-up on my participation in the TraceLabs OSINT CTF.</description>
-      <guid>https://atomicnicos.me/postx-2021-11</guid>
+      <guid>https://atomicnicos.me/post-2021-11</guid>
       <pubDate>Fri, Feb. 26th, 2021</pubDate>
     </item>
     <item>
       <title>eNCA Interview on the WhatsApp Privacy Policy Changes</title>
-      <link>https://atomicnicos.me/postx/2021/2021_01_19%2BeNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes</link>
+      <link>https://atomicnicos.me/post/2021/2021_01_19%2BeNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes</link>
       <description>Discussing the ex-new WhatsApp privacy policy on eNCA.</description>
-      <guid>https://atomicnicos.me/postx-2021-6</guid>
+      <guid>https://atomicnicos.me/post-2021-6</guid>
       <pubDate>Tue, Jan. 19th, 2021</pubDate>
     </item>
     <item>
       <title>WhatsApp Privacy Policy Changes Analysis</title>
-      <link>https://atomicnicos.me/postx/2021/2021_01_08%2BWhatsApp-Privacy-Policy-Changes-Analysis</link>
+      <link>https://atomicnicos.me/post/2021/2021_01_08%2BWhatsApp-Privacy-Policy-Changes-Analysis</link>
       <description>Reviewing the changes coming Feb. 8th 2021 to the WhatsApp privacy policy and their effect.</description>
-      <guid>https://atomicnicos.me/postx-2021-4</guid>
+      <guid>https://atomicnicos.me/post-2021-4</guid>
       <pubDate>Tue, Jan. 12th, 2021</pubDate>
     </item>
   </channel>

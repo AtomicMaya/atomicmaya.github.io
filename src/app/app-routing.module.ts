@@ -21,12 +21,16 @@ const routes: Routes = [
     data: { tags: [TAG_PERSONAL] }
   },
   {
-    path: 'postx/2020',
-    loadChildren: () => import('./routing/app-2020-postx-routing.module').then(m => m.Posts2020RoutingModule)
+    path: 'post/2020',
+    loadChildren: () => import('./routing/app-2020-post-routing.module').then(m => m.Posts2020RoutingModule)
   },
   {
-    path: 'postx/2021',
-    loadChildren: () => import('./routing/app-2021-postx-routing.module').then(m => m.Posts2021RoutingModule)
+    path: 'post/2021',
+    loadChildren: () => import('./routing/app-2021-post-routing.module').then(m => m.Posts2021RoutingModule)
+  },
+  {
+    path: 'post/2022',
+    loadChildren: () => import('./routing/app-2022-post-routing.module').then(m => m.Posts2022RoutingModule)
   },
   {
     path: 'posts',

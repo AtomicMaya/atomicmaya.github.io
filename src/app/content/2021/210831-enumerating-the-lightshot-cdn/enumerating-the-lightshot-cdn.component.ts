@@ -17,7 +17,7 @@ export class Aug2021EnumeratingTheLightshotCdnComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2021/2021_08_31+Enumerating-the-lightshot-CDN', this.post.title,
+    this.meta.setTags('/post/2021/2021_08_31+Enumerating-the-lightshot-CDN', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['enumerating', 'lightshot', 'prnt.sc', 'prntscr.com', 'CDN'],
                       this.post.description);

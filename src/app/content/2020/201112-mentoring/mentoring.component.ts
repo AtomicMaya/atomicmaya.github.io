@@ -16,7 +16,7 @@ export class Nov2020MentoringComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2020/2020_11_12+Mentoring', this.post.title,
+    this.meta.setTags('/post/2020/2020_11_12+Mentoring', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['cybersec', 'cybersecurity', 'infosec', 'community', 'mentoring']);
   }

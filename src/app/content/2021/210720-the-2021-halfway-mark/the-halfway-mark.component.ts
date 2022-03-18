@@ -13,7 +13,7 @@ export class July2021TheHalfwayMarkComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2021/2021_07_20+The-2021-Halfway-Mark', this.post.title,
+    this.meta.setTags('/post/2021/2021_07_20+The-2021-Halfway-Mark', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['2021', 'recap', 'halfway', 'achievements'],
                       this.post.description);

@@ -11,7 +11,7 @@ export const CURRENT_YEAR = 2021;
  * @param key The key within the tags of {@link Post} that they should be grouped by.
  * @export
  */
-export function groupBy<TItem>(xs: TItem[], key: string): {[key: string]: TItem[]} {
+export function groupBy<TItem>(xs: TItem[], key: string):{[key: string]: TItem[]} {
   return xs.reduce((rv, x) => {
     (rv[x[key]] = rv[x[key]] || []).push(x);
     return rv;

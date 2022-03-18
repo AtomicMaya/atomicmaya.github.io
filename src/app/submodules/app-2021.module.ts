@@ -26,6 +26,9 @@ import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/2108
 import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
 import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
 import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011-digital-overdose-official-writeup-3-c4/digital-overdose-official-writeup-3-c4.component';
+import { Nov2021conINTComponent } from '../content/2021/211125-conint-2021/conint2021.component';
+import { Nov2021HappyBirthday } from '../content/2021/211115-happy-birthday/happybirthday.component';
+import { Oct2021Beercon3Component } from '../content/2021/211030-beercon3/beercon3.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,10 @@ import { Oct2021DigitalOverdoseWriteupC4Component } from '../content/2021/211011
     Aug2021EnumeratingTheLightshotCdnComponent,
     Oct2021DigitalOverdoseWriteupOutageComponent,
     Oct2021DigitalOverdoseWriteupCakeComponent,
-    Oct2021DigitalOverdoseWriteupC4Component
+    Oct2021DigitalOverdoseWriteupC4Component,
+    Oct2021Beercon3Component,
+    Nov2021HappyBirthday,
+    Nov2021conINTComponent
   ],
   imports: [
     CommonModule,

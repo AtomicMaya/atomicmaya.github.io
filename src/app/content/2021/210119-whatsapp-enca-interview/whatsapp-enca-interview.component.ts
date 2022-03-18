@@ -15,7 +15,7 @@ export class Jan2021WhatsappEncaInterviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/postx/2021/2021_01_19%2BeNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes', this.post.title,
+    this.meta.setTags('/post/2021/2021_01_19%2BeNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes', this.post.title,
                       this.post.imageUrl, 640, 360,
                       ['whatsapp', 'facebook', 'signal', 'telegram', 'privacypolicy', '20210208', 'enca', 'interview', 'south', 'africa']);
   }
