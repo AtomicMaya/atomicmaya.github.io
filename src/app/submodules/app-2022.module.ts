@@ -6,10 +6,12 @@ import { Jan2022KnightCTFCryptographyComponent } from '../content/2022/220130-kn
 import { Jan2022KnightCTFMiscComponent } from '../content/2022/220130-knightctf-misc/knightctf-misc.component';
 import { Jan2022KnightCTFProgrammingComponent } from '../content/2022/220130-knightctf-programming/knightctf-programming.component';
 import { Jan2022KnightCTFReverseComponent } from '../content/2022/220130-knightctf-reverse-engineering/knightctf-reverse.component';
+import { Jan2022KnightCTFAllComponent } from '../content/2022/220129-knightctf-all/knightctf-all.component';
 
 
 @NgModule({
   declarations: [
+    Jan2022KnightCTFAllComponent,
     Jan2022KnightCTFCryptographyComponent,
     Jan2022KnightCTFMiscComponent,
     Jan2022KnightCTFProgrammingComponent,

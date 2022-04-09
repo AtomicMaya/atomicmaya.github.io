@@ -15,9 +15,9 @@ export class Jan2022KnightCTFCryptographyComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/post/2021/2021_11_25+speaking-at-conint', this.post.title,
+    this.meta.setTags('/post/2022/2022_01_30+knight-ctf-2022-cryptography-writeups', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['conint', 'osint'],
+                      ['KnightCTF', 'ctf', 'challenge', 'cryptography'],
                       this.post.description);
   }
 

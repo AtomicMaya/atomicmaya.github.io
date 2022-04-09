@@ -1,1 +1,272 @@
-<p>conint2021 works!</p>
+<app-post-body [post]="this.post" [date]="this.post.date">
+  <h4>Write-ups</h4>
+  <ul>
+    <li><a class='no-underline' routerLink='.' fragment='alphabet-knock-code'>Alphabet Knock Code</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='feistival'>Feistival</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='rsa-one'>RSA-One</a></li>
+  </ul>
+
+  <h4 id='alphabet-knock-code'>Alphabet Knock Code (100 points)</h4>
+
+  <p>The challenge provided a file called <code>knock.txt</code>, which contained the following text:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces>
+```txt
+... ......  . .....  . ...  ... .....  . .....  .... ..  . ...  ... .  .. ...  .. .  .. ..  .... ..
+```
+  </markdown>
+</div>
+
+<p>The description for the challenge was the following:</p>
+
+<p style='color: lime;'>My friend send me this file and told me that C=K, Y=Z and the total number is 24. But I can not understand this. Can you help me?</p>
+
+<p>From the <span style='color: lime;'>C=K</span> bit, we can extrapolate that this is a varation on the <a href='https://en.wikipedia.org/wiki/Tap_code' target='_blank'><em class='fas fa-external-link-square-alt'></em> Tap Code</a>, which is a code that is alleged to have been used by prisoners in order to communicate with one another.</p>
+
+<p>The normal tap code works in a 5-by-5 grid like such:</p>
+
+<div class='media-container'>
+  <div>
+    <table>
+      <thead>
+        <th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+      </thead>
+      <tbody>
+        <tr><th>1</th><td>A</td><td>B</td><td>C/K</td><td>D</td><td>E</td></tr>
+        <tr><th>2</th><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td></tr>
+        <tr><th>3</th><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td></tr>
+        <tr><th>4</th><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td></tr>
+        <tr><th>5</th><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p>The key to interpreting this cipher is not in the individual taps, but in the pairs of taps: the first set of taps specifies the line of the table, and the second set defines the column of the table, which together point to a letter.</p>
+
+<p>That's all fine and dandy, but we're told <span style='color: lime'>the total number is 24</span>, and not 25 like in the 5-by-5 grid. As such we look at the multipliers that make up 24: 2-by-12, 3-by-8 and 4-by-6 (and their transpose matrices).</p>
+
+<p>To get a better idea, we can look at the amount of dots that we have in the provided ciphertext: The first set goes from 1 to 4, the second goes from 1 to 6.</p>
+
+<p>This means we're dealing with a matrix with 4 lines and 6 columns, with two equivalencies (C=K and Y=Z):</p>
+
+<div class='media-container'>
+  <div>
+    <table>
+      <thead>
+        <th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+      </thead>
+      <tbody>
+        <tr><th>1</th><td>A</td><td>B</td><td>C/K</td><td>D</td><td>E</td><td>F</td></tr>
+        <tr><th>2</th><td>G</td><td>H</td><td>I</td><td>J</td><td>L</td><td>M</td></tr>
+        <tr><th>3</th><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td><td>S</td></tr>
+        <tr><th>4</th><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y/Z</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p>From there we are able to split the message into (row, column) pairs:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces>
+```txt
+... ...... -> 3,6
+. .....    -> 1,5
+. ...      -> 1,3
+... .....  -> 3,5
+. .....    -> 1,5
+.... ..    -> 4,2
+. ...      -> 1,3
+... .      -> 3,1
+.. ...     -> 2,3
+.. .       -> 2,1
+.. ..      -> 2,2
+.... ..    -> 4,2
+```
+  </markdown>
+</div>
+
+<p>By transposing the pairs with the values in our matrix, we get:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces>
+```txt
+... ...... -> 3,6 -> s
+. .....    -> 1,5 -> e
+. ...      -> 1,3 -> c/k
+... .....  -> 3,5 -> r
+. .....    -> 1,5 -> e
+.... ..    -> 4,2 -> u
+. ...      -> 1,3 -> c/k
+... .      -> 3,1 -> n
+.. ...     -> 2,3 -> i
+.. .       -> 2,1 -> g
+.. ..      -> 2,2 -> h
+.... ..    -> 4,2 -> u
+```
+  </markdown>
+</div>
+
+<p>This spells out <code>se(c|k)reu(c|k)nighu</code>. This... doesn't make much sense, but we can already guess the result as being secretknight. There must have been an issue with the encryption script.</p>
+
+<p>The final flag was: <code>KCTF{{ '{' }}secretknight{{ '}' }}</code>.</p>
+
+<h4 id='feistival'>Feistival (150 points)</h4>
+
+<p>The challenge provided a file called <code>cipher.txt</code>, which contained the following text:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces>
+```txt
+H@WExefjpwfo\x015(#\x06\x16\x02#\x00\x15\x07\x04
+```
+  </markdown>
+</div>
+
+<p>It also provided a Python file called <code>enc.py</code> which contained the following script:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers>
+```py
+m, n = 21, 22
+def f(word, key):
+    out = ""
+    for i in range(len(word)):
+        out += chr(ord(word[i]) ^ key)
+    return out
+
+flag = open("flag.txt", "r").read()
+
+L, R = flag[0:len(flag)//2], flag[len(flag)//2:]
+x = "".join(chr(ord(f(R, m)[i]) ^ ord(L[i])) for i in range(len(L)))
+y = f(R, 0)
+
+L, R = y, x
+x = "".join(chr(ord(f(R, n)[i]) ^ ord(L[i])) for i in range(len(L)))
+y = f(R, 0)
+
+ciphertext = x + y
+ct = open("cipher.txt", "w")
+ct.write(ciphertext)
+ct.close()
+```
+  </markdown>
+</div>
+
+<p>Finally, the description for the challenge was the following:</p>
+
+<p style='color: lime;'>My friend Ridwan is interested into ciphers lately. He sent me the encrypted flag. Can you help me decrypt?</p>
+
+<p>Before launching ourselves in the reversal / decryption process, let us decompose some of the code:</p>
+
+<ol>
+  <li>Line 2 provides us with a function which takes as input a string of characters (<code>word</code>) and a secondary value (<code>key</code>).<br/>
+  This function will take the word, convert each character to its ASCII value, XOR that value with the key, then convert it back into ASCII letters.<br/>
+  This is the Feistel operation<br/>
+  <li>Line 8 opens up the ciphertext and extracts the encrypted flag from within.</li>
+  <li>Line 10 splits the flag in 2 distinct parts L and R.</li>
+  <li>Line 11 performs the Feistel operation on R, then XORs each of the characters of the result with the value at the same index in L.</li>
+  <li>Line 12 performs the Feistel operation on R with value 0.</li>
+  <li>Line 14 flips switches L and R, and the next two lines repeats step 4.</li>
+  <li>The new flag is written to a new file.</li>
+</ol>
+
+<p>This is in the Cryptography category because it deals with a Feistel Cipher, but it also has a lot to do with programming. We createt <code>dec.py</code> to perform the opposite operations on the provided ciphertext:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers>
+```py
+def f(word, key):
+    out = ""
+    for i in range(len(word)):
+        out += chr(ord(word[i]) ^ key)
+    return out
+
+m, n = 21, 22
+
+ct = open("cipher.txt", "r")
+ciphertext = ct.read()
+ct.close()
+
+L, R = ciphertext[0:len(ciphertext)//2], ciphertext[len(ciphertext)//2:]
+y = f(R, 0)
+x = "".join(chr(ord(f(R, n)[i]) ^ ord(L[i])) for i in range(len(L)))
+L, R = y, x
+
+y = f(R, 0)
+x = "".join(chr(ord(f(R, m)[i]) ^ ord(L[i])) for i in range(len(L)))
+
+flag = x + y
+
+f = open("plain.txt", "w")
+f.write(flag)
+f.close()
+```
+  </markdown>
+</div>
+
+<p>The main takeaway is that the operations in lines 13 to 19 are simply in the reverse order than the original encryption code.</p>
+
+<p>The flag - found in <code>plain.txt</code> - is: <code>KCTF{{ '{' }}feistel_cipher_ftw{{ '}' }}</code>.</p>
+
+<h4 id='rsa-one'>RSA-One (100 points)</h4>
+
+<p>The challenge provided <code>private.pem</code>, a private key, which looked like this (although some of it is omitted for brevity):</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces>
+```txt
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAyiytHt1AKzYLwZPm1dd9uT7LgsqVj0eSLpheNd0H4xyiZCYG
+ZtRYnNtGNnq7A/ubyFalExm61QNewfy71h6xhM/❌IEIoNT0VfMOIzcq0Jmoh+v6k
+6/x/3GRkk/vLVolsLbkOKd4aorPMwEsZX4vMd+Sga5Mz0tx5xLFZsbl0r1vvtBl7
+...
+xqG9YAHVmm4iJzcHeMdzLwmzR6D/x6+k2cFWwox6PxvA7ikJQEYr
+-----END RSA PRIVATE KEY-----
+```
+  </markdown>
+</div>
+
+<p>It also provided <code>flag.enc</code>, the encrypted flag.</p>
+
+<p>My approach to this challenge was to bruteforce all the possible certs that could be generated:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces lineNumbers>
+```py
+from codecs import open as copen
+import string
+
+f = copen('private.pem', mode='r', encoding='utf-8')
+d = f.readlines()
+f.close()
+
+j = 0
+for i in list(string.ascii_letters) + list(string.digits) + ['+']:
+    d[2] = list(d[2])
+    d[2][39] = i
+    d[2] = "".join(d[2])
+    f = copen(f'private-{{'{'}}i{{'}'}}.pem', mode='w', encoding='utf-8')
+    f.writelines(d)
+    f.close()
+```
+  </markdown>
+</div>
+
+<p>We then attempt to produce a decoded file:</p>
+
+<div class="d-flex media-container">
+  <markdown ngPreserveWhitespaces>
+```sh
+find -type f -wholename "./private-*.pem" -exec sh -c 'echo $0; SUBSTR=$(echo $0 | cut -d'/' -f 2); openssl rsautl -decrypt -inkey $0 -in ../flag.enc -out "./decoded-${{'{'}}SUBSTR{{'}'}}" 2>/dev/null' {{'{'}}{{'}'}} \;
+```
+  </markdown>
+</div>
+
+<p>This command lists all the files named <code>private-[letter].pem</code>, and executes a command to retrieve the new symbol from the file name, then using openssl's rsautl tool to decrypt the file and output it to another. The main idea is that the file that successfully gets decrypted will be of a different size.</p>
+
+<p>We can then use <code>find ./ -size 0 -print -delete</code> to delete all empty files leaving <code>decoded-private-a.pem</code> which contains the flag: <code>KCTF{{'{'}}M4Y_TH3_8RUT3F0rc3_B3_W1TH_Y0U{{'}'}}</code></p>
+
+</app-post-body>

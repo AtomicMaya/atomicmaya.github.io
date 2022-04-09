@@ -5,11 +5,12 @@ import { Tag } from 'src/app/interfaces/tag';
 import { Post } from 'src/app/interfaces/post';
 import { Author } from 'src/app/interfaces/author';
 
+import { subroutes2022 } from 'src/app/routing/app.sub-routes-2022';
 import { subroutes2021 } from 'src/app/routing/app.sub-routes-2021';
-import { subroutes2020 } from '../routing/app.sub-routes-2020';
+import { subroutes2020 } from 'src/app/routing/app.sub-routes-2020';
 
 /** The compiled routes from all of the lazy-loaded modules. */
-export const routes: Routes = [...subroutes2020, ...subroutes2021];
+export const routes: Routes = [...subroutes2020, ...subroutes2021, ...subroutes2022];
 
 /**
  * Function that counts the number of {@link Post | Post} per {@link Tag | Tag}.
