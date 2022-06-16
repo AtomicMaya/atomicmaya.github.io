@@ -17,6 +17,27 @@
       <link>https://www.atomicnicos.me</link>
     </image>
     <item>
+      <title>Participating in the Knight CTF!</title>
+      <link>https://atomicnicos.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups</link>
+      <description>Dissecting various challenges at 2022's KnightCTF, from cryptography and programming to reverse engineering.</description>
+      <guid>https://atomicnicos.me/post-2021-25</guid>
+      <pubDate>Sat, Jan. 29th, 2022</pubDate>
+    </item>
+    <item>
+      <title>Speaking about communities at conINT!</title>
+      <link>https://atomicnicos.me/post/2021/2021_11_25%2Bspeaking-at-conint</link>
+      <description>Communities, the Internet and OSINT, how do they mix?</description>
+      <guid>https://atomicnicos.me/post-2021-24</guid>
+      <pubDate>Thu, Nov. 25th, 2021</pubDate>
+    </item>
+    <item>
+      <title>Happy birthday to this blog!</title>
+      <link>https://atomicnicos.me/post/2021/2021_11_15%2Bhappy-birthday-to-this-blog</link>
+      <description>I have kept this blog alive for 1 year!</description>
+      <guid>https://atomicnicos.me/post-2021-23</guid>
+      <pubDate>Mon, Nov. 15th, 2021</pubDate>
+    </item>
+    <item>
       <title>Digital Overdose 2021 Autumn CTF - C1 - I think this should be C4 - Official Writeup</title>
       <link>https://atomicnicos.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4</link>
       <description>Official developer writeup for the challenge 'C1 - I think this should be C4' that was created for the Digital Overdose Autumn 2021 CTF</description>

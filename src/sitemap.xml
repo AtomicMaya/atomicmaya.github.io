@@ -172,4 +172,39 @@
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2021/2021_11_15%2Bhappy-birthday-to-this-blog</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2021/2021_11_25%2Bspeaking-at-conint</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2022/2022_01_30%2Bknight-ctf-2022-cryptography-writeups</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2022/2022_01_30%2Bknight-ctf-2022-misc-writeups</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2022/2022_01_30%2Bknight-ctf-2022-programming-writeups</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2022/2022_01_30%2Bknight-ctf-2022-reverse-writeups</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>

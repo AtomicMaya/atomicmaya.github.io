@@ -1,2 +1,188 @@
 <app-post-body [post]="this.post" [date]="this.post.date">
+  <h4>Write-ups</h4>
+  <ul>
+    <li><a class='no-underline' routerLink='.' fragment='loop-in-a-loop'>Loop in a Loop</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='reverse-the-answer'>Reverse the Answer</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='square-sum'>Square Sum</a></li>
+  </ul>
+
+  <h4 id='loop-in-a-loop'>Loop in a Loop (100 points)</h4>
+
+  <p>This challenge was a simple code reversal challenge, written in C++.</p>
+
+  <div class='d-flex media-container'>
+    <markdown ngPreserveWhitespaces lineNumbers>
+```py
+#include {{'<'}}iostream{{'>'}}
+using namespace std;
+
+int main() {{'{'}}
+  string flag;
+  cout {{'<'}}{{'<'}} "Enter the flag: ";
+  cin {{'>'}}{{'>'}} flag;
+
+  for (int i=0; i {{'<'}} flag.length(); i++) {{'{'}}
+    for (int j=i; j {{'<'}} flag.length() - 1; j++) {{'{'}}
+      char x = flag[j];
+      flag[j] = flag[j+1];
+      flag[j+1] = x;
+    {{'}'}}
+  {{'}'}}
+
+  if (flag == "CFb5cp0rm1gK{{'{'}}1r4nT_m4{{'}'}}6")
+    cout {{'<'}}{{'<'}} "Congrats. That's the flag!" {{'<'}}{{'<'}} endl;
+  else
+    cout {{'<'}}{{'<'}} "Wrong flag. Bye" {{'<'}}{{'<'}} endl;
+
+  return 0;
+{{'}'}}
+```
+    </markdown>
+  </div>
+
+  <p>I rarely do C++ and never when I could use something else, so the solution will be in Python.</p>
+
+  <p>But first, analysis:</p>
+
+  <ul>
+    <li>The code takes a flag as input.</li>
+    <li>It then loops on all indices, and then initiates a second loop on all remaining indices.</li>
+    <li>The code inverts the characters at positions <code>j</code> and <code>j+1</code>.</li>
+  </ul>
+
+  <p>To reverse this we do the exact same loop with reversed parameters (i: length -> 0, j: length -> i), and then print the original flag:</p>
+
+  <div class='d-flex media-container'>
+    <markdown ngPreserveWhitespaces lineNumbers>
+```py
+flag = list("CFb5cp0rm1gK{{'{'}}1r4nT_m4{{'}'}}6")
+
+for i in range(len(flag) - 1, -1, -1):
+    for j in range(len(flag) - 1, i, -1):
+        flag[j], flag[j-1] = flag[j-1], flag[j]
+
+print("".join(flag))
+```
+    </markdown>
+  </div>
+
+  <p>The flag is <code>KCTF{{ '{' }}b451c_pr06r4mm1ng{{ '}' }}</code></p>
+
+  <hr/>
+
+  <h4 id='reverse-the-answer'>Reverse the Answer (50 points)</h4>
+
+  <p>This is a coding challenge aimed at the resolution of a mathematical problem.</p>
+
+  <p>The statement of the problem is the following:</p>
+
+  <ul style='color: lime;'>
+    <li>Let <code>x = 1</code></li>
+    <li>Let <code>calculation = (x*(x+1)) + (2 *(x + 1))</code></li>
+    <li>Let <code>reversed_calc = reversed number of calculation</code> [for example if <code>calculation = 123</code>, reversed_calc will be <code>321</code>]</li>
+    <li>If <code>reversed_calc</code> can be divided by <code>4</code>without reminder then <code>answer = answer + reversed_calc</code></li>
+    <li>Repeat all the calculations until you have <code>x = 543</code></li>
+    <li>The final answer will be the flag when <code>x = 543</code></li>
+    <li>Flag Format: <code>KCTF{{ '{' }}answer_here{{ '}' }}</code> Example Flag : <code>KCTF{{ '{' }}123{{ '}' }}</code></li>
+  </ul>
+
+  <p>We perform the loop for x going from 1 to 543.</p>
+
+  <p>To facilitate the calculation, we write the following program, in Python:</p>
+
+  <div class='d-flex media-container'>
+    <markdown ngPreserveWhitespaces lineNumbers>
+```py
+x = 1
+answer = 0
+
+while x <= 543:
+  calculation = (x + 2) * (x + 1)
+  rev = int(str(calculation)[::-1])
+  if rev % 4 == 0:
+      answer += rev
+  x += 1
+
+print(answer)
+```
+    </markdown>
+  </div>
+
+  <p>This produces <code>12252696</code>, so the flag is <code>KCTF{{ '{' }}12252696{{ '}' }}</code>.</p>
+
+  <hr/>
+
+  <h4 id='square-sum'>Square Sum (50 points)</h4>
+
+  <p style='color: lime;'>Have you ever heard the term "The sum of two squares"?</p>
+
+  <p style='color: lime;'>It's like the following :</p>
+
+  <div class='d-flex media-container'>
+    <markdown>
+```txt
+4 = 0^2 + 2^2
+8 = 2^2 + 2^2
+16 = 0^2 + 4^2
+----------------------------
+5002 = 39^2 + 59^2 => 49^2 + 51^2 => 51^2 + 49^2 => 59^2 + 39^2
+```
+    </markdown>
+  </div>
+
+  <p style='color: lime;'>And so on. In the example of 16, if we add the square of 0 & 4 we get 16. So here we are getting two values 0 & 4. So that's the answer.</p>
+
+  <p style='color: lime;'>So write a program & find out the two values of 25000. Conditions are the following:</p>
+
+  <ul style='color: lime;'>
+    <li>Remove the duplicates</li>
+    <li>Pick the third one</li>
+  </ul>
+
+  <p style='color: lime;'>Flag Format: <code>KCTF{{ '{' }}0,1{{ '}' }}</code></p>
+
+  <br/>
+  <p>We can produce an algorithm that loops between both bounds (or more accurately the square root of both bounds). This can quite easily be written in Python:</p>
+
+  <div class='d-flex media-container'>
+    <markdown ngPreserveWhitespaces lineNumbers>
+```py
+from math import sqrt
+
+for i in range(round(sqrt(25000))):
+    for j in range(round(sqrt(25000)), -1, -1):
+        if i ** 2 + j ** 2 == 25000:
+            print(f"{{ '{' }}i{{ '}' }} ** 2 + {{ '{' }}j{{ '}' }} ** 2")
+```
+    </markdown>
+  </div>
+
+  <p>This produces:</p>
+
+<div class='d-flex media-container'>
+  <markdown>
+```txt
+6 ** 2 + 158 ** 2
+50 ** 2 + 150 ** 2
+90 ** 2 + 130 ** 2
+130 ** 2 + 90 ** 2
+150 ** 2 + 50 ** 2
+```
+  </markdown>
+</div>
+
+<p>We can remove the duplicates:</p>
+
+<div class='d-flex media-container'>
+  <markdown>
+```txt
+6 ** 2 + 158 ** 2
+50 ** 2 + 150 ** 2
+90 ** 2 + 130 ** 2
+```
+  </markdown>
+</div>
+
+<p>The third result is 90, 130 so the flag is <code>KCTF{{ '{' }}90,130{{ '}' }}</code>.</p>
+
 </app-post-body>

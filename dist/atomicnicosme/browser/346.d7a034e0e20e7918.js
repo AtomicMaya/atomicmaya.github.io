@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkatomicnicosme=self.webpackChunkatomicnicosme||[]).push([[346],{346:(c,t,s)=>{s.r(t),s.d(t,{Posts2022RoutingModule:()=>a});var u=s(7117),l=s(2281),n=s(4650);let a=(()=>{class o{}return o.\u0275fac=function(P){return new(P||o)},o.\u0275mod=n.oAB({type:o}),o.\u0275inj=n.cJS({imports:[u.Bz.forChild(l.q),u.Bz]}),o})()}}]);

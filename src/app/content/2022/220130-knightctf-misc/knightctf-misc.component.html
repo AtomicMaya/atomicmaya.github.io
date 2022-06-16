@@ -6,6 +6,8 @@
     </a></li>
   </ul>
 
+  <hr/>
+
   <h4 id='find-pass-code-2'>Find Pass Code - 2 (150 points)</h4>
 
   <p>This challenge was in the Web category, and relied on knowledge from the first challenge, mainly that it required the userr to append <code>?source</code> to the URL in order to print out the page's PHP source code.</p>
@@ -42,12 +44,11 @@ if (isset($_GET["source"])) {{ '{' }}
 
   <p>The first thing that struck me was the fact that it was comparing the passcode entered against its MD5 hash. However, with one-way hashing functions, that shouldn't be the case (<code>H(X) != X</code>).</p>
 
-<p>However, we can see the <code>$old_pass_codes = array("0e215962017", "0e730083352", "0e807097110", "0e840922711");</code> array, which piqued my curiosity.</p>
+  <p>However, we can see the <code>$old_pass_codes = array("0e215962017", "0e730083352", "0e807097110", "0e840922711");</code> array, which piqued my curiosity.</p>
 
-<p>I'd remembered a story on Twitter about magic hashes, habitually preceded by the number 0e. (More here: <a href='https://www.whitehatsec.com/blog/magic-hashes/' target='_blank'><em class='fas fa-external-link-square-alt'></em> Magic Hashes</a>)</p>
+  <p>I'd remembered a story on Twitter about magic hashes, habitually preceded by the number 0e. (More here: <a href='https://www.whitehatsec.com/blog/magic-hashes/' target='_blank'><em class='fas fa-external-link-square-alt'></em> Magic Hashes</a>)</p>
 
-<p>So I searched for an index of magic hashes until I found this website:
-  <a href=' https://blog.csdn.net/u013512548/article/details/108213295' target='_blank'><em class='fas fa-external-link-square-alt'></em> 魔术hash on CSDN</a>.</p>
+  <p>So I searched for an index of magic hashes until I found this website: <a href=' https://blog.csdn.net/u013512548/article/details/108213295' target='_blank'><em class='fas fa-external-link-square-alt'></em> 魔术hash on CSDN</a>.</p>
   <div class='d-flex media-container'>
     <img src='/assets/images/2022/220130-misc-challenges/MD5.png' alt='Magic MD5 hashes' />
   </div>
@@ -55,6 +56,8 @@ if (isset($_GET["source"])) {{ '{' }}
   <p>There were the 3 first hashes, so I took the fourth: 0e1137126905.</p>
 
   <p>Enter that into the platform and we get the flag: <code>KCTF{{'{'}}ShOuD_wE_cOmPaRe_MD5_LiKe_ThAt__Be_SmArT{{'}'}}</code>.</p>
+
+  <hr/>
 
   <h4 id='qr-code-from-the-future'>QR Code from the Future (100 points)</h4>
 
@@ -84,7 +87,6 @@ ffmpeg.exe -i .\QR_Code_From_The_Future.gif -vsync 0 gif-images/%02d.png
     </markdown>
   </div>
 
-
   <div class='d-flex media-container'>
     <markdown ngPreserveWhitespaces lineNumbers>
 ```sh
@@ -93,10 +95,10 @@ echo "" >> gif_contents
 cat gif_contents
 rm gif_contents
 ```
-  </markdown>
-</div>
+    </markdown>
+  </div>
 
-<p>FFMPEG takes the image provided with the GIF as input (<code>-i</code>), synchroneously (<code>-vsync 0</code>). It then saves it to <code>gif-images</code>, a directory that needs to exist.</p>
+  <p>FFMPEG takes the image provided with the GIF as input (<code>-i</code>), synchroneously (<code>-vsync 0</code>). It then saves it to <code>gif-images</code>, a directory that needs to exist.</p>
   <p><code>%02</code> is so we don't have a flag out of order, it is just the number of leading zeros for that.</p>
   <p>Find checks all files in the directory gif-images that are PNG files. We feed each of these images to zbarimg which produces a code, which we store, remove the QR-Code: segment preceding it and append it to gif_contents.</p>
 

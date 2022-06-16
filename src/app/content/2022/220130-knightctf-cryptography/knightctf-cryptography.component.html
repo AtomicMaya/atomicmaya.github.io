@@ -6,6 +6,8 @@
     <li><a class='no-underline' routerLink='.' fragment='rsa-one'>RSA-One</a></li>
   </ul>
 
+  <hr/>
+
   <h4 id='alphabet-knock-code'>Alphabet Knock Code (100 points)</h4>
 
   <p>The challenge provided a file called <code>knock.txt</code>, which contained the following text:</p>
@@ -22,7 +24,7 @@
 
 <p style='color: lime;'>My friend send me this file and told me that C=K, Y=Z and the total number is 24. But I can not understand this. Can you help me?</p>
 
-<p>From the <span style='color: lime;'>C=K</span> bit, we can extrapolate that this is a varation on the <a href='https://en.wikipedia.org/wiki/Tap_code' target='_blank'><em class='fas fa-external-link-square-alt'></em> Tap Code</a>, which is a code that is alleged to have been used by prisoners in order to communicate with one another.</p>
+<p>From the <span style='color: lime;'>C=K</span> bit, we can extrapolate that this is a variation on the <a href='https://en.wikipedia.org/wiki/Tap_code' target='_blank'><em class='fas fa-external-link-square-alt'></em> Tap Code</a>, which is a code that is alleged to have been used by prisoners in order to communicate with one another.</p>
 
 <p>The normal tap code works in a 5-by-5 grid like such:</p>
 
@@ -112,6 +114,8 @@
 <p>This spells out <code>se(c|k)reu(c|k)nighu</code>. This... doesn't make much sense, but we can already guess the result as being secretknight. There must have been an issue with the encryption script.</p>
 
 <p>The final flag was: <code>KCTF{{ '{' }}secretknight{{ '}' }}</code>.</p>
+
+<hr/>
 
 <h4 id='feistival'>Feistival (150 points)</h4>
 
@@ -210,6 +214,8 @@ f.close()
 <p>The main takeaway is that the operations in lines 13 to 19 are simply in the reverse order than the original encryption code.</p>
 
 <p>The flag - found in <code>plain.txt</code> - is: <code>KCTF{{ '{' }}feistel_cipher_ftw{{ '}' }}</code>.</p>
+
+<hr/>
 
 <h4 id='rsa-one'>RSA-One (100 points)</h4>
 
