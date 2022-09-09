@@ -8,7 +8,7 @@ import { Jan2021WhatsappPrivacyPolicyHackSouthDiscussionComponent } from 'src/ap
 import { Jan2021WhatsappEncaInterviewComponent } from 'src/app/content/2021/210119-whatsapp-enca-interview/whatsapp-enca-interview.component';
 import { Jan2021LeedsEhsTalkComponent } from 'src/app/content/2021/210120-leeds-ehs-talk/leeds-ehs-talk.component';
 import { Jan2021DesignChoicesComponent } from 'src/app/content/2021/210123-website-design-choices/website-design-choices.component';
-import { TAG_APPSEC, TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_INFOSEC, TAG_IOT, TAG_MEDIA, TAG_OSINT, TAG_PERSONAL, TAG_PRIVACY, TAG_PROGRAMMING, TAG_TALKS, TAG_WEB, TAG_WRITEUP } from 'src/app/utils/tags';
+import { TAG_APPSEC, TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_INFOSEC, TAG_IOT, TAG_MEDIA, TAG_OSINT, TAG_PERSONAL, TAG_PRIVACY, TAG_PROGRAMMING, TAG_TALKS, TAG_VOLUNTEERING, TAG_WEB, TAG_WRITEUP } from 'src/app/utils/tags';
 import { Jan2021DefconWorcesterTalkComponent } from '../content/2021/210131-defcon-worcester-talk/defcon-worcester-talk.component';
 import { Feb2021ConDeploymentComponent } from '../content/2021/210201-con-deployment/con-deployment.component';
 import { Feb2021ConSiteComponent } from '../content/2021/210206-con-site/con-site.component';
@@ -232,7 +232,7 @@ export const subroutes2021: Routes = [
       title: 'The 2021 Digital Overdose Conference: Tales and Takeaways',
       authors: [ authorList['AtomicNicos'] ],
       description: 'Speaking a bit more about my experiences surrounding and during the Digital Overdose Conference.',
-      tags: [ TAG_INFOSEC, TAG_COMMUNITY, TAG_CONFERENCE ],
+      tags: [ TAG_INFOSEC, TAG_COMMUNITY, TAG_CONFERENCE, TAG_VOLUNTEERING ],
       date: [2021, 4, 29]
     },
   },
@@ -294,7 +294,6 @@ export const subroutes2021: Routes = [
       imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
     }
   },
-  // MODIFY UNDER HERE
   {
     path: '2021_10_30+beercon3',
     component: Oct2021Beercon3Component,
@@ -302,7 +301,7 @@ export const subroutes2021: Routes = [
       title: 'Speaking at BeerCon 3!',
       authors: [ authorList['AtomicNicos'] ],
       description: 'I spoke at BeerCon 3, mainly about how JavaScript and Application Security don\'t really mesh well together.',
-      tags: [ TAG_CONFERENCE, TAG_INFOSEC, TAG_APPSEC, TAG_PROGRAMMING, TAG_TALKS ],
+      tags: [ TAG_CONFERENCE, TAG_INFOSEC, TAG_APPSEC, TAG_PROGRAMMING, TAG_TALKS, TAG_VOLUNTEERING ],
       date: [2021, 10, 30]
     }
   },

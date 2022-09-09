@@ -26,6 +26,7 @@
 /tags/Privacy
 /tags/Programming
 /tags/Talks
+/tags/Volunteering
 /tags/Web
 /tags/Write-Up
 

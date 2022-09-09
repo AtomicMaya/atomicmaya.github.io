@@ -10,6 +10,7 @@ export const ROUTES = [
   '/authors/AtomicNicos',
 
   '/tags',
+  '/tags/Application%20Security',
   '/tags/Community',
   '/tags/Convention',
   '/tags/Cryptocurrency',
@@ -26,6 +27,7 @@ export const ROUTES = [
   '/tags/Privacy',
   '/tags/Programming',
   '/tags/Talks',
+  '/tags/Volunteering',
   '/tags/Web',
   '/tags/Write-Up',
 
