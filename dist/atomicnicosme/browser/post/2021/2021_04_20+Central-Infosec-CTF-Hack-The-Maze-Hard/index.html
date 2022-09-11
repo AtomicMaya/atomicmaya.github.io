@@ -24,6 +24,22 @@
   <link rel="icon" type="image/x-icon" href="favicon.png">
   <script data-goatcounter="https://atomicnicos.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
   <script src="https://kit.fontawesome.com/88cfc0e7e2.js" integrity="sha384-sX7kjQzLM8MFrzb6uyCnPsr+HRySaCE3/aRRrej3bbJ3kjm5GXmGWM1oYePcm1BW" crossorigin="anonymous"></script>
+  <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+  <script>
+    window.prerenderReady = false;
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <!-- /Github Pages hack. -->
 <link rel="stylesheet" href="styles.b420e920c9dbafeb.css"><style ng-transition="atomicnicos-me">.sidebar[_ngcontent-sc72]{position:relative;float:left;width:30%;padding:0 10px;overflow-y:visible}</style><style ng-transition="atomicnicos-me">footer[_ngcontent-sc18]{border-top:1px dashed #b5e853}</style><style ng-transition="atomicnicos-me">.text-decoration-underline[_ngcontent-sc69]{text-decoration:underline}</style><style ng-transition="atomicnicos-me">div[_ngcontent-sc70] > a[_ngcontent-sc70] > span[_ngcontent-sc70]{margin:.25rem;padding:.5rem;background-color:#2e2e2e;border-radius:.25rem;font-size:smaller}div[_ngcontent-sc70] > a[_ngcontent-sc70]{margin:.5rem 0}</style><style ng-transition="atomicnicos-me">.break-height[_ngcontent-sc49] {
     height: 150px;
   }</style><style ng-transition="atomicnicos-me">.collapsible-controller[_ngcontent-sc48]{background-color:#303030;color:#b5e853;cursor:pointer;padding:18px;width:100%;border:none;text-align:left;outline:none;font-size:18px}.active[_ngcontent-sc48], .collapsible-controller[_ngcontent-sc48]:hover{background-color:#202020}.collapsible[_ngcontent-sc48]{padding:10px 18px;display:none;overflow:hidden;background-color:#464646}ul[_ngcontent-sc48]{margin:5px 0!important}.collapsible.active[_ngcontent-sc48]{display:block}</style><style ng-transition="atomicnicos-me">p[_ngcontent-sc20]{font-size:smaller;color:#aaa}</style><style ng-transition="atomicnicos-me">p[_ngcontent-sc21]{font-size:smaller;color:#aaa}span[_ngcontent-sc21]{margin:.375rem;padding:.5rem;border-radius:.5rem;background-color:#484848}</style></head>
