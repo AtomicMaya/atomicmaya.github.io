@@ -5,8 +5,7 @@ import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   selector: 'app-knightctf2022-programming',
-  templateUrl: './knightctf-programming.component.html',
-  styleUrls: ['./knightctf-programming.component.scss']
+  templateUrl: './knightctf-programming.component.html'
 })
 export class Jan2022KnightCTFProgrammingComponent implements OnInit {
 
@@ -17,8 +16,8 @@ export class Jan2022KnightCTFProgrammingComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2022/2022_01_30+knight-ctf-2022-programming-writeups', this.post.title,
-                      this.post.imageUrl, 1280, 720,
-                      ['KnightCTF', 'ctf', 'challenge', 'programming'],
-                      this.post.description);
+      this.post.imageUrl, 1280, 720,
+      ['KnightCTF', 'ctf', 'challenge', 'programming'],
+      this.post.description);
   }
 }

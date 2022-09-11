@@ -13,7 +13,7 @@ export class LatestComponent implements OnInit {
   latest: Post[];
 
   ngOnInit(): void {
-    this.latest = generatePostRoutes().slice(0, 7);
+    this.latest = generatePostRoutes().slice(0, 9);
   }
 
   stringify(path: string) {

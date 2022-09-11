@@ -39,7 +39,6 @@ export const subroutes2021: Routes = [
       title: 'Goodbye 2020: New Year Party',
       authors: [ authorList['AtomicNicos'] ],
       description: 'Saying goodbye to 2020, with friends!',
-      imageUrl: '/assets/images/2020/coffeehouse/coffeehouse_backdrop.png',
       tags: [ TAG_COMMUNITY ],
       date: [2021, 1, 2]
     }

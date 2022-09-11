@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-catching-covid',
-  templateUrl: './catching-covid.component.html',
-  styleUrls: ['./catching-covid.component.scss']
+  templateUrl: './catching-covid.component.html'
 })
 export class Jan2022CatchingCovidComponent implements OnInit {
   post: Post;

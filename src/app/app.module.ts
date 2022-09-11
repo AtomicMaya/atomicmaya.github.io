@@ -1,3 +1,15 @@
+import "prismjs";
+import "prismjs/prism.js"
+import "prismjs/plugins/line-numbers/prism-line-numbers.min.js"
+import "prismjs/plugins/line-highlight/prism-line-highlight.js"
+import "prismjs/components/prism-javascript.min.js"
+import "prismjs/components/prism-python.min.js"
+import "prismjs/components/prism-markup-templating.js"
+import "prismjs/components/prism-php.min.js"
+import "prismjs/components/prism-c.min.js"
+import "prismjs/components/prism-cpp.min.js"
+import "prismjs/components/prism-bash.min.js"
+
 import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './common-ui/footer/footer.component';
@@ -59,6 +71,6 @@ import { ServiceLocator } from './utils/service.locator';
 })
 export class AppModule {
   constructor(private injector: Injector) {    // Create global Service Injector.
-      ServiceLocator.injector = this.injector;
+    ServiceLocator.injector = this.injector;
   }
 }

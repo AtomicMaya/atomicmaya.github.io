@@ -9,21 +9,22 @@
 /authors/AtomicNicos
 
 /tags
-/tags/Application%20Security
+/tags/AppSec
 /tags/Community
 /tags/Conference
 /tags/Cryptocurrency
 /tags/Cryptography
 /tags/CTF
-/tags/Cyber%20Security
+/tags/CyberSec
 /tags/Development
-/tags/Information%20Security
+/tags/InfoSec
 /tags/IOT
 /tags/Media
 /tags/Mobile
 /tags/OSINT
 /tags/Personal
 /tags/Privacy
+/tags/Professional
 /tags/Programming
 /tags/Talks
 /tags/Volunteering
@@ -64,8 +65,11 @@
 /post/2021/2021_10_11+digital-overdose-official-writeup-3-c4
 /post/2021/2021_11_15+happy-birthday-to-this-blog
 /post/2021/2021_11_25+speaking-at-conint
+/post/2022/2022_01_15+catching-covid
 /post/2022/2022_01_29+knight-ctf-2022-all-writeups
 /post/2022/2022_01_30+knight-ctf-2022-cryptography-writeups
 /post/2022/2022_01_30+knight-ctf-2022-misc-writeups
 /post/2022/2022_01_30+knight-ctf-2022-programming-writeups
 /post/2022/2022_01_30+knight-ctf-2022-reverse-writeups
+/post/2022/2022_02_18+Starting-a-new-job'
+/post/2022/2022_04_26+running-the-digital-overdose-conference-again

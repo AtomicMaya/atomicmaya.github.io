@@ -1,9 +1,12 @@
 th {
   border: 1px white solid !important;
-  text-align: center;
 }
 
 td {
   border: .5px white solid !important;
+}
+
+th, td {
   text-align: center;
+  padding: 4px 8px;
 }

@@ -183,6 +183,11 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://atomicnicos.me/post/2022/2022_01_15%2Bcatching-covid</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://atomicnicos.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
@@ -204,6 +209,16 @@
   </url>
   <url>
     <loc>https://atomicnicos.me/post/2022/2022_01_30%2Bknight-ctf-2022-reverse-writeups</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2022/2022_02_18%2BStarting-a-new-job</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicnicos.me/post/2022/2022_04_26%2Brunning-the-digital-overdose-conference-again</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>

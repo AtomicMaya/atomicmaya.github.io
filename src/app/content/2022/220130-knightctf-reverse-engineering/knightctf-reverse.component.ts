@@ -5,8 +5,7 @@ import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   selector: 'app-knightctf2022-reverse',
-  templateUrl: './knightctf-reverse.component.html',
-  styleUrls: ['./knightctf-reverse.component.scss']
+  templateUrl: './knightctf-reverse.component.html'
 })
 export class Jan2022KnightCTFReverseComponent implements OnInit {
 

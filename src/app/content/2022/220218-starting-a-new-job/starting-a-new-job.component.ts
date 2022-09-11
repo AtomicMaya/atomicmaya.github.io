@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-starting-a-new-job',
-  templateUrl: './starting-a-new-job.component.html',
-  styleUrls: ['./starting-a-new-job.component.scss']
+  templateUrl: './starting-a-new-job.component.html'
 })
 export class Feb2022StartingANewJobComponent implements OnInit {
   post: Post;

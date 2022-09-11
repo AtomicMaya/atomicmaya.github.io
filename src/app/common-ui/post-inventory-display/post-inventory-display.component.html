@@ -1,15 +1,15 @@
+<div class='d-flex flex-row justify-content-center'>
+  <div class="col-sm-3 mb-3">
+    <div class="btn btn-primary d-flex flex-column" (click)="this.toggleCompactView()"><span>{{ !this.compactView ? "Compact View" : "Card View" }}</span><i class="fas" [ngClass]="{'fa-angle-double-right': !this.compactView, 'fa-angle-double-down': this.compactView}"></i></div>
+  </div>
+</div>
+<div class="w-100 d-flex flex-row align-items-center justify-content-between">
+  <div class="mx-auto mb-3 align-self-center">
+    <h1 class="text-center">{{ this.title }}<br *ngIf="this.subtitle"/><span *ngIf="this.subtitle">{{ this.subtitle }}</span></h1>
+  </div>
+</div>
 <ng-container *ngIf="!this.compactView; then cardTemplate; else compactTemplate"></ng-container>
 <ng-template #cardTemplate>
-  <div class="d-flex flex-row flex-wrap align-items-center">
-    <div class="col-sm-3 mb-3">
-    </div>
-    <div class=" mb-3 align-self-center col-sm-6">
-      <h1 class="text-center">{{ this.title }}<br *ngIf="this.subtitle"/><span *ngIf="this.subtitle">{{ this.subtitle }}</span></h1>
-    </div>
-    <div class="col-sm-3 mb-3">
-      <div class="btn btn-primary d-flex flex-column" (click)="this.toggleCompactView()"><span>Compact View</span><em class="fas fa-angle-double-right"></em></div>
-    </div>
-  </div>
   <div *ngFor="let item of this.postsByYear | keyvalue: keyDescOrder" class="mt-1 year-section">
     <h2 *ngIf="item.key !== undefined">Posts of {{ item.key }}</h2>
     <hr/>
@@ -24,16 +24,6 @@
   </div>
 </ng-template>
 <ng-template #compactTemplate>
-  <div class="d-flex flex-row flex-wrap align-items-center">
-    <div class="col-sm-3 mb-3">
-    </div>
-    <div class=" mb-3 align-self-center col-sm-6">
-      <h1 class="text-center">{{ this.title }}<br *ngIf="this.subtitle"/><span *ngIf="this.subtitle">{{ this.subtitle }}</span></h1>
-    </div>
-    <div class="col-sm-3 mb-3">
-      <div class="btn btn-primary d-flex flex-column" (click)="this.toggleCompactView()"><span>Card View</span><em class="fas fa-angle-double-down"></em></div>
-    </div>
-  </div>
   <hr/>
   <app-posts-card-compact-header></app-posts-card-compact-header>
   <div *ngFor="let item of this.postsByYear | keyvalue: keyDescOrder" class="mt-1 year-section">

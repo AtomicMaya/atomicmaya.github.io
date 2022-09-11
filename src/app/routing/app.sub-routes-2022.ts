@@ -24,9 +24,9 @@ export const subroutes2022: Routes = [
     component: Jan2022CatchingCovidComponent,
     data: {
       title: 'Catching COVID, detailing my experience.',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [authorList['AtomicNicos']],
       description: 'I managed to catch COVID, here\'s my story about it.',
-      tags: [ TAG_PERSONAL ],
+      tags: [TAG_PERSONAL],
       date: [2022, 1, 15]
     }
   },
@@ -34,11 +34,13 @@ export const subroutes2022: Routes = [
     path: '2022_01_29+knight-ctf-2022-all-writeups',
     component: Jan2022KnightCTFAllComponent,
     data: {
-      title: 'Participating in the Knight CTF!',
-      authors: [ authorList['AtomicNicos'] ],
-      description: 'I participated in the Knight CTF alongside the team from Digital Overdose, wherein I successfully beat a few challenges.',
-      tags: [ TAG_CTF, TAG_WRITEUP ],
-      date: [2022, 1, 29]
+      title: 'Participating in KnightCTF!',
+      authors: [authorList['AtomicNicos']],
+      description: 'I participated in KnightCTF alongside the team from Digital Overdose, wherein I successfully beat a few challenges.',
+      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      tags: [TAG_CTF, TAG_WRITEUP],
+      date: [2022, 1, 29],
+
     }
   },
   {
@@ -46,9 +48,10 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFCryptographyComponent,
     data: {
       title: 'Dissecting the KnightCTF Cryptography challenges!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [authorList['AtomicNicos']],
       description: 'KnightCTF! A write-up on solving challenges from the "Cryptography" category.',
-      tags: [ TAG_CTF, TAG_CRYPTOGRAPHY, TAG_WRITEUP ],
+      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      tags: [TAG_CTF, TAG_CRYPTOGRAPHY, TAG_WRITEUP],
       date: [2022, 1, 30]
     }
   },
@@ -57,9 +60,10 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFMiscComponent,
     data: {
       title: 'Dissecting the KnightCTF Misc challenges!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [authorList['AtomicNicos']],
       description: 'KnightCTF! A write-up on solving challenges from the "Misc" category.',
-      tags: [ TAG_CTF, TAG_WRITEUP ],
+      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      tags: [TAG_CTF, TAG_WRITEUP],
       date: [2022, 1, 30]
     }
   },
@@ -68,9 +72,10 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFProgrammingComponent,
     data: {
       title: 'Dissecting the KnightCTF Programming challenges!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [authorList['AtomicNicos']],
       description: 'KnightCTF! A write-up on solving challenges from the "Programming" category.',
-      tags: [ TAG_CTF, TAG_PROGRAMMING, TAG_WRITEUP ],
+      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      tags: [TAG_CTF, TAG_PROGRAMMING, TAG_WRITEUP],
       date: [2022, 1, 30]
     }
   },
@@ -79,9 +84,10 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFReverseComponent,
     data: {
       title: 'Dissecting the KnightCTF Reverse Engineering challenges!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [authorList['AtomicNicos']],
       description: 'KnightCTF! A write-up on solving challenges from the "Reverse Engineering" category.',
-      tags: [ TAG_CTF, TAG_WRITEUP ],
+      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      tags: [TAG_CTF, TAG_WRITEUP],
       date: [2022, 1, 30]
     }
   },
@@ -90,9 +96,9 @@ export const subroutes2022: Routes = [
     component: Feb2022StartingANewJobComponent,
     data: {
       title: 'I started a new job!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [authorList['AtomicNicos']],
       description: 'Going into a bit more detail about what I\'m currently working on!',
-      tags: [ TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_INFOSEC ],
+      tags: [TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_INFOSEC],
       date: [2022, 2, 18]
     }
   },
@@ -101,12 +107,14 @@ export const subroutes2022: Routes = [
     component: Apr2022DigitalOverdoseConference2Component,
     data: {
       title: 'Digital Overdose Conference 2: We\'re doing this again!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [authorList['AtomicNicos']],
       description: 'Going behind the scenes of the second iteration of the Digital Overdose Conference.',
-      tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_VOLUNTEERING ],
+      imageUrl: '/assets/images/2022/220426-digital-overdose-conference2/conference_cover_2022.png',
+      tags: [TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_CYBERSEC, TAG_VOLUNTEERING],
       date: [2022, 4, 26]
     }
   },
+  /*
   {
     path: '2022_05_04+Building-a-raspi-private-web-server',
     component: May2022RaspiToolingComponent,
@@ -173,6 +181,7 @@ export const subroutes2022: Routes = [
       date: [2022, 8, 30]
     }
   },
+  */
   // JAN DEALING WITH COVID
   // FEB New JOB
   // MARCH

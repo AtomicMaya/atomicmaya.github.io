@@ -24,7 +24,7 @@ export class PostInventoryDisplayComponent implements OnInit {
   postsByYear: PostMap = {};
 
   /** A number of maximum number of posts to be displayed. */
-  numberPostsToLoad: number = 9;
+  numberPostsToLoad: number = 12;
 
   /** Whether or not all of the posts are loaded (helps to show the "load more" button). */
   maximumPostsLoaded: boolean;
@@ -79,7 +79,7 @@ export class PostInventoryDisplayComponent implements OnInit {
 
   /** Increases the maximum amount of posts to display. */
   loadMorePosts(): void {
-    this.numberPostsToLoad += 3;
+    this.numberPostsToLoad += 4;
     this.loadPosts();
   }
 

@@ -1,5 +1,6 @@
-<div class="card align-self-stretch align-items-stretch justify-content-between">
-  <img *ngIf="post.imageUrl" class="card-img-top" src="{{ post.imageUrl }}" alt="Card image">
+<div class="card align-self-stretch align-items-stretch justify-content-between m-2">
+  <a class="card-read-more" href="post/{{ post.date[0] }}/{{ post.path }}"><img *ngIf="post.imageUrl" class="card-img-top" src="{{ post.imageUrl }}" alt="Card image"></a>
+
   <div class="card-body">
     <h6 class="card-title mb-1"><em>{{ getMonth(post.date[1]) }} {{getDay(post.date[2])}}, {{ post.date[0] }}</em></h6>
 
@@ -10,10 +11,10 @@
         <span>{{ a.name }}</span>
       </a>
     </div>
-    <p *ngIf="post.description"><span style="text-decoration: underline;">Description:</span>&nbsp;{{ post.description }}</p>
+    <p *ngIf="post.description">{{ post.description }}</p>
 
     <div class="d-flex flex-row card-link-container">
-      <a class="card-tag p-1 mx-1" *ngFor="let t of post.tags" href="/tags/{{ t.name }}">
+      <a class="card-tag p-2 mx-1" *ngFor="let t of post.tags" href="/tags/{{ t.name }}">
         <span>{{ t.name }}</span>
       </a>
     </div>

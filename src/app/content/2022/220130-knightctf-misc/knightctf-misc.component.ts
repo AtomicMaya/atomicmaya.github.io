@@ -5,8 +5,7 @@ import { MetaService } from 'src/app/services/meta.service';
 
 @Component({
   selector: 'app-knightctf2022-misc',
-  templateUrl: './knightctf-misc.component.html',
-  styleUrls: ['./knightctf-misc.component.scss']
+  templateUrl: './knightctf-misc.component.html'
 })
 export class Jan2022KnightCTFMiscComponent implements OnInit {
 

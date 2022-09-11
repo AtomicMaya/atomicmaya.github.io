@@ -21,6 +21,10 @@
 }
 
 .card-link-container {
+
+  a {
+    text-decoration: none;
+  }
   flex-wrap: wrap;
 
   .card-tag, .card-author {
@@ -42,5 +46,16 @@
 
   .card-author {
     background-color: #818181;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column !important;
+
+    div {
+      width: 100% !important;
+      padding: 2px 0 !important;
+    }
   }
 }
