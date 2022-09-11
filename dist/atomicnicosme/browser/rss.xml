@@ -17,11 +17,32 @@
       <link>https://www.atomicnicos.me</link>
     </image>
     <item>
+      <title>Digital Overdose Conference 2: We're doing this again!</title>
+      <link>https://atomicnicos.me/post/2022/2022_04_26%2Brunning-the-digital-overdose-conference-again</link>
+      <description>Going behind the scenes of the second iteration of the Digital Overdose Conference.</description>
+      <guid>https://atomicnicos.me/post-2021-28</guid>
+      <pubDate>Tue, Apr. 26th, 2022</pubDate>
+    </item>
+    <item>
+      <title>I started a new job!</title>
+      <link>https://atomicnicos.me/post/2022/2022_02_18%2BStarting-a-new-job</link>
+      <description>Going into a bit more detail about what I'm currently working on!</description>
+      <guid>https://atomicnicos.me/post-2021-27</guid>
+      <pubDate>Fri, Feb. 18th, 2022</pubDate>
+    </item>
+    <item>
       <title>Participating in the Knight CTF!</title>
       <link>https://atomicnicos.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups</link>
       <description>Dissecting various challenges at 2022's KnightCTF, from cryptography and programming to reverse engineering.</description>
-      <guid>https://atomicnicos.me/post-2021-25</guid>
+      <guid>https://atomicnicos.me/post-2021-26</guid>
       <pubDate>Sat, Jan. 29th, 2022</pubDate>
+    </item>
+    <item>
+      <title>Catching COVID, detailing my experience.</title>
+      <link>https://atomicnicos.me/post/2022/2022_01_15%2Bcatching-covid</link>
+      <description>I managed to catch COVID, here's my story about it.</description>
+      <guid>https://atomicnicos.me/post-2021-25</guid>
+      <pubDate>Sat, Jan. 15th, 2022</pubDate>
     </item>
     <item>
       <title>Speaking about communities at conINT!</title>
