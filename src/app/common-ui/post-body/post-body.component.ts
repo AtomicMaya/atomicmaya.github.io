@@ -10,7 +10,7 @@ import { Post } from 'src/app/interfaces/post';
 })
 export class PostBodyComponent {
   // tslint:disable-next-line: no-string-literal
-  @Input() authors: Author[] = [ authorList['AtomicNicos'] ];
+  @Input() authors: Author[] = [ authorList['AtomicMaya'] ];
   @Input() date: number[];
   @Input() edited: number[];
   @Input() post: Post;

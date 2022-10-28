@@ -8,6 +8,6 @@ export class TitleService {
   constructor(private title: Title) { }
 
   setTitle(newTitle: string) {
-    this.title.setTitle(newTitle + ' | AtomicNicos\'s Blog');
+    this.title.setTitle(newTitle + ' | AtomicMaya\'s Blog');
   }
 }

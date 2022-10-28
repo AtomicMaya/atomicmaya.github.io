@@ -37,7 +37,7 @@ export const subroutes2021: Routes = [
     component: Jan2021Goodbye2020NewYearPartyComponent,
     data: {
       title: 'Goodbye 2020: New Year Party',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Saying goodbye to 2020, with friends!',
       tags: [ TAG_COMMUNITY ],
       date: [2021, 1, 2]
@@ -48,7 +48,7 @@ export const subroutes2021: Routes = [
     component: Jan2021MentalHealthComponent,
     data: {
       title: 'Mental Health',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Discussing mental health.',
       tags: [ TAG_PERSONAL ],
       date: [2021, 1, 3]
@@ -59,7 +59,7 @@ export const subroutes2021: Routes = [
     component: Jan2021GatewayOsintTalkComponent,
     data: {
       title: 'Talking about OSINT on Gateway',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a small talk about OSINT on Gateway.',
       tags: [ TAG_TALKS, TAG_OSINT ],
       date: [2021, 1, 5]
@@ -70,7 +70,7 @@ export const subroutes2021: Routes = [
     component: Jan2021WhatsappPrivacyPolicyAnalysisComponent,
     data: {
       title: 'WhatsApp Privacy Policy Changes Analysis',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Dissecting the new WhatsApp privacy policy changes.',
       tags: [ TAG_INFOSEC, TAG_PRIVACY ],
       date: [2021, 1, 8]
@@ -81,7 +81,7 @@ export const subroutes2021: Routes = [
     component: Jan2021WhatsappPrivacyPolicyHackSouthDiscussionComponent,
     data: {
       title: 'WhatsApp Privacy Policy Changes Discussion at Hack South',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Dissecting the new WhatsApp privacy policy changes, live on HackSouth.',
       tags: [ TAG_INFOSEC, TAG_PRIVACY ],
       date: [2021, 1, 9]
@@ -92,7 +92,7 @@ export const subroutes2021: Routes = [
     component: Jan2021WhatsappEncaInterviewComponent,
     data: {
       title: 'eNCA Interview on the WhatsApp Privacy Policy',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I appeared on eNCA, South Africa\'s primary news network.',
       tags: [ TAG_INFOSEC, TAG_PRIVACY, TAG_MEDIA ],
       date: [2021, 1, 19]
@@ -103,7 +103,7 @@ export const subroutes2021: Routes = [
     component: Jan2021LeedsEhsTalkComponent,
     data: {
       title: 'Talking at Leeds EHS',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'The Leeds Ethical Hacking Society hosted my take on ENISA\'s recommendations for IoT cybersecurity.',
       tags: [ TAG_TALKS, TAG_INFOSEC, TAG_IOT ],
       date: [2021, 1, 20]
@@ -114,7 +114,7 @@ export const subroutes2021: Routes = [
     component: Jan2021DesignChoicesComponent,
     data: {
       title: 'Website Design Choices',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Going over some of my website design choices.',
       imageUrl: '/assets/images/2021/website-design-choices/design.png',
       tags: [ TAG_PERSONAL, TAG_DEVELOPMENT, TAG_WEB ],
@@ -126,7 +126,7 @@ export const subroutes2021: Routes = [
     component: Jan2021DefconWorcesterTalkComponent,
     data: {
       title: 'Talking about IoT @DC441905',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'DEFCON Worcester was kind enough to listen to my ramblings on ENISA\'s recommendations for IoT cybersecurity.',
       tags: [ TAG_TALKS, TAG_INFOSEC, TAG_IOT ],
       date: [2021, 1, 31]
@@ -137,7 +137,7 @@ export const subroutes2021: Routes = [
     component: Feb2021ConDeploymentComponent,
     data: {
       title: 'Introducing... Digital Overdose Con!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I\'m co-organizing a conference for rookie speakers',
       tags: [ TAG_COMMUNITY, TAG_INFOSEC, TAG_CYBERSEC ],
       date: [2021, 2, 1]
@@ -148,7 +148,7 @@ export const subroutes2021: Routes = [
     component: Feb2021ConSiteComponent,
     data: {
       title: 'Building DO\'s website in 6 days!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Going through the various steps of how I helped build DO\'s website.',
       tags: [ TAG_COMMUNITY, TAG_DEVELOPMENT, TAG_WEB ],
       date: [2021, 2, 6]
@@ -159,7 +159,7 @@ export const subroutes2021: Routes = [
     component: Feb2021TracelabsWithHacksouthComponent,
     data: {
       title: 'Participating in the TraceLabs OSINT CTF with HackSouth',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'A write-up on my participation in the TraceLabs OSINT CTF.',
       tags: [ TAG_OSINT, TAG_CTF ],
       date: [2021, 2, 26]
@@ -170,7 +170,7 @@ export const subroutes2021: Routes = [
     component: Feb2021PasswordManagementComponent,
     data: {
       title: 'A much ado about passwords and password management',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Going over various (non-)solutions people use to store their passwords and the appeal of password management solutions.',
       tags: [ TAG_INFOSEC ],
       date: [2021, 3, 7]
@@ -181,7 +181,7 @@ export const subroutes2021: Routes = [
     component: Apr2021CentralInfosecCtfAllComponent,
     data: {
       title: 'Participating in the Central-Infosec CTF!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'The Central Infosec CTF! I didn\'t do much of it, but here\'s my takeaways.',
       tags: [ TAG_INFOSEC, TAG_CTF ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
@@ -193,7 +193,7 @@ export const subroutes2021: Routes = [
     component: Apr2021CentralInfosecCtfPythonComponent,
     data: {
       title: 'Dissecting the Central-Infosec Python challenges',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'The Central Infosec CTF! A write-up on solving the Python challenges.',
       tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
@@ -205,7 +205,7 @@ export const subroutes2021: Routes = [
     component: Apr2021CentralInfosecCtfHackTheStaticHardComponent,
     data: {
       title: 'Dissecting the Central-Infosec Static Code Analysis challenge',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'The Central Infosec CTF! A write-up on solving the "Hack The Static: Hard" challenge.',
       tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
@@ -217,7 +217,7 @@ export const subroutes2021: Routes = [
     component: Apr2021CentralInfosecCtfHackTheMazeHardComponent,
     data: {
       title: 'Dissecting the Central-Infosec Game Exploitation challenge',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'The Central Infosec CTF! A write-up on solving the "Hack The Maze: Hard" challenge.',
       tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
@@ -229,7 +229,7 @@ export const subroutes2021: Routes = [
     component: Apr2021DigitalOverdoseConferenceComponent,
     data: {
       title: 'The 2021 Digital Overdose Conference: Tales and Takeaways',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Speaking a bit more about my experiences surrounding and during the Digital Overdose Conference.',
       tags: [ TAG_INFOSEC, TAG_COMMUNITY, TAG_CONFERENCE, TAG_VOLUNTEERING ],
       date: [2021, 4, 29]
@@ -240,7 +240,7 @@ export const subroutes2021: Routes = [
     component: July2021TheHalfwayMarkComponent,
     data: {
       title: 'Halfway through 2021: A brief recap of what I\'ve been up to',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Going over the timeline for the last few months, seeing what has been accomplished.',
       tags: [ TAG_PERSONAL ],
       date: [2021, 7, 20]
@@ -251,7 +251,7 @@ export const subroutes2021: Routes = [
     component: Aug2021EnumeratingTheLightshotCdnComponent,
     data: {
       title: 'Enumerating the Lightshot CDN',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'How I went from the premise of an open CDN to exploiting it as a proof of concept',
       tags: [ TAG_INFOSEC, TAG_DEVELOPMENT, TAG_PRIVACY ],
       date: [2021, 8, 31]
@@ -262,7 +262,7 @@ export const subroutes2021: Routes = [
     component: Oct2021DigitalOverdoseWriteupOutageComponent,
     data: {
       title: 'Digital Overdose CTF Official Writeup #1 - Outage',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Official challenge developer writeup for "Outage - The usual suspect", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP ],
       date: [2021, 10, 11],
@@ -274,7 +274,7 @@ export const subroutes2021: Routes = [
     component: Oct2021DigitalOverdoseWriteupCakeComponent,
     data: {
       title: 'Digital Overdose CTF Official Writeup #2 - A door by any other name',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Official challenge developer writeup for "A door by any other name", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP, TAG_CRYPTOGRAPHY ],
       date: [2021, 10, 11],
@@ -286,7 +286,7 @@ export const subroutes2021: Routes = [
     component: Oct2021DigitalOverdoseWriteupC4Component,
     data: {
       title: 'Digital Overdose CTF Official Writeup #3 - C1 - I think this should be C4',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Official challenge developer writeup for "C1 - I think this should be C4", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP, TAG_DEVELOPMENT, TAG_WEB ],
       date: [2021, 10, 11],
@@ -298,7 +298,7 @@ export const subroutes2021: Routes = [
     component: Oct2021Beercon3Component,
     data: {
       title: 'Speaking at BeerCon 3!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I spoke at BeerCon 3, mainly about how JavaScript and Application Security don\'t really mesh well together.',
       tags: [ TAG_CONFERENCE, TAG_INFOSEC, TAG_APPSEC, TAG_PROGRAMMING, TAG_TALKS, TAG_VOLUNTEERING ],
       date: [2021, 10, 30]
@@ -309,7 +309,7 @@ export const subroutes2021: Routes = [
     component: Nov2021HappyBirthday,
     data: {
       title: 'Happy birthday to this blog!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Marking the first year of this blog\'s existence.',
       tags: [ TAG_PERSONAL ],
       date: [2021, 11, 15]
@@ -320,7 +320,7 @@ export const subroutes2021: Routes = [
     component: Nov2021conINTComponent,
     data: {
       title: 'Speaking about communities at conINT',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I took a stab at taking one year of experience in managing a community of hackers, and trying to discuss the benefits of Intelligence when it comes to keeping its members safe.',
       tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_OSINT ],
       date: [2021, 11, 25]

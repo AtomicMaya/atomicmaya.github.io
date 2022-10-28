@@ -20,7 +20,7 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
     CollapsibleComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'atomicnicos-me' }),
+    BrowserModule.withServerTransition({ appId: 'atomicmaya-me' }),
     AppRoutingModule,
     CommonModule,
     NgxTweetModule,

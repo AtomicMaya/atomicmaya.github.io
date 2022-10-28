@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "atomicnicosme": {
+    "atomicmayame": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/atomicnicosme/browser",
+            "outputPath": "dist/atomicmayame/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -98,18 +98,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "atomicnicosme:build"
+            "browserTarget": "atomicmayame:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "atomicnicosme:build:production"
+              "browserTarget": "atomicmayame:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "atomicnicosme:build"
+            "browserTarget": "atomicmayame:build"
           }
         },
         "test": {
@@ -133,18 +133,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "atomicnicosme:serve"
+            "devServerTarget": "atomicmayame:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "atomicnicosme:serve:production"
+              "devServerTarget": "atomicmayame:serve:production"
             }
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/atomicnicosme/server",
+            "outputPath": "dist/atomicmayame/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "sourceMap": true,
@@ -168,21 +168,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "atomicnicosme:build",
-            "serverTarget": "atomicnicosme:server"
+            "browserTarget": "atomicmayame:build",
+            "serverTarget": "atomicmayame:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "atomicnicosme:build:production",
-              "serverTarget": "atomicnicosme:server:production"
+              "browserTarget": "atomicmayame:build:production",
+              "serverTarget": "atomicmayame:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "atomicnicosme:build:production",
-            "serverTarget": "atomicnicosme:server:production",
+            "browserTarget": "atomicmayame:build:production",
+            "serverTarget": "atomicmayame:server:production",
             "routesFile": "./static.paths.txt"
           },
           "configurations": {

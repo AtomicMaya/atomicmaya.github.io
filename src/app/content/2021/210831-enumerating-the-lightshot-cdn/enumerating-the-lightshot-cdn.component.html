@@ -47,14 +47,14 @@
 
   <p>By iterating over the namespace, and opening the page via Selenium in a headless Chrome then grabbing the page and jamming it into BS4, we can then find the image and it's blob, and then convert the blob, then saving it to the relevant file format.</p>
 
-  <p>You can check that first functioning attempt at <a href="https://gist.github.com/AtomicNicos/d31462e2e9ed168f7665bf9e6b698daa"> here</a>.</p>
+  <p>You can check that first functioning attempt at <a href="https://gist.github.com/AtomicMaya/d31462e2e9ed168f7665bf9e6b698daa"> here</a>.</p>
 
   <br/>
   <h3>The quicker "I hadn't noticed that" approach</h3>
 
   <p>Meta tags. Apparently the LightShot page uses the <code>&lt;meta property="og:image" content="x"&gt;</code> tag, which contains a link to an image... which can be scraped using the <code>urllib</code> library. Thanks <a target="_blank" href="https://twitter.com/bugbot4" rel="noopener"><em class="fab fa-twitter-square"></em> Night</a> for pointing that out.</p>
 
-  <p>By refactoring my code to include this modification, it became much easier and faster and less expensive to use, due to Selenium and BS4 being made redundant. You can find it <a href="https://gist.github.com/AtomicNicos/077c84c8c6ff1d431c5e3e7c050f9fd0"> here</a>.</p>
+  <p>By refactoring my code to include this modification, it became much easier and faster and less expensive to use, due to Selenium and BS4 being made redundant. You can find it <a href="https://gist.github.com/AtomicMaya/077c84c8c6ff1d431c5e3e7c050f9fd0"> here</a>.</p>
 
   <p>I had not removed parallel processing on my first try, and this method is "so" efficient, that it tripped CloudFlare's DOS mitigation (or, as CloudFlare claims, the owner banned my IP specifically, see below). Oops, I apologize. However, CloudFlare <strong>is</strong> protecting a service used to share non-consensual pornography, scams and PII (regardless of own ToS) which would make a GDPR-specialized risk management firm sweat. I "fixed" it to continue my "research" and everything was nice and functional.</p>
 

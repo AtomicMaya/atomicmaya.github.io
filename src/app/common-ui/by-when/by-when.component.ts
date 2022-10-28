@@ -9,7 +9,7 @@ import { Author } from 'src/app/interfaces/author';
 })
 export class ByWhenComponent {
   // tslint:disable-next-line: no-string-literal
-  @Input() authors: Author[] = [ authorList['AtomicNicos'] ];
+  @Input() authors: Author[] = [ authorList['AtomicMaya'] ];
   @Input() date: number[];
   @Input() edited: number[];
 

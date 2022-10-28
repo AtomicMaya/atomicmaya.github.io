@@ -7,7 +7,7 @@ export const ROUTES = [
   '/privacy-policy',
 
   '/authors',
-  '/authors/AtomicNicos',
+  '/authors/AtomicMaya',
 
   '/tags',
   '/tags/AppSec',

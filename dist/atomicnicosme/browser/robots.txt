@@ -1,4 +1,0 @@
-User-agent: *
-Crawl-delay: 120
-Sitemap: https://atomicnicos.me/sitemap.xml
-Disallow: /docs/*

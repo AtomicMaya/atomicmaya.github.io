@@ -12,7 +12,7 @@ export class WhoamiComponent implements OnInit {
   ngOnInit(): void {
     this.meta.setTags('/whoami', 'whoami',
                       '/assets/images/me.jpg', 400, 400,
-                      ['atomicnicos', 'introduction', 'skills', 'privacy']);
+                      ['atomicnicos', 'atomicmaya', 'introduction', 'skills', 'privacy']);
   }
 
 }

@@ -24,7 +24,7 @@ export const subroutes2022: Routes = [
     component: Jan2022CatchingCovidComponent,
     data: {
       title: 'Catching COVID, detailing my experience.',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'I managed to catch COVID, here\'s my story about it.',
       tags: [TAG_PERSONAL],
       date: [2022, 1, 15]
@@ -35,7 +35,7 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFAllComponent,
     data: {
       title: 'Participating in KnightCTF!',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'I participated in KnightCTF alongside the team from Digital Overdose, wherein I successfully beat a few challenges.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
@@ -48,7 +48,7 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFCryptographyComponent,
     data: {
       title: 'Dissecting the KnightCTF Cryptography challenges!',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Cryptography" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_CRYPTOGRAPHY, TAG_WRITEUP],
@@ -60,7 +60,7 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFMiscComponent,
     data: {
       title: 'Dissecting the KnightCTF Misc challenges!',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Misc" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
@@ -72,7 +72,7 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFProgrammingComponent,
     data: {
       title: 'Dissecting the KnightCTF Programming challenges!',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Programming" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_PROGRAMMING, TAG_WRITEUP],
@@ -84,7 +84,7 @@ export const subroutes2022: Routes = [
     component: Jan2022KnightCTFReverseComponent,
     data: {
       title: 'Dissecting the KnightCTF Reverse Engineering challenges!',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Reverse Engineering" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
@@ -96,7 +96,7 @@ export const subroutes2022: Routes = [
     component: Feb2022StartingANewJobComponent,
     data: {
       title: 'I started a new job!',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'Going into a bit more detail about what I\'m currently working on!',
       tags: [TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_INFOSEC],
       date: [2022, 2, 18]
@@ -107,7 +107,7 @@ export const subroutes2022: Routes = [
     component: Apr2022DigitalOverdoseConference2Component,
     data: {
       title: 'Digital Overdose Conference 2: We\'re doing this again!',
-      authors: [authorList['AtomicNicos']],
+      authors: [authorList['AtomicMaya']],
       description: 'Going behind the scenes of the second iteration of the Digital Overdose Conference.',
       imageUrl: '/assets/images/2022/220426-digital-overdose-conference2/conference_cover_2022.png',
       tags: [TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_CYBERSEC, TAG_VOLUNTEERING],
@@ -120,7 +120,7 @@ export const subroutes2022: Routes = [
     component: May2022RaspiToolingComponent,
     data: {
       title: 'Building a Raspberry Pi private web server!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Going behind the scenes on developping a private web service deployed on a Raspberry Pi.',
       tags: [ TAG_DEVELOPMENT, TAG_CYBERSEC ],
       date: [2022, 5, 4]
@@ -131,7 +131,7 @@ export const subroutes2022: Routes = [
     component: May2022WavegameComponent,
     data: {
       title: 'Going to Paris for the Wavegame cloud competition!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I went to Paris for the WaveGame competition, and we ended up winning!',
       tags: [ TAG_INFOSEC ],
       date: [2022, 5, 15]
@@ -142,7 +142,7 @@ export const subroutes2022: Routes = [
     component: Jun2022SummerExamSessionComponent,
     data: {
       title: 'Refocusing for my summer exams.',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I had to refocus my efforst for the summer exams at university.',
       tags: [ TAG_PERSONAL ],
       date: [2022, 6, 15]
@@ -153,7 +153,7 @@ export const subroutes2022: Routes = [
     component: Jul2022AmsterdamMchComponent,
     data: {
       title: 'Going back to Amsterdam and attending MCH!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I attended MayContainHackers 2022, and got into some shenanigans!',
       tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING ],
       date: [2022, 7, 29]
@@ -164,7 +164,7 @@ export const subroutes2022: Routes = [
     component: Jul2022GenderParadigmShiftComponent,
     data: {
       title: 'My gender paradigm shift.',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Gender identity! A fun topic, and my personal stake in it.',
       tags: [ TAG_PERSONAL ],
       date: [2022, 7, 31]
@@ -175,7 +175,7 @@ export const subroutes2022: Routes = [
     component: Aug2022GoingToDefconComponent,
     data: {
       title: 'I spoke at DEFCON30! (I also attended it!)',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'DEFCON30! All the shenanigans, all the hackers, all the bad luck?',
       tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TALKS ],
       date: [2022, 8, 30]

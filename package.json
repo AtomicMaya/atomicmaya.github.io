@@ -1,5 +1,5 @@
 {
-  "name": "atomicnicosme",
+  "name": "atomicmayame",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,10 +8,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev:ssr": "ng run atomicnicosme:serve-ssr",
-    "serve:ssr": "node dist/atomicnicosme/server/main.js",
-    "build:ssr": "ng build --configuration production && ng run atomicnicosme:server:production",
-    "prerender": "ng run atomicnicosme:prerender"
+    "dev:ssr": "ng run atomicmayame:serve-ssr",
+    "serve:ssr": "node dist/atomicmayame/server/main.js",
+    "build:ssr": "ng build --configuration production && ng run atomicmayame:server:production",
+    "prerender": "ng run atomicmayame:prerender"
   },
   "private": true,
   "dependencies": {

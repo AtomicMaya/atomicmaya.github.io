@@ -1,10 +1,15 @@
 p {
   font-size: smaller;
-  color: darken(#d0d0d0, 15%)
+  color: darken(#d0d0d0, 15%);
+  display: flex;
+margin-bottom: 0;
+flex-wrap: wrap;
+padding: 0;
+align-items: center;
 }
 
 span {
-  margin: .375rem;
+  margin: .1rem .2rem;
   padding: 0.5rem;
   border-radius: .5rem;
   background-color: #484848;

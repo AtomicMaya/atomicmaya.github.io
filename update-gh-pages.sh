@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-git subtree push --prefix dist/atomicnicosme/browser/ origin gh-pages
+git subtree push --prefix dist/atomicmayame/browser/ origin gh-pages

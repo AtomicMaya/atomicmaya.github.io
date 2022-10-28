@@ -17,8 +17,8 @@ export const subroutes2020: Routes = [
     component: Oct2020HelloWorldComponent,
     data: {
       title: 'Hello World!',
-      authors: [ authorList['AtomicNicos'] ],
-      description: 'The first post on AtomicNicos\' Blog. Wow!',
+      authors: [ authorList['AtomicMaya'] ],
+      description: 'The first post on AtomicMaya\' Blog. Wow!',
       imageUrl: '/assets/images/2020/hello-world/hw.png',
       tags: [ TAG_PERSONAL ],
       date: [2021, 10, 15]
@@ -29,7 +29,7 @@ export const subroutes2020: Routes = [
     component: Oct2020ConintComponent,
     data: {
       title: 'I participated in the conINT CTF!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Discussing my participation in the conINT TraceLabs OSINT capture the flag event.',
       imageUrl: '/assets/images/2020/conint/conint_logo.png',
       tags: [ TAG_CONFERENCE, TAG_CTF, TAG_OSINT ],
@@ -41,7 +41,7 @@ export const subroutes2020: Routes = [
     component: Nov2020Beercon2Component,
     data: {
       title: 'I gave a talk at BeerCon2!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a talk at BeerCon2, a rookie infosec conference.',
       imageUrl: '/assets/images/2020/beercon2/bc2_zoombg.png',
       tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
@@ -53,7 +53,7 @@ export const subroutes2020: Routes = [
     component: Nov2020BsidesIslamabadComponent,
     data: {
       title: 'I talked at BSides Islamabad!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a talk at BSides Islamabad, Pakistan\'s first cybersecurity conference.',
       imageUrl: '/assets/images/2020/bsides-islamabad/card.png',
       tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
@@ -65,7 +65,7 @@ export const subroutes2020: Routes = [
     component: Nov2020MentoringComponent,
     data: {
       title: 'Mentoring!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I want to help you with your endeavors.',
       tags: [ TAG_PERSONAL, TAG_COMMUNITY ],
       date: [2021, 11, 12]
@@ -76,7 +76,7 @@ export const subroutes2020: Routes = [
     component: Nov2020ReadingComponent,
     data: {
       title: 'Reading Materials!',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Some books I plan on reading.',
       tags: [ TAG_INFOSEC, TAG_PERSONAL ],
       date: [2021, 11, 12]
@@ -87,7 +87,7 @@ export const subroutes2020: Routes = [
     component: Dec2020CoffeehouseComponent,
     data: {
       title: 'Security CoffeeHouse: BC2 Speaker Interviews',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'I participated in James Bore\'s Security CoffeeHouse!',
       imageUrl: '/assets/images/2020/coffeehouse/coffeehouse_backdrop.png',
       tags: [ TAG_COMMUNITY, TAG_CONFERENCE ],
@@ -99,7 +99,7 @@ export const subroutes2020: Routes = [
     component: Dec2020Osint4jComponent,
     data: {
       title: 'OSINT: Software Development Ideas',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Some software ideas for OSINT.',
       tags: [ TAG_OSINT, TAG_PROGRAMMING ],
       date: [2021, 12, 16]
@@ -111,7 +111,7 @@ export const subroutes2020: Routes = [
     component: HeapOverrideCTFComponent,
     data: {
       title: 'HeapOverride CTF Challenge: JS Reversal Adventures',
-      authors: [ authorList['AtomicNicos'] ],
+      authors: [ authorList['AtomicMaya'] ],
       description: 'Doing some JS Reversal.',
       tags: [ TAG_CTF, TAG_PROGRAMMING ] }
   },*/

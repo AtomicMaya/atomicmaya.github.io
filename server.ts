@@ -11,7 +11,7 @@ import { existsSync } from 'fs';
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
   const server = express();
-  const distFolder = join(process.cwd(), 'dist/atomicnicosme/browser');
+  const distFolder = join(process.cwd(), 'dist/atomicmayame/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
   const _404Html = existsSync(join(distFolder, '404/index.html')) ? '404/index.html' : 'index.html';
 
