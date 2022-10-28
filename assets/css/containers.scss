@@ -1,0 +1,25 @@
+.media-container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+
+  img,
+  p {
+    padding: 5px 0;
+  }
+
+  * {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  min-width: 90%;
+}

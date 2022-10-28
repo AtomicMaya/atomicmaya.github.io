@@ -1,0 +1,4 @@
+User-agent: *
+Crawl-delay: 120
+Sitemap: https://atomicmaya.me/sitemap.xml
+Disallow: /docs/*
