@@ -16,13 +16,13 @@ export const authorList: AuthorMap = {
       {
         label: 'Twitter',
         icon: 'fab fa-fw fa-twitter-square',
-        url: 'https://twitter.com/AtomicNicos',
-      },
+        url: 'https://twitter.com/Atomic_Maya',
+      },/*
       {
         label: 'LinkedIn',
         icon: 'fab fa-fw fa-linkedin',
         url: 'https://linkedin.com/in/nicolas-boeckh',
-      },
+      },*/
       {
         label: 'Keybase',
         icon: 'fas fa-fw fa-key',
