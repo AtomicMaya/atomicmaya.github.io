@@ -29,7 +29,8 @@
               "src/sitemap.xml",
               "src/robots.txt",
               "src/cq1QYBEBv1cShnPY8CL",
-              "src/.htaccess"
+              "src/.htaccess",
+              "src/CNAME"
             ],
             "styles": [
               "src/styles.scss",
