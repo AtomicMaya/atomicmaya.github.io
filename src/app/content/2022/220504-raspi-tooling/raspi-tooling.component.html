@@ -1,8 +1,70 @@
 <app-post-body [post]="this.post" [date]="this.post.date">
-- Raspberry PI
-- Shell
-"pic of shell"
-- Small deployed web service
+  <p>I was recently asked whether I could a family member out, as they needed a custom inventory management platform for pieces of a family art collection.</p>
+  <p>I accepted, although I probably shouldn't have.</p>
+  <p>I'll go over how the project services were designed, how it is being hosted, and more, in this article.</p>
+
+  <h4>Run-down</h4>
+  <ul>
+    <li><a class='no-underline' routerLink='.' fragment='the-service-architecture'>The service architecture</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='the-pi'>The Pi</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='what-does-it-run'>What does it run?</a></li>
+  </ul>
+
+  <hr/>
+  <h4 id='the-service-architecture'>The service architecture</h4>
+  <p>The project follows a pretty simple design: the web frontend is how the user interacts with the service, the backend is how the service saves the data to a database.</p>
+  <p>Due to my past experience, I decided to write the frontend in Angular, and the backend in Python, using FastAPI as the middleware. The database would use PostgreSQL</p>
+
+  <br/>
+  <h4 id='the-pi'>The Pi</h4>
+  <p>For a myriad of reasons, we decided to use a local system, and decided to do so on a Raspberry Pi 4.</p>
+  <p>The Pi has a number of advantages, but the one I retained was that one could have it boot off of an SSD, rather than the traditional SD card.</p>
+  <p>Another neat thing is that there are a lot of case designs to 3D print, and I found a design that allows for an SSD, and additional ventilation fans.</p>
+
+  <br/>
+  <p>Link thingiverse</p>
+  <p>The first element was to fit the SSD into the casing. In order to have it snug against the base, I flipped it from its original configuration.</p>
+
+  <div class='media-container'>
+    <img src='/assets/images/2022/220504-raspi-tooling/ssd.jpg' alt='The base casing with the SSD'>
+    <span><em>The base casing with the SSD</em></span>
+  </div>
+
+  <p>This meant that, in order to have the Pi itself fit snugly in the casing, a strut of sorts was needed. I designed it by using the RasPi design sheet.</p>
+
+  <div class='media-container'>
+    <img src='/assets/images/2022/220504-raspi-tooling/support.jpg' alt='The RaspberryPi strut'>
+    <span><em>The RaspberryPi strut</em></span>
+  </div>
+
+  <p>The Raspberry Pi then aligned perfectly with the holes in the casing, letting me start with the ventilation, which consists of a CPU heatsink/ventilator unit, and a casing 40mm ventilator.</p>
+
+  <div class='media-container'>
+    <img src='/assets/images/2022/220504-raspi-tooling/raspi-fitting.jpg' alt='The fitted RaspberryPi'>
+    <span><em>The fitted RaspberryPi</em></span>
+  </div>
+
+  <div class='media-container'>
+    <img src='/assets/images/2022/220504-raspi-tooling/ventilation.jpg' alt='The RaspberryPi with the ventilation'>
+    <span><em>The RaspberryPi with the ventilation</em></span>
+  </div>
+
+  <p>The final device, bar some cables, looks like this:</p>
+
+  <div class='media-container'>
+    <img src='/assets/images/2022/220504-raspi-tooling/closed.jpg' alt='The completed RaspberryPi'>
+  </div>
+
+  <br/>
+  <h4 id='what-does-it-run'>What does it run?</h4>
+
+  <p>From the get go I decided that I would use containerized applications, probably using Docker.</p>
+  <p>This somewhat restricted my choice of platforms, so I went with a very lightweight and headless version of Ubuntu, which I flashed onto the SSD.</p>
+
+  <p>I then installed containerd, docker and docker-compose for the management of our services.</p>
+  <p></p>
+
+  - Small deployed web service
 - Ubuntu
 - Docker
 - ufw
