@@ -8,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './gender-paradigm-shift.component.html',
   styleUrls: ['./gender-paradigm-shift.component.scss']
 })
-export class Jul2022GenderParadigmShiftComponent implements OnInit {
+export class Oct2022GenderParadigmShiftComponent implements OnInit {
   post: Post;
 
   constructor(private meta: MetaService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/post/2022/2022_07_31+my-gender-paradigm-shift', this.post.title,
+    this.meta.setTags('/post/2022/2022_10_15+my-gender-paradigm-shift', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['gender', 'non-binary'],
+                      ['gender', 'non-binary', 'trans', 'coming out'],
                       this.post.description);
   }
 }

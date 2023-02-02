@@ -15,8 +15,7 @@ import { TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_INFOSEC, 
 import { Apr2022DigitalOverdoseConference2Component } from '../content/2022/220426-digital-overdose-conference2/digital-overdose-conference2.component';
 import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
 import { May2022WavegameComponent } from '../content/2022/220515-wavegame/wavegame.component';
-import { Jun2022SummerExamSessionComponent } from '../content/2022/220615-summer-exam-session/summer-exam-session.component';
-import { Jul2022GenderParadigmShiftComponent } from '../content/2022/220731-gender-paradigm-shift/gender-paradigm-shift.component';
+import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221015-gender-paradigm-shift/gender-paradigm-shift.component';
 
 export const subroutes2022: Routes = [
   {
@@ -125,7 +124,6 @@ export const subroutes2022: Routes = [
       date: [2022, 5, 4]
     }
   },
-  /*
   {
     path: '2022_05_15+winning-the-wavegame',
     component: May2022WavegameComponent,
@@ -135,17 +133,6 @@ export const subroutes2022: Routes = [
       description: 'I went to Paris for the WaveGame competition, and we ended up winning!',
       tags: [ TAG_INFOSEC ],
       date: [2022, 5, 15]
-    }
-  },
-  {
-    path: '2022_06_15+Return-of-the-summer-exams',
-    component: Jun2022SummerExamSessionComponent,
-    data: {
-      title: 'Refocusing for my summer exams.',
-      authors: [ authorList['AtomicMaya'] ],
-      description: 'I had to refocus my efforst for the summer exams at university.',
-      tags: [ TAG_PERSONAL ],
-      date: [2022, 6, 15]
     }
   },
   {
@@ -160,17 +147,6 @@ export const subroutes2022: Routes = [
     }
   },
   {
-    path: '2022_07_31+my-gender-paradigm-shift',
-    component: Jul2022GenderParadigmShiftComponent,
-    data: {
-      title: 'My gender paradigm shift.',
-      authors: [ authorList['AtomicMaya'] ],
-      description: 'Gender identity! A fun topic, and my personal stake in it.',
-      tags: [ TAG_PERSONAL ],
-      date: [2022, 7, 31]
-    }
-  },
-  {
     path: '2022_08_30+Heading-for-DEFCON',
     component: Aug2022GoingToDefconComponent,
     data: {
@@ -181,13 +157,23 @@ export const subroutes2022: Routes = [
       date: [2022, 8, 30]
     }
   },
-  */
-  // JAN DEALING WITH COVID
-  // FEB New JOB
-  // MARCH
-  // APRIL DO CON 2
-  // MAY RASPI | PARIS + WAVESTONE
-  // JUNE EXAMN
+  {
+    path: '2022_10_15+my-gender-paradigm-shift',
+    component: Oct2022GenderParadigmShiftComponent,
+    data: {
+      title: 'My gender paradigm shift.',
+      authors: [ authorList['AtomicMaya'] ],
+      description: 'Gender identity! A fun topic, and my personal stake in it.',
+      tags: [ TAG_PERSONAL ],
+      date: [2022, 10, 15]
+    }
+  },
   // JULY TRIP TO AMSTERDAM AND MCH
   // AUGUST -> DEFCON (RE: COVID)
+  // OCTOBER -> Gender
+  // SEPTEMBER -> Scotland
+  // OCTOBER -> LONDON (DTX)
+  // NOVEMBER -> KOREA
+  // DECEMBER -> LONDON (BSides)
+  // JANUARY -> MSC Fun!
 ];

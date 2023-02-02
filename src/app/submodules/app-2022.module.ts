@@ -15,7 +15,7 @@ import { Jun2022SummerExamSessionComponent } from '../content/2022/220615-summer
 import { Jul2022AmsterdamMchComponent } from '../content/2022/220729-amsterdam-mch/amsterdam-mch.component';
 import { Aug2022GoingToDefconComponent } from '../content/2022/220830-going-to-defcon/going-to-defcon.component';
 import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
-import { Jul2022GenderParadigmShiftComponent } from '../content/2022/220731-gender-paradigm-shift/gender-paradigm-shift.component';
+import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221015-gender-paradigm-shift/gender-paradigm-shift.component';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { Jul2022GenderParadigmShiftComponent } from '../content/2022/220731-gend
     May2022WavegameComponent,
     Jun2022SummerExamSessionComponent,
     Jul2022AmsterdamMchComponent,
-    Jul2022GenderParadigmShiftComponent,
+    Oct2022GenderParadigmShiftComponent,
     Aug2022GoingToDefconComponent,
   ],
   imports: [
