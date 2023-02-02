@@ -114,7 +114,6 @@ export const subroutes2022: Routes = [
       date: [2022, 4, 26]
     }
   },
-  /*
   {
     path: '2022_05_04+Building-a-raspi-private-web-server',
     component: May2022RaspiToolingComponent,
@@ -126,6 +125,7 @@ export const subroutes2022: Routes = [
       date: [2022, 5, 4]
     }
   },
+  /*
   {
     path: '2022_05_15+winning-the-wavegame',
     component: May2022WavegameComponent,
