@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-digital-overdose-conference2',
-  templateUrl: './digital-overdose-conference2.component.html',
-  styleUrls: ['./digital-overdose-conference2.component.scss']
+  templateUrl: './digital-overdose-conference2.component.html'
 })
 export class Apr2022DigitalOverdoseConference2Component implements OnInit {
   post: Post;
