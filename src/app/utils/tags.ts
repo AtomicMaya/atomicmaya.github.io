@@ -1,6 +1,7 @@
 import { Tag } from '../interfaces/tag';
 
 export const TAG_APPSEC: Tag = { name: 'AppSec' };
+export const TAG_CLOUD: Tag = { name: 'Cloud' };
 export const TAG_COMMUNITY: Tag = { name: 'Community' };
 export const TAG_CONFERENCE: Tag = { name: 'Conference' };
 export const TAG_CRYPTOCURRENCY: Tag = { name: 'Cryptocurrency' };
@@ -8,6 +9,7 @@ export const TAG_CRYPTOGRAPHY: Tag = { name: 'Cryptography' };
 export const TAG_CTF: Tag = { name: 'CTF' };
 export const TAG_CYBERSEC: Tag = { name: 'CyberSec' };
 export const TAG_DEVELOPMENT: Tag = { name: 'Development' };
+export const TAG_DEVOPS: Tag = { name: 'DevOps' };
 export const TAG_INFOSEC: Tag = { name: 'InfoSec' };
 export const TAG_IOT: Tag = { name: 'IOT' };
 export const TAG_MEDIA: Tag = { name: 'Media' };

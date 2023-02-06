@@ -1,6 +1,6 @@
 import { Aug2022GoingToDefconComponent } from './../content/2022/220830-going-to-defcon/going-to-defcon.component';
 import { Jul2022AmsterdamMchComponent } from './../content/2022/220729-amsterdam-mch/amsterdam-mch.component';
-import { TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_TALKS } from './../utils/tags';
+import { TAG_CLOUD, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_TALKS } from './../utils/tags';
 import { Jan2022CatchingCovidComponent } from '../content/2022/220115-catching-covid/catching-covid.component';
 // tslint:disable: no-string-literal
 import { Routes } from '@angular/router';
@@ -91,7 +91,7 @@ export const subroutes2022: Routes = [
     }
   },
   {
-    path: '2022_02_18+Starting-a-new-job',
+    path: '2022_02_18+starting-a-new-job',
     component: Feb2022StartingANewJobComponent,
     data: {
       title: 'I started a new job!',
@@ -114,13 +114,13 @@ export const subroutes2022: Routes = [
     }
   },
   {
-    path: '2022_05_04+Building-a-raspi-private-web-server',
+    path: '2022_05_04+building-a-raspi-private-web-server',
     component: May2022RaspiToolingComponent,
     data: {
       title: 'Building a Raspberry Pi private web server!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'Going behind the scenes on developping a private web service deployed on a Raspberry Pi.',
-      tags: [ TAG_DEVELOPMENT, TAG_CYBERSEC ],
+      tags: [ TAG_DEVELOPMENT, TAG_CYBERSEC, TAG_DEVOPS ],
       date: [2022, 5, 4]
     }
   },
@@ -131,12 +131,12 @@ export const subroutes2022: Routes = [
       title: 'Going to Paris for the Wavegame cloud competition!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I went to Paris for the WaveGame competition, and we ended up winning!',
-      tags: [ TAG_INFOSEC ],
+      tags: [ TAG_INFOSEC, TAG_CLOUD, TAG_DEVOPS ],
       date: [2022, 5, 15]
     }
   },
   {
-    path: '2022_07_29+Heading-to-Amsterdam-and-going-to-MCH',
+    path: '2022_07_29+heading-to-Amsterdam-and-going-to-MCH',
     component: Jul2022AmsterdamMchComponent,
     data: {
       title: 'Going back to Amsterdam and attending MCH!',
@@ -147,7 +147,7 @@ export const subroutes2022: Routes = [
     }
   },
   {
-    path: '2022_08_30+Heading-for-DEFCON',
+    path: '2022_08_30+heading-for-DEFCON',
     component: Aug2022GoingToDefconComponent,
     data: {
       title: 'I spoke at DEFCON30! (I also attended it!)',

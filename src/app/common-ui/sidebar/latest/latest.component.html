@@ -1,7 +1,7 @@
 <h4>~$ Latest Posts</h4>
 <div class="my-2" *ngFor="let p of this.latest">
   <p class="m-0">
-    <span class="text-decoration-underline">{{ ('' + p.date[2]).padStart(2, '0') }}/{{ ('' + p.date[1]).padStart(2, '0') }}/{{ p.date[0] }}:</span>&nbsp;
+    <span class="text-decoration-underline">{{ ('' + p.date[2]).padStart(2, '0') }}/{{ ('' + p.date[1]).padStart(2, '0') }}/{{ p.date[0] }}:</span><br/>
     <a class="no-underline" href="post/{{p.date[0]}}/{{p.path}}">{{ p.title }}</a>
   </p>
 </div>

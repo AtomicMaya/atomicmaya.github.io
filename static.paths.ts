@@ -11,6 +11,7 @@ export const ROUTES = [
 
   '/tags',
   '/tags/AppSec',
+  '/tags/Cloud',
   '/tags/Community',
   '/tags/Conference',
   '/tags/Cryptocurrency',
@@ -18,6 +19,7 @@ export const ROUTES = [
   '/tags/CTF',
   '/tags/CyberSec',
   '/tags/Development',
+  '/tags/DevOps',
   '/tags/InfoSec',
   '/tags/IOT',
   '/tags/Media',
@@ -72,6 +74,8 @@ export const ROUTES = [
   '/post/2022/2022_01_30+knight-ctf-2022-misc-writeups',
   '/post/2022/2022_01_30+knight-ctf-2022-programming-writeups',
   '/post/2022/2022_01_30+knight-ctf-2022-reverse-writeups',
-  '/post/2022/2022_02_18+Starting-a-new-job',
-  '/post/2022/2022_04_26+running-the-digital-overdose-conference-again'
+  '/post/2022/2022_02_18+starting-a-new-job',
+  '/post/2022/2022_04_26+running-the-digital-overdose-conference-again',
+  '/post/2022/2022_05_04+building-a-raspi-private-web-server',
+  '/post/2022/2022_05_15+winning-the-wavegame'
 ];
