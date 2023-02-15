@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkatomicmayame=self.webpackChunkatomicmayame||[]).push([[478],{1478:(P,u,t)=>{t.r(u),t.d(u,{Posts2021RoutingModule:()=>l});var s=t(3180),n=t(3573),a=t(4650);let l=(()=>{class o{}return o.\u0275fac=function(M){return new(M||o)},o.\u0275mod=a.oAB({type:o}),o.\u0275inj=a.cJS({imports:[s.Bz.forChild(n.E),s.Bz]}),o})()}}]);
