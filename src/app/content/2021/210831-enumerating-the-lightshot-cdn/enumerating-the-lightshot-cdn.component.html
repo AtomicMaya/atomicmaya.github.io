@@ -6,7 +6,7 @@
   <p>Lightshot is a screen capture service provided for free on the Internet. It features a few functionalities including but not limited to screenshot editing, copying it to the copy-paste buffer and finally uploading the captured images to LightShot's CDN.</p>
   <p>That last part is the one of interest for us, as it was mentioned by <a target="_blank" href="https://twitter.com/illyrian598" rel="noopener"><em class="fab fa-twitter-square"></em> commandergirl</a> (see below) that LightShot's CDN (Content Delivery Network) was quite easy to enumerate.</p>
   <div class="media-container">
-    <ngx-tweet id="bc2-tweet" tweetId="1432084646473388039"></ngx-tweet>
+    <ngx-tweet id="lightshot-tweet" tweetId="1432084646473388039"></ngx-tweet>
   </div>
 
   <p>As a fun project I wanted to see how easy it was to enumerate all of the images uploaded to LightShot.</p>
@@ -35,7 +35,7 @@
 
   <p>But how many images could that represent? Well using bad math, I would have told you "at least 27M images", which would be completely wrong. Someone who has been doing math for a living mentioned that just for the 7 character segment - considering that the segment cannot start with a 0 (from experimentation) - we need <code>35 * 36^6 ~= 76.12e9</code> or about 76.12 Billion possibilities. Summing up for character segments of size 1 to 7, we thus get <code>35 * 36^6 + 35 * 36^5 + 35 * 36^4 + 35 * 36^3 + 35 * 36^2 + 35 * 36 + 36 ~= 78.36e9</code> or about 78.36 Billion possibilities. That is a lot. Thankfully we seem to be at <code>1qxxxxx</code> which is somewhere at the beginning of the 7 character space (relatively to 78.36 Billion possibilities).</p>
 
-  <p>For each of these URL segments, my initial impression of parsing that URL is that the page takes a few seconds to load, loading the image asynchroneously, thus requiring a more roundabout automated collection method. The image is available 1 of two ways, either in the image source, or as a data blob:</p>
+  <p>For each of these URL segments, my initial impression of parsing that URL is that the page takes a few seconds to load, loading the image asynchronously, thus requiring a more roundabout automated collection method. The image is available one of two ways, either in the image source, or as a data blob:</p>
 
   <div class="media-container">
     <img src="assets/images/2021/210831-lightshot/0-page-code.png" alt="The code of LightShot's page"/>

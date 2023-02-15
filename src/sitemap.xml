@@ -223,7 +223,22 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://atomicmaya.me/post/2022/2022_05_04%2Bbuilding-a-raspi-private-web-server</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2022/2022_07_29%2Bheading-to-Amsterdam-and-going-to-MCH</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2022/2022_08_30%2Bheading-for-DEFCON</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>

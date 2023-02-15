@@ -17,11 +17,32 @@
       <link>https://www.atomicmaya.me</link>
     </image>
     <item>
+      <title>I spoke at DEFCON30! (I also attended it!)</title>
+      <link>https://atomicmaya.me/post/2022/2022_08_30%2Bheading-for-DEFCON</link>
+      <description>DEFCON30! All the shenanigans, all the hackers, all the bad luck?</description>
+      <guid>https://atomicmaya.me/post-2022-08</guid>
+      <pubDate>Tue, Aug. 30th, 2022</pubDate>
+    </item>
+    <item>
+      <title>Going back to Amsterdam and attending MCH!</title>
+      <link>https://atomicmaya.me/post/2022/2022_07_29%2Bheading-to-Amsterdam-and-going-to-MCH</link>
+      <description>I attended MayContainHackers 2022, and got into some shenanigans!</description>
+      <guid>https://atomicmaya.me/post-2022-07</guid>
+      <pubDate>Fri, Jul. 29th, 2022</pubDate>
+    </item>
+    <item>
       <title>Going to Paris for the Wavegame cloud competition!</title>
       <link>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame</link>
       <description>I went to Paris for the WaveGame competition, and we ended up winning!</description>
-      <guid>https://atomicmaya.me/post-2022-05</guid>
+      <guid>https://atomicmaya.me/post-2022-06</guid>
       <pubDate>Sun, May. 15th, 2022</pubDate>
+    </item>
+    <item>
+      <title>Going to Paris for the Wavegame cloud competition!</title>
+      <link>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame</link>
+      <description>Building a Raspberry Pi private web server!</description>
+      <guid>https://atomicmaya.me/post-2022-05</guid>
+      <pubDate>Sun, May. 4th, 2022</pubDate>
     </item>
     <item>
       <title>Digital Overdose Conference 2: We're doing this again!</title>

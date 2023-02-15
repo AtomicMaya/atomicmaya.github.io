@@ -17,31 +17,59 @@
       <link>https://www.atomicmaya.me</link>
     </image>
     <item>
+      <title>I spoke at DEFCON30! (I also attended it!)</title>
+      <link>https://atomicmaya.me/post/2022/2022_08_30%2Bheading-for-DEFCON</link>
+      <description>DEFCON30! All the shenanigans, all the hackers, all the bad luck?</description>
+      <guid>https://atomicmaya.me/post-2022-08</guid>
+      <pubDate>Tue, Aug. 30th, 2022</pubDate>
+    </item>
+    <item>
+      <title>Going back to Amsterdam and attending MCH!</title>
+      <link>https://atomicmaya.me/post/2022/2022_07_29%2Bheading-to-Amsterdam-and-going-to-MCH</link>
+      <description>I attended MayContainHackers 2022, and got into some shenanigans!</description>
+      <guid>https://atomicmaya.me/post-2022-07</guid>
+      <pubDate>Fri, Jul. 29th, 2022</pubDate>
+    </item>
+    <item>
+      <title>Going to Paris for the Wavegame cloud competition!</title>
+      <link>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame</link>
+      <description>I went to Paris for the WaveGame competition, and we ended up winning!</description>
+      <guid>https://atomicmaya.me/post-2022-06</guid>
+      <pubDate>Sun, May. 15th, 2022</pubDate>
+    </item>
+    <item>
+      <title>Going to Paris for the Wavegame cloud competition!</title>
+      <link>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame</link>
+      <description>Building a Raspberry Pi private web server!</description>
+      <guid>https://atomicmaya.me/post-2022-05</guid>
+      <pubDate>Sun, May. 4th, 2022</pubDate>
+    </item>
+    <item>
       <title>Digital Overdose Conference 2: We're doing this again!</title>
       <link>https://atomicmaya.me/post/2022/2022_04_26%2Brunning-the-digital-overdose-conference-again</link>
       <description>Going behind the scenes of the second iteration of the Digital Overdose Conference.</description>
-      <guid>https://atomicmaya.me/post-2021-28</guid>
+      <guid>https://atomicmaya.me/post-2022-04</guid>
       <pubDate>Tue, Apr. 26th, 2022</pubDate>
     </item>
     <item>
       <title>I started a new job!</title>
       <link>https://atomicmaya.me/post/2022/2022_02_18%2BStarting-a-new-job</link>
       <description>Going into a bit more detail about what I'm currently working on!</description>
-      <guid>https://atomicmaya.me/post-2021-27</guid>
+      <guid>https://atomicmaya.me/post-2022-03</guid>
       <pubDate>Fri, Feb. 18th, 2022</pubDate>
     </item>
     <item>
       <title>Participating in the Knight CTF!</title>
       <link>https://atomicmaya.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups</link>
       <description>Dissecting various challenges at 2022's KnightCTF, from cryptography and programming to reverse engineering.</description>
-      <guid>https://atomicmaya.me/post-2021-26</guid>
+      <guid>https://atomicmaya.me/post-2022-02</guid>
       <pubDate>Sat, Jan. 29th, 2022</pubDate>
     </item>
     <item>
       <title>Catching COVID, detailing my experience.</title>
       <link>https://atomicmaya.me/post/2022/2022_01_15%2Bcatching-covid</link>
       <description>I managed to catch COVID, here's my story about it.</description>
-      <guid>https://atomicmaya.me/post-2021-25</guid>
+      <guid>https://atomicmaya.me/post-2022-01</guid>
       <pubDate>Sat, Jan. 15th, 2022</pubDate>
     </item>
     <item>

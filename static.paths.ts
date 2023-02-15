@@ -77,5 +77,7 @@ export const ROUTES = [
   '/post/2022/2022_02_18+starting-a-new-job',
   '/post/2022/2022_04_26+running-the-digital-overdose-conference-again',
   '/post/2022/2022_05_04+building-a-raspi-private-web-server',
-  '/post/2022/2022_05_15+winning-the-wavegame'
+  '/post/2022/2022_05_15+winning-the-wavegame',
+  '/post/2022/2022_07_29+heading-to-Amsterdam-and-going-to-MCH',
+  '/post/2022/2022_08_30+heading-for-DEFCON'
 ];

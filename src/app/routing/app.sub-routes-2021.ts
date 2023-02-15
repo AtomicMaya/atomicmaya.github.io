@@ -88,17 +88,6 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_19+eNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes',
-    component: Jan2021WhatsappEncaInterviewComponent,
-    data: {
-      title: 'eNCA Interview on the WhatsApp Privacy Policy',
-      authors: [ authorList['AtomicMaya'] ],
-      description: 'I appeared on eNCA, South Africa\'s primary news network.',
-      tags: [ TAG_INFOSEC, TAG_PRIVACY, TAG_MEDIA ],
-      date: [2021, 1, 19]
-    }
-  },
-  {
     path: '2021_01_20+Talking-at-Leeds-EHS',
     component: Jan2021LeedsEhsTalkComponent,
     data: {

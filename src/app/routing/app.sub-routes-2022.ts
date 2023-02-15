@@ -157,7 +157,7 @@ export const subroutes2022: Routes = [
       date: [2022, 8, 30]
     }
   },
-  {
+  /*{
     path: '2022_10_15+my-gender-paradigm-shift',
     component: Oct2022GenderParadigmShiftComponent,
     data: {
@@ -167,13 +167,12 @@ export const subroutes2022: Routes = [
       tags: [ TAG_PERSONAL ],
       date: [2022, 10, 15]
     }
-  },
-  // JULY TRIP TO AMSTERDAM AND MCH
-  // AUGUST -> DEFCON (RE: COVID)
+  },*/
   // OCTOBER -> Gender
   // SEPTEMBER -> Scotland
   // OCTOBER -> LONDON (DTX)
   // NOVEMBER -> KOREA
   // DECEMBER -> LONDON (BSides)
   // JANUARY -> MSC Fun!
+  // FEBRUARY -> BSIDES CYMRU
 ];

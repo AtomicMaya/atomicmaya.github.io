@@ -94,7 +94,7 @@ export const subroutes2020: Routes = [
       date: [2021, 12, 12]
     }
   },
-  {
+  /*{
     path: '2020_12_16+OSINT-Software-Development-Ideas',
     component: Dec2020Osint4jComponent,
     data: {
@@ -104,7 +104,7 @@ export const subroutes2020: Routes = [
       tags: [ TAG_OSINT, TAG_PROGRAMMING ],
       date: [2021, 12, 16]
     }
-  },
+  },*/
   /*
   {
     path: '2020_12_27+Heap-Override-CTF-Challenge-JS-Reversal-Adventures',
