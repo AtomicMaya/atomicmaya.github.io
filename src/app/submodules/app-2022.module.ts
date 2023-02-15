@@ -11,11 +11,11 @@ import { Jan2022CatchingCovidComponent } from '../content/2022/220115-catching-c
 import { Feb2022StartingANewJobComponent } from '../content/2022/220218-starting-a-new-job/starting-a-new-job.component';
 import { Apr2022DigitalOverdoseConference2Component } from '../content/2022/220426-digital-overdose-conference2/digital-overdose-conference2.component';
 import { May2022WavegameComponent } from '../content/2022/220515-wavegame/wavegame.component';
-import { Jun2022SummerExamSessionComponent } from '../content/2022/220615-summer-exam-session/summer-exam-session.component';
 import { Jul2022AmsterdamMchComponent } from '../content/2022/220729-amsterdam-mch/amsterdam-mch.component';
 import { Aug2022GoingToDefconComponent } from '../content/2022/220830-going-to-defcon/going-to-defcon.component';
 import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
 import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221015-gender-paradigm-shift/gender-paradigm-shift.component';
+import { Sep2022GoingToScotlandComponent } from '../content/2022/220930-going-to-scotland/going-to-scotland.component';
 
 
 @NgModule({
@@ -30,10 +30,10 @@ import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221015-gend
     Apr2022DigitalOverdoseConference2Component,
     May2022RaspiToolingComponent,
     May2022WavegameComponent,
-    Jun2022SummerExamSessionComponent,
     Jul2022AmsterdamMchComponent,
-    Oct2022GenderParadigmShiftComponent,
     Aug2022GoingToDefconComponent,
+    Sep2022GoingToScotlandComponent,
+    Oct2022GenderParadigmShiftComponent,
   ],
   imports: [
     CommonModule,

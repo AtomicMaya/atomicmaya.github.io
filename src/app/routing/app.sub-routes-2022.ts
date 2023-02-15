@@ -16,6 +16,7 @@ import { Apr2022DigitalOverdoseConference2Component } from '../content/2022/2204
 import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
 import { May2022WavegameComponent } from '../content/2022/220515-wavegame/wavegame.component';
 import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221015-gender-paradigm-shift/gender-paradigm-shift.component';
+import { Sep2022GoingToScotlandComponent } from '../content/2022/220930-going-to-scotland/going-to-scotland.component';
 
 export const subroutes2022: Routes = [
   {
@@ -157,7 +158,18 @@ export const subroutes2022: Routes = [
       date: [2022, 8, 30]
     }
   },
-  /*{
+  {
+    path: '2022_09_30+travelling-to-scotland',
+    component: Sep2022GoingToScotlandComponent,
+    data: {
+      title: 'I went to Scotland!',
+      authors: [ authorList['AtomicMaya'] ],
+      description: 'I attended a wedding in Scotland, and met up with some of my friends!',
+      tags: [ TAG_PERSONAL ],
+      date: [2022, 9, 30]
+    }
+  },
+  {
     path: '2022_10_15+my-gender-paradigm-shift',
     component: Oct2022GenderParadigmShiftComponent,
     data: {
@@ -167,9 +179,9 @@ export const subroutes2022: Routes = [
       tags: [ TAG_PERSONAL ],
       date: [2022, 10, 15]
     }
-  },*/
-  // OCTOBER -> Gender
+  },
   // SEPTEMBER -> Scotland
+  // OCTOBER -> Gender
   // OCTOBER -> LONDON (DTX)
   // NOVEMBER -> KOREA
   // DECEMBER -> LONDON (BSides)
