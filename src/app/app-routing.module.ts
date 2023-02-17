@@ -33,6 +33,10 @@ const routes: Routes = [
     loadChildren: () => import('./routing/app-2022-post-routing.module').then(m => m.Posts2022RoutingModule)
   },
   {
+    path: 'post/2023',
+    loadChildren: () => import('./routing/app-2023-post-routing.module').then(m => m.Posts2023RoutingModule)
+  },
+  {
     path: 'posts',
     component: PostsNoFilterComponent
   },

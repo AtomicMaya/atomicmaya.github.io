@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-going-to-scotland',
-  templateUrl: './going-to-scotland.component.html',
-  styleUrls: ['./going-to-scotland.component.scss']
+  templateUrl: './going-to-scotland.component.html'
 })
 export class Sep2022GoingToScotlandComponent implements OnInit {
   post: Post;
@@ -15,9 +14,9 @@ export class Sep2022GoingToScotlandComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/post/2022/2022_10_15+my-gender-paradigm-shift', this.post.title,
+    this.meta.setTags('/post/2022/2022_09_30+travelling-to-scotland', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['gender', 'non-binary', 'trans', 'coming out'],
+                      ['travel', 'scotland', 'glasgow'],
                       this.post.description);
   }
 }

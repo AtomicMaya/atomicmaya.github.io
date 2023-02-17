@@ -1,8 +1,8 @@
-import { Aug2022GoingToDefconComponent } from './../content/2022/220830-going-to-defcon/going-to-defcon.component';
-import { Jul2022AmsterdamMchComponent } from './../content/2022/220729-amsterdam-mch/amsterdam-mch.component';
-import { TAG_CLOUD, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_TALKS } from './../utils/tags';
-import { Jan2022CatchingCovidComponent } from '../content/2022/220115-catching-covid/catching-covid.component';
 // tslint:disable: no-string-literal
+import { Jan2022CatchingCovidComponent } from '../content/2022/220115-catching-covid/catching-covid.component';
+import { Jul2022AmsterdamMchComponent } from './../content/2022/220729-amsterdam-mch/amsterdam-mch.component';
+import { Aug2022GoingToDefconComponent } from './../content/2022/220830-going-to-defcon/going-to-defcon.component';
+import { TAG_ACADEMIA, TAG_CLOUD, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_TALKS, TAG_TRAVEL } from './../utils/tags';
 import { Routes } from '@angular/router';
 import { Jan2022KnightCTFAllComponent } from '../content/2022/220129-knightctf-all/knightctf-all.component';
 import { Jan2022KnightCTFCryptographyComponent } from '../content/2022/220130-knightctf-cryptography/knightctf-cryptography.component';
@@ -10,13 +10,16 @@ import { Jan2022KnightCTFMiscComponent } from '../content/2022/220130-knightctf-
 import { Jan2022KnightCTFProgrammingComponent } from '../content/2022/220130-knightctf-programming/knightctf-programming.component';
 import { Jan2022KnightCTFReverseComponent } from '../content/2022/220130-knightctf-reverse-engineering/knightctf-reverse.component';
 import { Feb2022StartingANewJobComponent } from '../content/2022/220218-starting-a-new-job/starting-a-new-job.component';
-import { authorList } from '../data/authors';
-import { TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_VOLUNTEERING, TAG_WRITEUP } from '../utils/tags';
 import { Apr2022DigitalOverdoseConference2Component } from '../content/2022/220426-digital-overdose-conference2/digital-overdose-conference2.component';
 import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
 import { May2022WavegameComponent } from '../content/2022/220515-wavegame/wavegame.component';
-import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221015-gender-paradigm-shift/gender-paradigm-shift.component';
 import { Sep2022GoingToScotlandComponent } from '../content/2022/220930-going-to-scotland/going-to-scotland.component';
+import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221021-gender-paradigm-shift/gender-paradigm-shift.component';
+import { authorList } from '../data/authors';
+import { TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_VOLUNTEERING, TAG_WRITEUP } from '../utils/tags';
+import { Oct2022Beercon4Component } from '../content/2022/221015-beercon4/beercon4.component';
+import { Nov2022KoreaComponent } from '../content/2022/221117-korea/korea.component';
+import { Dec2022BSidesLondonComponent } from '../content/2022/221220-bsides-london/bsides-london.component';
 
 export const subroutes2022: Routes = [
   {
@@ -132,7 +135,7 @@ export const subroutes2022: Routes = [
       title: 'Going to Paris for the Wavegame cloud competition!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I went to Paris for the WaveGame competition, and we ended up winning!',
-      tags: [ TAG_INFOSEC, TAG_CLOUD, TAG_DEVOPS ],
+      tags: [ TAG_INFOSEC, TAG_CLOUD, TAG_DEVOPS, TAG_TRAVEL ],
       date: [2022, 5, 15]
     }
   },
@@ -143,7 +146,7 @@ export const subroutes2022: Routes = [
       title: 'Going back to Amsterdam and attending MCH!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I attended MayContainHackers 2022, and got into some shenanigans!',
-      tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING ],
+      tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TRAVEL ],
       date: [2022, 7, 29]
     }
   },
@@ -154,7 +157,7 @@ export const subroutes2022: Routes = [
       title: 'I spoke at DEFCON30! (I also attended it!)',
       authors: [ authorList['AtomicMaya'] ],
       description: 'DEFCON30! All the shenanigans, all the hackers, all the bad luck?',
-      tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TALKS ],
+      tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TALKS, TAG_TRAVEL ],
       date: [2022, 8, 30]
     }
   },
@@ -165,26 +168,41 @@ export const subroutes2022: Routes = [
       title: 'I went to Scotland!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I attended a wedding in Scotland, and met up with some of my friends!',
-      tags: [ TAG_PERSONAL ],
+      tags: [ TAG_PERSONAL, TAG_TRAVEL ],
       date: [2022, 9, 30]
     }
   },
   {
-    path: '2022_10_15+my-gender-paradigm-shift',
-    component: Oct2022GenderParadigmShiftComponent,
+    path: '2022_10_15+beercon4',
+    component: Oct2022Beercon4Component,
     data: {
-      title: 'My gender paradigm shift.',
+      title: 'Heading out to DTX360 and BeerCon4!',
       authors: [ authorList['AtomicMaya'] ],
-      description: 'Gender identity! A fun topic, and my personal stake in it.',
-      tags: [ TAG_PERSONAL ],
+      description: 'BeerCon4, a cybersecurity event! (but at a trade show???)',
+      tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_TALKS, TAG_TRAVEL ],
       date: [2022, 10, 15]
     }
   },
-  // SEPTEMBER -> Scotland
-  // OCTOBER -> Gender
-  // OCTOBER -> LONDON (DTX)
-  // NOVEMBER -> KOREA
-  // DECEMBER -> LONDON (BSides)
-  // JANUARY -> MSC Fun!
-  // FEBRUARY -> BSIDES CYMRU
+  {
+    path: '2022_11_17+going-to-korea',
+    component: Nov2022KoreaComponent,
+    data: {
+      title: 'I went to South Korea!',
+      authors: [ authorList['AtomicMaya'] ],
+      description: 'A big university trip halfway around the world.',
+      tags: [ TAG_TRAVEL, TAG_ACADEMIA ],
+      date: [2022, 11, 17]
+    }
+  },
+  {
+    path: '2022_12_20+going-to-bsides-london',
+    component: Dec2022BSidesLondonComponent,
+    data: {
+      title: 'Heading out to BSides London!',
+      authors: [ authorList['AtomicMaya'] ],
+      description: 'BSides London, one of the UK\'s biggest BSides events, and the friends that were made along the way.',
+      tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_TRAVEL ],
+      date: [2022, 12, 20]
+    }
+  },
 ];

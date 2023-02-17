@@ -1,14 +1,14 @@
 import "prismjs";
-import "prismjs/prism.js"
-import "prismjs/plugins/line-numbers/prism-line-numbers.min.js"
-import "prismjs/plugins/line-highlight/prism-line-highlight.js"
-import "prismjs/components/prism-javascript.min.js"
-import "prismjs/components/prism-python.min.js"
-import "prismjs/components/prism-markup-templating.js"
-import "prismjs/components/prism-php.min.js"
-import "prismjs/components/prism-c.min.js"
-import "prismjs/components/prism-cpp.min.js"
-import "prismjs/components/prism-bash.min.js"
+import "prismjs/components/prism-bash.min.js";
+import "prismjs/components/prism-c.min.js";
+import "prismjs/components/prism-cpp.min.js";
+import "prismjs/components/prism-javascript.min.js";
+import "prismjs/components/prism-markup-templating.js";
+import "prismjs/components/prism-php.min.js";
+import "prismjs/components/prism-python.min.js";
+import "prismjs/plugins/line-highlight/prism-line-highlight.js";
+import "prismjs/plugins/line-numbers/prism-line-numbers.min.js";
+import "prismjs/prism.js";
 
 import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -34,6 +34,7 @@ import { SharedModule } from './shared.module';
 import { App2020Module } from './submodules/app-2020.module';
 import { App2021Module } from './submodules/app-2021.module';
 import { App2022Module } from './submodules/app-2022.module';
+import { App2023Module } from "./submodules/app-2023.module";
 import { ServiceLocator } from './utils/service.locator';
 
 
@@ -63,7 +64,8 @@ import { ServiceLocator } from './utils/service.locator';
     SharedModule,
     App2020Module,
     App2021Module,
-    App2022Module
+    App2022Module,
+    App2023Module
   ],
   providers: [],
   bootstrap: [AppComponent],

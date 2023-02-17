@@ -4,20 +4,19 @@ import { Post } from 'src/app/interfaces/post';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-gender-paradigm-shift',
-  templateUrl: './gender-paradigm-shift.component.html',
-  styleUrls: ['./gender-paradigm-shift.component.scss']
+  selector: 'app-korea',
+  templateUrl: './korea.component.html'
 })
-export class Oct2022GenderParadigmShiftComponent implements OnInit {
+export class Nov2022KoreaComponent implements OnInit {
   post: Post;
 
   constructor(private meta: MetaService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/post/2022/2022_10_15+my-gender-paradigm-shift', this.post.title,
+    this.meta.setTags('/post/2022/2022_11_17+going-to-korea', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['gender', 'non-binary', 'trans', 'coming out'],
+                      ['korea', 'travel'],
                       this.post.description);
   }
 }

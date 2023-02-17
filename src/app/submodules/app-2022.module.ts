@@ -1,21 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared.module';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown';
+import { Jan2022CatchingCovidComponent } from '../content/2022/220115-catching-covid/catching-covid.component';
+import { Jan2022KnightCTFAllComponent } from '../content/2022/220129-knightctf-all/knightctf-all.component';
 import { Jan2022KnightCTFCryptographyComponent } from '../content/2022/220130-knightctf-cryptography/knightctf-cryptography.component';
 import { Jan2022KnightCTFMiscComponent } from '../content/2022/220130-knightctf-misc/knightctf-misc.component';
 import { Jan2022KnightCTFProgrammingComponent } from '../content/2022/220130-knightctf-programming/knightctf-programming.component';
 import { Jan2022KnightCTFReverseComponent } from '../content/2022/220130-knightctf-reverse-engineering/knightctf-reverse.component';
-import { Jan2022KnightCTFAllComponent } from '../content/2022/220129-knightctf-all/knightctf-all.component';
-import { Jan2022CatchingCovidComponent } from '../content/2022/220115-catching-covid/catching-covid.component';
 import { Feb2022StartingANewJobComponent } from '../content/2022/220218-starting-a-new-job/starting-a-new-job.component';
 import { Apr2022DigitalOverdoseConference2Component } from '../content/2022/220426-digital-overdose-conference2/digital-overdose-conference2.component';
+import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
 import { May2022WavegameComponent } from '../content/2022/220515-wavegame/wavegame.component';
 import { Jul2022AmsterdamMchComponent } from '../content/2022/220729-amsterdam-mch/amsterdam-mch.component';
 import { Aug2022GoingToDefconComponent } from '../content/2022/220830-going-to-defcon/going-to-defcon.component';
-import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
-import { Oct2022GenderParadigmShiftComponent } from '../content/2022/221015-gender-paradigm-shift/gender-paradigm-shift.component';
 import { Sep2022GoingToScotlandComponent } from '../content/2022/220930-going-to-scotland/going-to-scotland.component';
+import { Oct2022Beercon4Component } from '../content/2022/221015-beercon4/beercon4.component';
+import { Nov2022KoreaComponent } from '../content/2022/221117-korea/korea.component';
+import { Dec2022BSidesLondonComponent } from '../content/2022/221220-bsides-london/bsides-london.component';
+import { SharedModule } from '../shared.module';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { Sep2022GoingToScotlandComponent } from '../content/2022/220930-going-to
     Jul2022AmsterdamMchComponent,
     Aug2022GoingToDefconComponent,
     Sep2022GoingToScotlandComponent,
-    Oct2022GenderParadigmShiftComponent,
+    Oct2022Beercon4Component,
+    Nov2022KoreaComponent,
+    Dec2022BSidesLondonComponent
   ],
   imports: [
     CommonModule,

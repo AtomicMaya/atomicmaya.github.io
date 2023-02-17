@@ -9,6 +9,7 @@
 /authors/AtomicMaya
 
 /tags
+/tags/Academia
 /tags/AppSec
 /tags/Cloud
 /tags/Community
@@ -29,6 +30,7 @@
 /tags/Professional
 /tags/Programming
 /tags/Talks
+/tags/Travel
 /tags/Volunteering
 /tags/Web
 /tags/Write-Up
@@ -79,3 +81,10 @@
 /post/2022/2022_05_15+winning-the-wavegame
 /post/2022/2022_07_29+heading-to-Amsterdam-and-going-to-MCH
 /post/2022/2022_08_30+heading-for-DEFCON
+/post/2022/2022_09_30+travelling-to-scotland
+/post/2022/2022_10_15+beercon4
+/post/2022/2022_11_17+going-to-korea
+/post/2022/2022_12_20+going-to-bsides-london
+/post/2023/2023_02_17+going-to-bsides-cymru
+/post/2023/2023_02_17+msc-fun
+/post/2023/2023_02_17+gender-paradigm-shift

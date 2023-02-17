@@ -1,5 +1,6 @@
 import { Tag } from '../interfaces/tag';
 
+export const TAG_ACADEMIA: Tag = { name: 'Academia' };
 export const TAG_APPSEC: Tag = { name: 'AppSec' };
 export const TAG_CLOUD: Tag = { name: 'Cloud' };
 export const TAG_COMMUNITY: Tag = { name: 'Community' };
@@ -20,6 +21,7 @@ export const TAG_PRIVACY: Tag = { name: 'Privacy' };
 export const TAG_PROFESSIONAL: Tag = { name: 'Professional' };
 export const TAG_PROGRAMMING: Tag = { name: 'Programming' };
 export const TAG_TALKS: Tag = { name: 'Talks' };
+export const TAG_TRAVEL: Tag = { name: 'Travel' };
 export const TAG_VOLUNTEERING: Tag = { name: 'Volunteering' };
 export const TAG_WEB: Tag = { name: 'Web' };
 export const TAG_WRITEUP: Tag = { name: 'Write-Up' };
