@@ -242,4 +242,39 @@
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2022/2022_09_30+travelling-to-scotland</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2022/2022_10_15+beercon4</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2022/2022_11_17+going-to-korea</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2022/2022_12_20+going-to-bsides-london</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_02_15+msc-fun</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_02_16+going-to-bsides-cymru</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_02_17+gender-paradigm-shift</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>

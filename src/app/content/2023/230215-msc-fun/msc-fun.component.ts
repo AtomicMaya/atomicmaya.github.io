@@ -14,7 +14,7 @@ export class Feb2023MScFunComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/post/2023/2023_02_17+msc-fun', this.post.title,
+    this.meta.setTags('/post/2023/2023_02_15+msc-fun', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['university', 'Masters', 'msc', 'thesis'],
                       this.post.description);

@@ -86,7 +86,7 @@ export const ROUTES = [
   '/post/2022/2022_10_15+beercon4',
   '/post/2022/2022_11_17+going-to-korea',
   '/post/2022/2022_12_20+going-to-bsides-london',
-  '/post/2023/2023_02_17+going-to-bsides-cymru',
-  '/post/2023/2023_02_17+msc-fun',
+  '/post/2023/2023_02_15+msc-fun',
+  '/post/2023/2023_02_16+going-to-bsides-cymru',
   '/post/2023/2023_02_17+gender-paradigm-shift'
 ];
