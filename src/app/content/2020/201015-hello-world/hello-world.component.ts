@@ -17,7 +17,7 @@ export class Oct2020HelloWorldComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2020/2020_10_15%2BHello-world', this.post.title,
                       this.post.imageUrl, 904, 200,
-                      ['blog', 'personal']);
+                      ['blog', 'personal'], this.post.description, this.post.readingTime);
   }
 
 }

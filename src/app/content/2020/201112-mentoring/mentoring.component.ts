@@ -18,7 +18,7 @@ export class Nov2020MentoringComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2020/2020_11_12+Mentoring', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['cybersec', 'cybersecurity', 'infosec', 'community', 'mentoring']);
+                      ['cybersec', 'cybersecurity', 'infosec', 'community', 'mentoring'], this.post.description, this.post.readingTime);
   }
 
 }

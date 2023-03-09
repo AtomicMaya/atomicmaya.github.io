@@ -17,6 +17,6 @@ export class Feb2023MScFunComponent implements OnInit {
     this.meta.setTags('/post/2023/2023_02_15+msc-fun', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['university', 'Masters', 'msc', 'thesis'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

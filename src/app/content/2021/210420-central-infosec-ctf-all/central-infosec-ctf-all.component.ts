@@ -17,6 +17,6 @@ export class Apr2021CentralInfosecCtfAllComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_04_20+Central-Infosec-CTF-All', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['central-infosec', 'ctf', 'challenge', 'overview']);
+                      ['central-infosec', 'ctf', 'challenge', 'overview'], this.post.description, this.post.readingTime);
   }
 }

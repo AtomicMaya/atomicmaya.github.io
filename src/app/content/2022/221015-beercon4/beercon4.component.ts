@@ -18,7 +18,7 @@ export class Oct2022Beercon4Component implements OnInit {
     this.meta.setTags('/post/2022/2022__30+travelling-to-scotland', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['beercon4', 'london'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 
 }

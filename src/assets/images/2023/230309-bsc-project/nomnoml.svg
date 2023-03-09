@@ -1,0 +1,277 @@
+<svg version="1.1" style="background: #ffffff88" baseProfile="full" width="792.0" height="995.0" viewbox="0 0 792 995" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+		<desc >#gravity: 2
+	#direction: down
+	#zoom: .8
+	#spacing: 20
+
+
+	[Person|
+		-id: Int { readOnly };
+		-gender: String { readOnly };
+	    -age: Int { readOnly };
+	    -education: Int { readOnly };
+	    -nationality: String { readOnly };
+	    -countryOfResidence: String { readOnly }
+	    |
+	    +Person(id: Int, gender: String, age: Int, education: Int, nationality: String, countryOfResidence: String)
+	]
+
+	[Language|
+		- name: String { readOnly }
+	    |
+	    + Language(name: String)
+	]
+
+	[&lt;abstract&gt; :KNOWS_LANGUAGE|
+	    [&lt;table&gt; field_name / references | language | Language.name || person | Person.id]
+	    |
+		(fk) language: String { readOnly };
+	    (fk) id: Int { readOnly };
+	    - dialect: String { readOnly };
+	    - proficiency: Int { readOnly };
+	    - familiarity: Int { readOnly }
+	]
+
+
+	[&lt;abstract&gt; :HAS_DISTANCE|
+		[&lt;table&gt; field_name / references | language1 | Language.name || language2 | Language.name || emitter | Person.id]
+	    |
+	    (fk) language1: String;
+	    (fk) language2: String;
+		(fk) emitter: Int;
+	    - distance: Int
+	]
+
+	[Person] - [&lt;abstract&gt; :KNOWS_LANGUAGE]
+	[&lt;abstract&gt; :KNOWS_LANGUAGE] -&gt; [Language]
+
+	[&lt;abstract&gt; :HAS_DISTANCE] -- [Person]
+	[Language] - [&lt;abstract&gt; :HAS_DISTANCE]
+	[&lt;abstract&gt; :HAS_DISTANCE] -&gt; [Language]
+	</desc>
+	<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+			<g transform="translate(0.5, 0.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+				<g stroke="transparent" fill="transparent">
+					<rect x="0.0" y="0.0" height="995.0" width="792.0" stroke="none"></rect>
+				</g>
+			<g transform="translate(8, 8)" fill="#33322E">
+					<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+						<path d="M288.0 168.0 L278.5 178 L278.5 188 L278.5 188 L278.5 198 L278.5 198 L278.5 208 L278.5 208.0 " fill="none"></path>
+					<path d="M278.5 479.0 L278.5 489 L278.5 499 L278.5 499 L278.5 509 L278.5 509 L278.5 515.6666666666666 L278.5 515.7 " fill="none"></path>
+					<path d="M275.8 512.3 L278.5 515.7 L281.2 512.3 L278.5 519.0 Z"></path>
+					<g stroke-dasharray="6 6">
+							<path d="M451.0 652.0 L457.5 642 L457.5 632 L457.5 632 L457.5 622 L457.5 622 L457.5 565.5 L457.5 565.5 L457.5 509 L457.5 509 L457.5 499 L457.5 499 L457.5 489 L457.5 489 L457.5 343.5 L457.5 343.5 L457.5 198 L457.5 198 L457.5 188 L457.5 188 L457.5 178 L457.5 178 L447.97872340425533 168 L448.0 168.0 " fill="none"></path>
+						</g>
+					<path d="M270.3 612.0 L268.5 622 L268.5 632 L268.5 632 L268.5 642 L268.5 642 L274.33061889250814 652 L274.3 652.0 " fill="none"></path>
+					<path d="M358.0 652.0 L358 642 L358 632 L358 632 L358 622 L358 622 L346.6462592238334 613.9309892597055 L346.6 613.9 " fill="none"></path>
+					<path d="M350.9 613.7 L346.6 613.9 L347.8 618.0 L343.9 612.0 Z"></path>
+					<g data-name="Person">
+							<g fill="#eee8d5" stroke="#33322E" data-name="Person">
+								<rect x="0.0" y="0.0" height="168.0" width="736.0" data-name="Person"></rect>
+							<path d="M0.0 31.0 L736.0 31.0" fill="none" data-name="Person"></path>
+							<path d="M0.0 137.0 L736.0 137.0" fill="none" data-name="Person"></path>
+							</g>
+						<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Person">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Person">
+									<text x="360.0" y="13.5" stroke="none" text-anchor="middle" data-name="Person">Person</text>
+
+								</g>
+							</g>
+						<g transform="translate(0, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Person">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Person">
+									<text x="0.0" y="13.5" stroke="none" data-name="Person">-id: Int { readOnly }</text>
+								<text x="0.0" y="28.5" stroke="none" data-name="Person">-gender: String { readOnly }</text>
+								<text x="0.0" y="43.5" stroke="none" data-name="Person">-age: Int { readOnly }</text>
+								<text x="0.0" y="58.5" stroke="none" data-name="Person">-education: Int { readOnly }</text>
+								<text x="0.0" y="73.5" stroke="none" data-name="Person">-nationality: String { readOnly }</text>
+								<text x="0.0" y="88.5" stroke="none" data-name="Person">-countryOfResidence: String { readOnly }</text>
+
+								</g>
+							</g>
+						<g transform="translate(0, 137)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Person">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Person">
+									<text x="0.0" y="13.5" stroke="none" data-name="Person">+Person(id: Int, gender: String, age: Int, education: Int, nationality: String, countryOfResidence: String)</text>
+
+								</g>
+							</g>
+						</g>
+					<g data-name="Language">
+							<g fill="#eee8d5" stroke="#33322E" data-name="Language">
+								<rect x="176.0" y="519.0" height="93.0" width="205.0" data-name="Language"></rect>
+							<path d="M176.0 550.0 L381.0 550.0" fill="none" data-name="Language"></path>
+							<path d="M176.0 581.0 L381.0 581.0" fill="none" data-name="Language"></path>
+							</g>
+						<g transform="translate(176, 519)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Language">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Language">
+									<text x="94.5" y="13.5" stroke="none" text-anchor="middle" data-name="Language">Language</text>
+
+								</g>
+							</g>
+						<g transform="translate(176, 550)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Language">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Language">
+									<text x="0.0" y="13.5" stroke="none" data-name="Language">- name: String { readOnly }</text>
+
+								</g>
+							</g>
+						<g transform="translate(176, 581)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Language">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Language">
+									<text x="0.0" y="13.5" stroke="none" data-name="Language">+ Language(name: String)</text>
+
+								</g>
+							</g>
+						</g>
+					<g data-name=":KNOWS_LANGUAGE">
+							<g fill="#eee8d5" stroke="#33322E" data-name=":KNOWS_LANGUAGE">
+								<rect x="120.0" y="208.0" height="271.0" width="318.0" data-name=":KNOWS_LANGUAGE"></rect>
+							<path d="M120.0 239.0 L438.0 239.0" fill="none" data-name=":KNOWS_LANGUAGE"></path>
+							<path d="M120.0 388.0 L438.0 388.0" fill="none" data-name=":KNOWS_LANGUAGE"></path>
+							</g>
+						<g transform="translate(120, 208)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="italic" data-name=":KNOWS_LANGUAGE">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name=":KNOWS_LANGUAGE">
+									<text x="151.0" y="13.5" stroke="none" text-anchor="middle" data-name=":KNOWS_LANGUAGE">:KNOWS_LANGUAGE</text>
+
+								</g>
+							</g>
+						<g transform="translate(120, 239)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name=":KNOWS_LANGUAGE">
+								<g transform="translate(8, 8)" fill="#33322E" data-name=":KNOWS_LANGUAGE">
+									<g transform="translate(20, 20)" data-name=":KNOWS_LANGUAGE">
+										<g data-name="field_name / references">
+											<g fill="#fdf6e3" stroke="#33322E" data-name="field_name / references">
+												<rect x="0.0" y="0.0" height="93.0" width="262.0" data-name="field_name / references"></rect>
+											<path d="M0.0 31.0 L0.0 31.0" fill="none" data-name="field_name / references"></path>
+											<path d="M0.0 31.0 L262.0 31.0" fill="none" data-name="field_name / references"></path>
+											<path d="M0.0 62.0 L262.0 62.0" fill="none" data-name="field_name / references"></path>
+											<path d="M131.0 31.0 L131.0 93.0" fill="none" data-name="field_name / references"></path>
+											<path d="M262.0 31.0 L262.0 93.0" fill="none" data-name="field_name / references"></path>
+											</g>
+										<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="field_name / references">
+													<text x="123.0" y="13.5" stroke="none" text-anchor="middle" data-name="field_name / references">field_name / references</text>
+
+												</g>
+											</g>
+										<g transform="translate(0, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">language</text>
+
+												</g>
+											</g>
+										<g transform="translate(131, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">Language.name</text>
+
+												</g>
+											</g>
+										<g transform="translate(0, 62)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">person</text>
+
+												</g>
+											</g>
+										<g transform="translate(131, 62)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">Person.id</text>
+
+												</g>
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						<g transform="translate(120, 388)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name=":KNOWS_LANGUAGE">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name=":KNOWS_LANGUAGE">
+									<text x="0.0" y="13.5" stroke="none" data-name=":KNOWS_LANGUAGE">(fk) language: String { readOnly }</text>
+								<text x="0.0" y="28.5" stroke="none" data-name=":KNOWS_LANGUAGE">(fk) id: Int { readOnly }</text>
+								<text x="0.0" y="43.5" stroke="none" data-name=":KNOWS_LANGUAGE">- dialect: String { readOnly }</text>
+								<text x="0.0" y="58.5" stroke="none" data-name=":KNOWS_LANGUAGE">- proficiency: Int { readOnly }</text>
+								<text x="0.0" y="73.5" stroke="none" data-name=":KNOWS_LANGUAGE">- familiarity: Int { readOnly }</text>
+
+								</g>
+							</g>
+						</g>
+					<g data-name=":HAS_DISTANCE">
+							<g fill="#eee8d5" stroke="#33322E" data-name=":HAS_DISTANCE">
+								<rect x="199.0" y="652.0" height="287.0" width="318.0" data-name=":HAS_DISTANCE"></rect>
+							<path d="M199.0 683.0 L517.0 683.0" fill="none" data-name=":HAS_DISTANCE"></path>
+							<path d="M199.0 863.0 L517.0 863.0" fill="none" data-name=":HAS_DISTANCE"></path>
+							</g>
+						<g transform="translate(199, 652)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="italic" data-name=":HAS_DISTANCE">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name=":HAS_DISTANCE">
+									<text x="151.0" y="13.5" stroke="none" text-anchor="middle" data-name=":HAS_DISTANCE">:HAS_DISTANCE</text>
+
+								</g>
+							</g>
+						<g transform="translate(199, 683)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name=":HAS_DISTANCE">
+								<g transform="translate(8, 8)" fill="#33322E" data-name=":HAS_DISTANCE">
+									<g transform="translate(20, 20)" data-name=":HAS_DISTANCE">
+										<g data-name="field_name / references">
+											<g fill="#fdf6e3" stroke="#33322E" data-name="field_name / references">
+												<rect x="0.0" y="0.0" height="124.0" width="262.0" data-name="field_name / references"></rect>
+											<path d="M0.0 31.0 L0.0 31.0" fill="none" data-name="field_name / references"></path>
+											<path d="M0.0 31.0 L262.0 31.0" fill="none" data-name="field_name / references"></path>
+											<path d="M0.0 62.0 L262.0 62.0" fill="none" data-name="field_name / references"></path>
+											<path d="M0.0 93.0 L262.0 93.0" fill="none" data-name="field_name / references"></path>
+											<path d="M131.0 31.0 L131.0 124.0" fill="none" data-name="field_name / references"></path>
+											<path d="M262.0 31.0 L262.0 124.0" fill="none" data-name="field_name / references"></path>
+											</g>
+										<g transform="translate(0, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="field_name / references">
+													<text x="123.0" y="13.5" stroke="none" text-anchor="middle" data-name="field_name / references">field_name / references</text>
+
+												</g>
+											</g>
+										<g transform="translate(0, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">language1</text>
+
+												</g>
+											</g>
+										<g transform="translate(131, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">Language.name</text>
+
+												</g>
+											</g>
+										<g transform="translate(0, 62)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">language2</text>
+
+												</g>
+											</g>
+										<g transform="translate(131, 62)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">Language.name</text>
+
+												</g>
+											</g>
+										<g transform="translate(0, 93)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">emitter</text>
+
+												</g>
+											</g>
+										<g transform="translate(131, 93)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="field_name / references">
+												<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="field_name / references">
+													<text x="0.0" y="13.5" stroke="none" data-name="field_name / references">Person.id</text>
+
+												</g>
+											</g>
+										</g>
+									</g>
+								</g>
+							</g>
+						<g transform="translate(199, 863)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name=":HAS_DISTANCE">
+								<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name=":HAS_DISTANCE">
+									<text x="0.0" y="13.5" stroke="none" data-name=":HAS_DISTANCE">(fk) language1: String</text>
+								<text x="0.0" y="28.5" stroke="none" data-name=":HAS_DISTANCE">(fk) language2: String</text>
+								<text x="0.0" y="43.5" stroke="none" data-name=":HAS_DISTANCE">(fk) emitter: Int</text>
+								<text x="0.0" y="58.5" stroke="none" data-name=":HAS_DISTANCE">- distance: Int</text>
+
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</svg>

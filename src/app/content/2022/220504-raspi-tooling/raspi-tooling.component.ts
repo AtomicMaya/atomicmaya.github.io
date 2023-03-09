@@ -18,6 +18,6 @@ export class May2022RaspiToolingComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_05_04+Building-a-raspi-private-web-server', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['raspberry PI', 'web server', 'Docker', 'Ubuntu'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

@@ -48,7 +48,8 @@ function routeToPost(r: Route): Post {
     title: r.data.title,
     imageUrl: r.data.imageUrl ?? '',
     tags: r.data.tags,
-    authors: r.data.authors
+    authors: r.data.authors,
+    readingTime: r.data.readingTime
   };
 }
 

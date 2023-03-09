@@ -17,6 +17,6 @@ export class Apr2022DigitalOverdoseConference2Component implements OnInit {
     this.meta.setTags('/post/2022/2022_04_26+running-the-digital-overdose-conference-again', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['Digital', 'Overdose', 'D.O. CON 2', 'conference', 'rookies'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

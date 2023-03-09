@@ -5,10 +5,9 @@ import { Jan2021MentalHealthComponent } from 'src/app/content/2021/210103-mental
 import { Jan2021GatewayOsintTalkComponent } from 'src/app/content/2021/210105-gateway-osint-talk/gateway-osint-talk.component';
 import { Jan2021WhatsappPrivacyPolicyAnalysisComponent } from 'src/app/content/2021/210108-whatsapp-privacy-policy-analysis/whatsapp-privacy-policy-analysis.component';
 import { Jan2021WhatsappPrivacyPolicyHackSouthDiscussionComponent } from 'src/app/content/2021/210109-whatsapp-privacy-policy-hack-south-discussion/whatsapp-privacy-policy-hack-south-discussion.component';
-import { Jan2021WhatsappEncaInterviewComponent } from 'src/app/content/2021/210119-whatsapp-enca-interview/whatsapp-enca-interview.component';
 import { Jan2021LeedsEhsTalkComponent } from 'src/app/content/2021/210120-leeds-ehs-talk/leeds-ehs-talk.component';
 import { Jan2021DesignChoicesComponent } from 'src/app/content/2021/210123-website-design-choices/website-design-choices.component';
-import { TAG_APPSEC, TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_INFOSEC, TAG_IOT, TAG_MEDIA, TAG_OSINT, TAG_PERSONAL, TAG_PRIVACY, TAG_PROGRAMMING, TAG_TALKS, TAG_VOLUNTEERING, TAG_WEB, TAG_WRITEUP } from 'src/app/utils/tags';
+import { TAG_APPSEC, TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_INFOSEC, TAG_IOT, TAG_OSINT, TAG_PERSONAL, TAG_PRIVACY, TAG_PROGRAMMING, TAG_TALKS, TAG_VOLUNTEERING, TAG_WEB, TAG_WRITEUP } from 'src/app/utils/tags';
 import { Jan2021DefconWorcesterTalkComponent } from '../content/2021/210131-defcon-worcester-talk/defcon-worcester-talk.component';
 import { Feb2021ConDeploymentComponent } from '../content/2021/210201-con-deployment/con-deployment.component';
 import { Feb2021ConSiteComponent } from '../content/2021/210206-con-site/con-site.component';
@@ -40,7 +39,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Saying goodbye to 2020, with friends!',
       tags: [ TAG_COMMUNITY ],
-      date: [2021, 1, 2]
+      date: [2021, 1, 2],
+      readingTime: 1
     }
   },
   {
@@ -51,7 +51,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Discussing mental health.',
       tags: [ TAG_PERSONAL ],
-      date: [2021, 1, 3]
+      date: [2021, 1, 3],
+      readingTime: 1
     }
   },
   {
@@ -62,7 +63,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a small talk about OSINT on Gateway.',
       tags: [ TAG_TALKS, TAG_OSINT ],
-      date: [2021, 1, 5]
+      date: [2021, 1, 5],
+      readingTime: 1
     }
   },
   {
@@ -73,7 +75,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Dissecting the new WhatsApp privacy policy changes.',
       tags: [ TAG_INFOSEC, TAG_PRIVACY ],
-      date: [2021, 1, 8]
+      date: [2021, 1, 8],
+      readingTime: 16
     }
   },
   {
@@ -84,7 +87,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Dissecting the new WhatsApp privacy policy changes, live on HackSouth.',
       tags: [ TAG_INFOSEC, TAG_PRIVACY ],
-      date: [2021, 1, 9]
+      date: [2021, 1, 9],
+      readingTime: 1
     }
   },
   {
@@ -95,7 +99,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'The Leeds Ethical Hacking Society hosted my take on ENISA\'s recommendations for IoT cybersecurity.',
       tags: [ TAG_TALKS, TAG_INFOSEC, TAG_IOT ],
-      date: [2021, 1, 20]
+      date: [2021, 1, 20],
+      readingTime: 1
     }
   },
   {
@@ -107,7 +112,8 @@ export const subroutes2021: Routes = [
       description: 'Going over some of my website design choices.',
       imageUrl: '/assets/images/2021/website-design-choices/design.png',
       tags: [ TAG_PERSONAL, TAG_DEVELOPMENT, TAG_WEB ],
-      date: [2021, 1, 23]
+      date: [2021, 1, 23],
+      readingTime: 2
     }
   },
   {
@@ -118,7 +124,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'DEFCON Worcester was kind enough to listen to my ramblings on ENISA\'s recommendations for IoT cybersecurity.',
       tags: [ TAG_TALKS, TAG_INFOSEC, TAG_IOT ],
-      date: [2021, 1, 31]
+      date: [2021, 1, 31],
+      readingTime: 1
     }
   },
   {
@@ -129,7 +136,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'I\'m co-organizing a conference for rookie speakers',
       tags: [ TAG_COMMUNITY, TAG_INFOSEC, TAG_CYBERSEC ],
-      date: [2021, 2, 1]
+      date: [2021, 2, 1],
+      readingTime: 1
     }
   },
   {
@@ -140,7 +148,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Going through the various steps of how I helped build DO\'s website.',
       tags: [ TAG_COMMUNITY, TAG_DEVELOPMENT, TAG_WEB ],
-      date: [2021, 2, 6]
+      date: [2021, 2, 6],
+      readingTime: 4
     }
   },
   {
@@ -151,7 +160,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'A write-up on my participation in the TraceLabs OSINT CTF.',
       tags: [ TAG_OSINT, TAG_CTF ],
-      date: [2021, 2, 26]
+      date: [2021, 2, 26],
+      readingTime: 12
     }
   },
   {
@@ -162,7 +172,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Going over various (non-)solutions people use to store their passwords and the appeal of password management solutions.',
       tags: [ TAG_INFOSEC ],
-      date: [2021, 3, 7]
+      date: [2021, 3, 7],
+      readingTime: 5
     }
   },
   {
@@ -174,7 +185,8 @@ export const subroutes2021: Routes = [
       description: 'The Central Infosec CTF! I didn\'t do much of it, but here\'s my takeaways.',
       tags: [ TAG_INFOSEC, TAG_CTF ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
-      date: [2021, 4, 20]
+      date: [2021, 4, 20],
+      readingTime: 3
     }
   },
   {
@@ -186,7 +198,8 @@ export const subroutes2021: Routes = [
       description: 'The Central Infosec CTF! A write-up on solving the Python challenges.',
       tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
-      date: [2021, 4, 20]
+      date: [2021, 4, 20],
+      readingTime: 15
     }
   },
   {
@@ -198,7 +211,8 @@ export const subroutes2021: Routes = [
       description: 'The Central Infosec CTF! A write-up on solving the "Hack The Static: Hard" challenge.',
       tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
-      date: [2021, 4, 20]
+      date: [2021, 4, 20],
+      readingTime: 13
     }
   },
   {
@@ -210,7 +224,8 @@ export const subroutes2021: Routes = [
       description: 'The Central Infosec CTF! A write-up on solving the "Hack The Maze: Hard" challenge.',
       tags: [ TAG_INFOSEC, TAG_CTF, TAG_WRITEUP ],
       imageUrl: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png',
-      date: [2021, 4, 20]
+      date: [2021, 4, 20],
+      readingTime: 15
     },
   },
   {
@@ -221,7 +236,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Speaking a bit more about my experiences surrounding and during the Digital Overdose Conference.',
       tags: [ TAG_INFOSEC, TAG_COMMUNITY, TAG_CONFERENCE, TAG_VOLUNTEERING ],
-      date: [2021, 4, 29]
+      date: [2021, 4, 29],
+      readingTime: 10
     },
   },
   {
@@ -232,7 +248,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Going over the timeline for the last few months, seeing what has been accomplished.',
       tags: [ TAG_PERSONAL ],
-      date: [2021, 7, 20]
+      date: [2021, 7, 20],
+      readingTime: 9
     },
   },
   {
@@ -243,7 +260,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'How I went from the premise of an open CDN to exploiting it as a proof of concept',
       tags: [ TAG_INFOSEC, TAG_DEVELOPMENT, TAG_PRIVACY ],
-      date: [2021, 8, 31]
+      date: [2021, 8, 31],
+      readingTime: 6
     }
   },
   {
@@ -255,7 +273,8 @@ export const subroutes2021: Routes = [
       description: 'Official challenge developer writeup for "Outage - The usual suspect", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP ],
       date: [2021, 10, 11],
-      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
+      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png',
+      readingTime: 4
     }
   },
   {
@@ -267,7 +286,8 @@ export const subroutes2021: Routes = [
       description: 'Official challenge developer writeup for "A door by any other name", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP, TAG_CRYPTOGRAPHY ],
       date: [2021, 10, 11],
-      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
+      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png',
+      readingTime: 4
     }
   },
   {
@@ -279,7 +299,8 @@ export const subroutes2021: Routes = [
       description: 'Official challenge developer writeup for "C1 - I think this should be C4", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP, TAG_DEVELOPMENT, TAG_WEB ],
       date: [2021, 10, 11],
-      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png'
+      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png',
+      readingTime: 15
     }
   },
   {
@@ -290,7 +311,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'I spoke at BeerCon 3, mainly about how JavaScript and Application Security don\'t really mesh well together.',
       tags: [ TAG_CONFERENCE, TAG_INFOSEC, TAG_APPSEC, TAG_PROGRAMMING, TAG_TALKS, TAG_VOLUNTEERING ],
-      date: [2021, 10, 30]
+      date: [2021, 10, 30],
+      readingTime: 2
     }
   },
   {
@@ -301,7 +323,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Marking the first year of this blog\'s existence.',
       tags: [ TAG_PERSONAL ],
-      date: [2021, 11, 15]
+      date: [2021, 11, 15],
+      readingTime: 1
     }
   },
   {
@@ -312,7 +335,8 @@ export const subroutes2021: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'I took a stab at taking one year of experience in managing a community of hackers, and trying to discuss the benefits of Intelligence when it comes to keeping its members safe.',
       tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_OSINT ],
-      date: [2021, 11, 25]
+      date: [2021, 11, 25],
+      readingTime: 1
     }
   },
 ];

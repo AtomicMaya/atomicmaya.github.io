@@ -18,6 +18,6 @@ export class Jan2021WhatsappPrivacyPolicyAnalysisComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_01_08%2BWhatsApp-Privacy-Policy-Changes-Analysis', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['privacy', 'whatsapp', 'facebook', 'signal', 'telegram', 'privacypolicy', '20210208']);
+                      ['privacy', 'whatsapp', 'facebook', 'signal', 'telegram', 'privacypolicy', '20210208'], this.post.description, this.post.readingTime);
   }
 }

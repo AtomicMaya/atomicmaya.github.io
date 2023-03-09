@@ -18,7 +18,7 @@ export class Jan2021WhatsappPrivacyPolicyHackSouthDiscussionComponent implements
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_01_09%2BWhatsApp-Privacy-Policy-Changes-Discussion-at-Hack-South', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['privacy', 'whatsapp', 'facebook', 'signal', 'telegram', 'privacypolicy', '20210208', 'talk', 'community', 'hacksouth', 'southafrica']);
+                      ['privacy', 'whatsapp', 'facebook', 'signal', 'telegram', 'privacypolicy', '20210208', 'talk', 'community', 'hacksouth', 'southafrica'], this.post.description, this.post.readingTime);
   }
 
 }

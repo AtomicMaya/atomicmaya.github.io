@@ -29,4 +29,7 @@ export interface Post {
 
   /** A list of {@link Author | authors} that collaborated on the Post. */
   authors?: Author[];
+
+  /** The average time to read the post. */
+  readingTime: number;
 }

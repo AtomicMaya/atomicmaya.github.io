@@ -17,6 +17,6 @@ export class Nov2022KoreaComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_11_17+going-to-korea', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['korea', 'travel'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

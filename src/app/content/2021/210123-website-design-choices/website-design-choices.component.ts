@@ -18,6 +18,6 @@ export class Jan2021DesignChoicesComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_01_23+Website-Design-Choices', this.post.title,
                       this.post.imageUrl, 960, 434,
-                      ['development', 'personal', 'design', 'ui']);
+                      ['development', 'personal', 'design', 'ui'], this.post.description, this.post.readingTime);
   }
 }

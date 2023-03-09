@@ -17,6 +17,6 @@ export class Feb2021ConDeploymentComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_02_01+Organising-a-conference', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['conference', 'digital', 'overdose']);
+                      ['conference', 'digital', 'overdose'], this.post.description, this.post.readingTime);
   }
 }

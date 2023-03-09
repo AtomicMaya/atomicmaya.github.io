@@ -17,6 +17,6 @@ export class Feb2022StartingANewJobComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_02_18+Starting-a-new-job', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['Work'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

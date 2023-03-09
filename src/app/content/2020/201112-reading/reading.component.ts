@@ -17,6 +17,6 @@ export class Nov2020ReadingComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2020/2020_11_12+Reading-Materials', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['books', 'studies', 'reading']);
+                      ['books', 'studies', 'reading'], this.post.description, this.post.readingTime);
   }
 }

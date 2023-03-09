@@ -17,7 +17,7 @@ export class Nov2021conINTComponent implements OnInit {
     this.meta.setTags('/post/2021/2021_11_25+speaking-at-conint', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['conint', 'osint', 'speaking'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 
 }

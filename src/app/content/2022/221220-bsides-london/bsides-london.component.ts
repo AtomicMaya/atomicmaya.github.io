@@ -17,6 +17,6 @@ export class Dec2022BSidesLondonComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_12_20+going-to-bsides-london', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['bsides', 'london', 'conference'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

@@ -18,6 +18,6 @@ export class Dec2020HeapOverrideCTFComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2020/2020_12_27%2BHeap-Override-CTF-Challenge-JS-Reversal-Adventures', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['ctf', 'javascript', 'challenge', 'reversal']);
+                      ['ctf', 'javascript', 'challenge', 'reversal'], this.post.description, this.post.readingTime);
   }
 }

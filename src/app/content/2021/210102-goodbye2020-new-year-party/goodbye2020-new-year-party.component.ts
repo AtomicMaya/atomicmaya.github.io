@@ -18,7 +18,7 @@ export class Jan2021Goodbye2020NewYearPartyComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_01_02%2BGoodbye-2020-New-Year-Party', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['personal', 'online', 'international', 'party']);
+                      ['personal', 'online', 'international', 'party'], this.post.description, this.post.readingTime);
   }
 
 }

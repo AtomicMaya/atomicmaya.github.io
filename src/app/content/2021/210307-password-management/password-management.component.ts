@@ -17,6 +17,6 @@ export class Feb2021PasswordManagementComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_03_07+Much-Ado-About-Passwords', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['article', 'password', 'management']);
+                      ['article', 'password', 'management'], this.post.description, this.post.readingTime);
   }
 }

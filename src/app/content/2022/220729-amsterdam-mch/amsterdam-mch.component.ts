@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-amsterdam-mch',
-  templateUrl: './amsterdam-mch.component.html',
-  styleUrls: ['./amsterdam-mch.component.scss']
+  templateUrl: './amsterdam-mch.component.html'
 })
 export class Jul2022AmsterdamMchComponent implements OnInit {
   post: Post;
@@ -18,6 +17,6 @@ export class Jul2022AmsterdamMchComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_07_29+Heading-to-Amsterdam-and-going-to-MCH', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['conference', 'mch', 'mch2022', 'volunteering', 'netherlands', 'may contain hackers'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

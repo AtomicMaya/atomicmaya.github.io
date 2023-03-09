@@ -16,6 +16,6 @@ export class July2021TheHalfwayMarkComponent implements OnInit {
     this.meta.setTags('/post/2021/2021_07_20+The-2021-Halfway-Mark', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['2021', 'recap', 'halfway', 'achievements'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

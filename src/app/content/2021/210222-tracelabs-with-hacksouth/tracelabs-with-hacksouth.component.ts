@@ -17,6 +17,6 @@ export class Feb2021TracelabsWithHacksouthComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_02_26+TraceLabs-CTF-With-Hacksouth', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['tracelabs', 'hacksouth', 'ctf']);
+                      ['tracelabs', 'hacksouth', 'ctf'], this.post.description, this.post.readingTime);
   }
 }

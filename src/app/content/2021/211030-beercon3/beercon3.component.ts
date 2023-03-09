@@ -17,6 +17,6 @@ export class Oct2021Beercon3Component implements OnInit {
     this.meta.setTags('/post/2021/2021_10_30+beercon3', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['beercon', 'thebeerfarmers', 'appsec'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

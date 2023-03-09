@@ -20,6 +20,6 @@ export class Aug2021EnumeratingTheLightshotCdnComponent implements OnInit {
     this.meta.setTags('/post/2021/2021_08_31+Enumerating-the-lightshot-CDN', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['enumerating', 'lightshot', 'prnt.sc', 'prntscr.com', 'CDN'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

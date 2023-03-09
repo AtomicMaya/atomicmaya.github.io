@@ -18,6 +18,6 @@ export class Jan2022KnightCTFAllComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_01_29+knight-ctf-2022-all-writeups', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['KnightCTF', 'ctf', 'challenge', 'overview'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

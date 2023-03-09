@@ -17,6 +17,6 @@ export class Nov2020Beercon2Component implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2020/2020_11_02%2BI-gave-a-talk-at-BeerCon2', this.post.title,
                       this.post.imageUrl, 1920, 1080,
-                      ['beercon2', 'conference', 'rookie', 'iot', 'international', 'online', 'talk']);
+                      ['beercon2', 'conference', 'rookie', 'iot', 'international', 'online', 'talk'], this.post.description, this.post.readingTime);
   }
 }

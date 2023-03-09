@@ -20,6 +20,6 @@ export class Oct2021DigitalOverdoseWriteupCakeComponent implements OnInit {
     this.meta.setTags('/post/2021/2021_10_11+digital-overdose-official-writeup-2-a-lying-cake', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['ctf', 'digital', 'overdose', 'ctftime', 'writeup'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

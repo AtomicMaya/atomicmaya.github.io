@@ -17,6 +17,6 @@ export class Apr2021CentralInfosecCtfHackTheMazeHardComponent implements OnInit 
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['central-infosec', 'ctf', 'challenge', 'write-up', 'game', 'exploitation']);
+                      ['central-infosec', 'ctf', 'challenge', 'write-up', 'game', 'exploitation'], this.post.description, this.post.readingTime);
   }
 }

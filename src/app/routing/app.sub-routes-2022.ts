@@ -29,7 +29,8 @@ export const subroutes2022: Routes = [
       authors: [authorList['AtomicMaya']],
       description: 'I managed to catch COVID, here\'s my story about it.',
       tags: [TAG_PERSONAL],
-      date: [2022, 1, 15]
+      date: [2022, 1, 15],
+      readingTime: 4
     }
   },
   {
@@ -42,6 +43,7 @@ export const subroutes2022: Routes = [
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
       date: [2022, 1, 29],
+      readingTime: 3
 
     }
   },
@@ -54,7 +56,8 @@ export const subroutes2022: Routes = [
       description: 'KnightCTF! A write-up on solving challenges from the "Cryptography" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_CRYPTOGRAPHY, TAG_WRITEUP],
-      date: [2022, 1, 30]
+      date: [2022, 1, 30],
+      readingTime: 10
     }
   },
   {
@@ -66,7 +69,8 @@ export const subroutes2022: Routes = [
       description: 'KnightCTF! A write-up on solving challenges from the "Misc" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
-      date: [2022, 1, 30]
+      date: [2022, 1, 30],
+      readingTime: 5
     }
   },
   {
@@ -78,7 +82,8 @@ export const subroutes2022: Routes = [
       description: 'KnightCTF! A write-up on solving challenges from the "Programming" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_PROGRAMMING, TAG_WRITEUP],
-      date: [2022, 1, 30]
+      date: [2022, 1, 30],
+      readingTime: 5
     }
   },
   {
@@ -90,7 +95,8 @@ export const subroutes2022: Routes = [
       description: 'KnightCTF! A write-up on solving challenges from the "Reverse Engineering" category.',
       imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
-      date: [2022, 1, 30]
+      date: [2022, 1, 30],
+      readingTime: 5
     }
   },
   {
@@ -101,7 +107,8 @@ export const subroutes2022: Routes = [
       authors: [authorList['AtomicMaya']],
       description: 'Going into a bit more detail about what I\'m currently working on!',
       tags: [TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_INFOSEC],
-      date: [2022, 2, 18]
+      date: [2022, 2, 18],
+      readingTime: 2
     }
   },
   {
@@ -113,7 +120,8 @@ export const subroutes2022: Routes = [
       description: 'Going behind the scenes of the second iteration of the Digital Overdose Conference.',
       imageUrl: '/assets/images/2022/220426-digital-overdose-conference2/conference_cover_2022.png',
       tags: [TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_CYBERSEC, TAG_VOLUNTEERING],
-      date: [2022, 4, 26]
+      date: [2022, 4, 26],
+      readingTime: 10
     }
   },
   {
@@ -124,7 +132,8 @@ export const subroutes2022: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'Going behind the scenes on developping a private web service deployed on a Raspberry Pi.',
       tags: [ TAG_DEVELOPMENT, TAG_CYBERSEC, TAG_DEVOPS ],
-      date: [2022, 5, 4]
+      date: [2022, 5, 4],
+      readingTime: 5
     }
   },
   {
@@ -135,7 +144,8 @@ export const subroutes2022: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'I went to Paris for the WaveGame competition, and we ended up winning!',
       tags: [ TAG_INFOSEC, TAG_CLOUD, TAG_DEVOPS, TAG_TRAVEL ],
-      date: [2022, 5, 15]
+      date: [2022, 5, 15],
+      readingTime: 8
     }
   },
   {
@@ -147,7 +157,8 @@ export const subroutes2022: Routes = [
       imageUrl: '/assets/images/2022/220729-amsterdam-mch/front-lights.jpg',
       description: 'I attended MayContainHackers 2022, and got into some shenanigans!',
       tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TRAVEL ],
-      date: [2022, 7, 29]
+      date: [2022, 7, 29],
+      readingTime: 5
     }
   },
   {
@@ -159,7 +170,8 @@ export const subroutes2022: Routes = [
       imageUrl: '/assets/images/2022/220830-going-to-defcon/defcon-logo.jpg',
       description: 'DEFCON30! All the shenanigans, all the hackers, all the bad luck?',
       tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TALKS, TAG_TRAVEL ],
-      date: [2022, 8, 30]
+      date: [2022, 8, 30],
+      readingTime: 6
     }
   },
   {
@@ -170,7 +182,8 @@ export const subroutes2022: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'I attended a wedding in Scotland, and met up with some of my friends!',
       tags: [ TAG_PERSONAL, TAG_TRAVEL ],
-      date: [2022, 9, 30]
+      date: [2022, 9, 30],
+      readingTime: 5
     }
   },
   {
@@ -181,7 +194,8 @@ export const subroutes2022: Routes = [
       authors: [ authorList['AtomicMaya'] ],
       description: 'BeerCon4, a cybersecurity event! (but at a trade show???)',
       tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_TALKS, TAG_TRAVEL ],
-      date: [2022, 10, 15]
+      date: [2022, 10, 15],
+      readingTime: 5
     }
   },
   {
@@ -193,7 +207,8 @@ export const subroutes2022: Routes = [
       imageUrl: '/assets/images/2022/221117-korea/17.jpeg',
       description: 'A big university trip halfway around the world.',
       tags: [ TAG_TRAVEL, TAG_ACADEMIA ],
-      date: [2022, 11, 17]
+      date: [2022, 11, 17],
+      readingTime: 10
     }
   },
   {
@@ -205,7 +220,8 @@ export const subroutes2022: Routes = [
       imageUrl: '/assets/images/2022/221220-bsides-london/bsides-logo.jpg',
       description: 'BSides London, one of the UK\'s biggest BSides events, and the friends that were made along the way.',
       tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_TRAVEL ],
-      date: [2022, 12, 20]
+      date: [2022, 12, 20],
+      readingTime: 4
     }
   },
 ];

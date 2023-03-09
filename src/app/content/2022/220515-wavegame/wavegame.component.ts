@@ -18,6 +18,6 @@ export class May2022WavegameComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_05_15+winning-the-wavegame', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['wavegame', 'competition', 'aws', 'cloud', 'winning'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

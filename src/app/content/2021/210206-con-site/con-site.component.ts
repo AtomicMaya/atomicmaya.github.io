@@ -17,6 +17,6 @@ export class Feb2021ConSiteComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_02_06+Building-DOs-Website', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['digital', 'overdose', 'conference', 'website', 'development']);
+                      ['digital', 'overdose', 'conference', 'website', 'development'], this.post.description, this.post.readingTime);
   }
 }

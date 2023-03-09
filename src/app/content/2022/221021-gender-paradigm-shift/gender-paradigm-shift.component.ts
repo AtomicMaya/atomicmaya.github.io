@@ -17,6 +17,6 @@ export class Oct2022GenderParadigmShiftComponent implements OnInit {
     this.meta.setTags('/post/2023/2023_02_17+gender-paradigm-shift', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['gender', 'non-binary', 'trans', 'coming out'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 }

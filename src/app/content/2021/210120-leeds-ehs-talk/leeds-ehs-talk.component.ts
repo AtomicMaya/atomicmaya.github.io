@@ -17,6 +17,6 @@ export class Jan2021LeedsEhsTalkComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_01_20+Talking-at-Leeds-EHS', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['talk', 'leeds', 'ehs', 'iot', 'enisa']);
+                      ['talk', 'leeds', 'ehs', 'iot', 'enisa'], this.post.description, this.post.readingTime);
   }
 }

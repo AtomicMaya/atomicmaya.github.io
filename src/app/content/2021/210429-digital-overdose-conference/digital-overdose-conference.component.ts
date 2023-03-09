@@ -17,6 +17,6 @@ export class Apr2021DigitalOverdoseConferenceComponent implements OnInit {
     this.route.data.subscribe(data => this.post = (data as Post));
     this.meta.setTags('/post/2021/2021_04_29+Digital-Overdose-Conference', this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ['digital', 'overdose', 'conference', 'summary']);
+                      ['digital', 'overdose', 'conference', 'summary'], this.post.description, this.post.readingTime);
   }
 }

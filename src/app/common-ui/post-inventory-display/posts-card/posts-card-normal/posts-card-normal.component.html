@@ -20,7 +20,7 @@
     </div>
     <br/>
     <div class="d-flex flex-row justify-content-end">
-      <a class="card-read-more" href="post/{{ post.date[0] }}/{{ post.path }}">&gt;&gt;&gt; Read More</a>
+      <a class="card-read-more" href="post/{{ post.date[0] }}/{{ post.path }}">&gt;&gt;&gt; Read More  <span *ngIf="post.readingTime !== undefined">({{post.readingTime}} min.)</span></a>
     </div>
   </div>
 </div>

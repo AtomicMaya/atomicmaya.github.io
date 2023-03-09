@@ -18,7 +18,7 @@ export class Jan2022KnightCTFCryptographyComponent implements OnInit {
     this.meta.setTags('/post/2022/2022_01_30+knight-ctf-2022-cryptography-writeups', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['KnightCTF', 'ctf', 'challenge', 'cryptography'],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 
 }

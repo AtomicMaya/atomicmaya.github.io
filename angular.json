@@ -50,7 +50,10 @@
               "node_modules/prismjs/components/prism-markup-templating.js",
               "node_modules/prismjs/components/prism-c.min.js",
               "node_modules/prismjs/components/prism-cpp.min.js",
-              "node_modules/prismjs/components/prism-bash.min.js"
+              "node_modules/prismjs/components/prism-bash.min.js",
+              "node_modules/prismjs/components/prism-docker.min.js",
+              "node_modules/prismjs/components/prism-shell-session.min.js",
+              "node_modules/prismjs/components/prism-yaml.min.js"
             ],
             "vendorChunk": true,
             "extractLicenses": false,

@@ -18,7 +18,7 @@ export class Nov2021HappyBirthday implements OnInit {
     this.meta.setTags('/post/2021/2021_11_15+happy-birthday-to-this-blog', this.post.title,
                       this.post.imageUrl, 1280, 720,
                       [],
-                      this.post.description);
+                      this.post.description, this.post.readingTime);
   }
 
 }
