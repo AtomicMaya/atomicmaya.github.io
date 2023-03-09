@@ -273,4 +273,9 @@
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_03_09+revamping-my-bsc-project</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>

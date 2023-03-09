@@ -712,6 +712,14 @@ networks:
   </app-collapsible>
 
   <br/><br>
+
+  <p>At the end, our architecture looks like this:</p>
+
+
+  <div class="media-container">
+    <img  src="/assets/images/2023/230309-bsc-project/lpd-container.png">
+  </div>
+
   <p>So we now have an entire bunch of services that all work magically. My only remaining issue is the ArangoDB instance is still accessible from the outside on port 8529, which I typically consider to be a bad thing.</p>
 
   <p>Thankfully, <code>iptables</code>, despite being a pain to <em>not break in eldritch manners</em>, is quite useful for this:</p>
@@ -721,6 +729,8 @@ networks:
 sudo iptables -I DOCKER-USER --protocol tcp --dport 8529 -i ens3 --jump REJECT
 ```
   </markdown>
+
+
 
   <hr><br/>
   <h4 id="final-product">Final project</h4>
