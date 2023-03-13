@@ -1,0 +1,44 @@
+<app-post-body [post]="this.post" [date]="this.post.date">
+  <p>"Well, this is new!" is probably one of the sentences going through your head right now, if you've been keeping track of this blog.</p>
+
+  <p>And you would be entirely correct, as this is my first time collaborating with a number of industry peers to investigate what seems to be a sophisticated phishing kit, published by a threat actor we are uncertain about (possibly <strong>0ktapus</strong> or <strong>Scatter Swine</strong>), that we have in the meantime namednamed <strong><em>SecuriPhish</em></strong>.</p>
+
+  <p>But I'm getting ahead of myself.</p>
+
+  <br/>
+  <h4>Summary</h4>
+  <ul>
+    <li><a class="no-underline" routerLink="." fragment="a-discovery-of-phishes">A discovery of phishes</a></li>
+    <li><a class="no-underline" routerLink="." fragment="phishing-as">Who were they phishing as?</a></li>
+    <li><a class="no-underline" routerLink="." fragment="phishing-for">What were they phishing for?</a></li>
+    <li><a class="no-underline" routerLink="." fragment="how-phish">How the phish did it work?</a></li>
+    <li><a class="no-underline" routerLink="." fragment=""></a></li>
+    <li><a class="no-underline" routerLink="." fragment=""></a></li>
+    <li><a class="no-underline" routerLink="." fragment=""></a></li>
+  </ul>
+
+  <hr><br/>
+  <h4 id="a-discovery-of-phishes">A discovery of phishes</h4>
+
+  <p>All of this started a fateful <em>&lt;insert time of day here&gt;</em>, when one of my friends received a phishing email.</p>
+  <p>This would be an ordinary everyday occurrence, had she not been using that email address for a singular service: the domain name registrar NameCheap.</p>
+  <p>Did NameCheap get popped? Magic 8-ball says probably not.</p>
+  <p>But NameCheap uses a service called SendGrid to send out emails, which is owned by Twilio, which was allegedly the victim of a breach on June 29th, 2022 (related article <a href="https://techcrunch.com/2022/10/28/twilio-june-data-breach" target="_blank"><em class="fas fa-external-link-square-alt"></em> here</a>, related Twilio investigation <a href="https://www.twilio.com/blog/august-2022-social-engineering-attack" target="_blank"><em class="fas fa-external-link-square-alt"></em> here</a>).</p>
+  <p>So although not a definite link, it is quite possible my friend's email address was sourced from that breach.</p>
+
+  <div class="media-container">
+    <img alt='A received phishing email' src="/assets/images/2023/230318-a-phishing-expedition/impersonation.png">
+  </div>
+
+  <p>But that's besides the point.</p>
+
+  <hr><br/>
+  <h4 id="phishing-as">Who were they phishing as?</h4>
+
+  <hr><br/>
+  <h4 id="phishing-for">What were they phishing for?</h4>
+
+  <hr><br/>
+  <h4 id="how-phish">How the phish did it work?</h4>
+
+</app-post-body>

@@ -1,280 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://atomicmaya.me/whoami/</loc>
+    <loc>https://atomicmaya.me/whoami/index.html</loc>
     <priority>0.80</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/posts/</loc>
+    <loc>https://atomicmaya.me/posts/index.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/copyright/</loc>
+    <loc>https://atomicmaya.me/copyright/index.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/privacy-policy/</loc>
+    <loc>https://atomicmaya.me/privacy-policy/index.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2020/2020_10_15+Hello-world/</loc>
+    <loc>https://atomicmaya.me/post/2020/2020_10_15+Hello-world/index.html</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2020/2020_10_19+I-participated-in-the-CONINT-CTF/</loc>
+    <loc>https://atomicmaya.me/post/2020/2020_10_19+I-participated-in-the-CONINT-CTF/index.html</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2020/2020_11_02+I-gave-a-talk-at-BeerCon2/</loc>
+    <loc>https://atomicmaya.me/post/2020/2020_11_02+I-gave-a-talk-at-BeerCon2/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2020/2020_11_09+I-talked-at-BSides-Islamabad/</loc>
+    <loc>https://atomicmaya.me/post/2020/2020_11_09+I-talked-at-BSides-Islamabad/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2020/2020_11_12+Mentoring/</loc>
+    <loc>https://atomicmaya.me/post/2020/2020_11_12+Mentoring/index.html</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2020/2020_11_12+Reading-Materials/</loc>
+    <loc>https://atomicmaya.me/post/2020/2020_11_12+Reading-Materials/index.html</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2020/2020_12_12+Security-Coffeehouse-BC2-Speaker-Interviews/</loc>
+    <loc>https://atomicmaya.me/post/2020/2020_12_12+Security-Coffeehouse-BC2-Speaker-Interviews/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_02+Goodbye-2020-New-Year-Party/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_02+Goodbye-2020-New-Year-Party/index.html</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_03+Mental-Health/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_03+Mental-Health/index.html</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_05+OSINT-on-Gateway/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_05+OSINT-on-Gateway/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_08+WhatsApp-Privacy-Policy-Changes-Analysis/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_08+WhatsApp-Privacy-Policy-Changes-Analysis/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_09+WhatsApp-Privacy-Policy-Changes-Discussion-at-Hack-South/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_09+WhatsApp-Privacy-Policy-Changes-Discussion-at-Hack-South/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_19+eNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_19+eNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_20+Talking-at-Leeds-EHS/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_20+Talking-at-Leeds-EHS/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_23+Website_Design_Choices/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_23+Website_Design_Choices/index.html</loc>
     <priority>0.40</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_01_31+Talking-at-DEFCON-Worcester/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_01_31+Talking-at-DEFCON-Worcester/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_02_01+Organising-a-conference/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_02_01+Organising-a-conference/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_02_06+Building-DOs-Website/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_02_06+Building-DOs-Website/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_02_26+TraceLabs-CTF-With-Hacksouth/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_02_26+TraceLabs-CTF-With-Hacksouth/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_03_07+Much-Ado-About-Passwords/</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_03_07+Much-Ado-About-Passwords/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-All</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-All/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Python</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Python/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_04_29+Digital-Overdose-Conference</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_04_29+Digital-Overdose-Conference/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_07_20+The-2021-Halfway-Mark</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_07_20+The-2021-Halfway-Mark/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_08_31%2BEnumerating-the-LightShot-CDN</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_08_31%2BEnumerating-the-LightShot-CDN/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-2-a-lying-cake</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-2-a-lying-cake/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_11_15%2Bhappy-birthday-to-this-blog</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_11_15%2Bhappy-birthday-to-this-blog/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2021/2021_11_25%2Bspeaking-at-conint</loc>
+    <loc>https://atomicmaya.me/post/2021/2021_11_25%2Bspeaking-at-conint/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_01_15%2Bcatching-covid</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_01_15%2Bcatching-covid/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-cryptography-writeups</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-cryptography-writeups/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-misc-writeups</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-misc-writeups/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-programming-writeups</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-programming-writeups/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-reverse-writeups</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_01_30%2Bknight-ctf-2022-reverse-writeups/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_02_18%2BStarting-a-new-job</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_02_18%2BStarting-a-new-job/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_04_26%2Brunning-the-digital-overdose-conference-again</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_04_26%2Brunning-the-digital-overdose-conference-again/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_05_04%2Bbuilding-a-raspi-private-web-server</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_05_04%2Bbuilding-a-raspi-private-web-server/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_07_29%2Bheading-to-Amsterdam-and-going-to-MCH</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_07_29%2Bheading-to-Amsterdam-and-going-to-MCH/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_08_30%2Bheading-for-DEFCON</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_08_30%2Bheading-for-DEFCON/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_09_30+travelling-to-scotland</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_09_30+travelling-to-scotland/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_10_15+beercon4</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_10_15+beercon4/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_11_17+going-to-korea</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_11_17+going-to-korea/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2022/2022_12_20+going-to-bsides-london</loc>
+    <loc>https://atomicmaya.me/post/2022/2022_12_20+going-to-bsides-london/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2023/2023_02_15+msc-fun</loc>
+    <loc>https://atomicmaya.me/post/2023/2023_02_15+msc-fun/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2023/2023_02_16+going-to-bsides-cymru</loc>
+    <loc>https://atomicmaya.me/post/2023/2023_02_16+going-to-bsides-cymru/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2023/2023_02_17+gender-paradigm-shift</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://atomicmaya.me/post/2023/2023_03_09+revamping-my-bsc-project</loc>
+    <loc>https://atomicmaya.me/post/2023/2023_03_09+revamping-my-bsc-project/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>

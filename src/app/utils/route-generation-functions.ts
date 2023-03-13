@@ -5,10 +5,10 @@ import { Post } from 'src/app/interfaces/post';
 import { Tag } from 'src/app/interfaces/tag';
 import { TagCount } from 'src/app/interfaces/tag-count';
 
-import { subroutes2020 } from 'src/app/routing/app.sub-routes-2020';
-import { subroutes2021 } from 'src/app/routing/app.sub-routes-2021';
-import { subroutes2022 } from 'src/app/routing/app.sub-routes-2022';
-import { subroutes2023 } from 'src/app/routing/app.sub-routes-2023';
+import { subroutes2020 } from 'src/app/routing/app-2020-post-routing.module';
+import { subroutes2021 } from 'src/app/routing/app-2021-post-routing.module';
+import { subroutes2022 } from 'src/app/routing/app-2022-post-routing.module';
+import { subroutes2023 } from 'src/app/routing/app-2023-post-routing.module';
 
 /** The compiled routes from all of the lazy-loaded modules. */
 export const routes: Routes = [...subroutes2020, ...subroutes2021, ...subroutes2022, ...subroutes2023];

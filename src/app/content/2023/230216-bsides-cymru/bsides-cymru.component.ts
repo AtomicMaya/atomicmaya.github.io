@@ -14,7 +14,7 @@ export class Feb2023BSidesCymruComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => this.post = (data as Post));
-    this.meta.setTags('/post/2023/2023_02_16+going-to-bsides-cymru', this.post.title,
+    this.meta.setTags(`/post/${this.post.path.slice(0, 4)}/${this.post.path}`, this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ['BSides', 'Wales', 'Travel', 'Cymru', 'Public Speaking', 'TransTechTent', 'TransTechTent.com'],
                       this.post.description, this.post.readingTime);
