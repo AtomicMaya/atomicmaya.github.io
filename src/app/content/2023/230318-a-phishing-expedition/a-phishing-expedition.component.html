@@ -1,7 +1,7 @@
 <app-post-body [post]="this.post" [date]="this.post.date">
   <p>"Well, this is new!" is probably one of the sentences going through your head right now, if you've been keeping track of this blog.</p>
 
-  <p>And you would be entirely correct, as this is my first time collaborating with a number of industry peers to investigate what seems to be a sophisticated phishing kit, published by a threat actor we are uncertain about (possibly <strong>0ktapus</strong> or <strong>Scatter Swine</strong>), that we have in the meantime namednamed <strong><em>SecuriPhish</em></strong>.</p>
+  <p>And you would be entirely correct, as this is my first time collaborating with industry peers Emily Dennison (<a target="_blank" href="https://twitter.com/nyxilar" rel="noopener"><em class="fab fa-twitter-square"></em> @nylixar</a>) and Oli Hough (<a target="_blank" href="https://twitter.com/olihoughio" rel="noopener"><em class="fab fa-twitter-square"></em> @olihoughio</a>) to investigate what seems to be a sophisticated phishing kit, used by a threat actor we are uncertain about (possibly <strong>0ktapus</strong> or <strong>Scatter Swine</strong>), that we have in the meantime named <strong><em>SecuriPhish</em></strong>.</p>
 
   <p>But I'm getting ahead of myself.</p>
 
@@ -16,9 +16,7 @@
       <li><a class='no-underline' routerLink="." fragment="stage-1">Payload - Stage 1</a></li>
       <li><a class='no-underline' routerLink="." fragment="stage-2">Payload - Stage 2</a></li>
     </ul>
-    <li><a class="no-underline" routerLink="." fragment=""></a></li>
-    <li><a class="no-underline" routerLink="." fragment=""></a></li>
-    <li><a class="no-underline" routerLink="." fragment=""></a></li>
+    <li><a class="no-underline" routerLink="." fragment="how-phin">Learning about the phishies</a></li>
   </ul>
 
   <hr><br/>
@@ -272,6 +270,71 @@ Post-ASCII:  \n |          f |          u |          n |          c |          t
 
   <p>This script is focused primarily on fingerprinting the browser and the underlying device, in order to complicate the life of people trying to analyze it.</p>
 
-  <h4 id="how-fin">How the phish did it work?</h4>
+  <p>Several functions are used to test that the browser is an authentic browser, and not some form of emulation:</p>
 
+  <ul>
+    <li><code>testPRX</code>: Tests a feature known as function proxying, which allows standard operations  in objects to be redefined as well as add new custom behavior to them.</li>
+    <li><code>compareWorker</code>: Tests a feature that allows the creation of worker threads.</li>
+    <li><code>getFPW</code>: Gets a list of keywords defined in JavaScript<br/>
+
+    <div class="media-container">
+      <img alt='The fingerprint keywords' src="/assets/images/2023/230318-a-phishing-expedition/fpw.png">
+    </div></li>
+    <li><code>iframeTest</code>: Checks whether some scripts can be executed in an iframe, allowing for some form of XSS.</li>
+    <li><code>isFakeCanvas</code>: Checks whether or not the browser has a native canvas or emulates one instead.</li>
+    <li><code>handleOrientation</code>: Determines the orientation status of the screen.</li>
+    <li><code>getPointerType</code>: Gets the type of pointer that the browser uses.</li>
+    <li><code>getHoverType</code>: Retrieves all hover methods supported by the browser.</li>
+    <li><code>cssHairlinesSupport</code>: Checks whether or not the browser supports the hairline feature.</li>
+    <li><code>is_touch_device</code>: Checks whether the device is a touch device like a phone or tablet.</li>
+    <li><code>getMethods</code>: Gets a list of the internal functions.</li>
+    <li><code>getAllMethods</code>: Gets a list of all the defined functions.</li>
+    <li><code>optimizeText</code>: Unknown because it crashed the browser when I ran it through the debugger.</li>
+    <li><code>checkCondition</code>: Checks whether the above points qualify a browser to be a valid target.</li>
+  </ul>
+
+  <p>Everything then gets grouped up in an <code>fp_collect</code> parameter (below), which is then sent off for validation, upon which our investigation ended because we were being redirected to a sinkhole endpoint.</p>
+
+  <markdown ngPreserveWhitespaces>
+```json
+{{'{'}}
+  5:"fgavbCuphbGknz",
+  rfyns:"rpvirq_uphbg_fv",rfyns:"fravyevnUffp",
+  "eribu":"eribu","ravs":"ergavbc",
+  ["SQC av-gyvho gvXorJ","erjrvI SQC rtqR gsbfbepvZ","erjrvI SQC zhvzbeuP","erjrvI SQC rzbeuP","erjrvI SQC"]:"favthyc",
+  {{'{'}}
+    6:"bvgnEyrkvCrpvirQj",97:"ugcrQyrkvCf",97:"ugcrQebybPf",7856:"gutvrUyvniNf",5746:"ugqvJyvniNf",5356:"gutvrUf",5746:"ugqvJf",614:"gutvrUp",978:"ugqvJp",5:"grfssBLrtnCj",5:"grfssBKrtnCj",
+    336:"LarrepFj",5746-:"KarrepFj",978:"ugqvJeraaVj",5746:"ugqvJerghBj",7856:"gutvrUerghBj",
+    614:"gutvrUeraaVj"
+  {{'}'}}:"arrepf",
+  "25658557":"ohFgphqbec",
+  rheg:"ravYab",
+  "raba":"gartNerfHynvprcf",
+  "69.2306.5.566/tqR 18.280/vensnF 5.5.5.566/rzbeuP (bxprT rxvy ,YZGUX) 18.280/gvXorJryccN (91k ;91avJ ;5.56 GA fjbqavJ) 5.0/nyyvmbZ":"gartNerfh",
+  "78avJ":"zebsgnyc",
+  ["ar","FH-ar"]:"frtnhtany","FH-ar":"rtnhtany",
+  16:"lpareehpabPrenjqenu",6-:"lebzrZrpvirq",6-:"abvgngarveBgrO",5:"abvgngarveBPq",
+  rheg:"fnianPqrgfheg",
+  330937:"tavzvg",
+  []:"bffnpvCcs",
+  rfyns:"qenbOlrx",rfyns:"ebeeRpbQpeFrznesV",
+  [6-,6-]:"lerggno",
+  "61782s5r91nr0o949o7q4sp25764s19o":"jcs","s6p6q255n59n1n768876406r03o9o9pq":"ocs"
+{{'}'}}
+```
+  </markdown>
+  <br/>
+  <h4 id="how-phin">Learning about the phishies</h4>
+
+  <p>Actors involved in large scale phishing are definitely getting more sophisticated as time goes on.</p>
+
+  <p>Phishing kits and spellcheck make it much harder for the average person to detect a phishing email, and these are things that are available to the highly motivated (and well-funded) threat actor. Mind you, we are not talking about the "You have $35M in an account from a recently departed relative in Kenya" type phish, although those remain prevalent.</p>
+
+  <p>The scale of breaches leading to such phishing campaigns is massive, which is why we don't necessarily see them as often.</p>
+
+  <p>Actions like single-service email addresses allow for immediate identification of the exposed service, which can lead to a threat actor burning a breach, which they may not always be inclined to do.</p>
+
+  <p>From a technical perspective, phishing kit developers are getting better at thwarting people performing analysis, although this is reliant on analysts not having machines specifically designed for being burnt.</p>
+
+  <p>Additionally, I could see from the code that many of the anti-analysis features have been cobbled together from different sources, so these are things that exists in service codebases "somewhere".</p>
 </app-post-body>

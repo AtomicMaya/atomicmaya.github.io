@@ -4,7 +4,7 @@ import { Oct2022GenderParadigmShiftComponent } from "../content/2022/221021-gend
 import { Feb2023MScFunComponent } from "../content/2023/230215-msc-fun/msc-fun.component";
 import { Feb2023BSidesCymruComponent } from "../content/2023/230216-bsides-cymru/bsides-cymru.component";
 import { Mar2023RevampingMyBscProjectComponent } from '../content/2023/230309-revamping-my-bsc-project/revamping-my-bsc-project.component';
-import { Mar2023APhishingExpeditionComponent } from '../content/2023/230318-a-phishing-expedition/a-phishing-expedition.component';
+import { Mar2023APhishingExpeditionComponent as May2023APhishingExpeditionComponent } from '../content/2023/230318-a-phishing-expedition/a-phishing-expedition.component';
 import { authorList } from "../data/authors";
 import { TAG_ACADEMIA, TAG_PERSONAL, TAG_CONFERENCE, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PROGRAMMING, TAG_TALKS, TAG_TRAVEL, TAG_CYBERSEC, TAG_REVERSE_ENGINEERING } from './../utils/tags';
 
@@ -60,15 +60,15 @@ export const subroutes2023: Routes = [
     }
   },
   {
-    path: '2023_03_18+a-phishing-expedition',
-    component: Mar2023APhishingExpeditionComponent,
+    path: '2023_05_05+a-phishing-expedition',
+    component: May2023APhishingExpeditionComponent,
     data: {
       title: 'A Phishing Expedition!',
       authors : [ authorList['AtomicMaya'] ],
-      description: 'I somehow got involved in analyzing a phishing kit that was making the rounds... So lets talk about it\'s technical aspects.',
+      description: 'I somehow got involved in analyzing a phishing kit that was making the rounds... So let\'s talk about its technical aspects.',
       tags: [ TAG_INFOSEC, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_REVERSE_ENGINEERING ],
-      date: [2023, 3, 18],
-      readingTime: -1
+      date: [2023, 5, 5],
+      readingTime: 15
     }
   }
 ]

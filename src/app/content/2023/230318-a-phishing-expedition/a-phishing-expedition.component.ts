@@ -17,7 +17,7 @@ export class Mar2023APhishingExpeditionComponent implements OnInit {
     console.log(this.post.path)
     this.meta.setTags(`/post/${this.post.path.slice(0, 4)}/${this.post.path}`, this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      ["phishing", "javascript", "deobfuscation", 'reverse engineering', 'browser fingerprinting', 'securiphish', '0ktapus', 'scatter swine', 'cti'],
+                      ["phishing", "javascript", "deobfuscation", 'emily dennison', 'https://twitter.com/nyxilar', '@nyxilar', 'nylixar', 'cyjax', 'reverse engineering', 'browser fingerprinting', 'securiphish', '0ktapus', 'scatter swine', 'cti'],
                       this.post.description, this.post.readingTime);
   }
 }
