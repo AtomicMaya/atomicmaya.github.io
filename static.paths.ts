@@ -30,6 +30,7 @@ export const ROUTES = [
   '/tags/Privacy',
   '/tags/Professional',
   '/tags/Programming',
+  '/tags/Reverse-Engineering',
   '/tags/Talks',
   '/tags/Travel',
   '/tags/Volunteering',
@@ -90,4 +91,5 @@ export const ROUTES = [
   '/post/2023/2023_02_16+going-to-bsides-cymru',
   '/post/2023/2023_02_17+gender-paradigm-shift',
   '/post/2023/2023_03_09+revamping-my-bsc-project',
+  '/post/2023/2023_05_11+a-phishing-expedition',
 ];

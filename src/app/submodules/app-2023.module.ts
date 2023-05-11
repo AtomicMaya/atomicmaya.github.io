@@ -5,7 +5,7 @@ import { Oct2022GenderParadigmShiftComponent } from "../content/2022/221021-gend
 import { Feb2023MScFunComponent } from '../content/2023/230215-msc-fun/msc-fun.component';
 import { Feb2023BSidesCymruComponent } from '../content/2023/230216-bsides-cymru/bsides-cymru.component';
 import { Mar2023RevampingMyBscProjectComponent } from '../content/2023/230309-revamping-my-bsc-project/revamping-my-bsc-project.component';
-import { Mar2023APhishingExpeditionComponent } from "../content/2023/230318-a-phishing-expedition/a-phishing-expedition.component";
+import { May2023APhishingExpeditionComponent } from "../content/2023/230511-a-phishing-expedition/a-phishing-expedition.component";
 import { SharedModule } from "../shared.module";
 
 
@@ -15,7 +15,7 @@ import { SharedModule } from "../shared.module";
     Feb2023BSidesCymruComponent,
     Feb2023MScFunComponent,
     Mar2023RevampingMyBscProjectComponent,
-    Mar2023APhishingExpeditionComponent
+    May2023APhishingExpeditionComponent
   ],
   imports: [
     CommonModule,
