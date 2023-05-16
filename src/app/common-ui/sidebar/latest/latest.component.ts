@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { generatePostRoutes } from 'src/app/utils/route-generation-functions';
-import { reToSlash, reToSpace, reToDashSep } from 'src/app/utils/listing-utils';
 import { Post } from 'src/app/interfaces/post';
+import { reToDashSep, reToSlash, reToSpace } from 'src/app/utils/listing-utils';
+import { generatePostRoutes } from 'src/app/utils/route-generation-functions';
 
 @Component({
   selector: 'app-latest',

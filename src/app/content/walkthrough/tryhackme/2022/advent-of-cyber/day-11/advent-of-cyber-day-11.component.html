@@ -1,0 +1,46 @@
+<app-post-body [post]="this.post" [date]="this.post.date" [showTags]="false">
+  <app-walkthrough-challenge-author category="Blue Team: Memory Forensics"
+  platformLink="https://tryhackme.com/room/adventofcyber4"></app-walkthrough-challenge-author>
+
+  <h3>Question 1</h3>
+  <blockquote>
+   <p>What is the Windows version number that the memory image captured?</p>
+  </blockquote>
+  <p>We run <code>python3 vol.py -f workstation.vmem windows.info</code>:</p>
+  <div class="media-container">
+   <img alt="Screenshot of volatility's output." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day11/1.png" style="max-height: 300px"/>
+   <span><em>Oh no... not Windows.</em></span>
+  </div>
+  <p>Answer: <code>10</code></p>
+  <h3>Question 2</h3>
+  <blockquote>
+   <p>What is the name of the binary/gift that secret Santa left?</p>
+  </blockquote>
+  <p>We run <code>python3 vol.py -f workstation.vmem windows.pslist</code>:</p>
+  <div class="media-container">
+   <img alt="Screenshot of volatility's output." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day11/2.png" style="max-height: 300px"/>
+   <span><em>I looooove gifts.</em></span>
+  </div>
+  <p>Answer: <code>mysterygift.exe</code></p>
+  <h3>Question 3</h3>
+  <blockquote>
+   <p>What is the Process ID (PID) of this binary?</p>
+  </blockquote>
+  <p>We check the associated column.</p>
+  <p>Answer: <code>2040</code></p>
+  <h3>Question 4</h3>
+  <blockquote>
+   <p>Dump the contents of this binary. How many files are dumped?</p>
+  </blockquote>
+  <p>We run <code>python3 vol.py -f workstation.vmem windows.dumpfiles --pid 2040</code> and then count the number of results.</p>
+  <div class="media-container">
+   <img alt="Screenshot of volatility's output." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day11/4.png" style="max-height: 500px"/>
+   <span><em>There probably was a programatic solution to count the number of lines.</em></span>
+  </div>
+  <p>Answer: <code>16</code></p>
+
+  <br />
+  <div class="d-flex justify-content-end">
+    <p><a href="/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022"><em class="fas fa-link"></em> Return to the Index</a></p>
+  </div>
+</app-post-body>

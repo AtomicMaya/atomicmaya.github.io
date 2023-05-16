@@ -1,4 +1,4 @@
-import { Tag } from './../../interfaces/tag';
+import { Tag } from 'src/app/interfaces/tag';
 import { Component, Input } from '@angular/core';
 
 @Component({

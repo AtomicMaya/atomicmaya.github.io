@@ -1,0 +1,74 @@
+<app-post-body [post]="this.post" [date]="this.post.date" [showTags]="false">
+  <!-- author="CyberSecMeg" link="https://twitter.com/cybersecmeg" icon="fab fa-twitter-square" -->
+  <app-walkthrough-challenge-author category="Red Team: OSINT"  platformLink="https://tryhackme.com/room/adventofcyber4"></app-walkthrough-challenge-author>
+
+
+  <h3>Question 1</h3>
+  <blockquote>
+  <p>What is the name of the Registrar for the domain santagift.shop?</p>
+  </blockquote>
+  <p>We take a look using the ICANN Lookup website: <a class="no-underline" href="https://lookup.icann.org/en/lookup" target="_blank"  rel="noopener"><em class="fas fa-external-link-square-alt"></em> https://lookup.icann.org/en/lookup</a></p>
+
+  <div class="media-container">
+    <img loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day03/1.png" alt="A screenshot of the ICANN website." style="max-height: 400px">
+    <span><em>ICANN be useful.</em></span>
+  </div>
+
+  <p>Answer: <code>NAMECHEAP INC</code></p>
+  <h3>Question 2</h3>
+  <blockquote>
+  <p>Find the website's source code (repository) on <a class="no-underline" href="https://github.com/" target="_blank"  rel="noopener"><em class="fas fa-external-link-square-alt"></em> github.com</a> and open the file containing sensitive credentials. Can you find the flag?</p>
+  </blockquote>
+  <p>There it's just a matter of looking for the URL, and finding the oldest repository involved.</p>
+
+  <div class="media-container">
+    <img loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day03/2.1.png" alt="A screenshot of a GitHub search result.">
+    <span><em>Plenty of valuable bits to search for.</em></span>
+  </div>
+
+  <p>There we look for interesting files, such as for example <code>config.php</code>.</p>
+
+  <div class="media-container">
+    <img loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day03/2.2.png" alt="A screenshot of a file in the GitHub repository named 'config.php'">
+    <span><em>Oh no.</em></span>
+  </div>
+
+  <p>This produces a flag:</p>
+
+  <div class="media-container">
+    <img loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day03/2.3.png" alt="A screenshot of 'config.php', revealing a flag.">
+    <span><em>My secretses.</em></span>
+  </div>
+
+  <p>Answer: <code>{{ '{' }}THM_OSINT_WORKS{{ '}' }}</code></p>
+  <h3>Question 3</h3>
+  <blockquote>
+  <p>What is the name of the file containing passwords?</p>
+  </blockquote>
+  <p>(See Q2)</p>
+  <p>Answer: <code>config.php</code></p>
+  <h3>Question 4</h3>
+  <blockquote>
+  <p>What is the name of the QA server associated with the website?</p>
+  </blockquote>
+  <p>If we scroll down in the file a bit, we can see the following:</p>
+
+  <div class="media-container">
+    <img loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day03/4.png" alt="A screenshot of hardcoded credentials.">
+    <span><em>This somehow got worse.</em></span>
+  </div>
+
+  <p>Answer: <code>qa.santagift.shop</code></p>
+  <h3>Question 5</h3>
+  <blockquote>
+  <p>What is the DB_PASSWORD that is being reused between the QA and PROD environments?</p>
+  </blockquote>
+  <p>(See Q4)</p>
+  <p>Answer: <code>S@nta2022</code></p>
+
+  <br />
+  <div class="d-flex justify-content-end">
+    <p><a href="/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022"><em
+          class="fas fa-link"></em> Return to the Index</a></p>
+  </div>
+</app-post-body>

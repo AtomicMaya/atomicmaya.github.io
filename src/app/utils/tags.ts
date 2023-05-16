@@ -1,4 +1,4 @@
-import { Tag } from '../interfaces/tag';
+import { Tag } from 'src/app/interfaces/tag';
 
 export const TAG_ACADEMIA: Tag = { name: 'Academia' };
 export const TAG_APPSEC: Tag = { name: 'AppSec' };

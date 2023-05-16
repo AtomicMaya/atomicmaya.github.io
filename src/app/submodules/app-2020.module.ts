@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared.module';
-import { Oct2020HelloWorldComponent } from '../content/2020/201015-hello-world/hello-world.component';
-import { Oct2020ConintComponent } from '../content/2020/201019-conint/conint.component';
-import { Nov2020Beercon2Component } from '../content/2020/201102-beercon2/beercon2.component';
-import { Nov2020BsidesIslamabadComponent } from '../content/2020/201109-bsides-islamabad/bsides-islamabad.component';
-import { Nov2020MentoringComponent } from '../content/2020/201112-mentoring/mentoring.component';
-import { Nov2020ReadingComponent } from '../content/2020/201112-reading/reading.component';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { Dec2020CoffeehouseComponent } from '../content/2020/201212-coffeehouse/coffeehouse.component';
-import { Dec2020Osint4jComponent } from '../content/2020/201216-osint4j/osint4j.component';
-import { Dec2020HeapOverrideCTFComponent } from '../content/2020/201227-heap-override-ctf/heap-override-ctf.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { Oct2020HelloWorldComponent } from 'src/app/content/post/2020/201015-hello-world/hello-world.component';
+import { Oct2020ConintComponent } from 'src/app/content/post/2020/201019-conint/conint.component';
+import { Nov2020Beercon2Component } from 'src/app/content/post/2020/201102-beercon2/beercon2.component';
+import { Nov2020BsidesIslamabadComponent } from 'src/app/content/post/2020/201109-bsides-islamabad/bsides-islamabad.component';
+import { Nov2020MentoringComponent } from 'src/app/content/post/2020/201112-mentoring/mentoring.component';
+import { Nov2020ReadingComponent } from 'src/app/content/post/2020/201112-reading/reading.component';
+import { Dec2020CoffeehouseComponent } from 'src/app/content/post/2020/201212-coffeehouse/coffeehouse.component';
+import { Dec2020Osint4jComponent } from 'src/app/content/post/2020/201216-osint4j/osint4j.component';
+import { Dec2020HeapOverrideCTFComponent } from 'src/app/content/post/2020/201227-heap-override-ctf/heap-override-ctf.component';
+import { SharedModule } from 'src/app/shared.module';
 
 @NgModule({
   declarations: [

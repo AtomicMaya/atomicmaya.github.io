@@ -1,24 +1,24 @@
 // tslint:disable: no-string-literal
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Jan2022CatchingCovidComponent } from '../content/2022/220115-catching-covid/catching-covid.component';
-import { Jan2022KnightCTFAllComponent } from '../content/2022/220129-knightctf-all/knightctf-all.component';
-import { Jan2022KnightCTFCryptographyComponent } from '../content/2022/220130-knightctf-cryptography/knightctf-cryptography.component';
-import { Jan2022KnightCTFMiscComponent } from '../content/2022/220130-knightctf-misc/knightctf-misc.component';
-import { Jan2022KnightCTFProgrammingComponent } from '../content/2022/220130-knightctf-programming/knightctf-programming.component';
-import { Jan2022KnightCTFReverseComponent } from '../content/2022/220130-knightctf-reverse-engineering/knightctf-reverse.component';
-import { Feb2022StartingANewJobComponent } from '../content/2022/220218-starting-a-new-job/starting-a-new-job.component';
-import { Apr2022DigitalOverdoseConference2Component } from '../content/2022/220426-digital-overdose-conference2/digital-overdose-conference2.component';
-import { May2022RaspiToolingComponent } from '../content/2022/220504-raspi-tooling/raspi-tooling.component';
-import { May2022WavegameComponent } from '../content/2022/220515-wavegame/wavegame.component';
-import { Sep2022GoingToScotlandComponent } from '../content/2022/220930-going-to-scotland/going-to-scotland.component';
-import { Oct2022Beercon4Component } from '../content/2022/221015-beercon4/beercon4.component';
-import { Nov2022KoreaComponent } from '../content/2022/221117-korea/korea.component';
-import { Dec2022BSidesLondonComponent } from '../content/2022/221220-bsides-london/bsides-london.component';
-import { authorList } from '../data/authors';
-import { TAG_ACADEMIA, TAG_CLOUD, TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_TALKS, TAG_TRAVEL, TAG_VOLUNTEERING, TAG_WRITEUP } from '../utils/tags';
-import { Jul2022AmsterdamMchComponent } from './../content/2022/220729-amsterdam-mch/amsterdam-mch.component';
-import { Aug2022GoingToDefconComponent } from './../content/2022/220830-going-to-defcon/going-to-defcon.component';
+import { Jan2022CatchingCovidComponent } from 'src/app/content/post/2022/220115-catching-covid/catching-covid.component';
+import { Jan2022KnightCTFAllComponent } from 'src/app/content/post/2022/220129-knightctf-all/knightctf-all.component';
+import { Jan2022KnightCTFCryptographyComponent } from 'src/app/content/post/2022/220130-knightctf-cryptography/knightctf-cryptography.component';
+import { Jan2022KnightCTFMiscComponent } from 'src/app/content/post/2022/220130-knightctf-misc/knightctf-misc.component';
+import { Jan2022KnightCTFProgrammingComponent } from 'src/app/content/post/2022/220130-knightctf-programming/knightctf-programming.component';
+import { Jan2022KnightCTFReverseComponent } from 'src/app/content/post/2022/220130-knightctf-reverse-engineering/knightctf-reverse.component';
+import { Feb2022StartingANewJobComponent } from 'src/app/content/post/2022/220218-starting-a-new-job/starting-a-new-job.component';
+import { Apr2022DigitalOverdoseConference2Component } from 'src/app/content/post/2022/220426-digital-overdose-conference2/digital-overdose-conference2.component';
+import { May2022RaspiToolingComponent } from 'src/app/content/post/2022/220504-raspi-tooling/raspi-tooling.component';
+import { May2022WavegameComponent } from 'src/app/content/post/2022/220515-wavegame/wavegame.component';
+import { Jul2022AmsterdamMchComponent } from 'src/app/content/post/2022/220729-amsterdam-mch/amsterdam-mch.component';
+import { Aug2022GoingToDefconComponent } from 'src/app/content/post/2022/220830-going-to-defcon/going-to-defcon.component';
+import { Sep2022GoingToScotlandComponent } from 'src/app/content/post/2022/220930-going-to-scotland/going-to-scotland.component';
+import { Oct2022Beercon4Component } from 'src/app/content/post/2022/221015-beercon4/beercon4.component';
+import { Nov2022KoreaComponent } from 'src/app/content/post/2022/221117-korea/korea.component';
+import { Dec2022BSidesLondonComponent } from 'src/app/content/post/2022/221220-bsides-london/bsides-london.component';
+import { authorList } from 'src/app/data/authors';
+import { TAG_ACADEMIA, TAG_CLOUD, TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_TALKS, TAG_TRAVEL, TAG_VOLUNTEERING, TAG_WRITEUP } from 'src/app/utils/tags';
 
 export const subroutes2022: Routes = [
   {
@@ -40,7 +40,7 @@ export const subroutes2022: Routes = [
       title: 'Participating in KnightCTF!',
       authors: [authorList['AtomicMaya']],
       description: 'I participated in KnightCTF alongside the team from Digital Overdose, wherein I successfully beat a few challenges.',
-      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      imageUrl: '/assets/images/post/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
       date: [2022, 1, 29],
       readingTime: 3
@@ -54,7 +54,7 @@ export const subroutes2022: Routes = [
       title: 'Dissecting the KnightCTF Cryptography challenges!',
       authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Cryptography" category.',
-      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      imageUrl: '/assets/images/post/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_CRYPTOGRAPHY, TAG_WRITEUP],
       date: [2022, 1, 30],
       readingTime: 10
@@ -67,7 +67,7 @@ export const subroutes2022: Routes = [
       title: 'Dissecting the KnightCTF Misc challenges!',
       authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Misc" category.',
-      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      imageUrl: '/assets/images/post/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
       date: [2022, 1, 30],
       readingTime: 5
@@ -80,7 +80,7 @@ export const subroutes2022: Routes = [
       title: 'Dissecting the KnightCTF Programming challenges!',
       authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Programming" category.',
-      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      imageUrl: '/assets/images/post/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_PROGRAMMING, TAG_WRITEUP],
       date: [2022, 1, 30],
       readingTime: 5
@@ -93,7 +93,7 @@ export const subroutes2022: Routes = [
       title: 'Dissecting the KnightCTF Reverse Engineering challenges!',
       authors: [authorList['AtomicMaya']],
       description: 'KnightCTF! A write-up on solving challenges from the "Reverse Engineering" category.',
-      imageUrl: '/assets/images/2022/220130-knightctf-assets/logo.png',
+      imageUrl: '/assets/images/post/2022/220130-knightctf-assets/logo.png',
       tags: [TAG_CTF, TAG_WRITEUP],
       date: [2022, 1, 30],
       readingTime: 5
@@ -118,7 +118,7 @@ export const subroutes2022: Routes = [
       title: 'Digital Overdose Conference 2: We\'re doing this again!',
       authors: [authorList['AtomicMaya']],
       description: 'Going behind the scenes of the second iteration of the Digital Overdose Conference.',
-      imageUrl: '/assets/images/2022/220426-digital-overdose-conference2/conference_cover_2022.png',
+      imageUrl: '/assets/images/post/2022/220426-digital-overdose-conference2/conference_cover_2022.png',
       tags: [TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_CYBERSEC, TAG_VOLUNTEERING],
       date: [2022, 4, 26],
       readingTime: 10
@@ -154,7 +154,7 @@ export const subroutes2022: Routes = [
     data: {
       title: 'Going back to Amsterdam and attending MCH!',
       authors: [ authorList['AtomicMaya'] ],
-      imageUrl: '/assets/images/2022/220729-amsterdam-mch/front-lights.jpg',
+      imageUrl: '/assets/images/post/2022/220729-amsterdam-mch/front-lights.jpg',
       description: 'I attended MayContainHackers 2022, and got into some shenanigans!',
       tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TRAVEL ],
       date: [2022, 7, 29],
@@ -167,7 +167,7 @@ export const subroutes2022: Routes = [
     data: {
       title: 'I spoke at DEFCON30! (I also attended it!)',
       authors: [ authorList['AtomicMaya'] ],
-      imageUrl: '/assets/images/2022/220830-going-to-defcon/defcon-logo.jpg',
+      imageUrl: '/assets/images/post/2022/220830-going-to-defcon/defcon-logo.jpg',
       description: 'DEFCON30! All the shenanigans, all the hackers, all the bad luck?',
       tags: [ TAG_CONFERENCE, TAG_VOLUNTEERING, TAG_TALKS, TAG_TRAVEL ],
       date: [2022, 8, 30],
@@ -204,7 +204,7 @@ export const subroutes2022: Routes = [
     data: {
       title: 'I went to South Korea!',
       authors: [ authorList['AtomicMaya'] ],
-      imageUrl: '/assets/images/2022/221117-korea/17.jpeg',
+      imageUrl: '/assets/images/post/2022/221117-korea/17.jpeg',
       description: 'A big university trip halfway around the world.',
       tags: [ TAG_TRAVEL, TAG_ACADEMIA ],
       date: [2022, 11, 17],
@@ -217,7 +217,7 @@ export const subroutes2022: Routes = [
     data: {
       title: 'Heading out to BSides London!',
       authors: [ authorList['AtomicMaya'] ],
-      imageUrl: '/assets/images/2022/221220-bsides-london/bsides-logo.jpg',
+      imageUrl: '/assets/images/post/2022/221220-bsides-london/bsides-logo.jpg',
       description: 'BSides London, one of the UK\'s biggest BSides events, and the friends that were made along the way.',
       tags: [ TAG_CONFERENCE, TAG_COMMUNITY, TAG_INFOSEC, TAG_TRAVEL ],
       date: [2022, 12, 20],

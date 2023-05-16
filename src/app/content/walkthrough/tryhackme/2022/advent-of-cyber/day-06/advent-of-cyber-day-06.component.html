@@ -1,0 +1,83 @@
+<app-post-body [post]="this.post" [date]="this.post.date" [showTags]="false">
+
+  <app-walkthrough-challenge-author category="Blue Team: Email Analysis"
+    platformLink="https://tryhackme.com/room/adventofcyber4"></app-walkthrough-challenge-author>
+
+  <h3>Question 1</h3>
+  <blockquote>
+  <p>What is the email address of the sender?</p>
+  </blockquote>
+  <p>We look at the <code>.eml</code> file for details, specifically the <code>From:</code> header.</p>
+  <div class="media-container"><img alt="Screenshot of the .eml file." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day06/1.png" style="max-height: 500px"/><span><em>Lots of data goes into sending an email nowadays.</em></span></div>
+  <p>Answer: <code>chief.elf@santaclaus.thm</code></p>
+  <h3>Question 2</h3>
+  <blockquote>
+  <p>What is the return address?</p>
+  </blockquote>
+  <p>We look at the <code>Return-Path:</code> header.</p>
+  <p>Answer: <code>murphy.evident@bandityeti.thm</code></p>
+  <h3>Question 3</h3>
+  <blockquote>
+  <p>On whose behalf was the email sent?</p>
+  </blockquote>
+  <p>Once more, we look at the <code>From:</code> header.</p>
+  <p>Answer: <code>Chief Elf</code></p>
+  <h3>Question 4</h3>
+  <blockquote>
+  <p>What is the X-spam score?</p>
+  </blockquote>
+  <p>We look at the <code>X-Pm-Spamscore:</code> header.</p>
+  <p>Answer: <code>3</code></p>
+  <h3>Question 5</h3>
+  <blockquote>
+  <p>What is hidden in the value of the Message-ID field?</p>
+  </blockquote>
+  <p>We get the value in the field, notice it is base64 encoded, and get the decoded string using <code>echo -n "QW9DMjAyMl9FbWFpbF9BbmFseXNpcw==" | base64 -d</code>.</p>
+  <div class="media-container"><img alt="Screenshot of a base64decode operation" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day06/5.png" style="max-height: 300px"/><span><em>Base 64 is not encryption</em></span></div>
+  <p>Answer: <code>AoC2022_Email_Analysis</code></p>
+  <h3>Question 6</h3>
+  <blockquote>
+  <p>Visit the email reputation check website provided in the task. What is the reputation result of the sender's email address?</p>
+  </blockquote>
+  <div class="media-container"><img alt="Screenshot of the email reputation website." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day06/6.png" style="max-height: 300px"/><span><em>That's a big red flag.</em></span></div>
+  <p>Answer: <code>RISKY</code></p>
+  <h3>Question 7</h3>
+  <blockquote>
+  <p>Check the attachments. What is the filename of the attachment?</p>
+  </blockquote>
+  <p>We process the <code>.eml</code> file using <code>emlAnalyzer</code> like so: <code>emlAnalyzer -i Urgent\:.eml --header --html -u --text --extract-all</code> (<em>make sure to be in the same directory as the <code>.eml</code> file</em>)</p>
+  <p>Then look under <code>Attachment Extracting</code>.</p>Screenshot of emlAnalyzer
+  <div class="media-container"><img alt="Screenshot of emlAnalyzer" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day06/7.png" style="max-height: 300px"/><span><em>Attachments are encoded as well..</em></span></div>
+  <p>Answer: <code>Division_of_labour-Load_share_plan.doc</code></p>
+  <h3>Question 8</h3>
+  <blockquote>
+  <p>What is the hash value of the attachment?</p>
+  </blockquote>
+  <p>We simply take the extracted file at <code>$PWD/eml_attachments/Division_of_labour-Load_share_plan.doc</code> and use <code>sha256sum</code> like so:</p>
+  <p><code>sha256sum eml_attachments/Division_of_labour-Load_share_plan.doc</code></p>
+  <div class="media-container"><img alt="Screenshot of a SHA calculation." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day06/8.png" style="max-height: 300px"/></div>
+  <p>Answer: <code>0827bb9a2e7c0628b82256759f0f888ca1abd6a2d903acdb8e44aca6a1a03467</code></p>
+  <h3>Question 9</h3>
+  <blockquote>
+  <p>Visit the Virus Total website and use the hash value to search.
+  Navigate to the behaviour section.
+  What is the second tactic marked in the Mitre ATT&amp;CK section?</p>
+  </blockquote>
+  <p>After pasting the hash in VT, we need to go to the <code>BEHAVIOR</code> tab, and scroll down to find the <code>MITRE ATT&amp;CK Tactics and Techniques</code></p>
+  <div class="media-container"><img alt="Screenshot of VirusTotal" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day06/9.png" style="max-height: 300px"/></div>
+  <p>Answer: <code>Defense Evasion</code></p>
+  <h3>Question 10</h3>
+  <blockquote>
+  <p>Visit the InQuest website and use the hash value to search.
+  What is the subcategory of the file?</p>
+  </blockquote>
+  <p>After pasting the hash in InQuestLabs, we get a reference to the documentation for a malicious file. By clicking on this reference, we find the subcategory:</p>
+  <div class="media-container"><img alt="Screenshot of InQuestLabs" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day06/10.png" style="max-height: 300px"/><span><em>Ooooh, macros.</em></span></div>
+  <p>Answer: <code>macro_hunter</code></p>
+
+
+  <br />
+  <div class="d-flex justify-content-end">
+    <p><a href="/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022"><em class="fas fa-link"></em> Return to the Index</a></p>
+  </div>
+</app-post-body>

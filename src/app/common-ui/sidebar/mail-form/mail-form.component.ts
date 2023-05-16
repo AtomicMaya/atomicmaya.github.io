@@ -1,5 +1,4 @@
-import { environment } from './../../../../environments/environment';
-import { ContactService } from './../../../services/contact.service';
+import { environment } from 'src/environments/environment';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +13,7 @@ export class MailFormComponent implements OnInit {
   windowDefined: boolean;
   site_key: string = environment.site_key;
 
-  constructor(private builder: FormBuilder, private contact: ContactService) { }
+  constructor(private builder: FormBuilder, /* private contact: ContactService */) { }
 
   ngOnInit() {
     if ( typeof window !== 'undefined') {
@@ -29,7 +28,7 @@ export class MailFormComponent implements OnInit {
 
   async onSubmit(FormData: any): Promise<void> {
     console.log(FormData);
-    this.formSuccess = await this.contact.postMessage(FormData);
+    //this.formSuccess = await this.contact.postMessage(FormData);
     console.log(this.formSuccess);
   }
 

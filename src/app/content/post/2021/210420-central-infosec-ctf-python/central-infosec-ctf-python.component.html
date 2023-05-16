@@ -1,0 +1,483 @@
+<app-post-body [post]="this.post" [date]="[2021, 04, 20]">
+  <p>This is a write-up of the "07. Reversing: Code Analysis (CIS-WEBSRV01)" series of challenges in the context of the <a target="_blank" href="https://ctf.centralinfosec.com/" rel="noopener"><em class="fas fa-external-link-square-alt"></em> Central Infosec CTF</a>.</p>
+
+  <p>The challenges consist of Python code to analyse and reverse, in order to find a series of flags. This write-up assumes just a basic amount of programming knowledge, and will walk you through most of the rest.</p>
+  <h4>Summary</h4>
+
+  <ul>
+    <li><a class="no-underline" routerLink="." fragment="chal-01">Challenge 1: Reading the script</a></li>
+    <li><a class="no-underline" routerLink="." fragment="chal-02">Challenge 2: Flipping the script</a></li>
+    <li><a class="no-underline" routerLink="." fragment="chal-03">Challenge 3: Reversing the function</a></li>
+    <li><a class="no-underline" routerLink="." fragment="chal-04">Challenge 4: Flipping the encoding</a></li>
+    <li><a class="no-underline" routerLink="." fragment="chal-05">Challenge 5: Dissassembling the operations</a></li>
+  </ul>
+
+  <style>
+    markdown {
+      page-break-inside: avoid;
+    }
+  </style>
+
+  <br/>
+
+  <h4 id="chal-01">Challenge 1: Reading the script</h4>
+
+  <p>The first challenge, located at the URL <code>$MACHINE_IP/python-01</code>, is a small python script that refreshes a few basics of string operations in Python, which you can see below.</p>
+
+  <div class="d-flex media-container">
+    <markdown [src]="'assets/other/python-01/python-01.py'" ngPreserveWhitespaces lineNumbers >
+```python
+str1 = "P"
+str2 = "7H0N"
+str3 = "C0NC@7"
+str1 += "Y"
+str2 = "57R"
+print("Central-InfoSec" + "{{ '{' }}" + str1 + "_" + str2 + "_" + str3 + "{{ '}' }}")
+# Output: Central-InfoSec{{ '{' }}???{{ '}' }}
+```
+    </markdown>
+  </div>
+
+  <br/>
+  <p>Let's break this down.</p>
+
+  <div class="d-flex flex-row align-items-center justify-content-between media-container">
+    <div>
+      <markdown ngPreserveWhitespaces lineNumbers >
+```python
+str1 = "P"
+str2 = "7H0N"
+str3 = "C0NC@7"
+```
+      </markdown>
+    </div>
+
+    <div class="d-flex">
+        <img loading="lazy" src="assets/images/2021/central-infosec-ctf/python-01/step1.png" height="130" alt="Setting up the variables."/>
+    </div>
+  </div>
+
+  <br/>
+  <p>In the code above, we can see the declaration of a few variables (ie. boxes that have a name and that now contain a bit of information).</p>
+
+  <div class="d-flex flex-row align-items-center justify-content-between media-container">
+    <div>
+      <markdown ngPreserveWhitespaces lineNumbers [start]="4">
+```python
+str1 += "Y"
+str2 = "57R"
+```
+      </markdown>
+    </div>
+
+    <div class="d-flex">
+        <img loading="lazy" src="assets/images/2021/central-infosec-ctf/python-01/step2.png" height="130" alt="Setting up the variables."/>
+    </div>
+  </div>
+
+  <br/>
+
+  <p>In this small bit, <code>str1</code> has the character <code>"Y"</code> added to it, resulting in it having the value <code>"PY"</code>. The content of <code>str2</code> however, gets replaced with the value <code>"57R"</code>.</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div>
+      <markdown ngPreserveWhitespaces lineNumbers [start]="6">
+```python
+print("Central-InfoSec" + "{{ '{' }}" + str1 + "_" + str2 + "_" + str3 + "{{ '}' }}")
+# Output: Central-InfoSec{{ '{' }}???{{ '}' }}
+```
+      </markdown>
+    </div>
+  </div>
+
+  <br/>
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2021/central-infosec-ctf/python-01/step3.png" height="50" alt="Concatenating the strings."/>
+    </div>
+  </div>
+
+  <br/>
+
+  <p>This last bit is the bit that does the work of showing the flag, which is <code>Central-InfoSec{{ '{' }}PY_57R_C0NC@7{{ '}' }}</code>.</p>
+  <br/>
+  <h4 id="chal-02">Challenge 2: Flipping the script</h4>
+
+  <p>The second challenge, located at the URL <code>$MACHINE_IP/python-02</code>, is a small script that goes on about string replacement. The key is to go from the output (<code>"Central-InfoSec{{ '{' }}$7R1N9_R3PL@C3M3N7_$47645558{{ '}' }}"</code>) and reverse the code to find the input (<code>"Central-InfoSec{{ '{' }}???{{ '}' }}"</code>).</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+flag = "Central-InfoSec{{ '{' }}???{{ '}' }}"
+flag = flag.replace("5","$",2)
+flag = flag.replace("2","4")
+flag = flag.replace("5","4",1)
+flag = flag.replace("8","58",1)
+
+print(flag)
+
+# Input: Central-InfoSec{{ '{' }}???{{ '}' }}
+# Output: Central-InfoSec{{ '{' }}$7R1N9_R3PL@C3M3N7_$47645558{{ '}' }}
+```
+    </markdown>
+  </div>
+
+  <br/>
+
+  <p>The way to deal with this is to reverse the steps taken to obfuscate the flag, which are each of the <code>replace</code> operations.</p>
+
+  <p>One thing to note is the optional third parameter that sometimes shows up, which according to the function signature (<code>string.replace(oldvalue, newvalue, count)</code>) is the amount of times the replacement is allowed to run on one string.</p>
+
+  <p>So to reverse this we are going to define the input as the original output, do every step in the opposite order and switch the <code>oldvalue</code> and <code>newvalue</code> parameters in each <code>replace</code> statement copied from the original code.</p>
+
+  <div class="d-flex flex-row align-items-center  media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2021/central-infosec-ctf/python-02/steps.png" alt="Setting up the variables."/>
+    </div>
+  </div>
+
+  <br/>
+
+  <p>To do this we're going to be writing the following script:</p>
+
+  <div class="d-flex  media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+flag = "Central-InfoSec{{ '{' }}$7R1N9_R3PL@C3M3N7_$47645558{{ '}' }}"
+flag = flag.replace("58","8",1)
+flag = flag.replace("4","5",1)
+flag = flag.replace("4","2")
+flag = flag.replace("$","5",2)
+print(flag)
+
+# Input: Central-InfoSec{{ '{' }}$7R1N9_R3PL@C3M3N7_$47645558{{ '}' }}
+# Output: Central-InfoSec{{ '{' }}57R1N9_R3PL@C3M3N7_55762558{{ '}' }}
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <p>This means our original string was <code>Central-InfoSec{{ '{' }}57R1N9_R3PL@C3M3N7_55762558{{ '}' }}</code>, and is also the flag required for this challenge.</p>
+  <br/>
+  <h4 id="chal-03">Challenge 3: Reversing the function</h4>
+
+  <p>The third challenge, located at the URL <code>$MACHINE_IP/python-03</code>, is a small script that goes on about string replacement. The key is to go from the output (<code>"Central-InfoSec{{ '{' }}$7R1N9_R3PL@C3M3N7_$47645558{{ '}' }}"</code>) and reverse the code to find the input (<code>"Central-InfoSec{{ '{' }}???{{ '}' }}"</code>).</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def encodeNumbers(statement, num1, num2):
+    number1 = str(num1)
+    number2 = str(int(number1)+int(num2))
+    statement = statement.replace(number1,number2)
+    return statement
+
+flag = "Central-InfoSec{{ '{' }}???{{ '}' }}"
+flag = encodeNumbers(flag,7,3)
+flag = encodeNumbers(flag,3,1)
+flag = encodeNumbers(flag,2,4)
+flag = encodeNumbers(flag,6,8)
+flag = encodeNumbers(flag,5,26)
+
+print(flag)
+
+# Input: Central-InfoSec{{ '{' }}???{{ '}' }}
+# Output: Central-InfoSec{{ '{' }}4NC0D4D_NUM84R31_131140{{ '}' }}
+```
+    </markdown>
+  </div>
+
+  <br/>
+
+  <p>So, before doing anything, let's find out what this code does.</p>
+
+  <p>The first thing it does is define a function (which you can notice by the <code>def</code> keyword), named <code>encodeNumbers</code>. A function is a block of code you want to run multiple times without having to rewrite the code each time, and is quite useful in programming.</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def encodeNumbers(statement, num1, num2):
+    number1 = str(num1)
+    number2 = str(int(number1)+int(num2))
+    statement = statement.replace(number1,number2)
+    return statement
+```
+    </markdown>
+  </div>
+
+  <br/>
+
+  <p>This function takes three parameters, the first (<code>statement</code>) being the flag, the second (<code>num1</code>) and third (<code>num2</code>) being numbers.</p>
+
+  <p>Its first step is defining a parameter named <code>number1</code>, to which the string representation of the <code>num1</code> parameter is assigned.</p>
+  <p>Its second step is defining a parameter named <code>number2</code>, which is the string representation of the sum of  <code>number1</code> (but as a number, so basically <code>num1</code>) and the <code>num2</code> parameter.</p>
+  <p>Its third step is replacing <code>number1</code> string with the <code>number2</code> string in the given flag.</p>
+  <p>Finally, it returns the flag. (When a function returns a value it allows this value to be assigned to a variable outside of the function itself)</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2021/central-infosec-ctf/python-03/steps.png" alt="Analyzing the function."/>
+    </div>
+  </div>
+
+  <br/>
+
+  <p>What this function is doing is replacing every occurence of <code>num1</code> by the sum of <code>num1</code> and <code>num2</code>.</p>
+
+  <p>So to reverse this function, we make it take the exact same numbers, but invert the order in the <code>replace</code> statement.</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def decodeNumbers(statement, num1, num2):
+    number1 = str(num1)
+    number2 = str(num1 + num2)  # Replaced with both numerical values for easier comprehension
+    statement = statement.replace(number2,number1)
+    return statement
+```
+    </markdown>
+  </div>
+  <br/>
+  <p>We then do like before and reverse the order of operations in order to obtain:</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers [start]="7" >
+```python
+flag = "Central-InfoSec{{ '{' }}4NC0D4D_NUM84R31_131140{{ '}' }}"
+flag = decodeNumbers(flag,7,3)
+flag = decodeNumbers(flag,3,1)
+flag = decodeNumbers(flag,2,4)
+flag = decodeNumbers(flag,6,8)
+flag = decodeNumbers(flag,5,26)
+
+print(flag)
+
+# Input: Central-InfoSec{{ '{' }}4NC0D4D_NUM84R31_131140{{ '}' }}
+# Output: Central-InfoSec{{ '{' }}3NC0D3D_NUM83R5_15130{{ '}' }}
+```
+    </markdown>
+  </div>
+
+  <br/>
+
+  <p>We can check that this worked correctly by setting the result (<code>Central-InfoSec{{ '{' }}3NC0D3D_NUM83R5_15130{{ '}' }}</code>) as the original flag and rerunning the encoding, which will produce the original output.</p>
+
+  <p>This means our original string was <code>Central-InfoSec{{ '{' }}3NC0D3D_NUM83R5_15130{{ '}' }}</code>, and is also the flag required for this challenge.</p>
+  <br/>
+
+  <h4 id="chal-04">Challenge 4: Flipping the encoding</h4>
+
+  <p>The fourth challenge, located at the URL <code>$MACHINE_IP/python-04</code>, is a script that deals with function analysis. The key is to invert the function and go from the output (<code>"Central-InfoSec{{ '{' }}OPU==_DCUG==_64{{ '}' }}"</code>) and reverse certain operations to find the input (<code>"Central-InfoSec{{ '{' }}???{{ '}' }}"</code>).</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def b64encode(s, n):
+    return ''.join(chr((ord(char) - ord('a') + n) % 26 + 97) for char in s.lower())
+
+flag1 = "Central-InfoSec{{ '{' }}"
+flag2a = "???"
+flag2b = "_"
+flag2c = "????"
+flag2d = "_"
+flag2e = "64"
+flag3 = "{{ '}' }}"
+flag2a = b64encode(flag2a,1).upper() + "=="
+flag2c = b64encode(flag2c,2).upper() + "=="
+
+print (flag1 + flag2a + flag2b + flag2c + flag2d + flag2e + flag3)
+
+# Input: Central-InfoSec{{ '{' }}???{{ '}' }}"
+# Output: Central-InfoSec{{ '{' }}OPU==_DCUG==_64{{ '}' }}
+```
+    </markdown>
+  </div>
+
+  <br/>
+
+  <h5>1. Working on the function</h5>
+
+  <p>Like the previous challenge, let us start by looking at the function:</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def b64encode(s, n):
+    return ''.join(chr((ord(char) - ord('a') + n) % 26 + 97) for char in s.lower())
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <p>This function takes two parameters, <code>s</code> (the flag) and <code>n</code> (a number). What it then does is a series of operations, which might be easier to understand if we expand it.</p>
+
+  <p>The first thing I wanted to touch on is that the <code>ord</code> and <code>chr</code> functions are both functions that are used to transform from an ASCII character to the ASCII index and vice-versa.</p>
+
+  <p>What is an ASCII character or an ASCII index? Well, since everything in computers deals primarily with numbers, if you want to write anything you need a reference table (that converts from numbers to characters). For the first 128 characters we call that table the ASCII table (as ASCII stands for <em>American Standard Code for Information Interchange</em>).</p>
+
+  <p>As such, the character <code>'a'</code> is at ASCII index <code>97</code> (and is different to ASCII index <code>65</code>, which is the character <code>'A'</code>). So our <code>ord</code> function, if supplied with <code>'a'</code> as a parameter, will return <code>97</code>. Inversely, our <code>chr</code> function, if supplied with <code>97</code> as a parameter, will return <code>'a'</code>.</p>
+
+  <p>Another thing you might notice is the <code>% 26</code> operation. This modulus operation is used to make sure we don't go over 25 characters greater than the ASCII index of <code>'a'</code>, which is <code>'z'</code>.</p>
+
+  <p>Additionally, the <code>for char in s.lower()</code> is what is known as a "list comprehension". It acts much like a traditional for loop but can be done on a single line. The <code>.lower()</code> method turns a string into it's lowercase variant.</p>
+
+  <p>Finally, the <code>''.join(...)</code> is a function used to merge all the elements of a list into a string.</p>
+
+  <p>So we can rewrite our <code>b64encode</code> function like so:</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def b64encode(s, n):
+    result = []                                     # Start our list
+    ascii_offset = ord('a')                         # Define our ASCII offset
+    for char in s.lower():                          # Start our loop
+        new_value = ord(char) - ascii_offset        # Remove the ASCII offset
+        new_value = ord(char) + n                   # Add the defined offset
+        new_value = new_value % 26                  # Make sure it doesn't exceed 'z'
+        new_value = new_value + ascii_offset        # Add the ASCII offset
+        result.append(chr(new_value))               # Add it to the list
+    return ''.join(result)                          # Merge the list elements into a string
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <p>To reverse that function is now easier: We need to do much of the same, but instead of adding the defined offset, just substract it.</p>
+  <p>However, since the modulo doesn't have a very well defined behavior in Python when it comes to potential negative numbers, we will also add 26 for good measure before we do the modulo operation, just to be safe.</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def b64decode(s, n):
+    result = []                                     # Start our list
+    ascii_offset = ord('a')                         # Define our ASCII offset
+    for char in s.lower():                          # Start our loop
+        new_value = ord(char) - ascii_offset        # Remove the ASCII offset
+        new_value = ord(char) - n                   # Subtract the defined offset
+        new_value = ord(char) + 26                  # Add 26 to make the modulo work
+        new_value = new_value % 26                  # Make sure it doesn't exceed 'z'
+        new_value = new_value + ascii_offset        # Add the ASCII offset
+        result.append(chr(new_value))               # Add it to the list
+    return ''.join(result)                          # Merge the list elements into a string
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <p>If you want to rewrite this as a shorter version, you can always write:</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+def b64decode(s, n):
+    return ''.join(chr((ord(char) - ord('a') - n + 26) % 26 + ord('a')) for char in s.lower())
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <h5>2. Working on the challenge</h5>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers [start]="4">
+```python
+flag1 = "Central-InfoSec{{ '{' }}"
+flag2a = "???"
+flag2b = "_"
+flag2c = "????"
+flag2d = "_"
+flag2e = "64"
+flag3 = "{{ '}' }}"
+flag2a = b64encode(flag2a,1).upper() + "=="
+flag2c = b64encode(flag2c,2).upper() + "=="
+
+print (flag1 + flag2a + flag2b + flag2c + flag2d + flag2e + flag3)
+
+# Input: Central-InfoSec{{ '{' }}???{{ '}' }}
+# Output: Central-InfoSec{{ '{' }}OPU==_DCUG==_64{{ '}' }}
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <p>We have multiple elements here, so let us devise what values are stored in what variable at the end of the program.</p>
+
+
+  <div class="d-flex flex-row align-items-center">
+    <div class="d-flex media-container">
+      <img loading="lazy" src="assets/images/2021/central-infosec-ctf/python-04/steps.png" alt="Analyzing the assignments."/>
+    </div>
+  </div>
+  <br/>
+
+  <p>Here we can see that <code>flag2a</code> and <code>flag2c</code> are the ones that are affected by the encoding (lines 11 and 12 in the above code). The program first encodes a value, then adds <code>"=="</code> to the end of it.</p>
+
+  <p>So if we run our <code>b64decode</code> function with parameters <code>"OPU"</code> and <code>1</code>, and once more with parameters <code>"DCUG"</code> and <code>2</code>, we should obtain the original values for the flags.</p>
+
+  <p>As such <code>"OPU"</code> turns into <code>"not"</code> and <code>"DCUG"</code> turns into <code>"base"</code>.</p>
+
+  <p>This makes the original flag be <code>Central-InfoSec{{ '{' }}not_base_64{{ '}' }}</code> (which would be correct, since the functions are operating more like a <a href="https://en.wikipedia.org/wiki/Caesar_cipher" rel="noopener" target="_blank"><em class="fas fa-external-link-square-alt"></em> Caesar Shift Cipher</a>).
+
+  <br/>
+  <h4 id="chal-05">Challenge 5: Dissassembling the operations</h4>
+
+  <p>The fifth challenge, located at the URL <code>$MACHINE_IP/python-04</code>, is a script that deals with function analysis. The key is to invert the function and go from the output (<code>"Central-InfoSec{{ '{' }}OPU==_DCUG==_64{{ '}' }}"</code>) and reverse certain operations to find the input (<code>"Central-InfoSec{{ '{' }}???{{ '}' }}"</code>).</p>
+
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers >
+```python
+flag1 = "Central-InfoSec{{ '{' }}"
+flag2a = "??_"
+flag2b = "?????????"
+flag2b = "C".join(flag2b.split("_"))[::-1]
+flag2c = "_?????"[::-1]
+flag2d = "8".join((flag2a + flag2b + flag2c).split("_"))[::-1]
+flag3 = "{{ '}' }}"
+
+print(flag1 + flag2d + flag3);
+
+# Input: Central-InfoSec{{ '{' }}???{{ '}' }}
+# Output: Central-InfoSec{{ '{' }}84@RD?7415C74@7851{{ '}' }}
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <p>This python script is a bit simpler in structure, but is a bit harder to analyze than our previous codes. Here we will go up from <code>flag2d</code> and find the original <code>flag2a</code>, <code>flag2b</code> and <code>flag2c</code>.</p>
+
+  <p><code>flag2d</code> ends up as <code>84@RD?7415C74@7851</code>. It is the result of a string flip operation (<code>[::-1]</code>, which will reverse any list or string), which is done on the result of a <code>'8'.join</code> operation (which is the same as before, but instead of merging the elements outright, is going to add a <code>'8'</code> character at each interstice), which is done on the result of a <code>join</code> operation, which is done on the concatenation of <code>flag2a</code>, <code>flag2b</code> and <code>flag2c</code>.</p>
+
+  <p>It gets confusing fast, so let's break it down a little:</p>
+  <div class="d-flex media-container">
+    <markdown ngPreserveWhitespaces lineNumbers [start]="6">
+```python
+flag2d = "8".join((flag2a + flag2b + flag2c).split("_"))[::-1]     # 84@RD?7415C74@7851
+flag2d_alpha = (flag2a + flag2b + flag2c)                          # Op4: "15_" + ?
+flag2d_bis = flag2d_alpha.split("_")                               # Op3: "15_7@47C5147?DR@4_"
+flag2d_ter = "8".join(flag2d_bis)                                  # Op2: ["15", "7@47C5147?DR@4", ""]
+flag2d_quat = flag2d_ter[::-1]                                     # Op1: "1587@47C5147?DR@48"
+```
+    </markdown>
+  </div>
+  <br/>
+
+  <p>If you read the operations in the opposite direction, and by comparing wit the original structure of <code>flag2a</code> (<code>"??_"</code>) we have some idea as to what <code>flag2a</code> is: <code>"15_"</code>.</p>
+
+  <p><code>flag2b</code> and <code>flag2c</code> are a bit more complicated however.</p>
+
+  <p>We now know that <code>flag2b + flag2c</code> is <code>"7@47C5147?DR@4_"</code>. If we look at the original structure of <code>flag2c</code> and the fact that it is reversed, we can find flag2c: We take the underscore (<code>"_"</code>) and the 5 character preceding them (<code>"?DR@4"</code>).<br/> We then reverse this string to obtain: <code>flag2c = "_4@RD?"</code></p>
+
+  <p>So now we only have <code>flag2b</code> left: <code>"7@47C5147"</code>.</p>
+  <p>Line 4 of our original code does the same thing with <code>flag_2b</code> as what earlier happened with <code>flag_2d</code>. It splits the string on the <code>"_"</code> character and merges it again with the <code>"C"</code> character at the interstices.</p>
+
+  <p>To reverse this we replace the <code>"C"</code> in our <code>flag_2b</code> by an <code>"_"</code>, which gets us <code>flag2b = "7@47_5147"</code>.</p>
+
+  <p>To finish this off, we assemble the contents of the flag, which becomes: <code>"15_" + "7@47_5147" + "_4@RD?"</code>.</p>
+
+  <p>The final flag to finish this section off is <code>"Central-InfoSec{{ '{' }}15_7@47_5147_4@RD?{{ '}' }}"</code>.</p>
+
+  <hr/>
+
+  <p>I hope you enjoyed reading this, as I've tried to make it as entry level into Python as possible. I'll be getting into more technical things in the 2 other write-ups, if that's more your speed!</p>
+</app-post-body>

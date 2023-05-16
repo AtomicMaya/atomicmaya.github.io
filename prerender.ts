@@ -40,5 +40,5 @@ ROUTES.forEach(route => {
     extraProviders: [
       provideModuleMap(LAZY_MODULE_MAP)
     ]
-  })).then(html => writeFileSync(join(fullPath, 'index.html'), html));
+  })).then(html => { console.log(join(fullPath, 'index.html')); writeFileSync(join(fullPath, 'index.html'), html)});
 });

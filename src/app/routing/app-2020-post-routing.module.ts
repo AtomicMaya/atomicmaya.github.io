@@ -1,15 +1,15 @@
 // tslint:disable: no-string-literal
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Oct2020HelloWorldComponent } from '../content/2020/201015-hello-world/hello-world.component';
-import { Oct2020ConintComponent } from '../content/2020/201019-conint/conint.component';
-import { Nov2020Beercon2Component } from '../content/2020/201102-beercon2/beercon2.component';
-import { Nov2020BsidesIslamabadComponent } from '../content/2020/201109-bsides-islamabad/bsides-islamabad.component';
-import { Nov2020MentoringComponent } from '../content/2020/201112-mentoring/mentoring.component';
-import { Nov2020ReadingComponent } from '../content/2020/201112-reading/reading.component';
-import { Dec2020CoffeehouseComponent } from '../content/2020/201212-coffeehouse/coffeehouse.component';
-import { authorList } from '../data/authors';
-import { TAG_COMMUNITY, TAG_CONFERENCE, TAG_CTF, TAG_INFOSEC, TAG_IOT, TAG_OSINT, TAG_PERSONAL, TAG_TALKS } from '../utils/tags';
+import { Oct2020HelloWorldComponent } from 'src/app/content/post/2020/201015-hello-world/hello-world.component';
+import { Oct2020ConintComponent } from 'src/app/content/post/2020/201019-conint/conint.component';
+import { Nov2020Beercon2Component } from 'src/app/content/post/2020/201102-beercon2/beercon2.component';
+import { Nov2020BsidesIslamabadComponent } from 'src/app/content/post/2020/201109-bsides-islamabad/bsides-islamabad.component';
+import { Nov2020MentoringComponent } from 'src/app/content/post/2020/201112-mentoring/mentoring.component';
+import { Nov2020ReadingComponent } from 'src/app/content/post/2020/201112-reading/reading.component';
+import { Dec2020CoffeehouseComponent } from 'src/app/content/post/2020/201212-coffeehouse/coffeehouse.component';
+import { authorList } from 'src/app/data/authors';
+import { TAG_COMMUNITY, TAG_CONFERENCE, TAG_CTF, TAG_INFOSEC, TAG_IOT, TAG_OSINT, TAG_PERSONAL, TAG_TALKS } from 'src/app/utils/tags';
 
 export const subroutes2020: Routes = [
   {
@@ -18,8 +18,8 @@ export const subroutes2020: Routes = [
     data: {
       title: 'Hello World!',
       authors: [ authorList['AtomicMaya'] ],
-      description: 'The first post on AtomicMaya\' Blog. Wow!',
-      imageUrl: '/assets/images/2020/hello-world/hw.png',
+      description: 'The first post on AtomicMaya\'s Blog. Wow!',
+      imageUrl: '/assets/images/post/2020/hello-world/hw.png',
       tags: [ TAG_PERSONAL ],
       date: [2021, 10, 15],
       readingTime: 1
@@ -32,7 +32,7 @@ export const subroutes2020: Routes = [
       title: 'I participated in the conINT CTF!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'Discussing my participation in the conINT TraceLabs OSINT capture the flag event.',
-      imageUrl: '/assets/images/2020/conint/conint_logo.png',
+      imageUrl: '/assets/images/post/2020/conint/conint_logo.png',
       tags: [ TAG_CONFERENCE, TAG_CTF, TAG_OSINT ],
       date: [2021, 10, 19],
       readingTime: 5
@@ -45,7 +45,7 @@ export const subroutes2020: Routes = [
       title: 'I gave a talk at BeerCon2!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a talk at BeerCon2, a rookie infosec conference.',
-      imageUrl: '/assets/images/2020/beercon2/bc2_zoombg.png',
+      imageUrl: '/assets/images/post/2020/beercon2/bc2_zoombg.png',
       tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
       date: [2021, 11, 2],
       readingTime: 10
@@ -58,7 +58,7 @@ export const subroutes2020: Routes = [
       title: 'I talked at BSides Islamabad!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a talk at BSides Islamabad, Pakistan\'s first cybersecurity conference.',
-      imageUrl: '/assets/images/2020/bsides-islamabad/card.png',
+      imageUrl: '/assets/images/post/2020/bsides-islamabad/card.png',
       tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
       date: [2021, 11, 9],
       readingTime: 3
@@ -95,7 +95,7 @@ export const subroutes2020: Routes = [
       title: 'Security CoffeeHouse: BC2 Speaker Interviews',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I participated in James Bore\'s Security CoffeeHouse!',
-      imageUrl: '/assets/images/2020/coffeehouse/coffeehouse_backdrop.png',
+      imageUrl: '/assets/images/post/2020/coffeehouse/coffeehouse_backdrop.png',
       tags: [ TAG_COMMUNITY, TAG_CONFERENCE ],
       date: [2021, 12, 12],
       readingTime: 2

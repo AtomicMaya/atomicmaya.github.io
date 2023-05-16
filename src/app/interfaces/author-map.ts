@@ -1,4 +1,4 @@
-import { Author } from './author';
+import { Author } from 'src/app/interfaces/author';
 
 /** An object listing authors by their name. */
 export interface AuthorMap {

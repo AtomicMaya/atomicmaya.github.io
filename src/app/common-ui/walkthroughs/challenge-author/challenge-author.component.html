@@ -1,0 +1,19 @@
+<div class="d-flex flex-column my-2">
+  <div class="d-flex flex-row col-sm-10">
+    <div class="d-flex col-sm-4"><strong><u>Author:</u></strong></div>
+    <div class="d-flex col-sm-6">
+      <a *ngIf="this.link != null" class="no-underline" href="{{this.link}}" target="_blank" rel="noopener"><em *ngIf="this.icon != null" class="{{this.icon}}"></em> {{this.author}}</a>
+      <a *ngIf="this.link == null && this.author != null">{{this.author}}</a>
+      <span *ngIf="this.link == null && this.author == null">Unknown</span>
+    </div>
+  </div>
+  <div class="d-flex flex-row col-sm-10" *ngIf="this.category != null">
+    <div class="d-flex col-sm-4"><strong><u>Category:</u></strong></div>
+    <div class="d-flex col-sm-6">{{ this.category }}</div>
+  </div>
+  <div class="d-flex flex-row col-sm-10" *ngIf="this.platformLink != null">
+    <div class="d-flex col-sm-4"><strong><u>Link:</u></strong></div>
+    <div class="d-flex col-sm-6"><a class="no-underline" href="{{ this.platformLink }}" target="_blank"  rel="noopener"><em *ngIf="this.platformIcon" class="{{ this.platformIcon }}"></em> {{ this.platformName }}</a></div>
+  </div>
+</div>
+<hr>

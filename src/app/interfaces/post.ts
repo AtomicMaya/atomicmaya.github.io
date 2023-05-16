@@ -1,5 +1,5 @@
-import { Author } from './author';
-import { Tag } from './tag';
+import { Author } from 'src/app/interfaces/author';
+import { Tag } from 'src/app/interfaces/tag';
 
 /**
  * Represents a Post.
@@ -32,4 +32,8 @@ export interface Post {
 
   /** The average time to read the post. */
   readingTime: number;
+}
+
+export interface WalkthroughPost extends Post {
+  platform?: string;
 }

@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { MetaService } from './../../services/meta.service';
+import { MetaService } from 'src/app/services/meta.service';
 @Component({
   selector: 'app-whoami',
   templateUrl: './whoami.component.html',

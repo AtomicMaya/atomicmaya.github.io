@@ -1,4 +1,4 @@
-import { TagCount } from './../../../interfaces/tag-count';
+import { TagCount } from 'src/app/interfaces/tag-count';
 import { Component, OnInit } from '@angular/core';
 import { countTags } from 'src/app/utils/route-generation-functions';
 

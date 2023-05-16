@@ -1,0 +1,34 @@
+<app-post-body [post]="this.post" [date]="this.post.date" [showTags]="false">
+  <app-walkthrough-challenge-author category="Blue Team: CyberChef"
+    platformLink="https://tryhackme.com/room/adventofcyber4"></app-walkthrough-challenge-author>
+
+  <p>I initially decided against covering this room, because its relation to cryptocurrency.</p>
+  <h3>Question 1</h3>
+  <blockquote>
+  <p>If not already completed, download the zip folder attached to this task, and open Remix in your preferred browser.</p>
+  </blockquote>
+  <div class="media-container"><img alt="Screenshot of the Remix IDE" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day08/1.png" style="max-height: 400px"/></div>
+  <p>Answer: <code>No answer needed</code></p>
+  <h3>Question 2</h3>
+  <blockquote>
+  <p>What flag is found after attacking the provided EtherStore Contract?</p>
+  </blockquote>
+  <p>First we compile both contracts.</p>
+  <div class="media-container"><img alt="Screenshot of Remix compiling a contract." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day08/2.1.png" style="max-height: 400px"/></div>
+  <p>Then we deploy <code>EtherStore.Sol</code> on an first account.</p>
+  <div class="media-container"><img alt="Screenshot of contract deploymentt" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day08/2.2.png" style="max-height: 300px"/></div>
+  <p>Which gives us a deployed contract with 0 balance.</p>
+  <div class="media-container"><img alt="Screenshot of the EtherStore contract holding 10 ETH" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day08/2.3.png" style="max-height: 300px"/></div>
+  <p>We then set the value to any number (e.g. 10) and hit "deposit" to "give the contract money" (or whatever).</p>
+  <p>We then copy the address of the EtherStore contract, switch to another account, and add it as a parameter to the <code>Attack.sol</code> contract we then deploy.</p>
+  <div class="media-container"><img alt="Screenshot of us deploying the Attack contract" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day08/2.4.png" style="max-height: 300px"/></div>
+  <p>Then we set the value to 1, and press "attack" (which steals not 1, but 1 plus the balance in the contract). Oh and the flag!</p>
+  <div class="media-container"><img alt="Screenshot of the updated balance, as well as the flag that was spammed to the console." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day08/2.5.png" style="max-height: 300px"/></div>
+  <p>Of course... One could have simply copied the JS in <code>EtherStore.sol</code> and done the <code>console.log</code> operation ourselves...</p>
+  <p>Answer: <code>flag{{ '{' }}411_ur_37h_15_m1n3{{ '}' }}</code></p>
+
+  <br />
+  <div class="d-flex justify-content-end">
+    <p><a href="/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022"><em class="fas fa-link"></em> Return to the Index</a></p>
+  </div>
+</app-post-body>

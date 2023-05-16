@@ -1,0 +1,77 @@
+<app-post-body [post]="this.post" [date]="this.post.date" [showTags]="false">
+  <app-walkthrough-challenge-author category="Red Team: Pivoting"
+  platformLink="https://tryhackme.com/room/adventofcyber4"></app-walkthrough-challenge-author>
+
+
+  <h3>Question 1</h3>
+  <blockquote>
+  <p>Deploy the attached VM, and wait a few minutes. What ports are open?</p>
+  </blockquote>
+  <p>Run <code>nmap -sV -sS $IP</code></p>
+  <div class="media-container"><img alt="Screenshot of an 'nmap' output, showing only the port 80 open." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day09/1.png" style="max-height: 200px"/><span><em>Well... that's not a lot to work with...</em></span></div>
+  <p>Answer: <code>80</code></p>
+  <h3>Question 2</h3>
+  <blockquote>
+  <p>What framework is the web application developed with?</p>
+  </blockquote>
+  <p>Browse to the page.</p>
+  <div class="media-container"><img alt="Screenshot of the web page." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day09/2.png" style="max-height: 400px"/><span><em>Thankfully the version info is right *there*</em></span></div>
+  <p>Answer: <code>Laravel</code></p>
+  <h3>Question 3</h3>
+  <blockquote>
+  <p>What CVE is the application vulnerable to?</p>
+  </blockquote>
+  <p>We search for <code>laravel</code> and use the <code>info</code> term to get the details of the CVE.</p>
+  <div class="media-container"><img alt="Screenshot of exploit-db results for laravel." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day09/3.png" style="max-height: 600px"/><span><em>Damn, exploitDB is convenient.</em></span></div>
+  <p>Answer: <code>CVE-2021-3129</code></p>
+  <h3>Question 4</h3>
+  <blockquote>
+  <p>What command can be used to upgrade the last opened session to a Meterpreter session?</p>
+  </blockquote>
+  <p>From the explanation we find:</p>
+  <div class="media-container"><img alt="Screenshot of meterpreter output." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day09/6.png" style="max-height: 500px"/></div>
+  <p>Answer: <code>sessions -u -1</code></p>
+  <h3>Question 5</h3>
+  <blockquote>
+  <p>What file indicates a session has been opened within a Docker container?</p>
+  </blockquote>
+  <p>From the internet: <code>/.dockerenv</code></p>
+  <p>Answer: <code>/.dockerenv</code></p>
+  <h3>Question 6</h3>
+  <blockquote>
+  <p>What file often contains useful credentials for web applications?</p>
+  </blockquote>
+  <p>See (Question 4)</p>
+  <p>Answer: <code>.env</code></p>
+  <h3>Question 7</h3>
+  <blockquote>
+  <p>What database table contains useful credentials?</p>
+  </blockquote>
+  <p>We find the table schema dump, there is a table called <code>users</code>:</p>
+  <div class="media-container"><img alt="Screenshot of the metasploit output of a postgresql connection." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day09/7.png" style="max-height: 500px"/><span><em>Santa is certainly not the only exec who's security officer cries themselves to sleep at night.</em></span></div>
+  <p>Answer: <code>users</code></p>
+  <h3>Question 8</h3>
+  <blockquote>
+  <p>What is Santa's password?</p>
+  </blockquote>
+  <p>Answer: <code>p4$$w0rd</code></p>
+  <h3>Question 9</h3>
+  <blockquote>
+  <p>What ports are open on the host machine?</p>
+  </blockquote>
+  <p>We run <code>proxychains -q nmap -n -sT -Pn -p 22,80,443,5432 172.17.0.1</code>:</p>
+  <div class="media-container"><img alt="Screenshot of a command being chained to the host." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day09/9.png" style="max-height: 500px"/><span><em>Ooops.</em></span></div>
+  <p>Answer: <code>22,80</code></p>
+  <h3>Question 10</h3>
+  <blockquote>
+  <p>What is the root flag?</p>
+  </blockquote>
+  <p>We login with the credentials and get the root flag:</p>
+  <div class="media-container"><img alt="Screenshot of an SSH session." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day09/10.png" style="max-height: 300px"/><span><em>We got 'em.</em></span></div>
+  <p>Answer: <code>THM{{ '{' }}47C61A0FA8738BA77308A8A600F88E4B{{ '}' }}</code></p>
+
+  <br />
+  <div class="d-flex justify-content-end">
+    <p><a href="/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022"><em class="fas fa-link"></em> Return to the Index</a></p>
+  </div>
+</app-post-body>

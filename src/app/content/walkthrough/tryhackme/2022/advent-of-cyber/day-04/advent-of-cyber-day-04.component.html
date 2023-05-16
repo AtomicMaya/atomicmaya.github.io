@@ -1,0 +1,46 @@
+<app-post-body [post]="this.post" [date]="this.post.date" [showTags]="false">
+  <!-- author="CyberSecMeg" link="https://twitter.com/cybersecmeg" icon="fab fa-twitter-square" -->
+  <app-walkthrough-challenge-author category="Red Team: Scanning"
+    platformLink="https://tryhackme.com/room/adventofcyber4"></app-walkthrough-challenge-author>
+
+  <h3>Question 1</h3>
+  <blockquote>
+    <p>What is the name of the HTTP server running on the remote host?</p>
+  </blockquote>
+  <p>We run <code>nmap</code> in service discovery mode like so: <code>nmap -sV -sS $IP</code></p>
+  <div class="media-container"><img alt="Nmap scan results." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day04/1.png"
+      style="max-height: 300px" /><span><em>Oooh, fun ports.</em></span></div>
+  <p>Answer: <code>Apache</code></p>
+  <h3>Question 2</h3>
+  <blockquote>
+    <p>What is the name of the service running on port 22 on the QA server?</p>
+  </blockquote>
+  <p>Answer: <code>ssh</code></p>
+  <h3>Question 3</h3>
+  <blockquote>
+    <p>What is the name of the service running on port 22 on the QA server?</p>
+  </blockquote>
+  <p>We access the SMB share by accessing <code>smb://$IP</code> in our file explorer. There we see three shares,
+    including <code>admins</code>. There we log in with the credentials provided in the challenge
+    <code>ubuntu:S@nta2022</code>.</p>
+  <div class="media-container"><img alt="A file explorer showing the directory of a samba share." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day04/3.1.png"
+      style="max-height: 300px" /><span><em>Login? Succesful.</em></span></div>
+  <p>We find the <code>flag.txt</code> file:</p>
+  <div class="media-container"><img alt="A screenshot of the 'flag.txt' file" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day04/3.3.png"
+      style="max-height: 300px" /><span><em>Here's our flag.</em></span></div>
+  <p>Answer: <code>{{ '{' }}THM_SANTA_SMB_SERVER{{ '}' }}</code></p>
+  <h3>Question 4</h3>
+  <blockquote>
+    <p>What is the password for the username santahr?</p>
+  </blockquote>
+  <p>We look into the <code>userlist.txt</code> file and find the correct password:</p>
+  <div class="media-container"><img alt="Screenshot of the 'userlist.txt' file, it shows several username/password combinations." loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day04/4.png"
+      style="max-height: 300px" /><span><em>Terrible password policy on display here.</em></span></div>
+  <p>Answer: <code>santa25</code></p>
+
+  <br />
+  <div class="d-flex justify-content-end">
+    <p><a href="/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022"><em class="fas fa-link"></em> Return to
+        the Index</a></p>
+  </div>
+</app-post-body>

@@ -1,4 +1,4 @@
-import { MetaService } from './../../services/meta.service';
+import { MetaService } from 'src/app/services/meta.service';
 import { Tag } from 'src/app/interfaces/tag';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';

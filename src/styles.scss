@@ -3,6 +3,7 @@
 @import 'assets/css/jekyll-hacker.scss';
 @import 'assets/css/containers.scss';
 @import 'assets/css/context.scss';
+@import 'assets/css/custom-fonts.css';
 @import 'prism-vsc-dark-plus.css';
 @import '~prismjs/plugins/line-numbers/prism-line-numbers.min.css';
 @import '~prismjs/plugins/line-highlight/prism-line-highlight.css';
@@ -111,6 +112,17 @@ ul.nomargin {
 ngx-tweet {
   width: 28.125em;
 }
-.media-container > p {
+.media-container > p, .media-container > span {
   text-align: center;
+}
+
+.spoiler{
+  background-color: gray;
+  color: transparent;
+  user-select: none;
+}
+
+.spoiler:hover{
+  background-color: inherit;
+  color: inherit;
 }

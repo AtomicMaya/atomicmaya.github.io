@@ -1,0 +1,14 @@
+<div class="w-100 d-flex flex-row align-items-center justify-content-between">
+  <div class="mx-auto mb-3 align-self-center">
+    <h1 class="text-center">{{ this.title }}<br *ngIf="this.subtitle"/><span *ngIf="this.subtitle">{{ this.subtitle }}</span></h1>
+  </div>
+</div>
+<hr/>
+<app-walkthroughs-card-compact-header></app-walkthroughs-card-compact-header>
+<div *ngFor="let item of this.postsByYear | keyvalue: keyDescOrder" class="mt-1 year-section">
+  <!-- Container -->
+  <div class="d-flex flex-column w-100">
+    <!-- Card -->
+    <app-walkthroughs-card-compact class="mb-1" *ngFor="let item0 of item.value" [post]="item0"></app-walkthroughs-card-compact>
+  </div>
+</div>
