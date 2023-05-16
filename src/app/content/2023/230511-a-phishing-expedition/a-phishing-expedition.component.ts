@@ -13,7 +13,7 @@ export class May2023APhishingExpeditionComponent implements OnInit {
   constructor(private meta: MetaService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(data => { this.post = (data as Post); console.log(this.post) });
+    this.route.data.subscribe(data => { this.post = (data as Post); });
     this.meta.setTags(`/post/${this.post.path.slice(0, 4)}/${this.post.path}`, this.post.title,
                       this.post.imageUrl, 1280, 720,
                       ["phishing", "javascript", "deobfuscation", 'emily dennison', 'https://twitter.com/nyxilar', '@nyxilar', 'nylixar', 'cyjax', 'reverse engineering', 'browser fingerprinting', 'securiphish', '0ktapus', 'scatter swine', 'cti'],
