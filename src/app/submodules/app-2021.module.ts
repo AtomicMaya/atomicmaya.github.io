@@ -19,7 +19,7 @@ import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/202
 import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
 import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-central-infosec-ctf-python/central-infosec-ctf-python.component';
 import { Apr2021DigitalOverdoseConferenceComponent } from '../content/2021/210429-digital-overdose-conference/digital-overdose-conference.component';
-import { July2021TheHalfwayMarkComponent } from '../content/2021/210720-the-2021-halfway-mark/the-halfway-mark.component';
+import { Jul2021TheHalfwayMarkComponent } from '../content/2021/210720-the-2021-halfway-mark/the-halfway-mark.component';
 import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/210831-enumerating-the-lightshot-cdn/enumerating-the-lightshot-cdn.component';
 import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
 import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
@@ -50,7 +50,7 @@ import { SharedModule } from '../shared.module';
     Apr2021CentralInfosecCtfPythonComponent,
     Apr2021CentralInfosecCtfHackTheStaticHardComponent,
     Apr2021DigitalOverdoseConferenceComponent,
-    July2021TheHalfwayMarkComponent,
+    Jul2021TheHalfwayMarkComponent,
     Aug2021EnumeratingTheLightshotCdnComponent,
     Oct2021DigitalOverdoseWriteupOutageComponent,
     Oct2021DigitalOverdoseWriteupCakeComponent,

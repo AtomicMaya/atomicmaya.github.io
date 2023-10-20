@@ -7,6 +7,12 @@ import { Mar2023RevampingMyBscProjectComponent } from '../content/2023/230309-re
 import { May2023APhishingExpeditionComponent } from '../content/2023/230511-a-phishing-expedition/a-phishing-expedition.component';
 import { authorList } from "../data/authors";
 import { TAG_ACADEMIA, TAG_PERSONAL, TAG_CONFERENCE, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PROGRAMMING, TAG_TALKS, TAG_TRAVEL, TAG_CYBERSEC, TAG_REVERSE_ENGINEERING } from './../utils/tags';
+import { Jul2023JavascriptWarCrimesAtSteelconComponent } from '../content/2023/230712-javascript-war-crimes-at-steelcon/javascript-war-crimes-at-steelcon.component';
+import { Aug2023IWentToDefcon31Component } from '../content/2023/230820-i-went-to-defcon-31/i-went-to-defcon31.component';
+import { Aug2023IWentToC3CampComponent } from '../content/2023/230821-i-went-to-c3camp/i-went-to-c3camp.component';
+import { Sep2023AttendingBonclesidesComponent } from '../content/2023/230931-attending-bonclesides/attending-bonclesides.component';
+import { Oct2023ItsBeen3YearsComponent } from '../content/2023/231015-its-been-3-years/its-been-3-years.component';
+import { Oct2023MakingThisBlogEasierToDeployComponent } from '../content/2023/231020-making-this-blog-easier-to-deploy/making-this-blog-easier-to-deploy.component';
 
 export const subroutes2023: Routes = [
   {
@@ -25,7 +31,7 @@ export const subroutes2023: Routes = [
     path: '2023_02_16+going-to-bsides-cymru',
     component: Feb2023BSidesCymruComponent,
     data: {
-      title: 'I went to Wales for BSides Cymru',
+      title: 'I went to Wales for BSides Cymru!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'BSides Cymru, or why I went to hang out with a bunch of trans and queer folk in Wales',
       imageUrl: '/assets/images/2023/230216-bsides-cymru/bsides-cymru-logo.png',
@@ -69,6 +75,78 @@ export const subroutes2023: Routes = [
       tags: [ TAG_INFOSEC, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_REVERSE_ENGINEERING ],
       date: [2023, 5, 11],
       readingTime: 15
+    }
+  },
+  {
+    path: '2023_07_12+javascript-war-crimes-at-steelcon',
+    component: Jul2023JavascriptWarCrimesAtSteelconComponent,
+    data: {
+      title: 'JavaScript war crimes! At SteelCon.',
+      authors : [ authorList['AtomicMaya'] ],
+      description: 'Maya is back - with a vengeance - to teach people about JSFuck.',
+      tags: [ TAG_INFOSEC, TAG_PROGRAMMING, TAG_DEVELOPMENT, TAG_REVERSE_ENGINEERING, TAG_CONFERENCE, TAG_TALKS, TAG_TRAVEL ],
+      date: [2023, 7, 12],
+      readingTime: 5
+    }
+  },
+  {
+    path: '2023_08_20+i-went-to-defcon-31',
+    component: Aug2023IWentToDefcon31Component,
+    data: {
+      title: 'I went to DEFCON31!',
+      authors : [ authorList['AtomicMaya'] ],
+      description: '',
+      tags: [ TAG_INFOSEC, TAG_PROGRAMMING, TAG_DEVELOPMENT, TAG_CONFERENCE, TAG_TALKS, TAG_TRAVEL ],
+      date: [2023, 8, 20],
+      readingTime: -1
+    }
+  },
+  {
+    path: '2023_08_21+i-went-to-c3camp',
+    component: Aug2023IWentToC3CampComponent,
+    data: {
+      title: 'I went to C3Camp!',
+      authors : [ authorList['AtomicMaya'] ],
+      description: '',
+      tags: [ TAG_INFOSEC, TAG_PROGRAMMING, TAG_DEVELOPMENT, TAG_CONFERENCE, TAG_TALKS, TAG_TRAVEL ],
+      date: [2023, 8, 21],
+      readingTime: -1
+    }
+  },
+  {
+    path: '2023_09_31+attending-bonclesides',
+    component: Sep2023AttendingBonclesidesComponent,
+    data: {
+      title: 'Attending BoncleSides!',
+      authors : [ authorList['AtomicMaya'] ],
+      description: '',
+      tags: [ TAG_INFOSEC, TAG_PROGRAMMING, TAG_DEVELOPMENT, TAG_CONFERENCE, TAG_TALKS, TAG_TRAVEL ],
+      date: [2023, 9, 31],
+      readingTime: -1
+    }
+  },
+  {
+    path: '2023_10_15+its-been-3-years',
+    component: Oct2023ItsBeen3YearsComponent,
+    data: {
+      title: 'It\'s been 3 years.',
+      authors : [ authorList['AtomicMaya'] ],
+      description: '',
+      tags: [ TAG_INFOSEC, TAG_PROGRAMMING, TAG_DEVELOPMENT, TAG_CONFERENCE, TAG_TALKS, TAG_TRAVEL ],
+      date: [2023, 10, 15],
+      readingTime: -1
+    }
+  },
+  {
+    path: '2023_10_20+making-this-blog-easier-to-deploy',
+    component: Oct2023MakingThisBlogEasierToDeployComponent,
+    data: {
+      title: 'Making this blog easier to deploy!',
+      authors : [ authorList['AtomicMaya'] ],
+      description: '',
+      tags: [ TAG_INFOSEC, TAG_PROGRAMMING, TAG_DEVELOPMENT, TAG_CONFERENCE, TAG_TALKS, TAG_TRAVEL ],
+      date: [2023, 10, 20],
+      readingTime: -1
     }
   }
 ]

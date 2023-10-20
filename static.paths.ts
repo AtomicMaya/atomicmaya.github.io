@@ -92,4 +92,10 @@ export const ROUTES = [
   '/post/2023/2023_02_17+gender-paradigm-shift/',
   '/post/2023/2023_03_09+revamping-my-bsc-project/',
   '/post/2023/2023_05_11+a-phishing-expedition/',
+  '/post/2023/2023_07_12+javascript-war-crimes-at-steelcon',
+  '/post/2023/2023_08_20+i-went-to-defcon-31',
+  '/post/2023/2023_08_21+i-went-to-c3camp',
+  '/post/2023/2023_09_31+attending-bonclesides',
+  '/post/2023/2023_10_15+its-been-3-years',
+  '/post/2023/2023_10_20+making-this-blog-easier-to-deploy',
 ];

@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import { SharedModule } from "../shared.module";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { MarkdownModule } from "ngx-markdown";
 import { Oct2022GenderParadigmShiftComponent } from "../content/2022/221021-gender-paradigm-shift/gender-paradigm-shift.component";
@@ -6,7 +7,12 @@ import { Feb2023MScFunComponent } from '../content/2023/230215-msc-fun/msc-fun.c
 import { Feb2023BSidesCymruComponent } from '../content/2023/230216-bsides-cymru/bsides-cymru.component';
 import { Mar2023RevampingMyBscProjectComponent } from '../content/2023/230309-revamping-my-bsc-project/revamping-my-bsc-project.component';
 import { May2023APhishingExpeditionComponent } from "../content/2023/230511-a-phishing-expedition/a-phishing-expedition.component";
-import { SharedModule } from "../shared.module";
+import { Jul2023JavascriptWarCrimesAtSteelconComponent } from "../content/2023/230712-javascript-war-crimes-at-steelcon/javascript-war-crimes-at-steelcon.component";
+import { Aug2023IWentToC3CampComponent } from "../content/2023/230821-i-went-to-c3camp/i-went-to-c3camp.component";
+import { Aug2023IWentToDefcon31Component } from "../content/2023/230820-i-went-to-defcon-31/i-went-to-defcon31.component";
+import { Sep2023AttendingBonclesidesComponent } from "../content/2023/230931-attending-bonclesides/attending-bonclesides.component";
+import { Oct2023ItsBeen3YearsComponent } from "../content/2023/231015-its-been-3-years/its-been-3-years.component";
+import { Oct2023MakingThisBlogEasierToDeployComponent } from "../content/2023/231020-making-this-blog-easier-to-deploy/making-this-blog-easier-to-deploy.component";
 
 
 @NgModule({
@@ -15,7 +21,13 @@ import { SharedModule } from "../shared.module";
     Feb2023BSidesCymruComponent,
     Feb2023MScFunComponent,
     Mar2023RevampingMyBscProjectComponent,
-    May2023APhishingExpeditionComponent
+    May2023APhishingExpeditionComponent,
+    Jul2023JavascriptWarCrimesAtSteelconComponent,
+    Aug2023IWentToDefcon31Component,
+    Aug2023IWentToC3CampComponent,
+    Sep2023AttendingBonclesidesComponent,
+    Oct2023ItsBeen3YearsComponent,
+    Oct2023MakingThisBlogEasierToDeployComponent
   ],
   imports: [
     CommonModule,
