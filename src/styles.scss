@@ -111,6 +111,17 @@ ul.nomargin {
 ngx-tweet {
   width: 28.125em;
 }
-.media-container > p {
+.media-container > p, .media-container > span {
   text-align: center;
+}
+
+.spoiler{
+  background-color: gray;
+  color: transparent;
+  user-select: none;
+}
+
+.spoiler:hover{
+  background-color: inherit;
+  color: inherit;
 }

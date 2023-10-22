@@ -1,15 +1,15 @@
-<div class="card d-flex flex-row flex-wrap p-2 my-0 align-items-center" (click)="goToPost('/post/' + post.date[0] + '/' + post.path)">
+<div class="card d-flex flex-row flex-wrap p-2 my-0 align-items-center" (click)="goToPost('/post/' + post.date[0] + '/' + post.path + '/')">
   <div class="col-6 d-flex flex-column justify-content-center align-items-begin">
     <em>{{ ('' + post.date[2]).padStart(2, '0') }}/{{ ('' + post.date[1]).padStart(2, '0') }}/{{ post.date[0] }}</em>
     <div class="card-title my-0">{{ this.stringify(post.title) }}</div>
   </div>
   <div class="d-flex flex-row col-3 card-link-container">
-    <a class="card-author p-1 mx-1" *ngFor="let a of post.authors" href="/authors/{{ a.name }}">
+    <a class="card-author p-1 mx-1" *ngFor="let a of post.authors" href="/authors/{{ a.name }}/">
       <span>{{ a.name }}</span>
     </a>
   </div>
   <div class="d-flex flex-row col-3 card-link-container">
-    <a class="card-tag p-1 mx-1" *ngFor="let t of post.tags" href="/tags/{{ t.name }}">
+    <a class="card-tag p-1 mx-1" *ngFor="let t of post.tags" href="/tags/{{ t.name }}/">
       <span>{{ t.name }}</span>
     </a>
   </div>

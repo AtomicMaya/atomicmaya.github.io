@@ -44,8 +44,9 @@ export const ROUTES = [
   '/post/2020/2020_11_12+Mentoring/',
   '/post/2020/2020_11_12+Reading-Materials/',
   '/post/2020/2020_12_12+Security-Coffeehouse-BC2-Speaker-Interviews/',
-  '/post/2020/2020_12_16+OSINT-Software-Development-Ideas/',
-  //'/postx/2020/2020_12_27%2BHeap-Override-CTF-Challenge-JS-Reversal-Adventures/',
+  //'/post/2020/2020_12_16+OSINT-Software-Development-Ideas/',
+  //'/post/2020/2020_12_27%2BHeap-Override-CTF-Challenge-JS-Reversal-Adventures/',
+
   '/post/2021/2021_01_02+Goodbye-2020-New-Year-Party/',
   '/post/2021/2021_01_03+Mental-Health/',
   '/post/2021/2021_01_05+OSINT-on-Gateway/',
@@ -71,6 +72,7 @@ export const ROUTES = [
   '/post/2021/2021_10_11+digital-overdose-official-writeup-3-c4/',
   '/post/2021/2021_11_15+happy-birthday-to-this-blog/',
   '/post/2021/2021_11_25+speaking-at-conint/',
+
   '/post/2022/2022_01_15+catching-covid/',
   '/post/2022/2022_01_29+knight-ctf-2022-all-writeups/',
   '/post/2022/2022_01_30+knight-ctf-2022-cryptography-writeups/',
@@ -87,9 +89,17 @@ export const ROUTES = [
   '/post/2022/2022_10_15+beercon4/',
   '/post/2022/2022_11_17+going-to-korea/',
   '/post/2022/2022_12_20+going-to-bsides-london/',
+
   '/post/2023/2023_02_15+msc-fun/',
   '/post/2023/2023_02_16+going-to-bsides-cymru/',
   '/post/2023/2023_02_17+gender-paradigm-shift/',
   '/post/2023/2023_03_09+revamping-my-bsc-project/',
+  '/post/2023/2023_04_12+yet-another-new-job',
   '/post/2023/2023_05_11+a-phishing-expedition/',
+  '/post/2023/2023_07_12+javascript-war-crimes-at-steelcon',
+  '/post/2023/2023_08_20+i-went-to-defcon-31',
+  '/post/2023/2023_08_21+i-went-to-c3camp',
+  '/post/2023/2023_09_30+attending-bonclesides',
+  '/post/2023/2023_10_15+its-been-3-years',
+  // '/post/2023/2023_10_20+making-this-blog-easier-to-deploy',
 ];

@@ -20,7 +20,7 @@ import { Apr2021CentralInfosecCtfHackTheMazeHardComponent } from '../content/202
 import { Apr2021CentralInfosecCtfHackTheStaticHardComponent } from '../content/2021/210420-central-infosec-ctf-hack-the-static-hard/central-infosec-ctf-hack-the-static-hard.component';
 import { Apr2021CentralInfosecCtfPythonComponent } from '../content/2021/210420-central-infosec-ctf-python/central-infosec-ctf-python.component';
 import { Apr2021DigitalOverdoseConferenceComponent } from '../content/2021/210429-digital-overdose-conference/digital-overdose-conference.component';
-import { July2021TheHalfwayMarkComponent } from '../content/2021/210720-the-2021-halfway-mark/the-halfway-mark.component';
+import { Jul2021TheHalfwayMarkComponent } from '../content/2021/210720-the-2021-halfway-mark/the-halfway-mark.component';
 import { Aug2021EnumeratingTheLightshotCdnComponent } from '../content/2021/210831-enumerating-the-lightshot-cdn/enumerating-the-lightshot-cdn.component';
 import { Oct2021DigitalOverdoseWriteupOutageComponent } from '../content/2021/211011-digital-overdose-official-writeup-1-outage/digital-overdose-official-writeup-1-outage.component';
 import { Oct2021DigitalOverdoseWriteupCakeComponent } from '../content/2021/211011-digital-overdose-official-writeup-2-a-lying-cake/digital-overdose-official-writeup-2-a-lying-cake.component';
@@ -242,7 +242,7 @@ export const subroutes2021: Routes = [
   },
   {
     path: '2021_07_20+The-2021-Halfway-Mark',
-    component: July2021TheHalfwayMarkComponent,
+    component: Jul2021TheHalfwayMarkComponent,
     data: {
       title: 'Halfway through 2021: A brief recap of what I\'ve been up to',
       authors: [ authorList['AtomicMaya'] ],
@@ -302,7 +302,7 @@ export const subroutes2021: Routes = [
       imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png',
       readingTime: 15
     }
-  },
+  },/*
   {
     path: '2021_10_30+beercon3',
     component: Oct2021Beercon3Component,
@@ -314,7 +314,7 @@ export const subroutes2021: Routes = [
       date: [2021, 10, 30],
       readingTime: 2
     }
-  },
+  },*/
   {
     path: '2021_11_15+happy-birthday-to-this-blog',
     component: Nov2021HappyBirthday,

@@ -18,7 +18,7 @@ export const subroutes2020: Routes = [
     data: {
       title: 'Hello World!',
       authors: [ authorList['AtomicMaya'] ],
-      description: 'The first post on AtomicMaya\' Blog. Wow!',
+      description: 'The first post on AtomicMaya\'s Blog. Wow!',
       imageUrl: '/assets/images/2020/hello-world/hw.png',
       tags: [ TAG_PERSONAL ],
       date: [2021, 10, 15],

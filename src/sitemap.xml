@@ -279,7 +279,37 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://atomicmaya.me/post/2023/2023_04_12+yet-another-new-job/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://atomicmaya.me/post/2023/2023_05_11+a-phishing-expedition/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_07_12+javascript-war-crimes-at-steelcon/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_08_20+i-went-to-defcon-31/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_08_21+i-went-to-c3camp/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_09_30+attending-bonclesides/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_10_15+its-been-3-years/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
   </url>

@@ -6,7 +6,7 @@ import { MetaService } from 'src/app/services/meta.service';
 @Component({
   templateUrl: './the-halfway-mark.component.html'
 })
-export class July2021TheHalfwayMarkComponent implements OnInit {
+export class Jul2021TheHalfwayMarkComponent implements OnInit {
   post: Post;
 
   constructor(private meta: MetaService, private route: ActivatedRoute) { }
