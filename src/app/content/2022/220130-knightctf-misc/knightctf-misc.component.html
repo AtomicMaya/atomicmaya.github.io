@@ -76,17 +76,7 @@ ffmpeg.exe -i .\QR_Code_From_The_Future.gif -vsync 0 gif-images/%02d.png
     </markdown>
   </div>
 
-  <p>We can then use zbarimg (from the zbar-tools) to read the QR codes (zbarimg socket errrors can be expected and ignored):</p>
-
-  <div class='d-flex media-container'>
-    <markdown ngPreserveWhitespaces lineNumbers>
-```sh
-mkdir ./gif-images
-ffmpeg.exe -i .\QR_Code_From_The_Future.gif -vsync 0 gif-images/%02d.png
-```
-    </markdown>
-  </div>
-
+  <p>We can then use zbarimg (from the <code>zbar-tools</code> package) to read the QR codes (zbarimg socket errors can be expected and ignored):</p>
   <div class='d-flex media-container'>
     <markdown ngPreserveWhitespaces lineNumbers>
 ```sh
@@ -100,6 +90,9 @@ rm gif_contents
 
   <p>FFMPEG takes the image provided with the GIF as input (<code>-i</code>), synchroneously (<code>-vsync 0</code>). It then saves it to <code>gif-images</code>, a directory that needs to exist.</p>
   <p><code>%02</code> is so we don't have a flag out of order, it is just the number of leading zeros for that.</p>
-  <p>Find checks all files in the directory gif-images that are PNG files. We feed each of these images to zbarimg which produces a code, which we store, remove the QR-Code: segment preceding it and append it to gif_contents.</p>
+  <p>Find checks all files in the directory gif-images that are PNG files. We feed each of these images to zbarimg which produces a code, which we store, remove the QR-Code: segment preceding it and append it to <code>gif_contents</code>.</p>
 
+  <p>This produces the string <code>{{ '}' }}pvznalq_bg_pvgngf_zbes_qriybir_gbt_rqbp_ED{{ '{' }}SGPX</code>, which, when flipped, gives the string <code>XPGS{{ '{' }}DE_pbqr_tbg_ribyirq_sebz_fgngvp_gb_qlanzvp{{ '}' }}</code>, which itself is a simple ROT13 encryption.</p>
+
+  <p>We get the flag: <code>KCTF{{'{'}}QR_code_got_evolved_from_static_to_dynamic{{'}'}}</code>.</p>
 </app-post-body>
