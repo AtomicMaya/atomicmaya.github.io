@@ -33,3 +33,7 @@ export interface Post {
   /** The average time to read the post. */
   readingTime: number;
 }
+
+export interface WalkthroughPost extends Post {
+  platform?: string;
+}

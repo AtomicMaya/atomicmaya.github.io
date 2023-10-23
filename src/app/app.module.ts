@@ -30,6 +30,10 @@ import { LatestComponent } from './common-ui/sidebar/latest/latest.component';
 import { ListTagCountComponent } from './common-ui/sidebar/list-tag-count/list-tag-count.component';
 import { SidebarComponent } from './common-ui/sidebar/sidebar.component';
 import { SocialsComponent } from './common-ui/sidebar/socials/socials.component';
+import { WalkthroughInventoryDisplayComponent } from "./common-ui/walkthrough-inventory-display/walkthrough-inventory-display.component";
+import { WalkthroughNoFilterComponent } from "./common-ui/walkthrough-inventory-display/walkthroughs-no-filter/walkthroughs-no-filter.component";
+import { WalkthroughsCardCompactHeaderComponent } from "./common-ui/walkthrough-inventory-display/walkthroughs-card/walkthroughs-card-compact-header/walkthroughs-card-compact-header.component";
+import { WalkthroughsCardCompactComponent } from "./common-ui/walkthrough-inventory-display/walkthroughs-card/walkthroughs-card-compact/walkthroughs-card-compact.component";
 import { CopyrightComponent } from './content/copyright/copyright.component';
 import { PrivacyPolicyComponent } from './content/privacy-policy/privacy-policy.component';
 import { WhoamiComponent } from './content/whoami/whoami.component';
@@ -38,7 +42,9 @@ import { App2020Module } from './submodules/app-2020.module';
 import { App2021Module } from './submodules/app-2021.module';
 import { App2022Module } from './submodules/app-2022.module';
 import { App2023Module } from "./submodules/app-2023.module";
+import { AppTryHackMe2022WalkthroughModule } from "./submodules/app-tryhackme-2022-walkthrough.module";
 import { ServiceLocator } from './utils/service.locator';
+import { WalkthroughFilteredByPlatformComponent } from "./common-ui/walkthrough-inventory-display/walkthroughs-filtered-by-platform/walkthroughs-filtered-by-platform.component";
 
 
 @NgModule({
@@ -57,18 +63,24 @@ import { ServiceLocator } from './utils/service.locator';
     PrivacyPolicyComponent,
     PostInventoryDisplayComponent,
     PostsFilteredByTagComponent,
+    PostsFilteredByAuthorComponent,
     PostsNoFilterComponent,
     PostsCardNormalComponent,
     PostsCardCompactComponent,
     PostsCardCompactHeaderComponent,
-    PostsFilteredByAuthorComponent,
+    WalkthroughInventoryDisplayComponent,
+    WalkthroughNoFilterComponent,
+    WalkthroughFilteredByPlatformComponent,
+    WalkthroughsCardCompactComponent,
+    WalkthroughsCardCompactHeaderComponent
   ],
   imports: [
     SharedModule,
     App2020Module,
     App2021Module,
     App2022Module,
-    App2023Module
+    App2023Module,
+    AppTryHackMe2022WalkthroughModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

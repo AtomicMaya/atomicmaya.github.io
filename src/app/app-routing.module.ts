@@ -8,6 +8,8 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { PostsFilteredByTagComponent } from './common-ui/post-inventory-display/posts-filtered-by-tag/posts-filtered-by-tag.component';
 import { PostsNoFilterComponent } from './common-ui/post-inventory-display/posts-no-filter/posts-no-filter.component';
 import { PostsFilteredByAuthorComponent } from './common-ui/post-inventory-display/posts-filtered-by-author/posts-filtered-by-author.component';
+import { WalkthroughNoFilterComponent } from './common-ui/walkthrough-inventory-display/walkthroughs-no-filter/walkthroughs-no-filter.component';
+import { WalkthroughFilteredByPlatformComponent } from './common-ui/walkthrough-inventory-display/walkthroughs-filtered-by-platform/walkthroughs-filtered-by-platform.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,18 @@ const routes: Routes = [
   {
     path: 'posts',
     component: PostsNoFilterComponent
+  },
+  {
+    path: 'walkthrough/tryhackme/2022',
+    loadChildren: () => import('./routing/app-tryhackme-2022-walkthrough-routing.module').then(m => m.TryHackMeWalkthroughs2022RoutingModule)
+  },
+  {
+    path: 'walkthrough/platforms/:filter',
+    component: WalkthroughFilteredByPlatformComponent,
+  },
+  {
+    path: 'walkthroughs',
+    component: WalkthroughNoFilterComponent
   },
   {
     path: 'tags',
