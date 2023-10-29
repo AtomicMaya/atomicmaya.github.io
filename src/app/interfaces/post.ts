@@ -1,5 +1,5 @@
-import { Author } from './author';
-import { Tag } from './tag';
+import { Author } from 'src/app/interfaces/author';
+import { Tag } from 'src/app/interfaces/tag';
 
 /**
  * Represents a Post.

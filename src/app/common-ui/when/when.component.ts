@@ -1,4 +1,4 @@
-import { authorList } from '../../data/authors';
+import { authorList } from 'src/app/data/authors';
 import { Component, Input } from '@angular/core';
 import { Author } from 'src/app/interfaces/author';
 import { getDay, getMonth } from 'src/app/utils/listing-utils';

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, Input } from '@angular/core';
 import { authorList } from 'src/app/data/authors';
 import { Author } from 'src/app/interfaces/author';
@@ -14,5 +15,5 @@ export class PostBodyComponent {
   @Input() date: number[];
   @Input() edited: number[];
   @Input() post: Post;
-
+  @Input() showTags: boolean = true;
 }

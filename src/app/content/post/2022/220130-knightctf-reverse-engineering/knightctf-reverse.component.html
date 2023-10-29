@@ -1,0 +1,116 @@
+<app-post-body [post]="this.post" [date]="this.post.date">
+  <h4>Write-ups</h4>
+  <ul>
+    <li><a class='no-underline' routerLink='.' fragment='baby-shark'>Baby Shark</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='droid-flag'>Droid Flag</a></li>
+  </ul>
+
+  <hr>
+
+  <h4 id='baby-shark'>Baby Shark (50 points)</h4>
+
+  <p style='color: lime;'>During my holiday in Bahamas, I met a baby shark. The shark wanted to sing me something but couldn't. Can you sing that for me?</p>
+
+  <p style='color: lime;'>Flag Format: KCTF{{'{'}}SomE_T3xT_h3r3{{'}'}}</p>
+
+  <br/>
+
+  <p>Once the JAR is downloaded, go to <a href='httpd://javadecompilers.com'>javadecompilers.com</a>, and upload it there.</p>
+
+  <p>We obtain a ZIP which we then unpack, revealing the following file structure:</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/tree.png" alt="File tree">
+    </div>
+  </div>
+
+  <p>We can see a few interesting Java files, which we'll get into quickly.</p>
+
+  <p>The first is <code>Flag.java</code>, it is not very interesting:</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/FlagCode.png" alt="A few false flags.">
+    </div>
+  </div>
+
+  <p>In <code>Strings.java</code> we can see what resembles strings that are Base64 encoded:</p>
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/StringsCode.png" alt="The various base64 codes">
+    </div>
+  </div>
+
+  <p>If we throw these in a Base64 decoder, the last gives us the flag: <code>KCTF{{'{'}}7H15_W@5_345Y_R16H7?{{'}'}}</code></p>
+  <br/>
+
+  <hr/>
+
+  <h4 id='droid-flag'>Droid Flag (100 points)</h4>
+
+  <p>One needs to decompile the provided APK, and understand what the decompiled code does, to retrieve the flag.</p>
+
+  <p>Once the ZIP is downloaded, extract the APK contained within, then go to <a href='httpd://javadecompilers.com'>javadecompilers.com</a>, and upload it there.</p>
+
+  <p>We obtain a ZIP which we then unpack, revealing the following file structure:</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/droid-tree.png" alt="The various base64 codes">
+    </div>
+  </div>
+
+  <p>We can see a few interesting Java files, which we'll get into quickly.</p>
+
+  <p>The first is <code>MainActivity.java</code>, it contains a few interesting lines:</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/MainActivityCode.png" alt="The various base64 codes">
+    </div>
+  </div>
+
+  <p>We can see that this code calls a number of functions in the <code>StringHandler</code> class from the <code>StringHandler.java</code> file, in the following order:</p>
+
+  <p><code>$(S1){{'{'}}$(S3)_$(S2)_$(S4){{'}'}}</code></p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/StringHandlerCode.png" alt="The various base64 codes">
+    </div>
+  </div>
+
+  <ul>
+    <li><code>S1</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f112s5</code></li>
+    <li><code>S2</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f113s6</code></li>
+    <li><code>S3</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f114s7</code></li>
+    <li><code>S4</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f115s8</code></li>
+  </ul>
+
+  <p>Those values are:</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/C0754RCode.png" alt="The various base64 codes">
+    </div>
+  </div>
+
+  <p>We look for any identifier with those numbers (<code>grep</code> is useful), and find some in <code>public.xml</code>:</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/PublicXML.png" alt="The various base64 codes">
+    </div>
+  </div>
+
+  <p>We then look for the names provided in <code>strings.xml</code>:</p>
+
+  <div class="d-flex flex-row align-items-center media-container">
+    <div class="d-flex">
+      <img loading="lazy" src="assets/images/2022/220130-rev-challenges/StringsXML.png" alt="The various base64 codes">
+    </div>
+  </div>
+
+  <p>In <code>StringHandler.java</code> we see that the values for <code>S2</code>, <code>S3</code> and <code>S4</code> are then reversed, which makes the final flag: <code>$(S1){{'{'}}$(S3)_$(S2)_$(S4){{'}'}}</code> -> <code>KCTF{{'{'}}aNdR01D_s1MpL3_r3V3rS3{{'}'}}</code>.</p>
+</app-post-body>

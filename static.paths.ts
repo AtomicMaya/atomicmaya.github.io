@@ -1,14 +1,18 @@
 export const ROUTES = [
+  /* Generic routes */
   '/',
   '/whoami/',
   '/posts/',
+  '/walkthroughs/',
   '/copyright/',
   '/404/',
   '/privacy-policy/',
 
+  /* Authors */
   '/authors/',
   '/authors/AtomicMaya/',
 
+  /* Tags */
   '/tags/',
   '/tags/Academia/',
   '/tags/AppSec/',
@@ -37,6 +41,7 @@ export const ROUTES = [
   '/tags/Web/',
   '/tags/Write-Up/',
 
+  /* Posts: 2020 */
   '/post/2020/2020_10_15+Hello-world/',
   '/post/2020/2020_10_19+I-participated-in-the-CONINT-CTF/',
   '/post/2020/2020_11_02+I-gave-a-talk-at-BeerCon2/',
@@ -47,6 +52,7 @@ export const ROUTES = [
   //'/post/2020/2020_12_16+OSINT-Software-Development-Ideas/',
   //'/post/2020/2020_12_27%2BHeap-Override-CTF-Challenge-JS-Reversal-Adventures/',
 
+  /* Posts: 2021 */
   '/post/2021/2021_01_02+Goodbye-2020-New-Year-Party/',
   '/post/2021/2021_01_03+Mental-Health/',
   '/post/2021/2021_01_05+OSINT-on-Gateway/',
@@ -73,6 +79,7 @@ export const ROUTES = [
   '/post/2021/2021_11_15+happy-birthday-to-this-blog/',
   '/post/2021/2021_11_25+speaking-at-conint/',
 
+  /* Posts: 2022 */
   '/post/2022/2022_01_15+catching-covid/',
   '/post/2022/2022_01_29+knight-ctf-2022-all-writeups/',
   '/post/2022/2022_01_30+knight-ctf-2022-cryptography-writeups/',
@@ -90,6 +97,7 @@ export const ROUTES = [
   '/post/2022/2022_11_17+going-to-korea/',
   '/post/2022/2022_12_20+going-to-bsides-london/',
 
+  /* Posts: 2023 */
   '/post/2023/2023_02_15+msc-fun/',
   '/post/2023/2023_02_16+going-to-bsides-cymru/',
   '/post/2023/2023_02_17+gender-paradigm-shift/',
@@ -102,4 +110,10 @@ export const ROUTES = [
   '/post/2023/2023_09_30+attending-bonclesides',
   '/post/2023/2023_10_15+its-been-3-years',
   // '/post/2023/2023_10_20+making-this-blog-easier-to-deploy',
+
+  /* Platforms */
+  '/walkthrough/platforms/tryhackme',
+
+  /* Walkthroughs: 2022 */
+  '/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022'
 ];

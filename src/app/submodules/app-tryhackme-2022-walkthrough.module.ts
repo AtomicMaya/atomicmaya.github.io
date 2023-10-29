@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { MarkdownModule } from "ngx-markdown";
-import { SharedModule } from "../shared.module";
-import { WalkthroughTHMDec2022AdventOfCyberComponent } from "../content/walkthrough/tryhackme/2022/221201-advent-of-cyber/advent-of-cyber.component";
+import { WalkthroughTHMDec2022AdventOfCyberComponent } from "src/app/content/walkthrough/tryhackme/2022/221201-advent-of-cyber/advent-of-cyber.component";
+import { SharedModule } from "src/app/shared.module";
 
 
 @NgModule({

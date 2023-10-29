@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-advent-of-cyber-2022',
-  templateUrl: './advent-of-cyber.component.html'
+  templateUrl: './advent-of-cyber.component.html',
+  styleUrls: ['./advent-of-cyber.component.scss']
 })
 export class WalkthroughTHMDec2022AdventOfCyberComponent implements OnInit {
   post: Post;
@@ -19,4 +20,7 @@ export class WalkthroughTHMDec2022AdventOfCyberComponent implements OnInit {
     [],
     this.post.description, this.post.readingTime);
   }
+
 }
+
+

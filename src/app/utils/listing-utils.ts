@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 
 import { KeyValue } from '@angular/common';
 import { Post } from 'src/app/interfaces/post';

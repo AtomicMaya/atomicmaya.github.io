@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Oct2022GenderParadigmShiftComponent } from "../content/2022/221021-gender-paradigm-shift/gender-paradigm-shift.component";
-import { Feb2023MScFunComponent } from "../content/2023/230215-msc-fun/msc-fun.component";
-import { Feb2023BSidesCymruComponent } from "../content/2023/230216-bsides-cymru/bsides-cymru.component";
-import { Mar2023RevampingMyBscProjectComponent } from '../content/2023/230309-revamping-my-bsc-project/revamping-my-bsc-project.component';
-import { Apr2023YetAnotherNewJob } from '../content/2023/230412-yet-another-new-job/yet-another-new-job.component';
-import { May2023APhishingExpeditionComponent } from '../content/2023/230511-a-phishing-expedition/a-phishing-expedition.component';
-import { Jul2023JavascriptWarCrimesAtSteelconComponent } from '../content/2023/230712-javascript-war-crimes-at-steelcon/javascript-war-crimes-at-steelcon.component';
-import { Aug2023IWentToDefcon31Component } from '../content/2023/230820-i-went-to-defcon-31/i-went-to-defcon31.component';
-import { Aug2023IWentToC3CampComponent } from '../content/2023/230821-i-went-to-c3camp/i-went-to-c3camp.component';
-import { Sep2023AttendingBonclesidesComponent } from '../content/2023/230930-attending-bonclesides/attending-bonclesides.component';
-import { Oct2023ItsBeen3YearsComponent } from '../content/2023/231015-its-been-3-years/its-been-3-years.component';
-import { Oct2023MakingThisBlogEasierToDeployComponent } from '../content/2023/231020-making-this-blog-easier-to-deploy/making-this-blog-easier-to-deploy.component';
-import { authorList } from "../data/authors";
-import { TAG_ACADEMIA, TAG_CONFERENCE, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_REVERSE_ENGINEERING, TAG_TALKS, TAG_TRAVEL } from './../utils/tags';
+import { Oct2022GenderParadigmShiftComponent } from "src/app/content/post/2022/221021-gender-paradigm-shift/gender-paradigm-shift.component";
+import { Feb2023MScFunComponent } from "src/app/content/post/2023/230215-msc-fun/msc-fun.component";
+import { Feb2023BSidesCymruComponent } from "src/app/content/post/2023/230216-bsides-cymru/bsides-cymru.component";
+import { Mar2023RevampingMyBscProjectComponent } from 'src/app/content/post/2023/230309-revamping-my-bsc-project/revamping-my-bsc-project.component';
+import { Apr2023YetAnotherNewJob } from 'src/app/content/post/2023/230412-yet-another-new-job/yet-another-new-job.component';
+import { May2023APhishingExpeditionComponent } from 'src/app/content/post/2023/230511-a-phishing-expedition/a-phishing-expedition.component';
+import { Jul2023JavascriptWarCrimesAtSteelconComponent } from 'src/app/content/post/2023/230712-javascript-war-crimes-at-steelcon/javascript-war-crimes-at-steelcon.component';
+import { Aug2023IWentToDefcon31Component } from 'src/app/content/post/2023/230820-i-went-to-defcon-31/i-went-to-defcon31.component';
+import { Aug2023IWentToC3CampComponent } from 'src/app/content/post/2023/230821-i-went-to-c3camp/i-went-to-c3camp.component';
+import { Sep2023AttendingBonclesidesComponent } from 'src/app/content/post/2023/230930-attending-bonclesides/attending-bonclesides.component';
+import { Oct2023ItsBeen3YearsComponent } from 'src/app/content/post/2023/231015-its-been-3-years/its-been-3-years.component';
+import { authorList } from "src/app/data/authors";
+import { TAG_ACADEMIA, TAG_CONFERENCE, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_REVERSE_ENGINEERING, TAG_TALKS, TAG_TRAVEL } from 'src/app/utils/tags';
 
 export const subroutes2023: Routes = [
   {
@@ -35,7 +34,7 @@ export const subroutes2023: Routes = [
       title: 'I went to Wales for BSides Cymru!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'BSides Cymru, or why I went to hang out with a bunch of trans and queer folk in Wales',
-      imageUrl: '/assets/images/2023/230216-bsides-cymru/bsides-cymru-logo.png',
+      imageUrl: '/assets/images/post/2023/230216-bsides-cymru/bsides-cymru-logo.png',
       tags: [ TAG_CONFERENCE, TAG_INFOSEC, TAG_TRAVEL, TAG_TALKS, TAG_CYBERSEC ],
       date: [2023, 2, 16],
       readingTime: 2
@@ -47,7 +46,7 @@ export const subroutes2023: Routes = [
     data: {
       title: 'My gender paradigm shift.',
       authors: [ authorList['AtomicMaya'] ],
-      imageUrl: '/assets/images/2022/221021-gender/trans-flag.png',
+      imageUrl: '/assets/images/post/2022/221021-gender/trans-flag.png',
       description: 'Gender identity! A fun topic, and my personal stake in it.',
       tags: [ TAG_PERSONAL ],
       date: [2023, 2, 17],
@@ -108,7 +107,7 @@ export const subroutes2023: Routes = [
     data: {
       title: 'I went to DEFCON31!',
       authors : [ authorList['AtomicMaya'] ],
-      description: 'I have once more been graced with the opportunity to head to Vegas, for one of the wordls\' largest hacker conferences.',
+      description: 'I have once more been graced with the opportunity to head to Vegas, for one of the worlds\' largest hacker conferences.',
       tags: [ TAG_INFOSEC, TAG_CONFERENCE, TAG_TRAVEL, TAG_CYBERSEC ],
       date: [2023, 8, 20],
       readingTime: 8

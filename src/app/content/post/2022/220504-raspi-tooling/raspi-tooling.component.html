@@ -1,0 +1,80 @@
+<app-post-body [post]="this.post" [date]="this.post.date">
+  <p>I was recently asked whether I could a family member out, as they needed a custom inventory management platform for pieces of a family art collection.</p>
+  <p>I accepted, although I probably shouldn't have.</p>
+  <p>I'll go over how the project services were designed, how it is being hosted, and more, in this blog post.</p>
+
+  <h4>Run-down</h4>
+  <ul>
+    <li><a class='no-underline' routerLink='.' fragment='the-service-architecture'>The service architecture</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='the-pi'>The Pi</a></li>
+    <li><a class='no-underline' routerLink='.' fragment='what-does-it-run'>What does it run?</a></li>
+  </ul>
+
+  <hr/>
+  <h4 id='the-service-architecture'>The service architecture</h4>
+  <p>The project follows a pretty simple design: the web frontend is how the user interacts with the service, the backend is how the service saves the data to a database.</p>
+  <p>Due to my past experience, I decided to write the frontend in Angular, and the backend in Python, using FastAPI as the middleware. The database would use MySQL.</p>
+
+  <br/>
+  <h4 id='the-pi'>The Pi</h4>
+  <p>For a myriad of reasons, we decided to use a local system, and decided to do so on a Raspberry Pi 4.</p>
+  <p>The Pi has a number of advantages, but the one I retained was that one could have it boot off of an SSD, rather than the traditional SD card.</p>
+  <p>Another neat thing is that there are a lot of case designs to 3D print, and I found a design that allows for an SSD, and additional ventilation fans.</p>
+  <p>I got my model for the casing from <a target="_blank" href="https://www.thingiverse.com/thing:5270416/files" rel="noopener"><em class="fas fa-external-link-square-alt"></em> Thingiverse</a>, which I then printed at the <a target="_blank" href="https://faclab.ch" rel="noopener"><em class="fas fa-external-link-square-alt"></em> FacLab</a>, my university's makerspace.</p>
+
+  <br/>
+  <p>The first element was to fit the SSD into the casing. In order to have it snug against the base, I flipped it from its original configuration.</p>
+
+  <div class='media-container'>
+    <img loading="lazy" src='/assets/images/post/2022/220504-raspi-tooling/ssd.jpg' alt='The base casing with the SSD'>
+    <span><em>The base casing with the SSD</em></span>
+  </div>
+
+  <p>This meant that, in order to have the Pi itself fit snugly in the casing, a strut of sorts was needed. I designed it by using the RasPi design sheet.</p>
+
+  <div class='media-container'>
+    <img loading="lazy" src='/assets/images/post/2022/220504-raspi-tooling/support.jpg' alt='The RaspberryPi strut'>
+    <span><em>The RaspberryPi strut</em></span>
+  </div>
+
+  <p>The Raspberry Pi then aligned perfectly with the holes in the casing, letting me start with the ventilation, which consists of a CPU heatsink/ventilator unit, and a casing 40mm ventilator.</p>
+
+  <div class='media-container'>
+    <img loading="lazy" src='/assets/images/post/2022/220504-raspi-tooling/raspi-fitting.jpg' alt='The fitted RaspberryPi'>
+    <span><em>The fitted RaspberryPi</em></span>
+  </div>
+
+  <div class='media-container'>
+    <img loading="lazy" src='/assets/images/post/2022/220504-raspi-tooling/ventilation.jpg' alt='The RaspberryPi with the ventilation'>
+    <span><em>The RaspberryPi with the ventilation</em></span>
+  </div>
+
+  <p>The final device, bar some cables, looks like this:</p>
+
+  <div class='media-container'>
+    <img loading="lazy" src='/assets/images/post/2022/220504-raspi-tooling/closed.jpg' alt='The completed RaspberryPi'>
+    <span><em>The completed RaspberryPi</em></span>
+  </div>
+
+  <br/>
+  <h4 id='what-does-it-run'>What does it run?</h4>
+
+  <p>From the get go I decided that I would use containerized applications, probably using Docker.</p>
+  <p>This somewhat restricted my choice of platforms, so I went with a very lightweight and headless version of Ubuntu, which I flashed onto the SSD.</p>
+
+  <p>I then installed containerd, docker and docker-compose for the management of our services, and went on to design a service architecture.</p>
+  <p>I knew I would need a frontend (for the user to perform the relevant inventory actions), a backend (to handle said actions) and a database (to store the data).</p>
+  <p>I also knew I did not want to use PHP, despite the fact that it would cut out the backend portion, because it isn't that great for modular code blocks, whereas Angular (when done right) is fantastic.</p>
+
+  <p>The backend I decided could be done in FastAPI, mainly because it supports being run in a service-esque fashion via uvicorn, and I didn't need inordinate speed.</p>
+  <p>As for the database, although I'd originally started by using a NoSQL database (MongoDB), I reverted to MySQL when I realized that searching specific fields could be made quicker with indexed data.</p>
+
+  <p>This led the final services architecture to look something like this:</p>
+  <div class='media-container'>
+    <img loading="lazy" src='/assets/images/post/2022/220504-raspi-tooling/design-raspi-service.drawio.png' alt='The services architecture'>
+    <span><em>The services architecture</em></span>
+  </div>
+
+  <p>After all of this was setup, I configured a few services such as a backup system, which exports the database to the device and uploads it to a server I control, and a firewall, which disallows anyone not connected locally on the network from accessing the services, whether web or SSH.</p>
+  <p>Finally, I setup a cron job to allow the device to restart the various containers on reboot, which gives my relatives the ability to move it and work on it wherever they are, without the hassle of "needing an engineer". I can also SSH into it to apply an update when I see them (or remote into their computer to do it), which helps!</p>
+</app-post-body>

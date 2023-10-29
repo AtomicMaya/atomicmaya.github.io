@@ -1,4 +1,4 @@
-import { SocialsLink } from './author/socials-link';
+import { SocialsLink } from 'src/app/interfaces/author/socials-link';
 
 /** Represents a {@link Post | Post's} author. */
 export interface Author {

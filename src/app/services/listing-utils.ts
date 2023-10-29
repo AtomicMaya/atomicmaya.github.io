@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 
 import { KeyValue } from "@angular/common";
-import { Post } from "../interfaces/post";
+import { Post } from "src/app/interfaces/post";
 
 export const CURRENT_YEAR = 2021;
 

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'lmao-custom-fonts';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('../fonts/lol.woff2') format('woff');
+  unicode-range: U+F8FF;
+}
+
+.lolf {
+  font-family: "lmao-custom-fonts";
+}
+
+.lol-tryhackme::before {
+  content: "\f8ff";
+}

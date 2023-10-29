@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
-import { MetaService } from './../../services/meta.service';
-import { Tag } from './../../interfaces/tag';
+import { MetaService } from 'src/app/services/meta.service';
+import { Tag } from 'src/app/interfaces/tag';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

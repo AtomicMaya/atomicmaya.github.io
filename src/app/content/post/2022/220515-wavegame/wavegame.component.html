@@ -1,0 +1,141 @@
+<app-post-body [post]="this.post" [date]="this.post.date">
+  <p>One of the random things I did this year was to undergo the qualifications for Wavestone's "Wavegame" competition (which is a thinly veiled recruitment strategy that focuses on university students only, led by a French consulting company).</p>
+
+  <p>Most of the teams were from French universities, and only a handful of us were joining in from Switzerland, with 2 of us (including myself) joining from the <a target="_blank" href="https://unige.ch" rel="noopener"><em class="fas fa-external-link-square-alt"></em> University of Geneva (UNIGE)</a>, and the 4 others joining from the <a target="_blank" href="https://epfl.ch" rel="noopener"><em class="fas fa-external-link-square-alt"></em> Ecole Polytechnique Fédérale de Lausanne (EPFL)</a>, providing us with an overall heterogeneous group that had capabilities in Computer Science, Information Systems and Data Science.</p>
+
+  <p>Due to an array of circumstances, we ended up in the "Green Wavers" track, which focused on cloud environments, devops and security, as opposed to the "Blue Wavers" (Blue Teaming) and the "Yellow Wavers" (Policy). This was a bit of a rough ride, as most of us had only peripherally worked with platforms such as AWS and the like.</p>
+
+  <p>The competition took the shape of 3 prequalification rounds (each on the same task of a website for Paris' 2024 Olympics, but with iteratively more complex requirements):</p>
+
+  <ol>
+    <li>From a base monolithic architecture, convert it to a microservices architecture, add security groups and integrate an RDS (database) into the system;</li>
+    <li>Configuring a CI/CD pipeline;</li>
+    <li>Adding FinOps observations, IAM, Operations oversight, and handling resiliency.</li>
+  </ol>
+
+  <p>By the end of it all, we were down to 4 team members, and had placed:</p>
+
+  <ol>
+    <li>3rd (with 75 points)</li>
+    <li>1st (with 84 points)</li>
+    <li>2nd (with 86 points)</li>
+  </ol>
+
+  <p>This enabled us to qualify to go to Paris for the finals, from the 11th to the 13th of May.</p>
+
+  <p>The first day was dedicated to getting from Geneva to Paris (by means of train), dropping our stuff off at the housing we had sorted, and exploring Paris a little.</p>
+
+  <app-collapsible buttonText="Sightseeing (May 11th)" [active]="false">
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day1-01.jpeg' alt='A mural in Paris' />
+      <span><em>A mural in Paris</em></span>
+    </div>
+
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day1-02.jpeg' alt="The 13th district's town hall" />
+      <span><em>The 13th district's town hall</em></span>
+    </div>
+
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day1-03.jpeg' alt='The Pantheon' />
+      <span><em>The Pantheon</em></span>
+    </div>
+
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day1-04.jpeg' alt='A statue in the Luxembourg Gardens' />
+      <span><em>A statue in the Luxembourg Gardens</em></span>
+    </div>
+
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day1-05.jpeg' alt='The Medici fountain in the Luxembourg Gardens' />
+      <span><em>The Medici fountain in the Luxembourg Gardens</em></span>
+    </div>
+
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day1-06.jpeg' alt="A building's architectural column" />
+      <span><em>A building's architectural column</em></span>
+    </div>
+
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day1-07.jpeg' alt='The statues on the Square of the Nation, illuminated, with the picture taken at night' />
+      <span><em>The statues on the Square of the Nation</em></span>
+    </div>
+  </app-collapsible>
+
+  <br/>
+  <br/>
+
+  <p>On Thursday, we headed off to Wavestone's HQ in the district "de la Défense" of Paris, for the final challenge.</p>
+  <div class='media-container'>
+    <img  src='/assets/images/post/2022/220515-wavegame/day2-01.jpeg' alt="The district 'de la Défense' with its landmark building" />
+    <span><em>The landmark building in the 'de la Défense' district</em></span>
+  </div>
+  <p>This is where things started to go... interestingly (to say the least).</p>
+
+  <p>The final challenge for us Green Wavers was to identify and patch a production system that was under attack, and "provide a report to the board".</p>
+
+  <p>Except, for reasons that escape me, our AWS account malfunctioned, leading the event organizers to have to reset our environments.</p>
+
+  <p>This was fine, as the event hadn't started yet due to the organizers wanting to make sure everyone could access the environments correctly.</p>
+
+  <p>What was not fine was that we ended up not having the same AWS resources, as those had also been reset. So, instead of having CloudTrail and logs we could grep through, we had graphs (except we had not figured out we were supposed to have CloudTrail).</p>
+
+  <p>From the graphs, I was able to figure out the attack scenario was hitting the login feature and enumerating the RDS database. We also then were able to derive that the system was being DOS'ed purposefully to limit remediation.</p>
+
+  <p>Whilst my colleagues were attempting to patch the systems (which is hard when you don't know what is broken), we were collating data about the attacks for the presentation.</p>
+
+  <p>The presentation went well, at least starting from the moment where we cleared up exactly what services we had access to and they figured out it was not a standard configuration.</p>
+
+  <p>Figuring that we had bungled the event, we went to the after party where we discussed and had a fun time on a dock on the Seine river, right below the Eiffel Tower.</p>
+
+  <div class='media-container'>
+    <img  src='/assets/images/post/2022/220515-wavegame/day2-02.jpg' alt='The Eiffel Tower, illuminated at night' />
+    <span><em>The Eiffel Tower</em></span>
+  </div>
+
+  <p>Near the end of the event, all the participants were called to the galley, where the announcement of the rankings was to take place.</p>
+
+  <p>After the Blue and Yellow Wavers had their winners announced, came the time of the Green Wavers.</p>
+
+  <p>In 3rd place, the team <em>200 IQMULUS</em> from Bordeaux's ynov campus was announced. By that time we had entirely lost any hope to landing on the podium.</p>
+
+  <p>In 2nd place, the team <em>La Passoire</em> from utc was announced.</p>
+
+  <p>Finally, in 1st place, to our great surprise, our team was announced.</p>
+
+  <p>In disbelief, we accepted the prize and were quite happy with ourselves.</p>
+
+  <p>As it turns out, the fact that we managed to keep cool without access to the needed resources and were still able to derive valuable information, as well as provide a cohesive presentation of the issues is what shifted the jury in our favor.</p>
+
+  <div class='media-container'>
+    <img  src='/assets/images/post/2022/220515-wavegame/results.png' alt="An image with the event's results" />
+    <span><em>An image with the event's results</em></span>
+  </div>
+
+  <p>After rejoining our accommodations and sleeping off the night's events, I went for a small tour of Paris before heading back to Geneva.</p>
+  <br/>
+
+  <app-collapsible buttonText="Sightseeing (May 13th)" [active]="false">
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day3-01.jpeg' alt='Picture of the Eiffel Tower, during the day.' />
+      <span><em>The Eiffel Tower</em></span>
+    </div>
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day3-02.jpeg' alt='Picture of the Trocadero Gardens' />
+      <span><em>The Trocadero Gardens</em></span>
+    </div>
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day3-03.jpeg' alt='Picture of a Parisian Street' />
+      <span><em>A street in Paris</em></span>
+    </div>
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day3-04.jpeg' alt='Picture of the Musée des Arts Décoratifs' />
+      <span><em>The Musée des Arts Décoratifs</em></span>
+    </div>
+    <div class='media-container'>
+      <img  src='/assets/images/post/2022/220515-wavegame/day3-05.jpeg' alt='Picture of the Louvre Pyramid' />
+      <span><em>The Louvre Pyramid</em></span>
+    </div>
+  </app-collapsible>
+  <br/>
+</app-post-body>
