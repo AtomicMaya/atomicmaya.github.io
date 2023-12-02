@@ -115,5 +115,31 @@ export const ROUTES = [
   '/walkthrough/platforms/tryhackme',
 
   /* Walkthroughs: 2022 */
-  '/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022'
+
+  /** Walkthroughs: AoC 2022 */
+  '/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022',
+  '/walkthrough/tryhackme/2022/2022_12_01%2BAdvent-of-Cyber-2022-Day-01',
+  '/walkthrough/tryhackme/2022/2022_12_02%2BAdvent-of-Cyber-2022-Day-02',
+  '/walkthrough/tryhackme/2022/2022_12_03%2BAdvent-of-Cyber-2022-Day-03',
+  '/walkthrough/tryhackme/2022/2022_12_04%2BAdvent-of-Cyber-2022-Day-04',
+  '/walkthrough/tryhackme/2022/2022_12_05%2BAdvent-of-Cyber-2022-Day-05',
+  '/walkthrough/tryhackme/2022/2022_12_06%2BAdvent-of-Cyber-2022-Day-06',
+  '/walkthrough/tryhackme/2022/2022_12_07%2BAdvent-of-Cyber-2022-Day-07',
+  '/walkthrough/tryhackme/2022/2022_12_08%2BAdvent-of-Cyber-2022-Day-08',
+  '/walkthrough/tryhackme/2022/2022_12_09%2BAdvent-of-Cyber-2022-Day-09',
+  '/walkthrough/tryhackme/2022/2022_12_10%2BAdvent-of-Cyber-2022-Day-10',
+  '/walkthrough/tryhackme/2022/2022_12_11%2BAdvent-of-Cyber-2022-Day-11',
+  '/walkthrough/tryhackme/2022/2022_12_12%2BAdvent-of-Cyber-2022-Day-12',
+  '/walkthrough/tryhackme/2022/2022_12_13%2BAdvent-of-Cyber-2022-Day-13',
+  '/walkthrough/tryhackme/2022/2022_12_14%2BAdvent-of-Cyber-2022-Day-14',
+  '/walkthrough/tryhackme/2022/2022_12_15%2BAdvent-of-Cyber-2022-Day-15',
+  '/walkthrough/tryhackme/2022/2022_12_16%2BAdvent-of-Cyber-2022-Day-16',
+  '/walkthrough/tryhackme/2022/2022_12_17%2BAdvent-of-Cyber-2022-Day-17',
+  '/walkthrough/tryhackme/2022/2022_12_18%2BAdvent-of-Cyber-2022-Day-18',
+  '/walkthrough/tryhackme/2022/2022_12_19%2BAdvent-of-Cyber-2022-Day-19',
+  '/walkthrough/tryhackme/2022/2022_12_20%2BAdvent-of-Cyber-2022-Day-20',
+  '/walkthrough/tryhackme/2022/2022_12_21%2BAdvent-of-Cyber-2022-Day-21',
+  '/walkthrough/tryhackme/2022/2022_12_22%2BAdvent-of-Cyber-2022-Day-22',
+  '/walkthrough/tryhackme/2022/2022_12_23%2BAdvent-of-Cyber-2022-Day-23',
+  '/walkthrough/tryhackme/2022/2022_12_24%2BAdvent-of-Cyber-2022-Day-24'
 ];

@@ -15,7 +15,7 @@ import { subroutesTHM2022 } from 'src/app/routing/app-tryhackme-2022-walkthrough
 export const postRoutes: Routes = [...subroutes2020, ...subroutes2021, ...subroutes2022, ...subroutes2023];
 
 /** The compiled routes from all of the lazy-loaded modules. */
-export const walkthroughRoutes: Routes = [...subroutesTHM2022];
+export const walkthroughRoutes: Routes = [...subroutesTHM2022].filter((r) => r.path.includes('-Day-'));
 
 /**
  * Function that counts the number of {@link Post | Post} per {@link Tag | Tag}.

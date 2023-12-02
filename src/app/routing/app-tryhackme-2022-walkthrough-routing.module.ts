@@ -10,10 +10,298 @@ export const subroutesTHM2022: Routes = [
     component: WalkthroughTHMDec2022AdventOfCyberComponent,
     data: {
       title: 'Advent of Cyber 2022',
-      authors : [ authorList['AtomicMaya'] ],
-      description: '',
-      tags: [ ],
+      authors: [authorList['AtomicMaya']],
+      description: 'Advent of Cyber 2022 - Index',
+      tags: [],
       date: [2022, 12, 1],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_01+Advent-of-Cyber-2022-Day-01',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay01,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 1',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 1 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 1],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_02+Advent-of-Cyber-2022-Day-02',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay02,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 2',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 2 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 2],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_03+Advent-of-Cyber-2022-Day-03',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay03,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 3',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 3 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 3],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_04+Advent-of-Cyber-2022-Day-04',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay04,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 4',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 4 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 4],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_05+Advent-of-Cyber-2022-Day-05',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay05,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 5',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 5 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 5],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_06+Advent-of-Cyber-2022-Day-06',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay06,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 6',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 6 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 6],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_07+Advent-of-Cyber-2022-Day-07',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay07,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 7',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 7 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 7],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_08+Advent-of-Cyber-2022-Day-08',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay08,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 8',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 8 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 8],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_09+Advent-of-Cyber-2022-Day-09',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay09,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 9',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 9 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 9],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_10+Advent-of-Cyber-2022-Day-10',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay10,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 10',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 10 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 10],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_11+Advent-of-Cyber-2022-Day-11',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay11,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 11',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 11 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 11],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_12+Advent-of-Cyber-2022-Day-12',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay12,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 12',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 12 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 12],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_13+Advent-of-Cyber-2022-Day-13',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay13,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 13',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 13 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 13],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_14+Advent-of-Cyber-2022-Day-14',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay14,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 14',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 14 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 14],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_15+Advent-of-Cyber-2022-Day-15',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay15,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 15',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 15 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 15],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_16+Advent-of-Cyber-2022-Day-16',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay16,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 16',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 16 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 16],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_17+Advent-of-Cyber-2022-Day-17',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay17,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 17',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 17 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 17],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_18+Advent-of-Cyber-2022-Day-18',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay18,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 18',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 18 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 18],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_19+Advent-of-Cyber-2022-Day-19',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay19,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 19',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 19 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 19],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_20+Advent-of-Cyber-2022-Day-20',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay20,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 20',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 20 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 20],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_21+Advent-of-Cyber-2022-Day-21',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay21,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 21',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 21 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 21],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_22+Advent-of-Cyber-2022-Day-22',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay22,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 22',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 22 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 22],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_23+Advent-of-Cyber-2022-Day-23',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay23,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 23',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 23 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 23],
+      readingTime: 2,
+    }
+  },
+  {
+    path: '2022_12_24+Advent-of-Cyber-2022-Day-24',
+    component: WalkthroughTHMDec2022AdventOfCyberComponentDay24,
+    data: {
+      title: 'Advent of Cyber 2022 - Day 24',
+      authors: [authorList['AtomicMaya']],
+      description: 'Walkthrough - AoC 2022 - Day 24 - "Someone\'s coming to Town"',
+      tags: [],
+      date: [2022, 12, 24],
       readingTime: 2,
     }
   },
