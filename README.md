@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Actually prerendering the files
 
-Run `npm run prerender`! Past Maya bids you hello. (use node v.14 at most).
+Run `npm run prerender`! Past Maya bids you hello. (use node v.14.19.3 at most).
 
 ## Development server
 

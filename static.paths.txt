@@ -115,15 +115,3 @@
 /walkthrough/tryhackme/2022/2022_12_10+Advent-of-Cyber-2022-Day-10
 /walkthrough/tryhackme/2022/2022_12_11+Advent-of-Cyber-2022-Day-11
 /walkthrough/tryhackme/2022/2022_12_12+Advent-of-Cyber-2022-Day-12
-/walkthrough/tryhackme/2022/2022_12_13+Advent-of-Cyber-2022-Day-13
-/walkthrough/tryhackme/2022/2022_12_14+Advent-of-Cyber-2022-Day-14
-/walkthrough/tryhackme/2022/2022_12_15+Advent-of-Cyber-2022-Day-15
-/walkthrough/tryhackme/2022/2022_12_16+Advent-of-Cyber-2022-Day-16
-/walkthrough/tryhackme/2022/2022_12_17+Advent-of-Cyber-2022-Day-17
-/walkthrough/tryhackme/2022/2022_12_18+Advent-of-Cyber-2022-Day-18
-/walkthrough/tryhackme/2022/2022_12_19+Advent-of-Cyber-2022-Day-19
-/walkthrough/tryhackme/2022/2022_12_20+Advent-of-Cyber-2022-Day-20
-/walkthrough/tryhackme/2022/2022_12_21+Advent-of-Cyber-2022-Day-21
-/walkthrough/tryhackme/2022/2022_12_22+Advent-of-Cyber-2022-Day-22
-/walkthrough/tryhackme/2022/2022_12_23+Advent-of-Cyber-2022-Day-23
-/walkthrough/tryhackme/2022/2022_12_24+Advent-of-Cyber-2022-Day-24
