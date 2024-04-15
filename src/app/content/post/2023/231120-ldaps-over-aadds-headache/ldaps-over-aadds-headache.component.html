@@ -1,0 +1,31 @@
+<app-post-body [post]="this.post" [date]="this.post.date">
+  <p>As I may have mentioned in the past, I am currently an employed person.</p>
+
+  <p>This blog post will not go into the specifics of said employment, but rather go into a task that I was undertaking, specifically to integrate Snipe IT -- an inventory management system -- with our Azure tenant, mainly in the sense of syncronizing the users within Snipe with the Entra ID Directory Services, and provide seamless login to Snipe to view the assets one is allocated.</p>
+
+  <p>But this proved to be quite a headache, and as a result I wanted to write up the full process for public consumption, because it definitely had a few pitfalls which I had to overcome.</p>
+
+  <hr/><br/>
+
+  <h4>Requirements</h4>
+
+  <p>Doing this obviously requires certain permissions on the Azure tenant, as you need the ability to create organization resources and set up entreprise applications.</p>
+
+  <p>Furthermore, it requires the permission and the authority to set up a service which costs, as Entra ID Directory Services is not free to run as a service.</p>
+
+  <hr/><br/>
+  <h4>Step 1: Azure</h4>
+
+  - things to mention:
+    - network group (aadds-ng)
+    - certificate creation
+    - debugging LDAP (Apache Directory studios, don't forget to add your IP to aadds-ng, or rather be safe and VPN into the office)
+    - SAML SSO!
+    - the branding bits
+    - fun tale about hunting a ghost in the machine (someone without the LDAP "displayName" property)
+
+  <hr/><br/>
+  <h4>Step 1: Azure Setup</h4>
+
+  <p></p>
+</app-post-body>

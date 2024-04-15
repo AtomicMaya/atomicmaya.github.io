@@ -10,6 +10,8 @@ import { PostsNoFilterComponent } from 'src/app/common-ui/post-inventory-display
 import { PostsFilteredByAuthorComponent } from 'src/app/common-ui/post-inventory-display/posts-filtered-by-author/posts-filtered-by-author.component';
 import { WalkthroughNoFilterComponent } from 'src/app/common-ui/walkthrough-inventory-display/walkthroughs-no-filter/walkthroughs-no-filter.component';
 import { WalkthroughFilteredByPlatformComponent } from 'src/app/common-ui/walkthrough-inventory-display/walkthroughs-filtered-by-platform/walkthroughs-filtered-by-platform.component';
+import { WIPComponent } from 'src/app/content/wip/wip.component';
+import { CalendarComponent } from 'src/app/content/calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,10 @@ const routes: Routes = [
   {
     path: 'post/2023',
     loadChildren: () => import('src/app/routing/app-2023-post-routing.module').then(m => m.Posts2023RoutingModule)
+  },
+  {
+    path: 'post/2024',
+    loadChildren: () => import('src/app/routing/app-2024-post-routing.module').then(m => m.Posts2024RoutingModule)
   },
   {
     path: 'posts',
@@ -77,6 +83,14 @@ const routes: Routes = [
   {
     path: 'privacy-policy',
     component: PrivacyPolicyComponent
+  },
+  {
+    path: 'wip',
+    component: WIPComponent
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent,
   },
   {
     path: '**',

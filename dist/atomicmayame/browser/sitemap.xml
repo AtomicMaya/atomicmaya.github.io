@@ -389,6 +389,33 @@
     <changefreq>weekly</changefreq>
     <lastmod>2023-11-01</lastmod>
   </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_10_20%2Bmaking-this-blog-easier-to-deploy/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2023-11-01</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_12_13%2Bspeaking-at-bsides-london/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2023-12-15</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2023/2023_12_31%2Bi-went-to-c3-congress/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2024-01-01</lastmod>
+  </url>
+
+  <!-- 2024 -->
+
+  <url>
+    <loc>https://atomicmaya.me/post/2024/2024_01_02+new-year-new-stuff/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2024-01-05</lastmod>
+  </url>
 
   <!-- WALKTRHOUGHS -->
 
@@ -466,12 +493,12 @@
     <changefreq>weekly</changefreq>
     <lastmod>2022-12-11</lastmod>
   </url>
-  <!-- url>
+  <url>
     <loc>https://atomicmaya.me/walkthrough/tryhackme/2022/2022_12_12%2BAdvent-of-Cyber-2022-Day-12/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>
     <lastmod>2022-12-12</lastmod>
-  </-url>
+  </url>
   <url>
     <loc>https://atomicmaya.me/walkthrough/tryhackme/2022/2022_12_13%2BAdvent-of-Cyber-2022-Day-13/index.html</loc>
     <priority>0.60</priority>
@@ -496,7 +523,7 @@
     <changefreq>weekly</changefreq>
     <lastmod>2022-12-16</lastmod>
   </url>
-  <url>
+  <!--url>
     <loc>https://atomicmaya.me/walkthrough/tryhackme/2022/2022_12_17%2BAdvent-of-Cyber-2022-Day-17/index.html</loc>
     <priority>0.60</priority>
     <changefreq>weekly</changefreq>

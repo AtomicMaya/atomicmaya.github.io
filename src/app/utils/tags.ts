@@ -22,6 +22,7 @@ export const TAG_PROFESSIONAL: Tag = { name: 'Professional' };
 export const TAG_PROGRAMMING: Tag = { name: 'Programming' };
 export const TAG_REVERSE_ENGINEERING: Tag = { name: 'Reverse-Engineering' };
 export const TAG_TALKS: Tag = { name: 'Talks' };
+export const TAG_TECHNICAL: Tag = { name: 'Technical' };
 export const TAG_TRAVEL: Tag = { name: 'Travel' };
 export const TAG_VOLUNTEERING: Tag = { name: 'Volunteering' };
 export const TAG_WEB: Tag = { name: 'Web' };

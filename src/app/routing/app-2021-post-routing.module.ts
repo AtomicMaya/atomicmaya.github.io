@@ -107,7 +107,6 @@ export const subroutes2021: Routes = [
       title: 'Website Design Choices',
       authors: [ authorList['AtomicMaya'] ],
       description: 'Going over some of my website design choices.',
-      imageUrl: '/assets/images/post/2021/website-design-choices/design.png',
       tags: [ TAG_PERSONAL, TAG_DEVELOPMENT, TAG_WEB ],
       date: [2021, 1, 23],
       readingTime: 2
@@ -270,7 +269,7 @@ export const subroutes2021: Routes = [
       description: 'Official challenge developer writeup for "Outage - The usual suspect", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP ],
       date: [2021, 10, 11],
-      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png',
+      imageUrl: 'assets/images/post/2021/211011-ctf/ctf_cover_2.png',
       readingTime: 4
     }
   },
@@ -283,7 +282,7 @@ export const subroutes2021: Routes = [
       description: 'Official challenge developer writeup for "A door by any other name", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP, TAG_CRYPTOGRAPHY ],
       date: [2021, 10, 11],
-      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png',
+      imageUrl: 'assets/images/post/2021/211011-ctf/ctf_cover_2.png',
       readingTime: 4
     }
   },
@@ -296,7 +295,7 @@ export const subroutes2021: Routes = [
       description: 'Official challenge developer writeup for "C1 - I think this should be C4", a challenge presented at the Digital Overdose 2021 Autumn CTF.',
       tags: [ TAG_CTF, TAG_WRITEUP, TAG_DEVELOPMENT, TAG_WEB ],
       date: [2021, 10, 11],
-      imageUrl: 'assets/images/2021/211011-ctf/ctf_cover_2.png',
+      imageUrl: 'assets/images/post/2021/211011-ctf/ctf_cover_2.png',
       readingTime: 15
     }
   },/*

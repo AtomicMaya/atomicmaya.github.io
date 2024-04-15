@@ -1,3 +1,156 @@
 <app-post-body [post]="this.post" [date]="this.post.date" [showTags]="false">
+  <app-walkthrough-challenge-author category="Purple Team: Secure Coding"
+  platformLink="https://tryhackme.com/room/adventofcyber4"></app-walkthrough-challenge-author>
+
+  <h3>Question 1</h3>
+  <blockquote>
+   <p>What is the value of Flag1?</p>
+  </blockquote>
+
+<markdown ngPreserveWhitespaces>
+```php
+include "connection.php";
+
+	$query="select * from users where id=".intval($_GET['id']);
+	$elves_rs=mysqli_query($db,$query);
+
+	if(!$elves_rs)
+	{{'{'}}
+		echo "Error: Invalid SQL Query";
+		die($query);
+  {{'}'}}
+
+	// Get the first result. There should be a single elf here.
+	$elf=mysqli_fetch_assoc($elves_rs);
+
+	//Now get the toys associated to this elf
+	$query="select * from toys where creator_id=".intval($_GET['id']);
+	$toys_rs=mysqli_query($db,$query);
+
+	if(!$toys_rs)
+	{{'{'}}
+		echo "Error: Invalid SQL Query";
+		die($query);
+  {{'}'}}
+```
+</markdown>
+  <div class="media-container">
+   <img alt="" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day16/1.png" style="max-height: 300px"/>
+   <span><em></em></span>
+  </div>
+  <p>Answer: <code>THM{{ '{' }}McCode, Elf McCode{{ '}' }}</code></p>
+  <h3>Question 2</h3>
+  <blockquote>
+   <p>What is the value of Flag2?</p>
+  </blockquote>
+
+  <markdown ngPreserveWhitespaces>
+```php
+$query="select * from toys where name like ? or description like ?";
+$stmt = mysqli_prepare($db, $query);
+$q = "%".$_GET['q']."%";
+mysqli_stmt_bind_param($stmt, 'ss', $q, $q);
+mysqli_stmt_execute($stmt);
+$toys_rs=mysqli_stmt_get_result($stmt);
+
+if(!$toys_rs)
+{{'{'}}
+  echo "Error: Invalid SQL Query";
+  die($query);
+{{'}'}}
+```
+    </markdown>
+  <div class="media-container">
+   <img alt="" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day16/2.png" style="max-height: 300px"/>
+   <span><em></em></span>
+  </div>
+  <p>Answer: <code>THM{{ '{' }}KodeNRoll{{ '}' }}</code></p>
+  <h3>Question 3</h3>
+  <blockquote>
+   <p>What is the value of Flag3?</p>
+  </blockquote>
+
+  <markdown ngPreserveWhitespaces>
+```php
+include "connection.php";
+
+$query="select * from toys where id=".intval($_GET['id']);
+$toys_rs=mysqli_query($db,$query);
+
+if(!$toys_rs)
+{{'{'}}
+  echo "Error: Invalid SQL Query";
+  die($query);
+{{'}'}}
+
+// Get the first result. There should be a single elf here.
+$toy=mysqli_fetch_assoc($toys_rs);
+
+//query info on the creator elf
+$query="select * from users where id=".intval($toy['creator_id']);
+$elves_rs=mysqli_query($db,$query);
+
+if(!$elves_rs)
+{{'{'}}
+  echo "Error: Invalid SQL Query";
+  die($query);
+{{'}'}}
+
+// Get the first result. There should be a single elf here.
+$elf=mysqli_fetch_assoc($elves_rs);
+
+//query info on planned deliveries
+$query="select * from kids where assigned_toy_id=".intval($_GET['id']);
+$kids_rs=mysqli_query($db,$query);
+
+if(!$kids_rs)
+{{'{'}}
+  echo "Error: Invalid SQL Query";
+  die($query);
+{{'}'}}
+```
+  </markdown>
+
+
+  <div class="media-container">
+   <img alt="" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day16/3.png" style="max-height: 500px"/>
+   <span><em></em></span>
+  </div>
+  <p>Answer: <code>THM{{ '{' }}Are we secure yet?{{ '}' }}</code></p>
+  <h3>Question 4</h3>
+  <blockquote>
+   <p>What is the value of Flag4?</p>
+  </blockquote>
+
+  <markdown ngPreserveWhitespaces>
+```php
+if(isset($_POST['username']) && isset($_POST['password'])){{'{'}}
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	$query="select * from users where username=? and password=?";
+	$stmt = mysqli_prepare($db, $query);
+	mysqli_stmt_bind_param($stmt, 'ss', $username, $password);
+	mysqli_stmt_execute($stmt);
+	$users_rs=mysqli_stmt_get_result($stmt);
+
+	if(mysqli_num_rows($users_rs)>0)
+	{{'{'}}
+		$_SESSION['username']=$username;
+		echo "&lt;script&gt;window.location='admin.php';&lt;/script&gt;";
+  {{'}'}}
+	else
+	{{'{'}}
+		$message="Incorrect username/password found!";
+		echo "&lt;script type='text/javascript'&gt;alert('$message');&lt;/script&gt;";
+  {{'}'}}
+{{'}'}}
+```
+    </markdown>
+  <div class="media-container">
+   <img alt="" loading="lazy" src="assets/images/walkthrough/thm/aoc-2022/day16/4.png" style="max-height: 400px"/>
+   <span><em></em></span>
+  </div>
+  <p>Answer: <code>THM{{ '{' }}SQLi_who???{{ '}' }}</code></p>
+
 
 </app-post-body>

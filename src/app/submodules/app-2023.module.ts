@@ -13,6 +13,9 @@ import { Aug2023IWentToC3CampComponent } from "src/app/content/post/2023/230821-
 import { Sep2023AttendingBonclesidesComponent } from "src/app/content/post/2023/230930-attending-bonclesides/attending-bonclesides.component";
 import { Oct2023ItsBeen3YearsComponent } from "src/app/content/post/2023/231015-its-been-3-years/its-been-3-years.component";
 import { Oct2023MakingThisBlogEasierToDeployComponent } from "src/app/content/post/2023/231020-making-this-blog-easier-to-deploy/making-this-blog-easier-to-deploy.component";
+import { Nov2023LDAPSoverAADDSHeadacheComponent } from "src/app/content/post/2023/231120-ldaps-over-aadds-headache/ldaps-over-aadds-headache.component";
+import { Dec2023SpeakingAtBsidesLondonComponent } from "src/app/content/post/2023/231213-speaking-at-bsides-london/speaking-at-bsides-london.component";
+import { Dec2023IWentToC3CongressComponent } from "src/app/content/post/2023/231231-i-went-to-c3congress/i-went-to-c3congress.component";
 import { SharedModule } from "src/app/shared.module";
 
 
@@ -29,7 +32,10 @@ import { SharedModule } from "src/app/shared.module";
     Aug2023IWentToC3CampComponent,
     Sep2023AttendingBonclesidesComponent,
     Oct2023ItsBeen3YearsComponent,
-    Oct2023MakingThisBlogEasierToDeployComponent
+    Oct2023MakingThisBlogEasierToDeployComponent,
+    Nov2023LDAPSoverAADDSHeadacheComponent,
+    Dec2023SpeakingAtBsidesLondonComponent,
+    Dec2023IWentToC3CongressComponent
   ],
   imports: [
     CommonModule,

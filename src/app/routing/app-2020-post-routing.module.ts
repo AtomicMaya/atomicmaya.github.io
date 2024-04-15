@@ -19,7 +19,7 @@ export const subroutes2020: Routes = [
       title: 'Hello World!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'The first post on AtomicMaya\'s Blog. Wow!',
-      imageUrl: '/assets/images/post/2020/hello-world/hw.png',
+      imageUrl: '/assets/images/post/2020/201015-hello-world/hw.png',
       tags: [ TAG_PERSONAL ],
       date: [2021, 10, 15],
       readingTime: 1
@@ -32,7 +32,7 @@ export const subroutes2020: Routes = [
       title: 'I participated in the conINT CTF!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'Discussing my participation in the conINT TraceLabs OSINT capture the flag event.',
-      imageUrl: '/assets/images/post/2020/conint/conint_logo.png',
+      imageUrl: '/assets/images/post/2020/201019-conint/conint_logo.png',
       tags: [ TAG_CONFERENCE, TAG_CTF, TAG_OSINT ],
       date: [2021, 10, 19],
       readingTime: 5
@@ -45,7 +45,7 @@ export const subroutes2020: Routes = [
       title: 'I gave a talk at BeerCon2!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a talk at BeerCon2, a rookie infosec conference.',
-      imageUrl: '/assets/images/post/2020/beercon2/bc2_zoombg.png',
+      imageUrl: '/assets/images/post/2020/201102-beercon2/bc2_zoombg.png',
       tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
       date: [2021, 11, 2],
       readingTime: 10
@@ -58,7 +58,7 @@ export const subroutes2020: Routes = [
       title: 'I talked at BSides Islamabad!',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I gave a talk at BSides Islamabad, Pakistan\'s first cybersecurity conference.',
-      imageUrl: '/assets/images/post/2020/bsides-islamabad/card.png',
+      imageUrl: '/assets/images/post/2020/201109-bsides-islamabad/card.png',
       tags: [ TAG_INFOSEC, TAG_IOT, TAG_TALKS, TAG_CONFERENCE ],
       date: [2021, 11, 9],
       readingTime: 3
@@ -95,7 +95,7 @@ export const subroutes2020: Routes = [
       title: 'Security CoffeeHouse: BC2 Speaker Interviews',
       authors: [ authorList['AtomicMaya'] ],
       description: 'I participated in James Bore\'s Security CoffeeHouse!',
-      imageUrl: '/assets/images/post/2020/coffeehouse/coffeehouse_backdrop.png',
+      imageUrl: '/assets/images/post/2020/201212-coffeehouse/coffeehouse_backdrop.png',
       tags: [ TAG_COMMUNITY, TAG_CONFERENCE ],
       date: [2021, 12, 12],
       readingTime: 2

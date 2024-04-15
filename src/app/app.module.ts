@@ -31,9 +31,10 @@ import { ListTagCountComponent } from 'src/app/common-ui/sidebar/list-tag-count/
 import { SidebarComponent } from 'src/app/common-ui/sidebar/sidebar.component';
 import { SocialsComponent } from 'src/app/common-ui/sidebar/socials/socials.component';
 import { WalkthroughInventoryDisplayComponent } from "src/app/common-ui/walkthrough-inventory-display/walkthrough-inventory-display.component";
-import { WalkthroughNoFilterComponent } from "src/app/common-ui/walkthrough-inventory-display/walkthroughs-no-filter/walkthroughs-no-filter.component";
 import { WalkthroughsCardCompactHeaderComponent } from "src/app/common-ui/walkthrough-inventory-display/walkthroughs-card/walkthroughs-card-compact-header/walkthroughs-card-compact-header.component";
 import { WalkthroughsCardCompactComponent } from "src/app/common-ui/walkthrough-inventory-display/walkthroughs-card/walkthroughs-card-compact/walkthroughs-card-compact.component";
+import { WalkthroughFilteredByPlatformComponent } from "src/app/common-ui/walkthrough-inventory-display/walkthroughs-filtered-by-platform/walkthroughs-filtered-by-platform.component";
+import { WalkthroughNoFilterComponent } from "src/app/common-ui/walkthrough-inventory-display/walkthroughs-no-filter/walkthroughs-no-filter.component";
 import { CopyrightComponent } from 'src/app/content/copyright/copyright.component';
 import { PrivacyPolicyComponent } from 'src/app/content/privacy-policy/privacy-policy.component';
 import { WhoamiComponent } from 'src/app/content/whoami/whoami.component';
@@ -42,9 +43,11 @@ import { App2020Module } from 'src/app/submodules/app-2020.module';
 import { App2021Module } from 'src/app/submodules/app-2021.module';
 import { App2022Module } from 'src/app/submodules/app-2022.module';
 import { App2023Module } from "src/app/submodules/app-2023.module";
+import { App2024Module } from "src/app/submodules/app-2024.module";
 import { AppTryHackMe2022WalkthroughModule } from "src/app/submodules/app-tryhackme-2022-walkthrough.module";
 import { ServiceLocator } from 'src/app/utils/service.locator';
-import { WalkthroughFilteredByPlatformComponent } from "src/app/common-ui/walkthrough-inventory-display/walkthroughs-filtered-by-platform/walkthroughs-filtered-by-platform.component";
+import { WIPComponent } from "src/app/content/wip/wip.component";
+import { CalendarComponent } from "./content/calendar/calendar.component";
 
 
 @NgModule({
@@ -54,6 +57,8 @@ import { WalkthroughFilteredByPlatformComponent } from "src/app/common-ui/walkth
     FooterComponent,
     MainBodyComponent,
     WhoamiComponent,
+    WIPComponent,
+    CalendarComponent,
     SidebarComponent,
     SocialsComponent,
     LatestComponent,
@@ -80,6 +85,7 @@ import { WalkthroughFilteredByPlatformComponent } from "src/app/common-ui/walkth
     App2021Module,
     App2022Module,
     App2023Module,
+    App2024Module,
     AppTryHackMe2022WalkthroughModule,
   ],
   providers: [],
