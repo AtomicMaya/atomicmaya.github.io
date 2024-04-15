@@ -17,10 +17,39 @@
       <title>AtomicMaya's Blog at the end of the universe</title>
       <link>https://www.atomicmaya.me</link>
     </image>
+    <!-- 2024 -->
+    <item>
+      <title>New Year, New Stuff!</title>
+      <link>https://atomicmaya.me/post/2024/2024_01_02+new-year-new-stuff/index.html</link>
+      <description>A few changes to this blog.</description>
+      <guid>https://atomicmaya.me/post-2024-01</guid>
+      <pubDate>Tue, 02 Jan 2024 18:00:00 GMT</pubDate>
+    </item>
     <!-- 2023 -->
     <item>
+      <title>Attending Chaos Congress, a highlight to close off the year.</title>
+      <link>https://atomicmaya.me/post/2023/2023_12_31+i-went-to-c3-congress/index.html</link>
+      <description>Chaos Congress, the perfect place for this chaos goose to end the year.</description>
+      <guid>https://atomicmaya.me/post-2023-14</guid>
+      <pubDate>Sun, 31 Dec 2023 18:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>I somehow spoke at BSides London! (an unscheduled development)</title>
+      <link>https://atomicmaya.me/post/2023/2023_12_13+speaking-at-bsides-london/index.html</link>
+      <description>BSides London! (I failed the "Maya don't speak at a BSides challenge" again)</description>
+      <guid>https://atomicmaya.me/post-2023-13</guid>
+      <pubDate>Tue, 12 Dec 2023 18:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Making this blog easier to deploy!</title>
+      <link>https://atomicmaya.me/post/2023/2023_10_20+making-this-blog-easier-to-deploy/index.html</link>
+      <description>Blogging, on the move?</description>
+      <guid>https://atomicmaya.me/post-2023-12</guid>
+      <pubDate>Fri, 20 Oct 2023 18:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>It's been 3 years.</title>
-      <link>https://atomicmaya.me/post/2023/023_10_15+its-been-3-years/index.html</link>
+      <link>https://atomicmaya.me/post/2023/2023_10_15+its-been-3-years/index.html</link>
       <description>3 years, 54 blog posts, a bit of a brain dump.</description>
       <guid>https://atomicmaya.me/post-2023-11</guid>
       <pubDate>Sun, 15 Oct 2023 18:00:00 GMT</pubDate>
