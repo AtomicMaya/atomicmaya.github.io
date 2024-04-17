@@ -29,7 +29,7 @@ import { TAG_COMMUNITY, TAG_CONFERENCE, TAG_CRYPTOGRAPHY, TAG_CTF, TAG_CYBERSEC,
 
 export const subroutes2021: Routes = [
   {
-    path: '2021_01_02+Goodbye-2020-New-Year-Party',
+    path: '2021_01_02+goodbye-2020-new-year-party',
     component: Jan2021Goodbye2020NewYearPartyComponent,
     data: {
       title: 'Goodbye 2020: New Year Party',
@@ -41,7 +41,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_03+Mental-Health',
+    path: '2021_01_03+mental-health',
     component: Jan2021MentalHealthComponent,
     data: {
       title: 'Mental Health',
@@ -53,7 +53,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_05+OSINT-on-Gateway',
+    path: '2021_01_05+osint-on-gateway',
     component: Jan2021GatewayOsintTalkComponent,
     data: {
       title: 'Talking about OSINT on Gateway',
@@ -65,7 +65,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_08+WhatsApp-Privacy-Policy-Changes-Analysis',
+    path: '2021_01_08+whatsapp-privacy-policy-changes-analysis',
     component: Jan2021WhatsappPrivacyPolicyAnalysisComponent,
     data: {
       title: 'WhatsApp Privacy Policy Changes Analysis',
@@ -77,7 +77,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_09+WhatsApp-Privacy-Policy-Changes-Discussion-at-Hack-South',
+    path: '2021_01_09+whatsapp-privacy-policy-changes-discussion-at-hack-south',
     component: Jan2021WhatsappPrivacyPolicyHackSouthDiscussionComponent,
     data: {
       title: 'WhatsApp Privacy Policy Changes Discussion at Hack South',
@@ -89,7 +89,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_20+Talking-at-Leeds-EHS',
+    path: '2021_01_20+talking-at-leeds-ehs',
     component: Jan2021LeedsEhsTalkComponent,
     data: {
       title: 'Talking at Leeds EHS',
@@ -101,7 +101,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_23+Website-Design-Choices',
+    path: '2021_01_23+website-design-choices',
     component: Jan2021DesignChoicesComponent,
     data: {
       title: 'Website Design Choices',
@@ -113,7 +113,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_01_31+Talking-at-DEFCON-Worcester',
+    path: '2021_01_31+talking-at-defcon-worcester',
     component: Jan2021DefconWorcesterTalkComponent,
     data: {
       title: 'Talking about IoT @DC441905',
@@ -125,7 +125,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_02_01+Organising-a-conference',
+    path: '2021_02_01+organising-a-conference',
     component: Feb2021ConDeploymentComponent,
     data: {
       title: 'Introducing... Digital Overdose Con!',
@@ -137,7 +137,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_02_06+Building-DOs-Website',
+    path: '2021_02_06+building-dos-website',
     component: Feb2021ConSiteComponent,
     data: {
       title: 'Building DO\'s website in 6 days!',
@@ -149,7 +149,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_02_26+TraceLabs-CTF-With-Hacksouth',
+    path: '2021_02_26+tracelabs-ctf-with-hacksouth',
     component: Feb2021TracelabsWithHacksouthComponent,
     data: {
       title: 'Participating in the TraceLabs OSINT CTF with HackSouth',
@@ -161,7 +161,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_03_07+Much-Ado-About-Passwords',
+    path: '2021_03_07+much-ado-about-passwords',
     component: Feb2021PasswordManagementComponent,
     data: {
       title: 'A much ado about passwords and password management',
@@ -173,7 +173,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_04_20+Central-Infosec-CTF-All',
+    path: '2021_04_20+central-infosec-ctf-all',
     component: Apr2021CentralInfosecCtfAllComponent,
     data: {
       title: 'Participating in the Central-Infosec CTF!',
@@ -186,7 +186,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_04_20+Central-Infosec-CTF-Python',
+    path: '2021_04_20+central-infosec-ctf-python',
     component: Apr2021CentralInfosecCtfPythonComponent,
     data: {
       title: 'Dissecting the Central-Infosec Python challenges',
@@ -199,7 +199,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard',
+    path: '2021_04_20+central-infosec-ctf-hack-the-static-hard',
     component: Apr2021CentralInfosecCtfHackTheStaticHardComponent,
     data: {
       title: 'Dissecting the Central-Infosec Static Code Analysis challenge',
@@ -212,7 +212,7 @@ export const subroutes2021: Routes = [
     }
   },
   {
-    path: '2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard',
+    path: '2021_04_20+central-infosec-ctf-hack-the-maze-hard',
     component: Apr2021CentralInfosecCtfHackTheMazeHardComponent,
     data: {
       title: 'Dissecting the Central-Infosec Game Exploitation challenge',
@@ -225,7 +225,7 @@ export const subroutes2021: Routes = [
     },
   },
   {
-    path: '2021_04_29+Digital-Overdose-Conference',
+    path: '2021_04_29+digital-overdose-conference',
     component: Apr2021DigitalOverdoseConferenceComponent,
     data: {
       title: 'The 2021 Digital Overdose Conference: Tales and Takeaways',
@@ -237,7 +237,7 @@ export const subroutes2021: Routes = [
     },
   },
   {
-    path: '2021_07_20+The-2021-Halfway-Mark',
+    path: '2021_07_20+the-2021-halfway-mark',
     component: Jul2021TheHalfwayMarkComponent,
     data: {
       title: 'Halfway through 2021: A brief recap of what I\'ve been up to',
@@ -249,7 +249,7 @@ export const subroutes2021: Routes = [
     },
   },
   {
-    path: '2021_08_31+Enumerating-the-LightShot-CDN',
+    path: '2021_08_31+enumerating-the-lightshot-cdn',
     component: Aug2021EnumeratingTheLightshotCdnComponent,
     data: {
       title: 'Enumerating the Lightshot CDN',

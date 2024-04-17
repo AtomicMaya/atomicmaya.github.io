@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 2064 2549" width="2064px" height="2549px" style="background: rgb(245, 246, 246);" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.diagram-root { font-family: "Helvetica Neue", sans-serif; font-size: 12px; } .t { overflow: visible; } .t-bg { y: 40; fill: #fff;   } .th { fill: #005aa0;   } .tht { fill: #fff; font-size: 14px;  } .tf { fill: #323c46; overflow: visible; } .tf.pk { fill: #005aa0; font-weight: bold; } .tf.fk { font-weight: bold; } .ty { fill: #adb1b5; font-weight: normal; text-anchor: end; } .r { fill: transparent; stroke: #c3c3c3; stroke-width: 1; } .l { stroke: 1; } .i { fill: #c2c7ce; stroke: #c2c7ce; } .i.ix { fill: #afb3b6; stroke: #000; } .fa { fill: transparent; overflow: visible; } .fa .bg.hover { fill: #f7f7f7; } .c { cy: 12; r: 4; stroke: #d2d2dc; fill: #d2d2dc; } .hr { fill: transparent; stroke: #323c46; stroke-opacity: 0.035; stroke-width: 13; } .dc { stroke: #fa5a3c; fill: #fa5a3c; } .x { stroke: white; stroke-width: 1; } .hl .th { fill: #1b9bff; } .hl .tht {  } .fhl .bg { fill: #e7f4ff; } .fhls .bg {  } .r.hl { stroke: #1b9bff; } .dim { opacity: 0.25; }</style>
+  </defs>
+  <rect width="2064" height="2549" style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);"/>
+  <g class="drawing-wrapper" transform="matrix(0.893575, 0, 0, 0.893575, 906.135212, 981.911803)" style="">
+    <g xmlns="http://www.w3.org/2000/svg" class="rs">
+      <path d="M 446.41 -298.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -298.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M446.41 -298.67 L446.41 -298.67 458.41 -298.67 M 446.41 -292.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -292.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M446.41 -292.67 L446.41 -292.67 453.41 -298.67 446.41 -304.67 M 446.41 -304.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -304.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M458.41 -298.67 Q 610.39 -298.67, 762.37 -210.83 T 1066.33 -123 M 1078.33 -123 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 1078.33 -123 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M1078.33 -123 L1078.33 -123 1066.33 -123 M1072.33 -117 L1072.33 -117 1072.33 -129" id="h3194252142" class="r"/>
+      <path d="M 530.91 668 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 530.91 668 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M530.91 668 L530.91 668 542.91 668 M536.91 674 L536.91 674 536.91 662 M542.91 668 Q 673.77 668, 804.62 272.5 T 1066.33 -123 M 1078.33 -123 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 1078.33 -123 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M1078.33 -123 L1078.33 -123 1066.33 -123 M1072.33 -117 L1072.33 -117 1072.33 -129" id="h2639090290" class="r"/>
+      <path d="M 739.33 -553.33 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 739.33 -553.33 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M739.33 -553.33 L739.33 -553.33 727.33 -553.33 M733.33 -547.33 L733.33 -547.33 733.33 -559.33 M727.33 -553.33 Q 660.1 -553.33, 592.87 -438.5 T 458.41 -323.67 M 446.41 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M446.41 -323.67 L446.41 -323.67 458.41 -323.67 M 446.41 -317.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -317.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M446.41 -317.67 L446.41 -317.67 453.41 -323.67 446.41 -329.67 M 446.41 -329.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -329.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0 " id="h1339877961" class="r"/>
+      <path d="M 929.54 -503.33000000000004 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 929.54 -503.33000000000004 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M929.54 -503.33000000000004 L929.54 -503.33000000000004 941.54 -503.33000000000004 M935.54 -497.33000000000004 L935.54 -497.33000000000004 935.54 -509.33000000000004 M941.54 -503.33000000000004 Q 972.74 -503.33000000000004, 1003.94 -313.17 T 1066.33 -123 M 1078.33 -123 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 1078.33 -123 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M1078.33 -123 L1078.33 -123 1066.33 -123 M1072.33 -117 L1072.33 -117 1072.33 -129" id="h1935019223" class="r"/>
+      <path d="M 712 -343.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 712 -343.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M712 -343.67 L712 -343.67 700 -343.67 M706 -337.67 L706 -337.67 706 -349.67 M700 -343.67 Q 639.61 -343.67, 579.21 -333.67 T 458.41 -323.67 M 446.41 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M446.41 -323.67 L446.41 -323.67 458.41 -323.67 M452.41 -317.67 L452.41 -317.67 452.41 -329.67" id="h775997904" class="r"/>
+      <path d="M 942.66 -318.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 942.66 -318.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M942.66 -318.67 L942.66 -318.67 954.66 -318.67 M948.66 -312.67 L948.66 -312.67 948.66 -324.67 M954.66 -318.67 Q 982.58 -318.67, 1010.49 -220.83 T 1066.33 -123 M 1078.33 -123 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 1078.33 -123 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M1078.33 -123 L1078.33 -123 1066.33 -123 M1072.33 -117 L1072.33 -117 1072.33 -129" id="h4154590799" class="r"/>
+      <path d="M -11.85 693.83 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -11.85 693.83 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-11.85 693.83 L-11.85 693.83 0.15000000000000036 693.83 M-5.85 699.83 L-5.85 699.83 -5.85 687.83 M0.15000000000000036 693.83 Q 89.49 693.83, 178.83 680.92 T 357.5 668 M 369.5 668 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 369.5 668 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M369.5 668 L369.5 668 357.5 668 M363.5 674 L363.5 674 363.5 662" id="h1551426153" class="r"/>
+      <path d="M -200.5 718.83 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -200.5 718.83 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-200.5 718.83 L-200.5 718.83 -212.5 718.83 M-206.5 724.83 L-206.5 724.83 -206.5 712.83 M-212.5 718.83 Q -245.58 718.83, -278.66 486.92 T -344.83 255 M -356.83 255 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -356.83 255 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-356.83 255 L-356.83 255 -344.83 255 M-350.83 261 L-350.83 261 -350.83 249" id="h3166195515" class="r"/>
+      <path d="M 787.2 173.67000000000002 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 787.2 173.67000000000002 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M787.2 173.67000000000002 L787.2 173.67000000000002 799.2 173.67000000000002 M793.2 179.67000000000002 L793.2 179.67000000000002 793.2 167.67000000000002 M799.2 173.67000000000002 Q 865.99 173.67000000000002, 932.77 25.34 T 1066.33 -123 M 1078.33 -123 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 1078.33 -123 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M1078.33 -123 L1078.33 -123 1066.33 -123 M1072.33 -117 L1072.33 -117 1072.33 -129" id="h2074970121" class="r"/>
+      <path d="M 437 198.67000000000002 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 437 198.67000000000002 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M437 198.67000000000002 L437 198.67000000000002 425 198.67000000000002 M431 204.67000000000002 L431 204.67000000000002 431 192.67000000000002 M425 198.67000000000002 C 169.14399999999995 198.67000000000002, 246.33999999999997 -323.67, 296.34 -323.67 M 308.34 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M308.34 -323.67 L308.34 -323.67 296.34 -323.67 M302.34 -317.67 L302.34 -317.67 302.34 -329.67" id="h2253004394" class="r"/>
+      <path d="M 787.2 248.67000000000002 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 787.2 248.67000000000002 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M787.2 248.67000000000002 L787.2 248.67000000000002 799.2 248.67000000000002 M793.2 254.67000000000002 L793.2 254.67000000000002 793.2 242.67000000000002 M799.2 248.67000000000002 Q 865.99 248.67000000000002, 932.77 62.84 T 1066.33 -123 M 1078.33 -123 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 1078.33 -123 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M1078.33 -123 L1078.33 -123 1066.33 -123 M1072.33 -117 L1072.33 -117 1072.33 -129" id="h3212308928" class="r"/>
+      <path d="M 437 273.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 437 273.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M437 273.67 L437 273.67 425 273.67 M431 279.67 L431 279.67 431 267.67 M425 273.67 C 169.14399999999995 273.67, 246.33999999999997 -323.67, 296.34 -323.67 M 308.34 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M308.34 -323.67 L308.34 -323.67 296.34 -323.67 M302.34 -317.67 L302.34 -317.67 302.34 -329.67" id="h2297053298" class="r"/>
+      <path d="M -356.83 280 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -356.83 280 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-356.83 280 L-356.83 280 -344.83 280 M-350.83 286 L-350.83 286 -350.83 274 M-344.83 280 Q -184.54 280, -24.25 -21.84 T 296.34 -323.67 M 308.34 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M308.34 -323.67 L308.34 -323.67 296.34 -323.67 M302.34 -317.67 L302.34 -317.67 302.34 -329.67" id="h3746532076" class="r"/>
+      <path d="M -623 355 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -623 355 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-623 355 L-623 355 -635 355 M-629 361 L-629 361 -629 349 M-635 355 Q -654.56 355, -674.11 358.17 T -713.22 361.3399999999999 M -725.22 361.3399999999999 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -725.22 361.3399999999999 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-725.22 361.3399999999999 L-725.22 361.3399999999999 -713.22 361.3399999999999 M-719.22 367.3399999999999 L-719.22 367.3399999999999 -719.22 355.3399999999999" id="h2684085372" class="r"/>
+      <path d="M -356.83 405 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -356.83 405 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-356.83 405 L-356.83 405 -344.83 405 M-350.83 411 L-350.83 411 -350.83 399 M-344.83 405 Q -169.24 405, 6.34 549 T 357.5 693 M 369.5 693 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 369.5 693 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M369.5 693 L369.5 693 357.5 693 M363.5 699 L363.5 699 363.5 687" id="h2638261548" class="r"/>
+      <path d="M -209.33 127 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -209.33 127 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-209.33 127 L-209.33 127 -221.33 127 M-215.33 133 L-215.33 133 -215.33 121 M-221.33 127 C -271.33000000000004 127, -276.62800000000004 668.83, -212.5 668.83 M -200.5 668.83 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -200.5 668.83 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-200.5 668.83 L-200.5 668.83 -212.5 668.83 M-206.5 674.83 L-206.5 674.83 -206.5 662.83" id="h4111966359" class="r"/>
+      <path d="M 171.86 152 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 171.86 152 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M171.86 152 L171.86 152 183.86 152 M177.86 158 L177.86 158 177.86 146 M183.86 152 Q 227.27 152, 270.68 410 T 357.5 668 M 369.5 668 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 369.5 668 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M369.5 668 L369.5 668 357.5 668 M363.5 674 L363.5 674 363.5 662" id="h3257796495" class="r"/>
+      <path d="M 171.86 177 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 171.86 177 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M171.86 177 L171.86 177 183.86 177 M177.86 183 L177.86 183 177.86 171 M183.86 177 Q 211.98 177, 240.1 -60.84 T 296.34 -298.67 M 308.34 -298.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -298.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M308.34 -298.67 L308.34 -298.67 296.34 -298.67 M302.34 -292.67 L302.34 -292.67 302.34 -304.67" id="h816779792" class="r"/>
+      <path d="M 171.86 202 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 171.86 202 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M171.86 202 L171.86 202 183.86 202 M177.86 208 L177.86 208 177.86 196 M183.86 202 Q 211.98 202, 240.1 -60.84 T 296.34 -323.67 M 308.34 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M308.34 -323.67 L308.34 -323.67 296.34 -323.67 M302.34 -317.67 L302.34 -317.67 302.34 -329.67" id="h1924653551" class="r"/>
+      <path d="M -209.33 227 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -209.33 227 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-209.33 227 L-209.33 227 -221.33 227 M -209.33 233 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -209.33 233 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-209.33 233 L-209.33 233 -216.33 227 -209.33 221 M -209.33 221 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -209.33 221 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-221.33 227 Q -252.2 227, -283.08 241 T -344.83 255 M -356.83 255 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M -356.83 255 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M-356.83 255 L-356.83 255 -344.83 255 M-350.83 261 L-350.83 261 -350.83 249" id="h933864163" class="r"/>
+      <path d="M 171.86 477 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 171.86 477 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M171.86 477 L171.86 477 183.86 477 M177.86 483 L177.86 483 177.86 471 M183.86 477 Q 211.98 477, 240.1 76.66 T 296.34 -323.67 M 308.34 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M308.34 -323.67 L308.34 -323.67 296.34 -323.67 M 308.34 -317.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -317.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M308.34 -317.67 L308.34 -317.67 301.34 -323.67 308.34 -329.67 M 308.34 -329.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 308.34 -329.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0 " id="h1005465055" class="r"/>
+      <path xmlns="http://www.w3.org/2000/svg" d="M 790 -978 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 790 -978 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M790 -978 L790 -978 778 -978 M784 -972 L784 -972 784 -984 M778 -978 Q 698.11 -978, 618.21 -650.83 T 458.41 -323.67 M 446.41 -323.67 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 446.41 -323.67 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M446.41 -323.67 L446.41 -323.67 458.41 -323.67 M452.41 -317.67 L452.41 -317.67 452.41 -329.67" id="h4197330898" class="r"/>
+      <path xmlns="http://www.w3.org/2000/svg" d="M 984.74 -828 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 984.74 -828 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M984.74 -828 L984.74 -828 996.74 -828 M990.74 -822 L990.74 -822 990.74 -834 M996.74 -828 Q 1014.14 -828, 1031.53 -475.5 T 1066.33 -123 M 1078.33 -123 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0 M 1078.33 -123 m -0.5, 0 a 0.5,0.5 0 1,0 1,0 a 0.5,0.5 0 1,0 -1,0  M1078.33 -123 L1078.33 -123 1066.33 -123 M1072.33 -117 L1072.33 -117 1072.33 -129" id="h1601643375" class="r"/>
+    </g>
+    <g class="hrs"/>
+    <g xmlns="http://www.w3.org/2000/svg" class="ts" style="     height: 500px;     width: 500px; ">
+      <svg width="138.07" height="275" x="308.34" y="-405.67" id="h1997520772" class="t">
+        <rect height="40" width="138.07" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_users</text>
+        <rect height="235" width="138.07" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="125.07" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(71.946953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">user_id<tspan x="125.07" class="ty">int(11)</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(76.946953125, 75) scale(0.014)"/>
+        <text x="13" y="111" class="tf fk" style="white-space: pre;">org_id<tspan x="125.07" class="ty">int(11)?</tspan></text>
+        <text x="13" y="136" class="tf" style="white-space: pre;">user_fname<tspan x="125.07" class="ty">text</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">user_lname<tspan x="125.07" class="ty">text</tspan></text>
+        <text x="13" y="186" class="tf" style="white-space: pre;">user_email<tspan x="125.07" class="ty">text?</tspan></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">user_name<tspan x="125.07" class="ty">text</tspan></text>
+        <text x="13" y="236" class="tf" style="white-space: pre;">user_lang<tspan x="125.07" class="ty">text</tspan></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">user_enabled<tspan x="125.07" class="ty">text</tspan></text>
+      </svg>
+      <svg width="180.87" height="425" x="1078.33" y="-180" id="h3862643555" class="t">
+        <rect height="40" width="180.87" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_organizations</text>
+        <rect height="385" width="180.87" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">org_id<tspan x="167.87" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(114.746953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf" style="white-space: pre;">org_number<tspan x="167.87" class="ty">int(11)?</tspan></text>
+        <text x="13" y="111" class="tf" style="white-space: pre;">org_addr1<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="136" class="tf" style="white-space: pre;">org_addr2<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">org_city<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="186" class="tf" style="white-space: pre;">org_prov<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">org_postalcode<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="236" class="tf" style="white-space: pre;">org_jdestatus<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">org_type<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">org_business<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">org_enabled<tspan x="167.87" class="ty">{Y,N}</tspan></text>
+        <text x="13" y="336" class="tf" style="white-space: pre;">org_cbgregions<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">org_quotezone<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="386" class="tf" style="white-space: pre;">org_cbg<tspan x="167.87" class="ty">text?</tspan></text>
+        <text x="13" y="411" class="tf" style="white-space: pre;">org_payee<tspan x="167.87" class="ty">text?</tspan></text>
+      </svg>
+      <svg width="161.41" height="475" x="369.5" y="611" id="h156147385" class="t">
+        <rect height="40" width="161.41" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_vendors</text>
+        <rect height="435" width="161.41" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">org_id<tspan x="148.41" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(95.286953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">org_number<tspan x="148.41" class="ty">int?</tspan></text>
+        <text x="13" y="111" class="tf" style="white-space: pre;">org_name<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="136" class="tf" style="white-space: pre;">org_addr1<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">org_addr2<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="186" class="tf" style="white-space: pre;">org_city<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">org_prov<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="236" class="tf" style="white-space: pre;">org_postalcode<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">org_jdestatus<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">org_type<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">org_business<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="336" class="tf" style="white-space: pre;">org_enabled<tspan x="148.41" class="ty">{Y,N}</tspan></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">org_cbgregions<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="386" class="tf" style="white-space: pre;">org_quotezone<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="411" class="tf" style="white-space: pre;">org_cbg<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="436" class="tf" style="white-space: pre;">org_payee<tspan x="148.41" class="ty">text?</tspan></text>
+        <text x="13" y="461" class="tf" style="white-space: pre;">org_resolved<tspan x="148.41" class="ty">int(11)</tspan></text>
+      </svg>
+      <svg width="188.65" height="225" x="-200.5" y="586.83" id="h3860213986" class="t">
+        <rect height="40" width="188.65" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_buys_products</text>
+        <rect height="185" width="188.65" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="175.65" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(122.526953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">buy_id<tspan x="175.65" class="ty">int(11)</tspan></text>
+        <text x="13" y="111" class="tf fk" style="white-space: pre;">vendor_id<tspan x="175.65" class="ty">int(11)</tspan></text>
+        <text x="13" y="136" class="tf fk" style="white-space: pre;">product_id<tspan x="175.65" class="ty">int(11)</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">prices<tspan x="175.65" class="ty">text?</tspan></text>
+        <text x="13" y="186" class="tf" style="white-space: pre;">price_breaks<tspan x="175.65" class="ty">text?</tspan></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">order_num<tspan x="175.65" class="ty">int(11)</tspan></text>
+      </svg>
+      <svg width="350.2" height="425" x="437" y="66.67" id="h766802948" class="t">
+        <rect height="40" width="350.2" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_meetings</text>
+        <rect height="385" width="350.2" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="337.2" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(284.076953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf" style="white-space: pre;">initiator<tspan x="337.2" class="ty">{member,vendor,bdm}</tspan></text>
+        <text x="13" y="111" class="tf fk" style="white-space: pre;">initiator_org_id<tspan x="337.2" class="ty">int(11)?</tspan></text>
+        <text x="13" y="136" class="tf fk" style="white-space: pre;">initiator_user_id<tspan x="337.2" class="ty">int(11)</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">meet_with<tspan x="337.2" class="ty">{member,vendor,bdm}</tspan></text>
+        <text x="13" y="186" class="tf fk" style="white-space: pre;">meet_with_org_id<tspan x="337.2" class="ty">int(11)?</tspan></text>
+        <text x="13" y="211" class="tf fk" style="white-space: pre;">meet_with_user_id<tspan x="337.2" class="ty">int(11)?</tspan></text>
+        <text x="13" y="236" class="tf" style="white-space: pre;">duration<tspan x="337.2" class="ty">int(11)</tspan></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">meeting_time<tspan x="337.2" class="ty">datetime</tspan></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">room_id<tspan x="337.2" class="ty">varchar(10)</tspan></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">notes<tspan x="337.2" class="ty">text?</tspan></text>
+        <text x="13" y="336" class="tf" style="white-space: pre;">status<tspan x="337.2" class="ty">{requested,cancelled,accepted,rejected,completed}</tspan></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">initiator_marked_completed<tspan x="337.2" class="ty">int(11)</tspan></text>
+        <text x="13" y="386" class="tf" style="white-space: pre;">meet_with_marked_completed<tspan x="337.2" class="ty">int(11)</tspan></text>
+        <text x="13" y="411" class="tf" style="white-space: pre;">time_created<tspan x="337.2" class="ty">datetime</tspan></text>
+      </svg>
+      <svg width="266.17" height="1150" x="-623" y="198" id="h2918024080" class="t">
+        <rect height="40" width="266.17" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">all_products</text>
+        <rect height="1110" width="266.17" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="253.17000000000002" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(200.04695312500002, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">vid<tspan x="253.17000000000002" class="ty">int(11)</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(205.04695312500002, 75) scale(0.014)"/>
+        <text x="13" y="111" class="tf" style="white-space: pre;">sscid<tspan x="253.17000000000002" class="ty">int(11)</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(205.04695312500002, 100) scale(0.014)"/>
+        <text x="13" y="136" class="tf" style="white-space: pre;">sku<tspan x="253.17000000000002" class="ty">varchar(25)?</tspan></text>
+        <text x="13" y="161" class="tf fk" style="white-space: pre;">cat_id<tspan x="253.17000000000002" class="ty">int(11)</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(205.04695312500002, 150) scale(0.014)"/>
+        <text x="13" y="186" class="tf" style="white-space: pre;">vendor_name<tspan x="253.17000000000002" class="ty">varchar(60)</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(176.81648437500002, 175) scale(0.014)"/>
+        <text x="13" y="211" class="tf fk" style="white-space: pre;">vendor_number<tspan x="253.17000000000002" class="ty">int(11)?</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(198.37312500000002, 200) scale(0.014)"/>
+        <text x="13" y="236" class="tf" style="white-space: pre;">vendor_part_number<tspan x="253.17000000000002" class="ty">varchar(256)?</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(163.46882812500002, 225) scale(0.014)"/>
+        <text x="13" y="261" class="tf" style="white-space: pre;">model_number<tspan x="253.17000000000002" class="ty">varchar(100)?</tspan></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">manufacturer<tspan x="253.17000000000002" class="ty">varchar(100)?</tspan></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">upc<tspan x="253.17000000000002" class="ty">varchar(25)?</tspan></text>
+        <text x="13" y="336" class="tf" style="white-space: pre;">region_list<tspan x="253.17000000000002" class="ty">varchar(10)?</tspan></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">listed_date<tspan x="253.17000000000002" class="ty">date?</tspan></text>
+        <text x="13" y="386" class="tf" style="white-space: pre;">discontinued_date<tspan x="253.17000000000002" class="ty">date?</tspan></text>
+        <text x="13" y="411" class="tf" style="white-space: pre;">description_short<tspan x="253.17000000000002" class="ty">varchar(256)?</tspan></text>
+        <text x="13" y="436" class="tf" style="white-space: pre;">description_short_fr<tspan x="253.17000000000002" class="ty">varchar(256)?</tspan></text>
+        <text x="13" y="461" class="tf" style="white-space: pre;">description_long<tspan x="253.17000000000002" class="ty">text?</tspan></text>
+        <text x="13" y="486" class="tf" style="white-space: pre;">description_long_fr<tspan x="253.17000000000002" class="ty">text?</tspan></text>
+        <text x="13" y="511" class="tf" style="white-space: pre;">features<tspan x="253.17000000000002" class="ty">text?</tspan></text>
+        <text x="13" y="536" class="tf" style="white-space: pre;">features_fr<tspan x="253.17000000000002" class="ty">text?</tspan></text>
+        <text x="13" y="561" class="tf" style="white-space: pre;">colour<tspan x="253.17000000000002" class="ty">varchar(25)?</tspan></text>
+        <text x="13" y="586" class="tf" style="white-space: pre;">colour_fr<tspan x="253.17000000000002" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="611" class="tf" style="white-space: pre;">order_uom<tspan x="253.17000000000002" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="636" class="tf" style="white-space: pre;">alt_uom<tspan x="253.17000000000002" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="661" class="tf" style="white-space: pre;">qty<tspan x="253.17000000000002" class="ty">int(11)?</tspan></text>
+        <text x="13" y="686" class="tf" style="white-space: pre;">alt_qty<tspan x="253.17000000000002" class="ty">int(11)?</tspan></text>
+        <text x="13" y="711" class="tf" style="white-space: pre;">order_min<tspan x="253.17000000000002" class="ty">int(11)?</tspan></text>
+        <text x="13" y="736" class="tf" style="white-space: pre;">qty_multiplier<tspan x="253.17000000000002" class="ty">int(11)?</tspan></text>
+        <text x="13" y="761" class="tf" style="white-space: pre;">conversion_factor<tspan x="253.17000000000002" class="ty">decimal(15,10)?</tspan></text>
+        <text x="13" y="786" class="tf" style="white-space: pre;">imperial_height<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="811" class="tf" style="white-space: pre;">imperial_width<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="836" class="tf" style="white-space: pre;">imperial_depth<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="861" class="tf" style="white-space: pre;">imperial_length<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="886" class="tf" style="white-space: pre;">imperial_weight<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="911" class="tf" style="white-space: pre;">imperial_uom<tspan x="253.17000000000002" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="936" class="tf" style="white-space: pre;">metric_height<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="961" class="tf" style="white-space: pre;">metric_width<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="986" class="tf" style="white-space: pre;">metric_depth<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="1011" class="tf" style="white-space: pre;">metric_length<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="1036" class="tf" style="white-space: pre;">metric_weight<tspan x="253.17000000000002" class="ty">float?</tspan></text>
+        <text x="13" y="1061" class="tf" style="white-space: pre;">metric_uom<tspan x="253.17000000000002" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="1086" class="tf" style="white-space: pre;">creation_date_time<tspan x="253.17000000000002" class="ty">datetime?</tspan></text>
+        <text x="13" y="1111" class="tf" style="white-space: pre;">last_modified_date_time<tspan x="253.17000000000002" class="ty">timestamp</tspan></text>
+        <text x="13" y="1136" class="tf" style="white-space: pre;">status<tspan x="253.17000000000002" class="ty">{enabled,disabled,pending,marked}</tspan></text>
+      </svg>
+      <svg width="381.19" height="450" x="-209.33" y="45" id="h677596000" class="t">
+        <rect height="40" width="381.19" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_member_orders</text>
+        <rect height="410" width="381.19" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="368.19" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(315.066953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">buy_id<tspan x="368.19" class="ty">int(11)</tspan></text>
+        <text x="13" y="111" class="tf fk" style="white-space: pre;">vendor_id<tspan x="368.19" class="ty">int(11)</tspan></text>
+        <text x="13" y="136" class="tf fk" style="white-space: pre;">org_id<tspan x="368.19" class="ty">int(11)</tspan></text>
+        <text x="13" y="161" class="tf fk" style="white-space: pre;">user_id<tspan x="368.19" class="ty">int(11)</tspan></text>
+        <text x="13" y="186" class="tf fk" style="white-space: pre;">items<tspan x="368.19" class="ty">JSON</tspan></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">purchase_order_number<tspan x="368.19" class="ty">text?</tspan></text>
+        <text x="13" y="236" class="tf" style="white-space: pre;">authorized_by<tspan x="368.19" class="ty">text?</tspan></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">notes<tspan x="368.19" class="ty">text?</tspan></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">action<tspan x="368.19" class="ty">{default,immediate,declined}?</tspan></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">status<tspan x="368.19" class="ty">{draft,submitted,declined,received,in-process,shipped}</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(65.020078125, 300) scale(0.014)"/>
+        <text x="13" y="336" class="tf" style="white-space: pre;">timestamp<tspan x="368.19" class="ty">timestamp</tspan></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">submission_time<tspan x="368.19" class="ty">timestamp?</tspan></text>
+        <text x="13" y="386" class="tf" style="white-space: pre;">urgent<tspan x="368.19" class="ty">int(11)?</tspan></text>
+        <text x="13" y="411" class="tf" style="white-space: pre;">vendor_update_timestamp<tspan x="368.19" class="ty">timestamp?</tspan></text>
+        <text x="13" y="436" class="tf fk" style="white-space: pre;">vendor_update_user_id<tspan x="368.19" class="ty">int(11)?</tspan></text>
+      </svg>
+      <svg width="230.66" height="175" x="712" y="-450.67" id="h2187887902" class="t">
+        <rect height="40" width="230.66" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_buys_member_logins</text>
+        <rect height="135" width="230.66" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="217.66" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(164.536953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf" style="white-space: pre;">buy_id<tspan x="217.66" class="ty">int(11)</tspan></text>
+        <text x="13" y="111" class="tf fk" style="white-space: pre;">user_id<tspan x="217.66" class="ty">int(11)</tspan></text>
+        <text x="13" y="136" class="tf fk" style="white-space: pre;">org_id<tspan x="217.66" class="ty">int(11)</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">last_login_time<tspan x="217.66" class="ty">timestamp</tspan></text>
+      </svg>
+      <svg width="190.21" height="150" x="739.33" y="-635.33" id="h190159691" class="t">
+        <rect height="40" width="190.21" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_user_branches</text>
+        <rect height="110" width="190.21" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="177.21" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(124.08695312500001, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">user_id<tspan x="177.21" class="ty">int(11)?</tspan></text>
+        <text x="13" y="111" class="tf" style="white-space: pre;">org_number<tspan x="177.21" class="ty">int(11)?</tspan></text>
+        <text x="13" y="136" class="tf fk" style="white-space: pre;">org_id<tspan x="177.21" class="ty">int(11)?</tspan></text>
+      </svg>
+      <svg width="90" height="375" x="790" y="-1060" id="h1601157805" class="t">
+        <rect height="40" width="90" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">Table 11</text>
+        <rect height="335" width="90" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(62, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="111" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="136" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="186" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="236" class="tf fk" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="336" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">...<tspan x="77" class="ty"/></text>
+      </svg>
+      <svg width="253.78" height="1425" x="-979" y="304.3399999999999" id="h2847124952" class="t">
+        <rect height="40" width="253.78" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_products</text>
+        <rect height="1385" width="253.78" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">cat_id<tspan x="240.78" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(187.656953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf" style="white-space: pre;">regionlist<tspan x="240.78" class="ty">varchar(10)?</tspan></text>
+        <text x="13" y="111" class="tf" style="white-space: pre;">vendor_number<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(185.983125, 100) scale(0.014)"/>
+        <text x="13" y="136" class="tf" style="white-space: pre;">vendor_name<tspan x="240.78" class="ty">varchar(60)</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">vendor_part_number<tspan x="240.78" class="ty">varchar(256)?</tspan></text>
+        <path d="M814.545 581.818v-23.273H535.273v-93.09h-46.546v93.09H209.455v139.637H256V605.09h232.727v93.09h46.546v-93.09H768v93.09h46.545V581.819zM674.91 465.455H349.091V139.636h325.818v325.819zM325.82 884.364H139.635V698.182h186.182v186.182z m279.272 0H418.909V698.182h186.182v186.182z m279.273 0H698.182V698.182h186.182v186.182zM395.636 418.909h232.728V186.182H395.636v232.727zM186.182 837.82h93.09v-93.092h-93.09v93.091z m279.273 0h93.09v-93.092h-93.09v93.091z m279.272 0h93.091v-93.092h-93.09v93.091z" class="i ix" transform="translate(151.078828125, 150) scale(0.014)"/>
+        <text x="13" y="186" class="tf" style="white-space: pre;">description_short<tspan x="240.78" class="ty">varchar(256)?</tspan></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">description_long<tspan x="240.78" class="ty">text?</tspan></text>
+        <text x="13" y="236" class="tf" style="white-space: pre;">features<tspan x="240.78" class="ty">text?</tspan></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">manufacturer<tspan x="240.78" class="ty">varchar(100)?</tspan></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">listed_date<tspan x="240.78" class="ty">date?</tspan></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">discontinued_date<tspan x="240.78" class="ty">date?</tspan></text>
+        <text x="13" y="336" class="tf" style="white-space: pre;">order_uom<tspan x="240.78" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">invoice_uom<tspan x="240.78" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="386" class="tf" style="white-space: pre;">colour<tspan x="240.78" class="ty">varchar(25)?</tspan></text>
+        <text x="13" y="411" class="tf" style="white-space: pre;">model_number<tspan x="240.78" class="ty">varchar(100)?</tspan></text>
+        <text x="13" y="436" class="tf" style="white-space: pre;">upc<tspan x="240.78" class="ty">varchar(25)?</tspan></text>
+        <text x="13" y="461" class="tf" style="white-space: pre;">imperial_height<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="486" class="tf" style="white-space: pre;">imperial_width<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="511" class="tf" style="white-space: pre;">imperial_depth<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="536" class="tf" style="white-space: pre;">imperial_length<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="561" class="tf" style="white-space: pre;">imperial_uom<tspan x="240.78" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="586" class="tf" style="white-space: pre;">metric_height<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="611" class="tf" style="white-space: pre;">metric_width<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="636" class="tf" style="white-space: pre;">metric_depth<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="661" class="tf" style="white-space: pre;">metric_length<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="686" class="tf" style="white-space: pre;">metric_uom<tspan x="240.78" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="711" class="tf" style="white-space: pre;">imperial_weight<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="736" class="tf" style="white-space: pre;">metric_weight<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="761" class="tf" style="white-space: pre;">order_min<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="786" class="tf" style="white-space: pre;">qty_multiplier<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="811" class="tf" style="white-space: pre;">units_per_measure<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="836" class="tf" style="white-space: pre;">creation_date_time<tspan x="240.78" class="ty">datetime?</tspan></text>
+        <text x="13" y="861" class="tf" style="white-space: pre;">last_modification_date_time<tspan x="240.78" class="ty">timestamp</tspan></text>
+        <text x="13" y="886" class="tf" style="white-space: pre;">reg_price<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="911" class="tf" style="white-space: pre;">expo_price<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="936" class="tf" style="white-space: pre;">qty<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="961" class="tf" style="white-space: pre;">freight_amount<tspan x="240.78" class="ty">text?</tspan></text>
+        <text x="13" y="986" class="tf" style="white-space: pre;">category_id<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="1011" class="tf" style="white-space: pre;">conversion_factor_old<tspan x="240.78" class="ty">float?</tspan></text>
+        <text x="13" y="1036" class="tf" style="white-space: pre;">cost_on_alt_unit<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="1061" class="tf" style="white-space: pre;">aqty<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="1086" class="tf" style="white-space: pre;">palletqty<tspan x="240.78" class="ty">int(11)?</tspan></text>
+        <text x="13" y="1111" class="tf" style="white-space: pre;">conversion_factor<tspan x="240.78" class="ty">decimal(15,10)?</tspan></text>
+        <text x="13" y="1136" class="tf" style="white-space: pre;">description_short_fr<tspan x="240.78" class="ty">varchar(256)?</tspan></text>
+        <text x="13" y="1161" class="tf" style="white-space: pre;">description_long_fr<tspan x="240.78" class="ty">text?</tspan></text>
+        <text x="13" y="1186" class="tf" style="white-space: pre;">features_fr<tspan x="240.78" class="ty">text?</tspan></text>
+        <text x="13" y="1211" class="tf" style="white-space: pre;">colour_fr<tspan x="240.78" class="ty">varchar(50)?</tspan></text>
+        <text x="13" y="1236" class="tf" style="white-space: pre;">image_name<tspan x="240.78" class="ty">varchar(512)?</tspan></text>
+        <text x="13" y="1261" class="tf" style="white-space: pre;">cat_main<tspan x="240.78" class="ty">varchar(256)?</tspan></text>
+        <text x="13" y="1286" class="tf" style="white-space: pre;">cat_sub<tspan x="240.78" class="ty">varchar(256)?</tspan></text>
+        <text x="13" y="1311" class="tf" style="white-space: pre;">cat_sub_sub<tspan x="240.78" class="ty">varchar(256)</tspan></text>
+        <text x="13" y="1336" class="tf" style="white-space: pre;">status<tspan x="240.78" class="ty">varchar(20)</tspan></text>
+        <text x="13" y="1361" class="tf" style="white-space: pre;">pallet_image<tspan x="240.78" class="ty">varchar(512)</tspan></text>
+        <text x="13" y="1386" class="tf" style="white-space: pre;">resolved<tspan x="240.78" class="ty">int(11)</tspan></text>
+        <text x="13" y="1411" class="tf" style="white-space: pre;">resolution_notes<tspan x="240.78" class="ty">text?</tspan></text>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="194.74" height="375" x="790" y="-1060" id="h1601157805" class="t">
+        <rect height="40" width="194.74" class="th"/>
+        <text x="13" y="25" class="tht" style="white-space: pre;">castlecore_members</text>
+        <rect height="335" width="194.74" class="t-bg"/>
+        <text x="13" y="61" class="tf pk" style="white-space: pre;">id<tspan x="181.74" class="ty">int(11)</tspan></text>
+        <path d="M7,14A2,2 0 0,1 5,12A2,2 0 0,1 7,10A2,2 0 0,1 9,12A2,2 0 0,1 7,14M12.65,10C11.83,7.67 9.61,6 7, 6A6, 6 0 0, 0 1, 12A6, 6 0 0, 0 7, 18C9.61, 18 11.83, 16.33 12.65, 14H17V18H21V14H23V10H12.65Z" class="i pk" transform="translate(128.616953125, 48) scale(0.65)"/>
+        <text x="13" y="86" class="tf fk" style="white-space: pre;">castlecore_id<tspan x="181.74" class="ty">int(11)</tspan></text>
+        <text x="13" y="111" class="tf" style="white-space: pre;">user_fname<tspan x="181.74" class="ty">text?</tspan></text>
+        <text x="13" y="136" class="tf" style="white-space: pre;">user_lname<tspan x="181.74" class="ty">text?</tspan></text>
+        <text x="13" y="161" class="tf" style="white-space: pre;">user_email<tspan x="181.74" class="ty">text?</tspan></text>
+        <text x="13" y="186" class="tf" style="white-space: pre;">user_name<tspan x="181.74" class="ty">text?</tspan></text>
+        <text x="13" y="211" class="tf" style="white-space: pre;">user_lang<tspan x="181.74" class="ty">text?</tspan></text>
+        <text x="13" y="236" class="tf fk" style="white-space: pre;">org_number<tspan x="181.74" class="ty">int(11)?</tspan></text>
+        <text x="13" y="261" class="tf" style="white-space: pre;">org_name<tspan x="181.74" class="ty">text?</tspan></text>
+        <text x="13" y="286" class="tf" style="white-space: pre;">region<tspan x="181.74" class="ty">text?</tspan></text>
+        <text x="13" y="311" class="tf" style="white-space: pre;">status<tspan x="181.74" class="ty">{enabled,disabled}</tspan></text>
+        <text x="13" y="336" class="tf" style="white-space: pre;">last_login_time<tspan x="181.74" class="ty">timestamp?</tspan></text>
+        <text x="13" y="361" class="tf" style="white-space: pre;">timestamp<tspan x="181.74" class="ty">timestamp</tspan></text>
+      </svg>
+    </g>
+  </g>
+</svg>

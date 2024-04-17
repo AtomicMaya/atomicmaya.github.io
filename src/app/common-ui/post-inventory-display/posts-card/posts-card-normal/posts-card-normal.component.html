@@ -14,7 +14,7 @@
     <p *ngIf="post.description">{{ post.description }}</p>
 
     <div class="d-flex flex-row card-link-container">
-      <a class="card-tag p-2 mx-1" *ngFor="let t of post.tags" href="/tags/{{ t.name }}/">
+      <a class="card-tag p-2 mx-1" *ngFor="let t of post.tags" href="/tags/{{ t.path }}/">
         <span>{{ t.name }}</span>
       </a>
     </div>

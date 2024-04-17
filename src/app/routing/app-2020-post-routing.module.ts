@@ -13,7 +13,7 @@ import { TAG_COMMUNITY, TAG_CONFERENCE, TAG_CTF, TAG_INFOSEC, TAG_IOT, TAG_OSINT
 
 export const subroutes2020: Routes = [
   {
-    path: '2020_10_15+Hello-world',
+    path: '2020_10_15+hello-world',
     component: Oct2020HelloWorldComponent,
     data: {
       title: 'Hello World!',
@@ -26,7 +26,7 @@ export const subroutes2020: Routes = [
     }
   },
   {
-    path: '2020_10_19+I-participated-in-the-CONINT-CTF',
+    path: '2020_10_19+i-participated-in-the-conint-ctf',
     component: Oct2020ConintComponent,
     data: {
       title: 'I participated in the conINT CTF!',
@@ -39,7 +39,7 @@ export const subroutes2020: Routes = [
     }
   },
   {
-    path: '2020_11_02+I-gave-a-talk-at-BeerCon2',
+    path: '2020_11_02+i-gave-a-talk-at-beercon2',
     component: Nov2020Beercon2Component,
     data: {
       title: 'I gave a talk at BeerCon2!',
@@ -52,7 +52,7 @@ export const subroutes2020: Routes = [
     }
   },
   {
-    path: '2020_11_09+I-talked-at-BSides-Islamabad',
+    path: '2020_11_09+i-talked-at-bsides-islamabad',
     component: Nov2020BsidesIslamabadComponent,
     data: {
       title: 'I talked at BSides Islamabad!',
@@ -65,7 +65,7 @@ export const subroutes2020: Routes = [
     }
   },
   {
-    path: '2020_11_12+Mentoring',
+    path: '2020_11_12+mentoring',
     component: Nov2020MentoringComponent,
     data: {
       title: 'Mentoring!',
@@ -77,7 +77,7 @@ export const subroutes2020: Routes = [
     }
   },
   {
-    path: '2020_11_12+Reading-Materials',
+    path: '2020_11_12+reading-materials',
     component: Nov2020ReadingComponent,
     data: {
       title: 'Reading Materials!',
@@ -89,7 +89,7 @@ export const subroutes2020: Routes = [
     }
   },
   {
-    path: '2020_12_12+Security-Coffeehouse-BC2-Speaker-Interviews',
+    path: '2020_12_12+security-coffeehouse-bc2-speaker-interviews',
     component: Dec2020CoffeehouseComponent,
     data: {
       title: 'Security CoffeeHouse: BC2 Speaker Interviews',
@@ -102,7 +102,7 @@ export const subroutes2020: Routes = [
     }
   },
   /*{
-    path: '2020_12_16+OSINT-Software-Development-Ideas',
+    path: '2020_12_16+osint-software-development-ideas',
     component: Dec2020Osint4jComponent,
     data: {
       title: 'OSINT: Software Development Ideas',
@@ -114,7 +114,7 @@ export const subroutes2020: Routes = [
   },*/
   /*
   {
-    path: '2020_12_27+Heap-Override-CTF-Challenge-JS-Reversal-Adventures',
+    path: '2020_12_27+heap-override-ctf-challenge-js-reversal-adventures',
     component: HeapOverrideCTFComponent,
     data: {
       title: 'HeapOverride CTF Challenge: JS Reversal Adventures',

@@ -30,7 +30,7 @@ import { WalkthroughTHMDec2022AdventOfCyberComponentDay24 } from "src/app/conten
 
 export const subroutesTHM2022: Routes = [
   {
-    path: '2022_12_01+Advent-of-Cyber-2022',
+    path: '2022_12_01+advent-of-cyber-2022',
     component: WalkthroughTHMDec2022AdventOfCyberComponent,
     data: {
       title: 'Advent of Cyber 2022',
@@ -42,7 +42,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_01+Advent-of-Cyber-2022-Day-01',
+    path: '2022_12_01+advent-of-cyber-2022-day-01',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay01,
     data: {
       title: 'Advent of Cyber 2022 - Day 1',
@@ -54,7 +54,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_02+Advent-of-Cyber-2022-Day-02',
+    path: '2022_12_02+advent-of-cyber-2022-day-02',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay02,
     data: {
       title: 'Advent of Cyber 2022 - Day 2',
@@ -66,7 +66,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_03+Advent-of-Cyber-2022-Day-03',
+    path: '2022_12_03+advent-of-cyber-2022-day-03',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay03,
     data: {
       title: 'Advent of Cyber 2022 - Day 3',
@@ -78,7 +78,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_04+Advent-of-Cyber-2022-Day-04',
+    path: '2022_12_04+advent-of-cyber-2022-day-04',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay04,
     data: {
       title: 'Advent of Cyber 2022 - Day 4',
@@ -90,7 +90,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_05+Advent-of-Cyber-2022-Day-05',
+    path: '2022_12_05+advent-of-cyber-2022-day-05',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay05,
     data: {
       title: 'Advent of Cyber 2022 - Day 5',
@@ -102,7 +102,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_06+Advent-of-Cyber-2022-Day-06',
+    path: '2022_12_06+advent-of-cyber-2022-day-06',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay06,
     data: {
       title: 'Advent of Cyber 2022 - Day 6',
@@ -114,7 +114,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_07+Advent-of-Cyber-2022-Day-07',
+    path: '2022_12_07+advent-of-cyber-2022-day-07',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay07,
     data: {
       title: 'Advent of Cyber 2022 - Day 7',
@@ -126,7 +126,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_08+Advent-of-Cyber-2022-Day-08',
+    path: '2022_12_08+advent-of-cyber-2022-day-08',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay08,
     data: {
       title: 'Advent of Cyber 2022 - Day 8',
@@ -138,7 +138,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_09+Advent-of-Cyber-2022-Day-09',
+    path: '2022_12_09+advent-of-cyber-2022-day-09',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay09,
     data: {
       title: 'Advent of Cyber 2022 - Day 9',
@@ -150,7 +150,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_10+Advent-of-Cyber-2022-Day-10',
+    path: '2022_12_10+advent-of-cyber-2022-day-10',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay10,
     data: {
       title: 'Advent of Cyber 2022 - Day 10',
@@ -162,7 +162,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_11+Advent-of-Cyber-2022-Day-11',
+    path: '2022_12_11+advent-of-cyber-2022-day-11',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay11,
     data: {
       title: 'Advent of Cyber 2022 - Day 11',
@@ -174,7 +174,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_12+Advent-of-Cyber-2022-Day-12',
+    path: '2022_12_12+advent-of-cyber-2022-day-12',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay12,
     data: {
       title: 'Advent of Cyber 2022 - Day 12',
@@ -186,7 +186,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_13+Advent-of-Cyber-2022-Day-13',
+    path: '2022_12_13+advent-of-cyber-2022-day-13',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay13,
     data: {
       title: 'Advent of Cyber 2022 - Day 13',
@@ -198,7 +198,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_14+Advent-of-Cyber-2022-Day-14',
+    path: '2022_12_14+advent-of-cyber-2022-day-14',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay14,
     data: {
       title: 'Advent of Cyber 2022 - Day 14',
@@ -210,7 +210,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_15+Advent-of-Cyber-2022-Day-15',
+    path: '2022_12_15+advent-of-cyber-2022-day-15',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay15,
     data: {
       title: 'Advent of Cyber 2022 - Day 15',
@@ -222,7 +222,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_16+Advent-of-Cyber-2022-Day-16',
+    path: '2022_12_16+advent-of-cyber-2022-day-16',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay16,
     data: {
       title: 'Advent of Cyber 2022 - Day 16',
@@ -234,7 +234,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_17+Advent-of-Cyber-2022-Day-17',
+    path: '2022_12_17+advent-of-cyber-2022-day-17',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay17,
     data: {
       title: 'Advent of Cyber 2022 - Day 17',
@@ -246,7 +246,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_18+Advent-of-Cyber-2022-Day-18',
+    path: '2022_12_18+advent-of-cyber-2022-day-18',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay18,
     data: {
       title: 'Advent of Cyber 2022 - Day 18',
@@ -258,7 +258,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_19+Advent-of-Cyber-2022-Day-19',
+    path: '2022_12_19+advent-of-cyber-2022-day-19',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay19,
     data: {
       title: 'Advent of Cyber 2022 - Day 19',
@@ -270,7 +270,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_20+Advent-of-Cyber-2022-Day-20',
+    path: '2022_12_20+advent-of-cyber-2022-day-20',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay20,
     data: {
       title: 'Advent of Cyber 2022 - Day 20',
@@ -282,7 +282,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_21+Advent-of-Cyber-2022-Day-21',
+    path: '2022_12_21+advent-of-cyber-2022-day-21',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay21,
     data: {
       title: 'Advent of Cyber 2022 - Day 21',
@@ -294,7 +294,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_22+Advent-of-Cyber-2022-Day-22',
+    path: '2022_12_22+advent-of-cyber-2022-day-22',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay22,
     data: {
       title: 'Advent of Cyber 2022 - Day 22',
@@ -306,7 +306,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_23+Advent-of-Cyber-2022-Day-23',
+    path: '2022_12_23+advent-of-cyber-2022-day-23',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay23,
     data: {
       title: 'Advent of Cyber 2022 - Day 23',
@@ -318,7 +318,7 @@ export const subroutesTHM2022: Routes = [
     }
   },
   {
-    path: '2022_12_24+Advent-of-Cyber-2022-Day-24',
+    path: '2022_12_24+advent-of-cyber-2022-day-24',
     component: WalkthroughTHMDec2022AdventOfCyberComponentDay24,
     data: {
       title: 'Advent of Cyber 2022 - Day 24',

@@ -1,5 +1,5 @@
 <h4>~$ Tags</h4>
 
 <div class="d-flex flex-wrap">
-    <a class="no-underline" *ngFor="let tc of this.tagCount" href="/tags/{{ tc.tag_name }}/"><span>{{ tc.tag_name }} ({{ tc.count }})</span></a>
+    <a class="no-underline" *ngFor="let tc of this.tagCount" href="/tags/{{ tc.tag_path }}/"><span>{{ tc.tag_name }} ({{ tc.count }})</span></a>
 </div>

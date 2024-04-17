@@ -31,7 +31,7 @@ export function countTags(): TagCount[] {
         if (output.map(x => x.tag_name).includes(t.name)) {
           output.filter(x => x.tag_name === t.name)[0].count += 1;
         } else {
-          output.push({ tag_name: t.name, count: 1});
+          output.push({ tag_name: t.name, tag_path: t.path, count: 1});
         }
       }
     }
@@ -71,7 +71,7 @@ function routeToWalkthrough(r: Route): WalkthroughPost {
  * @export
  */
 export function filterPostRoutesByTag(filter: string): Post[] {
-  return postRoutes.filter((x: Route) => x.data.tags.map((y: Tag) => y.name).includes(filter))
+  return postRoutes.filter((x: Route) => x.data.tags.map((y: Tag) => y.path).includes(filter))
     .sort((a: Route, b: Route) => (a.path > b.path ? -1 : 1))
     .map((r: Route) => routeToPost(r));
 }

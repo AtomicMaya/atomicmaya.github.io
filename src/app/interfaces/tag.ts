@@ -1,3 +1,4 @@
 export interface Tag {
-  name: string
+  name: string,
+  path: string,
 }

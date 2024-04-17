@@ -19,6 +19,13 @@
     </image>
     <!-- 2024 -->
     <item>
+      <title>Whoops! That's some PII!</title>
+      <link>https://atomicmaya.me/post/2024/2024_04_18+whoops-thats-some-pii/index.html</link>
+      <description>I stumbled onto the database of a lumber/building materials buying group in Canada. A tale of responsible disclosure.</description>
+      <guid>https://atomicmaya.me/post-2024-02</guid>
+      <pubDate>Thu, 18 Apr 2024 12:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>New Year, New Stuff!</title>
       <link>https://atomicmaya.me/post/2024/2024_01_02+new-year-new-stuff/index.html</link>
       <description>A few changes to this blog.</description>
@@ -155,56 +162,56 @@
     </item>
     <item>
       <title>I spoke at DEFCON30! (I also attended it!)</title>
-      <link>https://atomicmaya.me/post/2022/2022_08_30%2Bheading-for-DEFCON/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_08_30+heading-for-defcon/index.html</link>
       <description>DEFCON30! All the shenanigans, all the hackers, all the bad luck?</description>
       <guid>https://atomicmaya.me/post-2022-08</guid>
       <pubDate>Tue, 30 Aug 2022 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Going back to Amsterdam and attending MCH!</title>
-      <link>https://atomicmaya.me/post/2022/2022_07_29%2Bheading-to-Amsterdam-and-going-to-MCH/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_07_29+heading-to-amsterdam-and-going-to-mch/index.html</link>
       <description>I attended MayContainHackers 2022, and got into some shenanigans!</description>
       <guid>https://atomicmaya.me/post-2022-07</guid>
       <pubDate>Fri, 29 Jul 2022 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Going to Paris for the Wavegame cloud competition!</title>
-      <link>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_05_15+winning-the-wavegame/index.html</link>
       <description>I went to Paris for the WaveGame competition, and we ended up winning!</description>
       <guid>https://atomicmaya.me/post-2022-06</guid>
       <pubDate>Sun, 15 May 2022 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Going to Paris for the Wavegame cloud competition!</title>
-      <link>https://atomicmaya.me/post/2022/2022_05_15%2Bwinning-the-wavegame/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_05_15+building-a-raspi-private-web-server/index.html</link>
       <description>Building a Raspberry Pi private web server!</description>
       <guid>https://atomicmaya.me/post-2022-05</guid>
       <pubDate>Wed, 04 May 2022 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Digital Overdose Conference 2: We're doing this again!</title>
-      <link>https://atomicmaya.me/post/2022/2022_04_26%2Brunning-the-digital-overdose-conference-again/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_04_26+running-the-digital-overdose-conference-again/index.html</link>
       <description>Going behind the scenes of the second iteration of the Digital Overdose Conference.</description>
       <guid>https://atomicmaya.me/post-2022-04</guid>
       <pubDate>Tue, 26 Apr 2022 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>I started a new job!</title>
-      <link>https://atomicmaya.me/post/2022/2022_02_18%2BStarting-a-new-job/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_02_18+starting-a-new-job/index.html</link>
       <description>Going into a bit more detail about what I'm currently working on!</description>
       <guid>https://atomicmaya.me/post-2022-03</guid>
       <pubDate>Fri, 18 Feb 2022 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Participating in the Knight CTF!</title>
-      <link>https://atomicmaya.me/post/2022/2022_01_29%2Bknight-ctf-2022-all-writeups/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_01_29+knight-ctf-2022-all-writeups/index.html</link>
       <description>Dissecting various challenges at 2022's KnightCTF, from cryptography and programming to reverse engineering.</description>
       <guid>https://atomicmaya.me/post-2022-02</guid>
       <pubDate>Sat, 29 Jan 2022 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Catching COVID, detailing my experience.</title>
-      <link>https://atomicmaya.me/post/2022/2022_01_15%2Bcatching-covid/index.html</link>
+      <link>https://atomicmaya.me/post/2022/2022_01_15+catching-covid/index.html</link>
       <description>I managed to catch COVID, here's my story about it.</description>
       <guid>https://atomicmaya.me/post-2022-01</guid>
       <pubDate>Sat, 15 Jan 2022 18:00:00 GMT</pubDate>
@@ -212,112 +219,112 @@
     <!-- 2021 -->
     <item>
       <title>Speaking about communities at conINT!</title>
-      <link>https://atomicmaya.me/post/2021/2021_11_25%2Bspeaking-at-conint/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_11_25+speaking-at-conint/index.html</link>
       <description>Communities, the Internet and OSINT, how do they mix?</description>
       <guid>https://atomicmaya.me/post-2021-24</guid>
       <pubDate>Thu, 25 Nov 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Happy birthday to this blog!</title>
-      <link>https://atomicmaya.me/post/2021/2021_11_15%2Bhappy-birthday-to-this-blog/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_11_15+happy-birthday-to-this-blog/index.html</link>
       <description>I have kept this blog alive for 1 year!</description>
       <guid>https://atomicmaya.me/post-2021-23</guid>
       <pubDate>Mon, 15 Nov 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Digital Overdose 2021 Autumn CTF - C1 - I think this should be C4 - Official Writeup</title>
-      <link>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-3-c4/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_10_11+digital-overdose-official-writeup-3-c4/index.html</link>
       <description>Official developer writeup for the challenge 'C1 - I think this should be C4' that was created for the Digital Overdose Autumn 2021 CTF</description>
       <guid>https://atomicmaya.me/post-2021-22</guid>
       <pubDate>Mon, 11 Oct 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Digital Overdose 2021 Autumn CTF - A door by any other name - Official Writeup</title>
-      <link>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-2-a-lying-cake/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_10_11+digital-overdose-official-writeup-2-a-lying-cake/index.html</link>
       <description>Official developer writeup for the challenge 'A door by any other name' that was created for the Digital Overdose Autumn 2021 CTF</description>
       <guid>https://atomicmaya.me/post-2021-21</guid>
       <pubDate>Mon, 11 Oct 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Digital Overdose 2021 Autumn CTF - Outage - Official Writeup</title>
-      <link>https://atomicmaya.me/post/2021/2021_10_11%2Bdigital-overdose-official-writeup-1-outage/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_10_11+digital-overdose-official-writeup-1-outage/index.html</link>
       <description>Official developer writeup for the challenge 'Outage - The usual suspect' that was created for the Digital Overdose Autumn 2021 CTF</description>
       <guid>https://atomicmaya.me/post-2021-20</guid>
       <pubDate>Mon, 11 Oct 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Enumerating the Lightshot CDN</title>
-      <link>https://atomicmaya.me/post/2021/2021_08_31%2BEnumerating-the-LightShot-CDN/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_08_31+enumerating-the-lightshot-cdn/index.html</link>
       <description>How I went from the premise of an open CDN to exploiting it as a proof of concept.</description>
       <guid>https://atomicmaya.me/post-2021-19</guid>
       <pubDate>Tue, 31 Aug 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Halfway through 2021: A brief recap of what I've been up to</title>
-      <link>https://atomicmaya.me/post/2021/2021_07_20+The-2021-Halfway-Mark/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_07_20+the-2021-halfway-mark/index.html</link>
       <description>Going over the timeline for the last few months, seeing what has been accomplished.</description>
       <guid>https://atomicmaya.me/post-2021-18</guid>
       <pubDate>Tue, 20 Jul 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>The 2021 Digital Overdose Conference: Tales and Takeaways</title>
-      <link>https://atomicmaya.me/post/2021/2021_04_29+Digital-Overdose-Conference/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_04_29+digital-overdose-conference/index.html</link>
       <description>Speaking a bit more about my experiences surrounding and during the Digital Overdose Conference.</description>
       <guid>https://atomicmaya.me/post-2021-17</guid>
       <pubDate>Thu, 29 Apr 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Dissecting the Central-Infosec Python challenges</title>
-      <link>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Python/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_04_20+central-infosec-ctf-python/index.html</link>
       <description>This is a write-up of the "07. Reversing: Code Analysis (CIS-WEBSRV01)" series of challenges in the context of the  Central Infosec CTF.</description>
       <guid>https://atomicmaya.me/post-2021-16</guid>
       <pubDate>Tue, 20 Apr 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Dissecting the Central-Infosec Static Code Analysis challenge</title>
-      <link>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Static-Hard/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_04_20+central-infosec-ctf-hack-the-static-hard/index.html</link>
       <description>This is a write-up for the hardest of the "14. Web Exploitation: Advanced (CIS-WEBSRV01)" series of challenges in the context of the  Central Infosec CTF.</description>
       <guid>https://atomicmaya.me/post-2021-15</guid>
       <pubDate>Tue, 20 Apr 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Dissecting the Central-Infosec Game Exploitation challenge</title>
-      <link>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-Hack-The-Maze-Hard/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_04_20+central-infosec-ctf-hack-the-maze-hard/index.html</link>
       <description>This is a write-up for the hardest of the "13. Web Exploitation: Games (CIS-WEBSRV01)" series of challenges in the context of the  Central Infosec CTF.</description>
       <guid>https://atomicmaya.me/post-2021-14</guid>
       <pubDate>Tue, 20 Apr 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Central-Infosec CTF: The story, and the links!</title>
-      <link>https://atomicmaya.me/post/2021/2021_04_20+Central-Infosec-CTF-All/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_04_20+central-infosec-ctf-all/index.html</link>
       <description>This is a recap of my participation in the Central Infosec CTF with "Advanced Persistent Team".</description>
       <guid>https://atomicmaya.me/post-2021-13</guid>
       <pubDate>Tue, 20 Apr 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>A much ado about passwords and password management</title>
-      <link>https://atomicmaya.me/post/2021/2021_03_07+Much-Ado-About-Passwords/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_03_07+much-ado-about-passwords/index.html</link>
       <description>Going over various (non-)solutions people use to store their passwords and the appeal of password management solutions.</description>
       <guid>https://atomicmaya.me/post-2021-12</guid>
       <pubDate>Sun, 07 Mar 2021 18:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Participating in the TraceLabs OSINT CTF with HackSouth</title>
-      <link>https://atomicmaya.me/post/2021/2021_02_26%2BTraceLabs-CTF-With-Hacksouth/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_02_26+tracelabs-ctf-with-hacksouth/index.html</link>
       <description>A write-up on my participation in the TraceLabs OSINT CTF.</description>
       <guid>https://atomicmaya.me/post-2021-11</guid>
       <pubDate>Fri, 26 Feb 2021 18:00:00 GMT</pubDate>
     </item>
     <!-- <item>
       <title>eNCA Interview on the WhatsApp Privacy Policy Changes</title>
-      <link>https://atomicmaya.me/post/2021/2021_01_19%2BeNCA-Interview-on-the-WhatsApp-Privacy-Policy-Changes/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_01_19+enca-interview-on-the-whatsapp-privacy-policy-changes/index.html</link>
       <description>Discussing the ex-new WhatsApp privacy policy on eNCA.</description>
       <guid>https://atomicmaya.me/post-2021-6</guid>
       <pubDate>Tue, 19 Jan 2021 18:00:00 GMT</pubDate>
     </item> -->
     <item>
       <title>WhatsApp Privacy Policy Changes Analysis</title>
-      <link>https://atomicmaya.me/post/2021/2021_01_08%2BWhatsApp-Privacy-Policy-Changes-Analysis/index.html</link>
+      <link>https://atomicmaya.me/post/2021/2021_01_08+whatsapp-privacy-policy-changes-analysis/index.html</link>
       <description>Reviewing the changes coming Feb. 8th 2021 to the WhatsApp privacy policy and their effect.</description>
       <guid>https://atomicmaya.me/post-2021-4</guid>
       <pubDate>Tue, 12 Jan 2021 18:00:00 GMT</pubDate>

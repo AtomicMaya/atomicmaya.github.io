@@ -1,4 +1,3 @@
-import { Dec2023IWentToC3CongressComponent } from 'src/app/content/post/2023/231231-i-went-to-c3congress/i-went-to-c3congress.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Oct2022GenderParadigmShiftComponent } from "src/app/content/post/2022/221021-gender-paradigm-shift/gender-paradigm-shift.component";
@@ -12,12 +11,11 @@ import { Aug2023IWentToDefcon31Component } from 'src/app/content/post/2023/23082
 import { Aug2023IWentToC3CampComponent } from 'src/app/content/post/2023/230821-i-went-to-c3camp/i-went-to-c3camp.component';
 import { Sep2023AttendingBonclesidesComponent } from 'src/app/content/post/2023/230930-attending-bonclesides/attending-bonclesides.component';
 import { Oct2023ItsBeen3YearsComponent } from 'src/app/content/post/2023/231015-its-been-3-years/its-been-3-years.component';
-import { Oct2023MakingThisBlogEasierToDeployComponent } from '../content/post/2023/231020-making-this-blog-easier-to-deploy/making-this-blog-easier-to-deploy.component';
-import { Nov2023LDAPSoverAADDSHeadacheComponent } from '../content/post/2023/231120-ldaps-over-aadds-headache/ldaps-over-aadds-headache.component';
-import { Dec2023SpeakingAtBsidesLondonComponent } from '../content/post/2023/231213-speaking-at-bsides-london/speaking-at-bsides-london.component';
+import { Oct2023MakingThisBlogEasierToDeployComponent } from 'src/app/content/post/2023/231020-making-this-blog-easier-to-deploy/making-this-blog-easier-to-deploy.component';
+import { Dec2023SpeakingAtBsidesLondonComponent } from 'src/app/content/post/2023/231213-speaking-at-bsides-london/speaking-at-bsides-london.component';
+import { Dec2023IWentToC3CongressComponent } from 'src/app/content/post/2023/231231-i-went-to-c3congress/i-went-to-c3congress.component';
 import { authorList } from "src/app/data/authors";
 import { TAG_ACADEMIA, TAG_CONFERENCE, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_REVERSE_ENGINEERING, TAG_TALKS, TAG_TECHNICAL, TAG_TRAVEL } from 'src/app/utils/tags';
-
 
 export const subroutes2023: Routes = [
   {

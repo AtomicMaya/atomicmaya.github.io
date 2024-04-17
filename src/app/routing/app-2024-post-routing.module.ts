@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Jan2024NewYearNewStuffComponent } from '../content/post/2024/240102-new-year-new-stuff/new-year-new-stuff.component';
+import { Jan2024NewYearNewStuffComponent } from 'src/app/content/post/2024/240102-new-year-new-stuff/new-year-new-stuff.component';
+import { Apr2024WhoopsThatsSomePIIComponent } from 'src/app/content/post/2024/240418-whoops-thats-some-pii/whoops-thats-some-pii.component';
 import { authorList } from "src/app/data/authors";
-import { TAG_ACADEMIA, TAG_CONFERENCE, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_REVERSE_ENGINEERING, TAG_TALKS, TAG_TECHNICAL, TAG_TRAVEL } from 'src/app/utils/tags';
-//import { Jan2024WhoopsThatsSomePIIComponent } from '../content/post/2024/240107-whoops-thats-some-pii/whoops-thats-some-pii.component';
+import { TAG_HACKING, TAG_INFOSEC, TAG_PERSONAL, TAG_RESPONSIBLE_DISCLOSURE, TAG_REVERSE_ENGINEERING } from 'src/app/utils/tags';
 
 export const subroutes2024: Routes = [
   {
@@ -18,19 +18,18 @@ export const subroutes2024: Routes = [
       readingTime: 1
     }
   },
-  /*
   {
-    path: '2024_01_07+whoops-thats-some-pii',
-    component: Jan2024WhoopsThatsSomePIIComponent,
+    path: '2024_04_18+whoops-thats-some-pii',
+    component: Apr2024WhoopsThatsSomePIIComponent,
     data: {
-      title: 'Woops! That\'s some PII!',
+      title: 'Whoops! That\'s some PII!',
       authors: [ authorList['AtomicMaya'] ],
-      description: '',
-      tags: [],
-      date: [ 2024, 1, 7 ],
-      readingTime: -1
+      description: 'I stumbled onto the database of a lumber/building materials buying group in Canada. A tale of responsible disclosure.',
+      tags: [TAG_INFOSEC, TAG_RESPONSIBLE_DISCLOSURE, TAG_HACKING],
+      date: [ 2024, 4, 18 ],
+      readingTime: 21
     }
-  },*/
+  },
 ]
 subroutes2024.map((r) => r.data.path = r.path)
 
