@@ -18,6 +18,5 @@ export class Apr2024WhoopsThatsSomePIIComponent implements OnInit {
                       this.post.imageUrl, 1280, 720,
                       ['castle', 'Castle Building Centres Group Ltd.', 'grayhat warfare', 'bucket hunting', 'aws s3'],
                       this.post.description, this.post.readingTime);
-    console.log('meta set', this.post.date)
   }
 }

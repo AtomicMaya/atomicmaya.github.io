@@ -120,6 +120,8 @@ export const ROUTES = [
   /* Posts: 2024 */
   '/post/2024/2024_01_02+new-year-new-stuff/',
   '/post/2024/2024_04_18+whoops-thats-some-pii/',
+  '/post/2024/2024_06_30+electromagnetic-fields/',
+  '/post/2024/2024_07_27+startup-whiplash-at-steelcon/',
 
   /* Platforms */
   '/walkthrough/platforms/tryhackme/',

@@ -426,6 +426,18 @@
     <changefreq>weekly</changefreq>
     <lastmod>2024-04-18</lastmod>
   </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2024/2024_06_30%2Belectromagnetic-fields/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2024-12-02</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2024/2024_07_27%2Bstartup-whiplash-at-steelcon/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2024-12-02</lastmod>
+  </url>
 
   <!-- WALKTHROUGHS -->
 

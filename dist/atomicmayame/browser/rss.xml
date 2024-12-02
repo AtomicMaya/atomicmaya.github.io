@@ -19,6 +19,20 @@
     </image>
     <!-- 2024 -->
     <item>
+      <title>Startup Whiplash! At Steelcon!</title>
+      <link>https://atomicmaya.me/post/2024/2024_07_27+startup-whiplash-at-steelcon/index.html</link>
+      <description>One of my rants, this time with extra punch, sure to give whiplash.</description>
+      <guid>https://atomicmaya.me/post-2024-04</guid>
+      <pubDate>Sat, 27 Jul 2024 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Electromagnetic Fields!</title>
+      <link>https://atomicmaya.me/post/2024/2024_06_30+electromagnetic-fields/index.html</link>
+      <description>I went to a field near Ledbury. Oh, and so did 3000 or so other hackers!</description>
+      <guid>https://atomicmaya.me/post-2024-03</guid>
+      <pubDate>Sun, 30 Jun 2024 12:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>Whoops! That's some PII!</title>
       <link>https://atomicmaya.me/post/2024/2024_04_18+whoops-thats-some-pii/index.html</link>
       <description>I stumbled onto the database of a lumber/building materials buying group in Canada. A tale of responsible disclosure.</description>
