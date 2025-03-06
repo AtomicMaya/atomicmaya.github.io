@@ -16,7 +16,7 @@ export class Oct2023ItsBeen3YearsComponent implements OnInit {
     this.route.data.subscribe(data => { this.post = (data as Post); });
     this.meta.setTags(`/post/${this.post.path.slice(0, 4)}/${this.post.path}`, this.post.title,
                       this.post.imageUrl, 1280, 720,
-                      [''],
+                      ['blog', 'writing', 'achievement'],
                       this.post.description, this.post.readingTime);
   }
 }

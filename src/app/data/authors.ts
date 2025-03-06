@@ -14,10 +14,21 @@ export const authorList: AuthorMap = {
         url: 'https://atomicmaya.me',
       },
       {
+        label: 'Fediverse',
+        icon: 'fab fa-fw fa-mastodon',
+        url: 'https://catgirl.global/@maya',
+      },
+      {
+        label: 'Photography',
+        icon: 'fa fa-fw fa-camera-retro',
+        url: 'https://pixels.catgirl.global/@maya',
+      },
+      /*
+      {
         label: 'Twitter',
         icon: 'fab fa-fw fa-twitter-square',
         url: 'https://twitter.com/AtomicMaya_',
-      },
+      },*/
       {
         label: 'LinkedIn',
         icon: 'fab fa-fw fa-linkedin',
@@ -33,11 +44,6 @@ export const authorList: AuthorMap = {
         icon: 'fab fa-fw fa-github',
         url: 'https://github.com/AtomicMaya',
       },
-      {
-        label: 'Mastodon',
-        icon: 'fab fa-fw fa-mastodon',
-        url: 'https://tech.lgbt/@AtomicMaya',
-      }
     ]
   },
 };

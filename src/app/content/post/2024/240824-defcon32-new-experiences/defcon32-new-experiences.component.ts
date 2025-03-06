@@ -16,7 +16,7 @@ export class Aug2024Defcon32NewExperiencesComponent implements OnInit {
     this.route.data.subscribe(data => { this.post = (data as Post); });
     this.meta.setTags(`/post/${this.post.path.slice(0, 4)}/${this.post.path}`, this.post.title,
       this.post.imageUrl, 1280, 720,
-      [''],
+      ['defcon', 'defcon32', 'defcon 2024', 'hacking', 'conference'],
       this.post.description, this.post.readingTime);
   }
 }

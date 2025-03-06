@@ -13,5 +13,4 @@ export class CalendarComponent implements OnInit {
                       '', 400, 400,
                       ['calendar']);
   }
-
 }

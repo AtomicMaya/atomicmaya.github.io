@@ -6,8 +6,10 @@ import { Jan2024NewYearNewStuffComponent } from "src/app/content/post/2024/24010
 import { Apr2024WhoopsThatsSomePIIComponent } from "src/app/content/post/2024/240418-whoops-thats-some-pii/whoops-thats-some-pii.component";
 import { Jun2024ElectromagneticFieldsComponent } from "src/app/content/post/2024/240630-electromagnetic-fields/electromagnetic-fields.component";
 import { Jul2024StartupWhiplashAtSteelconComponent } from "src/app/content/post/2024/240727-startup-whiplash-at-steelcon/startup-whiplash-at-steelcon.component";
+import { Aug2024PNWAdventuresComponent } from "src/app/content/post/2024/240815-pnw-adventures/pnw-adventures.component";
 import { Aug2024Defcon32NewExperiencesComponent } from "src/app/content/post/2024/240824-defcon32-new-experiences/defcon32-new-experiences.component";
 import { Oct2024BSidesNewcastleComponent } from "src/app/content/post/2024/241015-bsides-newcastle/bsides-newcastle.component";
+
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { Oct2024BSidesNewcastleComponent } from "src/app/content/post/2024/24101
     Apr2024WhoopsThatsSomePIIComponent,
     Jun2024ElectromagneticFieldsComponent,
     Jul2024StartupWhiplashAtSteelconComponent,
+    Aug2024PNWAdventuresComponent,
     Aug2024Defcon32NewExperiencesComponent,
     Oct2024BSidesNewcastleComponent
   ],

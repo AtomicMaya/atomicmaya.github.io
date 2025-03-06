@@ -8,6 +8,7 @@ import { Jun2024ElectromagneticFieldsComponent } from 'src/app/content/post/2024
 import { Jul2024StartupWhiplashAtSteelconComponent } from 'src/app/content/post/2024/240727-startup-whiplash-at-steelcon/startup-whiplash-at-steelcon.component';
 import { Aug2024Defcon32NewExperiencesComponent } from 'src/app/content/post/2024/240824-defcon32-new-experiences/defcon32-new-experiences.component';
 import { Oct2024BSidesNewcastleComponent } from 'src/app/content/post/2024/241015-bsides-newcastle/bsides-newcastle.component';
+import { Aug2024PNWAdventuresComponent } from '../content/post/2024/240815-pnw-adventures/pnw-adventures.component';
 
 export const subroutes2024: Routes = [
   {
@@ -59,31 +60,45 @@ export const subroutes2024: Routes = [
       imageUrl: '/assets/images/post/2024/240727-startup-whiplash-at-steelcon/steelcon-logo.png',
       readingTime: 3
     }
-  },/*
+  },
+  {
+    path: '2024_08_15+pnw-adventures',
+    component: Aug2024PNWAdventuresComponent,
+    data: {
+      title: 'Maya goes on holidays in the Pacific Northwest',
+      authors: [authorList['AtomicMaya']],
+      description: 'Maya decided to go on a pre-DEFCON visit to the US West Coast.',
+      tags: [TAG_TRAVEL],
+      date: [2024, 8, 15],
+      readingTime: 5
+    }
+  },
   {
     path: '2024_08_24+defcon32-new-experiences',
     component: Aug2024Defcon32NewExperiencesComponent,
     data: {
       title: 'New experiences at DEFCON 32',
       authors: [authorList['AtomicMaya']],
-      description: '',
+      description: 'I went to DEFCON32 and volunteered.',
       tags: [TAG_CONFERENCE, TAG_TRAVEL, TAG_VOLUNTEERING],
       date: [2024, 8, 24],
-      readingTime: 21
+      imageUrl: '/assets/images/post/2024/240820-defcon32-new-experiences/defcon-logo.jpg',
+      readingTime: 6
     }
   },
   {
     path: '2024_10_15+bsides-newcastle',
     component: Oct2024BSidesNewcastleComponent,
     data: {
-      title: 'Volunteering, at BSides Newcastle!',
+      title: 'Doing conference A/V shenanigans at BSides NCL.',
       authors: [authorList['AtomicMaya']],
-      description: '',
+      description: 'I went to a conference and got given things to do! (this surprises no one)',
       tags: [TAG_CONFERENCE, TAG_TRAVEL, TAG_VOLUNTEERING],
       date: [2024, 10, 15],
-      readingTime: 21
+      imageUrl: '/assets/images/post/2024/241015-bsides-newcastle/boncl-logo.png',
+      readingTime: 3
     }
-  } */
+  }
 ]
 subroutes2024.map((r) => r.data.path = r.path)
 

@@ -122,6 +122,9 @@ export const ROUTES = [
   '/post/2024/2024_04_18+whoops-thats-some-pii/',
   '/post/2024/2024_06_30+electromagnetic-fields/',
   '/post/2024/2024_07_27+startup-whiplash-at-steelcon/',
+  '/post/2024/2024_08_15+pnw-adventures/',
+  '/post/2024/2024_08_24+defcon32-new-experiences/',
+  '/post/2024/2024_10_15+bsides-newcastle/',
 
   /* Platforms */
   '/walkthrough/platforms/tryhackme/',

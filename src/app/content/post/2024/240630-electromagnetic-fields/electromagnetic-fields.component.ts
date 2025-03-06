@@ -16,7 +16,7 @@ export class Jun2024ElectromagneticFieldsComponent implements OnInit {
     this.route.data.subscribe(data => { this.post = (data as Post); });
     this.meta.setTags(`/post/${this.post.path.slice(0, 4)}/${this.post.path}`, this.post.title,
       this.post.imageUrl, 1280, 720,
-      [''],
+      ['EMF2024', 'electromagnetic field', 'ledbury', 'hacking'],
       this.post.description, this.post.readingTime);
   }
 }

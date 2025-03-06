@@ -438,6 +438,24 @@
     <changefreq>weekly</changefreq>
     <lastmod>2024-12-02</lastmod>
   </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2024/post/2024/2024_08_15%2Bpnw-adventures/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2024/2024_08_24%2Bdefcon32-new-experiences/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2024/post/2024/2024_10_15%2Bbsides-newcastle/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-03-06</lastmod>
+  </url>
 
   <!-- WALKTHROUGHS -->
 
