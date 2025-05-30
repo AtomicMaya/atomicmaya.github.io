@@ -2,5 +2,7 @@
 <p><app-when [date]="this.date" [edited]="this.edited"></app-when><span *ngIf="this.post.readingTime !== undefined"> | Est. reading time: {{ this.post.readingTime }} minutes</span></p>
 <app-tag-viewer *ngIf="showTags" [tags]="this.post.tags"></app-tag-viewer>
 <div>
-    <ng-content></ng-content>
+    <article>
+        <ng-content></ng-content>
+    </article>
 </div>

@@ -8,12 +8,13 @@ import { TagCount } from 'src/app/interfaces/tag-count';
 import { subroutes2020 } from 'src/app/routing/app-2020-post-routing.module';
 import { subroutes2021 } from 'src/app/routing/app-2021-post-routing.module';
 import { subroutes2022 } from 'src/app/routing/app-2022-post-routing.module';
-import { subroutes2023 } from 'src/app/routing/app-2023-post-routing.module';
 import { subroutesTHM2022 } from 'src/app/routing/app-tryhackme-2022-walkthrough-routing.module';
-import { subroutes2024 } from '../routing/app-2024-post-routing.module';
+import { subroutes2023 } from 'src/app/routing/app-2023-post-routing.module';
+import { subroutes2024 } from 'src/app/routing/app-2024-post-routing.module';
+import { subroutes2025 } from 'src/app/routing/app-2025-post-routing.module';
 
 /** The compiled post routes from all of the lazy-loaded modules. */
-export const postRoutes: Routes = [...subroutes2020, ...subroutes2021, ...subroutes2022, ...subroutes2023, ...subroutes2024];
+export const postRoutes: Routes = [...subroutes2020, ...subroutes2021, ...subroutes2022, ...subroutes2023, ...subroutes2024, ...subroutes2025];
 
 /** The compiled routes from all of the lazy-loaded modules. */
 export const walkthroughRoutes: Routes = [...subroutesTHM2022].filter((r) => !r.path.includes('-Day-'));

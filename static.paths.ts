@@ -18,6 +18,7 @@ export const ROUTES = [
   '/tags/',
   '/tags/academia/',
   '/tags/appsec/',
+  '/tags/chaos-events/',
   '/tags/cloud/',
   '/tags/community/',
   '/tags/conference/',
@@ -125,6 +126,11 @@ export const ROUTES = [
   '/post/2024/2024_08_15+pnw-adventures/',
   '/post/2024/2024_08_24+defcon32-new-experiences/',
   '/post/2024/2024_10_15+bsides-newcastle/',
+  '/post/2024/2024_12_23%2Bbsides-london/',
+
+  /* Posts: 2025 */
+  '/post/2025/2025_01_09%2Bmaya-went-to-38c3',
+
 
   /* Platforms */
   '/walkthrough/platforms/tryhackme/',

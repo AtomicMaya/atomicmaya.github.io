@@ -2,6 +2,7 @@ import { Tag } from 'src/app/interfaces/tag';
 
 export const TAG_ACADEMIA: Tag = { name: 'Academia', path: 'academia' };
 export const TAG_APPSEC: Tag = { name: 'Application Security', path: 'appsec' };
+export const TAG_CHAOS: Tag = { name: 'Chaos Events', path: 'chaos-events' };
 export const TAG_CLOUD: Tag = { name: 'Cloud', path: 'cloud' };
 export const TAG_COMMUNITY: Tag = { name: 'Community', path: 'community' };
 export const TAG_CONFERENCE: Tag = { name: 'Conference', path: 'conference' };

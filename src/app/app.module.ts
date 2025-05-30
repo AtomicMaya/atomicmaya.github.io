@@ -15,8 +15,9 @@ import "prismjs/prism.js";
 
 import { CUSTOM_ELEMENTS_SCHEMA, Injector, NgModule } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { FooterComponent } from 'src/app/common-ui/footer/footer.component';
 import { HeaderComponent } from 'src/app/common-ui/header/header.component';
+import { FooterComponent } from 'src/app/common-ui/footer/footer.component';
+import { Footer88x31Component } from "src/app/common-ui/footer-88x31/footer-88x31.component";
 import { MainBodyComponent } from 'src/app/common-ui/main-body/main-body.component';
 import { NotFound404Component } from 'src/app/common-ui/not-found404/not-found404.component';
 import { PostInventoryDisplayComponent } from 'src/app/common-ui/post-inventory-display/post-inventory-display.component';
@@ -44,10 +45,11 @@ import { App2021Module } from 'src/app/submodules/app-2021.module';
 import { App2022Module } from 'src/app/submodules/app-2022.module';
 import { App2023Module } from "src/app/submodules/app-2023.module";
 import { App2024Module } from "src/app/submodules/app-2024.module";
+import { App2025Module } from "src/app/submodules/app-2025.module";
 import { AppTryHackMe2022WalkthroughModule } from "src/app/submodules/app-tryhackme-2022-walkthrough.module";
 import { ServiceLocator } from 'src/app/utils/service.locator';
 import { WIPComponent } from "src/app/content/wip/wip.component";
-import { CalendarComponent } from "./content/calendar/calendar.component";
+import { CalendarComponent } from "src/app/content/calendar/calendar.component";
 
 
 @NgModule({
@@ -55,6 +57,7 @@ import { CalendarComponent } from "./content/calendar/calendar.component";
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    Footer88x31Component,
     MainBodyComponent,
     WhoamiComponent,
     WIPComponent,
@@ -86,6 +89,7 @@ import { CalendarComponent } from "./content/calendar/calendar.component";
     App2022Module,
     App2023Module,
     App2024Module,
+    App2025Module,
     AppTryHackMe2022WalkthroughModule,
   ],
   providers: [],

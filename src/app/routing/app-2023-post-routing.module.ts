@@ -15,7 +15,7 @@ import { Oct2023MakingThisBlogEasierToDeployComponent } from 'src/app/content/po
 import { Dec2023SpeakingAtBsidesLondonComponent } from 'src/app/content/post/2023/231213-speaking-at-bsides-london/speaking-at-bsides-london.component';
 import { Dec2023IWentToC3CongressComponent } from 'src/app/content/post/2023/231231-i-went-to-c3congress/i-went-to-c3congress.component';
 import { authorList } from "src/app/data/authors";
-import { TAG_ACADEMIA, TAG_CONFERENCE, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_REVERSE_ENGINEERING, TAG_TALKS, TAG_TECHNICAL, TAG_TRAVEL } from 'src/app/utils/tags';
+import { TAG_ACADEMIA, TAG_CHAOS, TAG_CONFERENCE, TAG_CTF, TAG_CYBERSEC, TAG_DEVELOPMENT, TAG_DEVOPS, TAG_INFOSEC, TAG_PERSONAL, TAG_PROFESSIONAL, TAG_PROGRAMMING, TAG_REVERSE_ENGINEERING, TAG_TALKS, TAG_TECHNICAL, TAG_TRAVEL } from 'src/app/utils/tags';
 
 export const subroutes2023: Routes = [
   {
@@ -195,7 +195,7 @@ export const subroutes2023: Routes = [
       title: 'Attending Chaos Congress, a highlight to close off the year.',
       authors : [ authorList['AtomicMaya'] ],
       description: 'Chaos Congress, the perfect place for this chaos goose to end the year.',
-      tags: [ TAG_TRAVEL, TAG_CONFERENCE ],
+      tags: [ TAG_CHAOS, TAG_TRAVEL, TAG_CONFERENCE ],
       date: [2023, 12, 31],
       readingTime: 10
     }

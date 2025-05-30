@@ -9,6 +9,7 @@ import { Jul2024StartupWhiplashAtSteelconComponent } from "src/app/content/post/
 import { Aug2024PNWAdventuresComponent } from "src/app/content/post/2024/240815-pnw-adventures/pnw-adventures.component";
 import { Aug2024Defcon32NewExperiencesComponent } from "src/app/content/post/2024/240824-defcon32-new-experiences/defcon32-new-experiences.component";
 import { Oct2024BSidesNewcastleComponent } from "src/app/content/post/2024/241015-bsides-newcastle/bsides-newcastle.component";
+import { Dec2024BSidesLondonComponent } from "src/app/content/post/2024/241223-bsides-london/bsides-london.component";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { Oct2024BSidesNewcastleComponent } from "src/app/content/post/2024/24101
     Jul2024StartupWhiplashAtSteelconComponent,
     Aug2024PNWAdventuresComponent,
     Aug2024Defcon32NewExperiencesComponent,
-    Oct2024BSidesNewcastleComponent
+    Oct2024BSidesNewcastleComponent,
+    Dec2024BSidesLondonComponent
   ],
   imports: [
     CommonModule,

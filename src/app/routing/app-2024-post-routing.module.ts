@@ -8,7 +8,8 @@ import { Jun2024ElectromagneticFieldsComponent } from 'src/app/content/post/2024
 import { Jul2024StartupWhiplashAtSteelconComponent } from 'src/app/content/post/2024/240727-startup-whiplash-at-steelcon/startup-whiplash-at-steelcon.component';
 import { Aug2024Defcon32NewExperiencesComponent } from 'src/app/content/post/2024/240824-defcon32-new-experiences/defcon32-new-experiences.component';
 import { Oct2024BSidesNewcastleComponent } from 'src/app/content/post/2024/241015-bsides-newcastle/bsides-newcastle.component';
-import { Aug2024PNWAdventuresComponent } from '../content/post/2024/240815-pnw-adventures/pnw-adventures.component';
+import { Aug2024PNWAdventuresComponent } from 'src/app/content/post/2024/240815-pnw-adventures/pnw-adventures.component';
+import { Dec2024BSidesLondonComponent } from 'src/app/content/post/2024/241223-bsides-london/bsides-london.component';
 
 export const subroutes2024: Routes = [
   {
@@ -97,6 +98,19 @@ export const subroutes2024: Routes = [
       date: [2024, 10, 15],
       imageUrl: '/assets/images/post/2024/241015-bsides-newcastle/boncl-logo.png',
       readingTime: 3
+    }
+  },
+  {
+    path: '2024_12_23+bsides-london',
+    component: Dec2024BSidesLondonComponent,
+    data: {
+      title: 'bsides london, 0% attendance run (sorry)',
+      authors: [authorList['AtomicMaya']],
+      description: 'I went to a conference and did some volunteering! (this surprises no one)',
+      tags: [TAG_CONFERENCE, TAG_TRAVEL, TAG_VOLUNTEERING],
+      date: [2024, 12, 23],
+      imageUrl: '/assets/images/post/2024/241223-bsides-london/bsides-london-logo.jpeg',
+      readingTime: 2
     }
   }
 ]
