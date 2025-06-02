@@ -4,7 +4,7 @@ import { AuthorMap } from 'src/app/interfaces/author-map';
 /** The list of authors. */
 export const authorList: AuthorMap = {
   'AtomicMaya': {
-    name: 'AtomicMaya',
+    name: 'maya',
     bio: 'Developer, Hackademic, OSINTeer, Infosec.',
     avatar: '/assets/images/authors/me.jpg',
     links: [

@@ -18,12 +18,25 @@ export const subroutes2025: Routes = [
       imageUrl: '/assets/images/post/2025/250109-38c3/38c3.svg',
       readingTime: 5
     }
-  },/*
+  },
   {
-    path: '2025_02_12+maya-does-an-infrastruktur',
+    path: '2025_02_21+maya-does-an-infrastruktur',
     component: Feb2025MayaDoesAnInfrastrukturComponent,
     data: {
       title: 'maya does an infrastruktur!',
+      authors: [authorList['AtomicMaya']],
+      description: 'meow',
+      tags: [TAG_DEVELOPMENT, TAG_TECHNICAL],
+      date: [2025, 2, 21],
+      //imageUrl: '/assets/images/post/2025/250109-38c3/38c3.svg',
+      readingTime: 2
+    }
+  },
+  {
+    path: '2025_03_22+a-world-on-fire',
+    component: Feb2025MayaDoesAnInfrastrukturComponent,
+    data: {
+      title: 'a world on fire, the attack on my community, and how i will not be made to yield in life',
       authors: [authorList['AtomicMaya']],
       description: 'meow',
       tags: [TAG_DEVELOPMENT, TAG_TECHNICAL],
@@ -31,7 +44,8 @@ export const subroutes2025: Routes = [
       //imageUrl: '/assets/images/post/2025/250109-38c3/38c3.svg',
       readingTime: 2
     }
-  }*/
+  },
+  
 ]
 subroutes2025.map((r) => r.data.path = r.path)
 
