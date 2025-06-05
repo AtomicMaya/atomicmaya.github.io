@@ -126,10 +126,13 @@ export const ROUTES = [
   '/post/2024/2024_08_15+pnw-adventures/',
   '/post/2024/2024_08_24+defcon32-new-experiences/',
   '/post/2024/2024_10_15+bsides-newcastle/',
-  '/post/2024/2024_12_23%2Bbsides-london/',
+  '/post/2024/2024_12_23+bsides-london/',
 
   /* Posts: 2025 */
-  '/post/2025/2025_01_09%2Bmaya-went-to-38c3',
+  '/post/2025/2025_01_09+maya-went-to-38c3',
+  '/post/2025/2025_02_21+maya-does-an-infrastruktur/',
+  '/post/2025/2025_03_22+a-world-on-fire/',
+  '/post/2025/2025_04_29+hack-glasgow/',
 
 
   /* Platforms */
