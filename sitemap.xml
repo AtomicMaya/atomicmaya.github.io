@@ -471,6 +471,24 @@
     <changefreq>weekly</changefreq>
     <lastmod>2025-05-30</lastmod>
   </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2025/2025_02_21%2Bmaya-does-an-infrastruktur/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2025/2025_03_22%2Ba-world-on-fire/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-06-06</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2025/2025_04_29%2Bhack-glasgow/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-06-06</lastmod>
+  </url>
 
   <!-- WALKTHROUGHS -->
 
