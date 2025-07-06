@@ -8,12 +8,12 @@ export const friend88x31List: EightyEightThirtyOne[] = [
         url: 'https://atomicmaya.me'
     },
     {
-        image: 'https://999eagle.moe/images/88x31/440729.png',
+        image: 'https://atomicmaya.me/assets/images/88x31/440729.png',
         alt: "⛧-440729's button",
         url: 'https://999eagle.moe'
     },
     {
-        image: 'https://www.theresnotime.co.uk/button.png',
+        image: 'https://atomicmaya.me/assets/images/88x31/theresnotime_co_uk.png',
         alt: "theresnotime.co.uk button",
         url: 'https://www.theresnotime.co.uk/'
     },
@@ -23,17 +23,22 @@ export const friend88x31List: EightyEightThirtyOne[] = [
         url: 'https://alyx.sh'
     },
     {
-        image: 'https://fungal.locahlo.st/medias/88x31/fungal.locahlo.st.png',
+        image: 'https://atomicmaya.me/assets/images/88x31/fungal_locahlo_st.png',
         alt: "fungal's 88x31 stamp",
         url: 'https://fungal.locahlo.st'
     },
     {
-        image: 'https://girlthi.ng/~thermia/img/88x31/thermia.gif',
+        image: 'https://atomicmaya.me/assets/images/88x31/girlthi_ng-thermia.gif',
         alt: "thermia's button",
         url: 'https://girlthi.ng/~thermia/'
     },
     {
-        image: 'https://awawa.neocities.org/buttons/awawa.png',
+        image: 'https://atomicmaya.me/assets/images/88x31/query_44203_online.png',
+        alt: 'Δ-44203',
+        url: 'https://query.44203.online',
+    },
+    {
+        image: 'https://atomicmaya.me/assets/images/88x31/awawa_neocities_org.png',
         alt: "awawa.neocities.org",
         url: 'https://awawa.neocities.org'
     },
