@@ -133,6 +133,8 @@ export const ROUTES = [
   '/post/2025/2025_02_21+maya-does-an-infrastruktur/',
   '/post/2025/2025_03_22+a-world-on-fire/',
   '/post/2025/2025_04_29+hack-glasgow/',
+  '/post/2025/2025_05_27+a-trip-to-montreal/',
+  '/post/2025/2025_07_12+a-semester-in-review/',
 
 
   /* Platforms */

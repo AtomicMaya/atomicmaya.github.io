@@ -19,4 +19,8 @@ export class LatestComponent implements OnInit {
   stringify(path: string) {
     return path.replace(reToSlash, '/').replace(reToSpace, ' ').replace(reToDashSep, ' - ');
   }
+
+  modify(path: string) {
+    return path.replace("+", "%2B");
+  }
 }

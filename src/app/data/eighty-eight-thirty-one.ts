@@ -13,6 +13,11 @@ export const friend88x31List: EightyEightThirtyOne[] = [
         url: 'https://999eagle.moe'
     },
     {
+        image: 'https://atomicmaya.me/assets/images/88x31/551724.png',
+        alt: "Δ-551724's button",
+        url: 'https://index.551724.dev'
+    },
+    {
         image: 'https://atomicmaya.me/assets/images/88x31/theresnotime_co_uk.png',
         alt: "theresnotime.co.uk button",
         url: 'https://www.theresnotime.co.uk/'
@@ -31,6 +36,11 @@ export const friend88x31List: EightyEightThirtyOne[] = [
         image: 'https://atomicmaya.me/assets/images/88x31/girlthi_ng-thermia.gif',
         alt: "thermia's button",
         url: 'https://girlthi.ng/~thermia/'
+    },
+    {
+        image: 'https://atomicmaya.me/assets/images/88x31/wolfyja_de-awoo-now.png',
+        alt: "jade's button",
+        url: 'https://wolfyja.de/'
     },
     {
         image: 'https://atomicmaya.me/assets/images/88x31/query_44203_online.png',
