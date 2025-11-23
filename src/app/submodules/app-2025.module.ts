@@ -8,6 +8,7 @@ import { Apr2025HackGlasgowComponent } from 'src/app/content/post/2025/250429-ha
 import { May2025_TripToMontreal_Component } from "src/app/content/post/2025/250518-a-trip-to-montreal/a-trip-to-montreal.component";
 import { Jul2025_SemesterInReview_Component } from "src/app/content/post/2025/250712-a-semester-in-review/a-semester-in-review.component";
 import { Aug2025_WHY2025_Component } from "src/app/content/post/2025/250831-why2025-a-dutch-hacker-camp-experience/why2025-a-dutch-hacker-camp-experience.component";
+import {Sep2025_SmallInternet_Component} from "../content/post/2025/250913-small-internet/small-internet.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Aug2025_WHY2025_Component } from "src/app/content/post/2025/250831-why2
     Apr2025HackGlasgowComponent,
     May2025_TripToMontreal_Component,
     Jul2025_SemesterInReview_Component,
-    // Aug2025_WHY2025_Component
+    Aug2025_WHY2025_Component,
+    Sep2025_SmallInternet_Component
   ],
   imports: [
     CommonModule,

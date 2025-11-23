@@ -8,6 +8,7 @@ import { Apr2025HackGlasgowComponent } from 'src/app/content/post/2025/250429-ha
 import { May2025_TripToMontreal_Component } from 'src/app/content/post/2025/250518-a-trip-to-montreal/a-trip-to-montreal.component';
 import { Jul2025_SemesterInReview_Component } from 'src/app/content/post/2025/250712-a-semester-in-review/a-semester-in-review.component';
 import { Aug2025_WHY2025_Component } from 'src/app/content/post/2025/250831-why2025-a-dutch-hacker-camp-experience/why2025-a-dutch-hacker-camp-experience.component';
+import {Sep2025_SmallInternet_Component} from "../content/post/2025/250913-small-internet/small-internet.component";
 
 export const subroutes2025: Routes = [
   {
@@ -69,21 +70,33 @@ export const subroutes2025: Routes = [
       description: 'going over some of the shenanigans i have been up to in the last few months :)',
       tags: [TAG_WEB, TAG_PERSONAL],
       date: [2025, 7, 12],
-      readingTime: 5
+      readingTime: 2
     }
   },
-  // {
-  //   path: '2025_08_31+why2025-a-dutch-hacker-camp-experience',
-  //   component: Aug2025_WHY2025_Component,
-  //   data: {
-  //     title: 'WHY2025, a Dutch hacker camp experience',
-  //     authors: [authorList['AtomicMaya']],
-  //     description: 'once more, maya was in a field, and somehow helped the internet spawn there',
-  //     tags: [TAG_CONFERENCE, TAG_TRAVEL, TAG_VOLUNTEERING, TAG_CHAOS],
-  //     date: [2025, 8, 31],
-  //     readingTime: 4
-  //   }
-  // },
+  {
+    path: '2025_08_31+why2025-a-dutch-hacker-camp-experience',
+    component: Aug2025_WHY2025_Component,
+    data: {
+      title: 'WHY2025, a Dutch hacker camp experience',
+      authors: [authorList['AtomicMaya']],
+      description: 'once more, maya was in a field, and somehow helped the internet spawn there',
+      tags: [TAG_CONFERENCE, TAG_TRAVEL, TAG_VOLUNTEERING, TAG_CHAOS],
+      date: [2025, 8, 31],
+      readingTime: 4
+    }
+  },
+  {
+    path: '2025_09_27+returning-this-silly-little-blog-to-the-era-of-small-internet',
+    component: Sep2025_SmallInternet_Component,
+    data: {
+      title: 'returning this silly little blog to the era of "small internet"',
+      authors: [authorList['AtomicMaya']],
+      description: 'maya is making things less "big tech"',
+      tags: [TAG_DEVELOPMENT, TAG_WEB],
+      date: [2025, 9, 27],
+      readingTime: 3
+    }
+  },
 ]
 subroutes2025.map((r) => r.data.path = r.path)
 

@@ -1,5 +1,18 @@
 # atomicmaya.me
 
+## 2025-09 onwards
+
+We have a shell.nix.
+
+Run `nix-shell`.
+
+Available commands are:
+- start
+- render
+- render-test
+
+## etc.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Adding a component

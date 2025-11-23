@@ -20,6 +20,9 @@ stdenv.mkDerivation {
     npm run prerender
     rm -r ./dist/atomicmayame/browser/202*
     '')
+    (pkgs.writeShellScriptBin "render-test" ''
+    python3 -m http.server -d ./dist/atomicmayame/browser/ 4200
+    '')
   ];
   shellHook = ''
     export PATH="$PWD/node_modules/.bin/:$PATH"

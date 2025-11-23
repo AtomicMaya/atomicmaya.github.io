@@ -135,7 +135,8 @@ export const ROUTES = [
   '/post/2025/2025_04_29+hack-glasgow/',
   '/post/2025/2025_05_27+a-trip-to-montreal/',
   '/post/2025/2025_07_12+a-semester-in-review/',
-
+  '/post/2025/2025_08_31+why2025-a-dutch-hacker-camp-experience/',
+  '/post/2025/2025_09_27+returning-this-silly-little-blog-to-the-era-of-small-internet/',
 
   /* Platforms */
   '/walkthrough/platforms/tryhackme/',
