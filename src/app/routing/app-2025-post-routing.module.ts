@@ -9,6 +9,8 @@ import { May2025_TripToMontreal_Component } from 'src/app/content/post/2025/2505
 import { Jul2025_SemesterInReview_Component } from 'src/app/content/post/2025/250712-a-semester-in-review/a-semester-in-review.component';
 import { Aug2025_WHY2025_Component } from 'src/app/content/post/2025/250831-why2025-a-dutch-hacker-camp-experience/why2025-a-dutch-hacker-camp-experience.component';
 import {Sep2025_SmallInternet_Component} from "../content/post/2025/250913-small-internet/small-internet.component";
+import { Dec2025_OnceMoreToBSidesLondon_Component } from '../content/post/2025/251217-once-more-to-bsides-london/once-more-to-bsides-london.component';
+import { Nov2025_GenericUpdate_Component } from '../content/post/2025/251115-things-ive-been-up-to/things-ive-been-up-to.component';
 
 export const subroutes2025: Routes = [
   {
@@ -94,6 +96,30 @@ export const subroutes2025: Routes = [
       description: 'maya is making things less "big tech"',
       tags: [TAG_DEVELOPMENT, TAG_WEB],
       date: [2025, 9, 27],
+      readingTime: 3
+    }
+  },
+  {
+    path: '2025_11_15+things-ive-been-up-to',
+    component: Nov2025_GenericUpdate_Component,
+    data: {
+      title: 'things i\'ve been up to',
+      authors: [authorList['AtomicMaya']],
+      description: 'just a rapid fire series of small updates',
+      tags: [TAG_CONFERENCE, TAG_CHAOS],
+      date: [2025, 11, 15],
+      readingTime: 6
+    }
+  },
+  {
+    path: '2025_12_17+once-more-to-bsides-london',
+    component: Dec2025_OnceMoreToBSidesLondon_Component,
+    data: {
+      title: 'once more to BSides London',
+      authors: [authorList['AtomicMaya']],
+      description: 'going to bsides london to help out and hang out',
+      tags: [TAG_CONFERENCE, TAG_CHAOS],
+      date: [2025, 12, 17],
       readingTime: 3
     }
   },

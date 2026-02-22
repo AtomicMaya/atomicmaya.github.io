@@ -3,8 +3,6 @@
 import { KeyValue } from '@angular/common';
 import { Post } from 'src/app/interfaces/post';
 
-export const CURRENT_YEAR = 2021;
-
 /**
  * Function that groups {@link Object | elements} in an {@link Post[] | array of Posts} by a certain key within the {@link Post}.
  *

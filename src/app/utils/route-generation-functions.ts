@@ -12,9 +12,10 @@ import { subroutesTHM2022 } from 'src/app/routing/app-tryhackme-2022-walkthrough
 import { subroutes2023 } from 'src/app/routing/app-2023-post-routing.module';
 import { subroutes2024 } from 'src/app/routing/app-2024-post-routing.module';
 import { subroutes2025 } from 'src/app/routing/app-2025-post-routing.module';
+import { subroutes2026 } from 'src/app/routing/app-2026-post-routing.module';
 
 /** The compiled post routes from all of the lazy-loaded modules. */
-export const postRoutes: Routes = [...subroutes2020, ...subroutes2021, ...subroutes2022, ...subroutes2023, ...subroutes2024, ...subroutes2025];
+export const postRoutes: Routes = [...subroutes2020, ...subroutes2021, ...subroutes2022, ...subroutes2023, ...subroutes2024, ...subroutes2025, ...subroutes2026];
 
 /** The compiled routes from all of the lazy-loaded modules. */
 export const walkthroughRoutes: Routes = [...subroutesTHM2022].filter((r) => !r.path.includes('-Day-'));

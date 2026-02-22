@@ -137,6 +137,10 @@ export const ROUTES = [
   '/post/2025/2025_07_12+a-semester-in-review/',
   '/post/2025/2025_08_31+why2025-a-dutch-hacker-camp-experience/',
   '/post/2025/2025_09_27+returning-this-silly-little-blog-to-the-era-of-small-internet/',
+  '/post/2025/2025_11_15+things-ive-been-up-to/',
+  '/post/2025/2025_12_17+once-more-to-bsides-london/',
+
+  /* Posts: 2026 */
 
   /* Platforms */
   '/walkthrough/platforms/tryhackme/',
