@@ -513,6 +513,21 @@
     <changefreq>weekly</changefreq>
     <lastmod>2025-11-23</lastmod>
   </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2025/2025_11_15%2Bthings-ive-been-up-to/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://atomicmaya.me/post/2025/2025_12_17%2Bonce-more-to-bsides-london/index.html</loc>
+    <priority>0.60</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-02-22</lastmod>
+  </url>
+
+  <!-- 2026 -->
+
 
   <!-- WALKTHROUGHS -->
 
