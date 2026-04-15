@@ -1,0 +1,23 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+---
+
+<header>
+	<div class="container">
+		<a id="a-title" href="/">
+		<h1 class="ms-2">{SITE_TITLE}</h1>
+		</a>
+		<h2>{SITE_DESCRIPTION}</h2>
+
+		<nav>
+		<ul class="nav-lists d-flex flex-row flex-wrap">
+			<li class="paths align-middle my-auto justify-content-center">Paths:</li>
+			<li class="nav-elements"><a href="/whoami/">~$ whoami</a></li>
+			<li class="nav-elements"><a href="/posts/">~$ ls -la ./posts</a></li>
+			<li class="nav-elements"><a href="/walkthroughs/">~$ ls -la ./walkthroughs</a></li>
+			<li class="nav-elements"><a href="/wip/">~$ ./.wip</a></li>
+			<li class="nav-elements"><a href="/calendar/">~$ ./.calendar</a></li>
+		</ul>
+		</nav>
+	</div>
+</header>
