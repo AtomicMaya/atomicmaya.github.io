@@ -1,0 +1,17 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import MainBody from '../layouts/MainBody.astro';
+---
+
+<MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
+    <h1>~$ Copyright</h1>
+    <app-by-when [date]="[2020, 10, 01]" [edited]="[2021, 01, 13]"></app-by-when>
+
+    <div class="media-container">
+    <a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener"><img alt="Creative Commons License" width="300" style="border-width:0" src="https://atomicmaya.me/assets/images/88x31/cc-by-nc-sa.gif" title="CCBYNCSA Label" /></a>
+    </div>
+
+    <p class="text-center">All works within this site are licensed under<br/><a rel="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0//" rel="noopener">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+
+    <p>In the interest of inventorizing mentions, if articles within this website were to be cited by you in a published work, I would be glad if you were so kind as to inform me (via <s>Twitter</s>, Fedi or LinkedIn DM's).</p>
+</MainBody>

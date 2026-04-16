@@ -2,20 +2,21 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-const blog = defineCollection({
-	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
+const posts = defineCollection({
+	// Load Markdown and MDX files in the `src/content/post/` directory.
+	loader: glob({ base: './src/content/post', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
 	schema: ({ image }) =>
 		z.object({
 			title: z.string(),
-			description: z.string(),
+			description: z.optional(z.string()),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
-			heroImage: z.optional(image()),
-			keywords: z.optional(z.string().transform( v => v.split(', ').map( String )))
+			readingTime: z.optional(z.number()),
+			image: z.optional(image()),
+			keywords: z.optional(z.array(z.string()))
 		}),
 });
 
-export const collections = { blog };
+export const collections = { posts };

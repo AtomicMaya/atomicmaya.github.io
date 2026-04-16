@@ -1,0 +1,44 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+
+type Props = {
+    title: string
+    description: string
+}
+
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+    </head>
+
+	<body>
+		<Header />
+		<main>
+            <div class="container main-page">
+            <div class="main-content">
+                <slot />
+                <div><span></span><br/></div>
+            </div>
+            <div class="sidebar">
+                <Sidebar />
+            </div>
+            </div>
+        </main>
+        <Footer />
+    </body>
+</html>
+<style>
+.sidebar {
+    position: relative;
+    float: left;
+    width: 30%;
+    padding: 0 10px;
+    overflow-y: visible;
+}
+</style>

@@ -1,0 +1,89 @@
+---
+title: 'I participated in the conINT CTF!'
+description: "Discussing my participation in the conINT TraceLabs OSINT capture the flag event."
+pubDate: 'Oct 19 2020'
+readingTime: 5
+image: '../../../assets/images/post/2020/201019-conint/conint_logo.png'
+keywords: 
+- Conference
+- CTF
+- OSINT
+---
+
+On the weekend of the 17th of October 2020, I had registered to view the talks given at conINT 2020.
+
+I actually was able to catch a few talks live, notably:
+
+* The opening keynote, by Benjamin Strick<br/>
+  This talk really has some mind blowing OSINT tricks and is a really good introduction to it's uses;
+* "A Beginners Guide to Shodan", by Alan O'Reilly<br/>
+  A pretty good overview of the uses of Shodan, which I'm still majorly unfamiliar with;
+* "Turning Information into Intelligence", by Chris Poulter<br/>
+  An in-depth differentiation between information & intelligence, the differences and how to go from the former to the latter;
+* "Mind Hacks - Psychological profiling, and mental health in OSINT investigations", by Nicole Beckwith<br/>
+  A pretty awesome talk on the psychological impact of working with OSINT and how to compartmentalize in a healthy way;
+* "Offensive OSINT - A guide on how effectively use OSINT during Penetration Testing and Red teaming engagements", by Charles Shirer<br/>
+  Tools, many tools, the best tools;
+* "Using Intelligence to Defend Against Ransomware", by Will Thomas<br/>
+  An awesome talk about monitoring the ransomware threat landscape;
+* "OSINT: Getting Started", by Siobhan Kelleher<br/>
+  An awesome introduction to the ingress points in using OSINT, and what mistakes not to make, and how to effectively pivot;
+
+I caught up with the rest later, on conINT's YouTube channel.<br/>
+
+<br/>
+
+Once that was done, I thought my weekend was over. Only a few moments later did I understand that the nagging sensation in my gut was my desire to participate in the Tracelabs Global Search CTF, the day after.
+
+I'd never participated in an OSINT CTF, so -- after a few organizational misshaps -- I teamed up with Dan Conn (whom I'd met on Infosec Happy Hour) and Kathryn.
+
+We started out a bit haphazardly, unsure of how to progress -- although we had a few helpful tips and tricks from Charles Wroth.
+
+<br/>
+
+For obvious reasons, I can't get into the missing people's details. What I can get into though, is how we got -- or failed to get -- some of it.
+
+* My main tool was Google. By using a process known as "Google dorking", I could get some pretty pertinent information about an MP (aka. Missing Person), including a name change in public records, which could very well still be used as an alias.
+* To map the missing people's family, the tool of choice was Facebook. One MP's aunt had actually listed their entire family in the 'About' section of her profile.
+* One of the areas where I was lacking was finding an MP's account using advanced search, as their last location mixed with their first name could've gotten us the account.
+* Additionally, the link between Facebook and Instagram could've been coupled with some Yandex reverse image search to find another MP's main Facebook account.
+* We managed to find a current address (I think) for one of the MP's in the white pages, and comparing it with real estate sites for that area to see when it was sold.
+* For LinkedIn, I found a nifty little trick to not alert a user their profile had been visited (later).
+* In terms of text in a foreign language, using Google Translate's language detection feature was used to confirm that the person writing a post at least knew of the same language as the MP, raising the likelyhood they were one and the same.
+
+<br/>
+
+All of this generated some pretty good leads, and scored us a pretty nice sum of points, landing us at the 37th place on 125 participating groups, which -- in my modest opinion, is pretty awesome !
+
+Although we didn't win -- realistically not really feasible, it was a really fun and challenging experience !
+
+I got better at finding valuable information, at searching for specific data and using advanced search tools.
+
+One of the tricks I used was even nominated for an MVO (Most Valuable OSINT) award -- which we didn't win, but was nice nevertheless. I'll get to said trick slightly later.
+
+<br/>
+
+In the future I would like to at least take a gander at dehashed and searching for user credentials in dumps, a Global Search CTF being one of the only legitimate reasons to learn more about it.
+
+For our involvement, we received a Badgr virtual badge (below) !
+The Badgr TraceLabs CTF badge.
+
+##### The OSINT trick I mentioned earlier
+
+This trick is used to get a copy of the public LinkedIn profile without pinging it -- without having a premium / recruiter account, obviously -- thus respecting the no-touch rule set up by the CTF.
+
+Step 1: Copy the LinkedIn profile link.
+
+Step 2: Open Google's Mobile Friendly site tester.
+
+Step 3: Paste in the LinkedIn profile link and solve the CAPTCHA.
+
+Step 4: Once the redirect is over, go to the HTML tab to the right of the page and copy the HTML code.
+
+Step 5: Create a .html file on your machine, open it in your favorite editor (or Notepad, who cares), and paste the HTML code in.
+
+Step 6: Open the .html file in your browser.
+
+Step 7: ?
+
+Step 8: Profit.

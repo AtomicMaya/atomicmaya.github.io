@@ -1,8 +1,7 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
-
-<header>
+<header class="mb-3">
 	<div class="container">
 		<a id="a-title" href="/">
 		<h1 class="ms-2">{SITE_TITLE}</h1>
@@ -12,7 +11,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 		<nav>
 		<ul class="nav-lists d-flex flex-row flex-wrap">
 			<li class="paths align-middle my-auto justify-content-center">Paths:</li>
-			<li class="nav-elements"><a href="/whoami/">~$ whoami</a></li>
+			<li class="nav-elements"><a href="/">~$ whoami</a></li>
 			<li class="nav-elements"><a href="/posts/">~$ ls -la ./posts</a></li>
 			<li class="nav-elements"><a href="/walkthroughs/">~$ ls -la ./walkthroughs</a></li>
 			<li class="nav-elements"><a href="/wip/">~$ ./.wip</a></li>

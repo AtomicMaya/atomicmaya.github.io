@@ -4,14 +4,35 @@ interface Props {
 }
 
 const { date } = Astro.props;
----
 
-<time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-		})
-	}
-</time>
+/**
+ * Function that translates a numerical month to it's shortened text equivalent.
+ *
+ * @param month The numerical value of the month (January = 1)
+ * @export
+ */
+function getMonth(month: number): string {
+  return ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'][month];
+}
+
+/**
+ * Function that finds the appropriate date hint for a given day.
+ *
+ * @param day The numerical value of the day.
+ * @export
+ */
+function getDay(day: number): string {
+  if ([1, 21, 31].includes(day)) {
+    return `${day}st`;
+  } else if ([2, 22].includes(day)) {
+    return `${day}nd`;
+  } else if ([3, 23].includes(day)) {
+    return `${day}rd`;
+  } else {
+    return `${day}th`;
+  }
+}
+
+const formatDate = (dateTime: Date) => `${getMonth(dateTime.getMonth())} ${getDay(dateTime.getDate())}, ${dateTime.getFullYear()}`
+---
+{formatDate(date)}

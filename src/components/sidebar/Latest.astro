@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import ISOFormattedDate from '../stub/ISOFormattedDate.astro';
+
+const posts = (await getCollection('posts')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 10);
+---
+<h4>~$ Latest Posts</h4>
+{
+	posts.map(post => 
+	<div class="my-2">
+		<p class="m-0">
+			<span class="text-decoration-underline"><ISOFormattedDate date={post.data.pubDate}/>:</span><br/>
+			<a class="no-underline" href={`/post/${post.id}`}>{ post.data.title }</a>
+		</p>
+	</div>
+	)
+}

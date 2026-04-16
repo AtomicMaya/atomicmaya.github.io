@@ -1,15 +1,20 @@
 @use 'assets/css/jekyll-hacker.scss';
 @use 'assets/css/containers.scss';
 @use 'assets/css/context.scss';
-@import 'assets/css/custom-fonts.css';
 @import 'assets/css/prism-vsc-dark-plus.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.css';
 @import '../node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import 'assets/css/custom-fonts.css';
 
 html,
 body {
   height: 100%;
+}
+
+p {
+  color: white;
 }
 
 nav {

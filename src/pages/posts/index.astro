@@ -1,0 +1,47 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import MainBody from '../../layouts/MainBody.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const postsLists = await getCollection('posts')
+const posts = postsLists.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const years = [...new Set(postsLists.map(e => e.data.pubDate.getFullYear()))].sort((a,b) => 0 - (a > b ? 1 : -1));
+---
+<style lang="scss">
+	.year-section {
+		h2, h3 {
+			text-align: center;
+		}
+		
+		hr.dark {
+			color: #1f1f1f;
+			border: 1px solid #1f1f1f99;
+		}
+		
+		hr.clear {
+			color: #f7f7f7;
+			border: 1px solid #f7f7f799;
+		}
+	}
+</style>
+<MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	{
+		years.map(y => 
+		<h2 class="mt-1 year-section">Posts of {y}</h2>
+		<section>
+			<div class="d-flex flex-row flex-wrap">
+				{
+					posts.filter((post) => post.data.pubDate.getFullYear() == y).map((post) => 
+						<PostCard {...post} />
+					)
+				}
+			</div>
+		</section>
+		<hr/>
+		)
+	}
+</MainBody>

@@ -1,0 +1,12 @@
+---
+import { base64 } from 'astro:schema';
+
+interface Props {
+	date: Date;
+}
+
+const { date } = Astro.props;
+
+const formatDate = (dateTime: Date) => { dateTime.setHours(4); return dateTime.toISOString().split("T")[0]; };
+---
+{formatDate(date)}
