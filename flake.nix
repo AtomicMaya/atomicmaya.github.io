@@ -6,8 +6,14 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }: 
-    flake-utils.lib.eachSystem [ "x86_64-linux" ] (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    flake-utils.lib.eachSystem [ "x86_64-linux" ] (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
@@ -47,7 +53,6 @@
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             nodejs
-            nodePackages.npm
             python3
             startScript
             renderScript
@@ -61,7 +66,7 @@
             npm install
             echo "Dependencies installed."
             echo ""
-            echo "🚀 Angular (old) development environment!"
+            echo "🚀 Astro development environment!"
             echo ""
             echo "Available commands:"
             echo "  start         - Start Astro dev instance (http://localhost:4321)"
@@ -70,7 +75,8 @@
             echo "  deploy-pages  - Push to git subtree"
           '';
         };
-      in {
+      in
+      {
         packages = {
           default = startScript;
           start = startScript;
@@ -81,5 +87,5 @@
 
         devShells.default = devShell;
       }
-  );
+    );
 }
