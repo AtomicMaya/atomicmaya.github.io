@@ -1,0 +1,12 @@
+---
+interface Props {
+    text: string;
+    url: string;
+}
+
+const { text, url } = Astro.props;
+---
+
+<a class="content-link" href={url} target="_blank" rel="noopener"
+    ><em class="fas fa-link"></em><span>{text}</span></a
+>
