@@ -31,7 +31,8 @@ const years = [...new Set(postsLists.map(e => e.data.pubDate.getFullYear()))].so
 <MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	{
 		years.map(y => 
-		<h2 class="mt-1 year-section">Posts of {y}</h2>
+		<h2 class="mt-1 year-section text-center">{y}</h2>
+		<hr/>
 		<section>
 			<div class="d-flex flex-row flex-wrap">
 				{

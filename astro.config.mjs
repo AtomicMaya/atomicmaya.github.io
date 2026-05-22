@@ -2,7 +2,10 @@
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links";
 import { defineConfig, fontProviders } from 'astro/config';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug';
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,4 +38,26 @@ export default defineConfig({
 			},
 		},
 	],
+	markdown: {
+		rehypePlugins: [
+			rehypeSlug,
+			rehypeAstroRelativeMarkdownLinks,
+			[
+				rehypeAutolinkHeadings,
+				{
+					behavior: 'prepend',
+					content: {
+						type: 'text',
+						value: '',
+					},
+					headingProperties: {
+						className: ['anchor'],
+					},
+					properties: {
+						className: ['anchor-link'],
+					},
+				},
+			],
+		],
+	},
 });
