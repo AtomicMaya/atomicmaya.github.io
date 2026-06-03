@@ -3,5 +3,5 @@ import { socials } from "../../data/socials";
 ---
 <h4>~$ Find me here</h4>
 <div class="center d-flex flex-row justify-content-center flex-wrap">
-    {socials.map( e => <div class="mx-1"><a target="_blank" href={e.url} rel="noopener"><em class={e.icon}></em></a></div>)}
+    {socials.map( e => <div class="mx-1"><a target="_blank" href={e.url} rel="noopener" aria-label={'Link to maya\'s ' + e.label}><span id={'aria-social-' + e.aria?.toLowerCase()} hidden>{e.aria} Icon</span><em class={e.icon}></em></a></div>)}
 </div>

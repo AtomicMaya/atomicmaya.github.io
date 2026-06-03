@@ -1,0 +1,16 @@
+---
+interface Props {
+    text: string;
+    url: string;
+    author: string;
+    profile: string;
+    date: string
+}
+
+const { text, url, author, profile, date } = Astro.props;
+---
+
+<div class="media-container">
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">{text}— {author} ({profile}) <a href={url}>{date}</a></p></blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>

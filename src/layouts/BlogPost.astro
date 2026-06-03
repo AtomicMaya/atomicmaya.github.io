@@ -8,9 +8,10 @@ type Props = CollectionEntry<'posts'>['data'];
 const { title, description, pubDate, updatedDate, keywords, readingTime, image } = Astro.props;
 ---
 <style lang="scss">
+	@use "sass:color";
 	.tag-viewer {
 		font-size: smaller;
-		color: darken(#d0d0d0, 15%);
+		color: color.adjust(#d0d0d0, $lightness: -15%);
 		display: flex;
 		margin-bottom: 0;
 		flex-wrap: wrap;

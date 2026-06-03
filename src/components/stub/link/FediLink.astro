@@ -1,0 +1,12 @@
+---
+interface Props {
+    text: string;
+    url: string;
+}
+
+const { text, url } = Astro.props;
+import Link from './Link.astro'
+---
+
+<Link url={url} text={text} icon="lolf fab lol-fedi" />
+

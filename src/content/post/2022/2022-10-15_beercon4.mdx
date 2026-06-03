@@ -10,3 +10,71 @@ keywords:
 - Talks
 - Travel
 ---
+
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import FediLink from '../../../components/stub/link/FediLink.astro'
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
+import LocalLink from '../../../components/stub/link/LocalLink.astro'
+
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img_av from '../../../assets/images/post/2022/2022-10-15_beercon4/av.jpeg'
+import img_audioswitch from '../../../assets/images/post/2022/2022-10-15_beercon4/audio-switch.jpeg'
+import img_videoswitch from '../../../assets/images/post/2022/2022-10-15_beercon4/video-switch.jpeg'
+import img_avwill from '../../../assets/images/post/2022/2022-10-15_beercon4/av-will.jpeg'
+import img_squirrel from '../../../assets/images/post/2022/2022-10-15_beercon4/squirrel.jpeg'
+import img_buckingham from '../../../assets/images/post/2022/2022-10-15_beercon4/buckingham.jpeg'
+import img_bigben from '../../../assets/images/post/2022/2022-10-15_beercon4/big-ben.jpeg'
+
+As October rolls around, one of my favourite events was slated to take place again, namely BeerCon4, the 4th iteration of the conference organized by <TwitterLink url="https://twitter.com/thebeerfarmers" text="The Beer Farmers" /> that I first spoke at as a Rookie (<LocalLink url='/post/2020/2020-11-02_beercon2' text='link' />), and where I volunteered the next year (<LocalLink url='http://localhost:4321/post/2021/2021-10-30_beercon3' text='link' />).
+
+BeerCon was that kind of event which was very community focused, and this time it was slated to take place in the middle of DTX360, a trade exposition in London.
+
+Since I had signed on for volunteering, I hopped on a flight from Geneva to London, where I arrived the day before the conference. Navigating London was a bit of an experience for the first time, but I quickly made it to my hotel, which was a 20-minute walk from the Expo hall.
+
+Since I was not planning on doing much that afternoon, I headed out to the event premises to meet up with <TwitterLink url="https://twitter.com/phat_hobbit" text="Ian" /> and see how it was being set up.
+
+That may have been a very lucky idea, as it allowed me to scope out and resolve the issues we were going to run into, such as:
+
+- Defining the actual needs in terms of A/V
+- Audio routing
+- Video streaming to Twitch and relevant assets
+- Placeholder assets
+- A/V routing panels
+
+The next day, I linked up with <TwitterLink url="https://twitter.com/ddsgerard" text="Ger" /> and <FediLink url="https://infosec.exchange/@davewm" text="Dave" />, who were my fellow roadies for the event, and we headed out to the expo hall, where we linked up with Ian, <TwitterLink url="https://twitter.com/NikkiC360" text="Nikki" /> and <TwitterLink url="https://twitter.com/LisaForteUK" text="Lisa" />, the on-premises BeerFarmers.
+
+The A/V setup itself contained an impressive amount of kit, as it needed to field audio from the various headsets and microphones, handle the video feeds from the camera and the slides, as well as handle the on-premises output (which did not require streaming assets) and the Twitch output (which did).
+
+<ImageContainer image={img_av} style='width: 70%; height: auto;' alt="Picture of the audiovisual setup" desc="The A/V setup" />
+
+From the picture above, you can see my laptop to the right (which I was using to make the slides of my talk), the Zoom laptop in the middle (as we were patching in <TwitterLink url="https://twitter.com/AppSecBloke" text="Mike" /> and the remote speakers) and the "emergency" laptop on the left (for speakers that only brought a USB stick).
+
+<ImageContainer image={img_audioswitch} style='width: 70%; height: auto;' alt="Picture of the audio switching board" desc="The audio switching board" />
+
+The audio mixing was the most precarious aspect of the whole event, as we had to patch sound into the local speakers, to Twitch and to Zoom, without causing feedback loops (which BeerCon3 initially suffered from). To that effect, we were equipped with the above audio switch, which handle inputs from the 5 headsets, the handheld microphone, the Zoom output, the broadcast computer and the presenter's lectern.
+
+<ImageContainer image={img_videoswitch} style='width: auto; height: 400px;' alt="Picture of the video switching board" desc="The video switching board" />
+
+The various condensed outputs were then cast into two video switches. The upper one handled which feeds were being provided to OBS for streaming, and the lower one handled which feeds were sent to the TV behind the presenter.
+
+<ImageContainer image={img_avwill} style='width: 70%; height: auto;' alt="Picture of the audiovisual setup, but live" desc="The fully operational A/V setup (ft. Will)" />
+
+At the end of the first day, we all hung out at the CyberHouseParty (a not-so-after party), where many neon sticks were abused.
+
+On the second day, a lot was the same, with the exception that we had switched some talks around to accommodate <TwitterLink url="https://twitter.com/TheKenMunroShow" text="Ken Munro" />, who preferred to give the talk in person on the first day.
+
+This ended with me taking the final "keynote"-ish slot, where I sorted out my own A/V and gave a talk about organizing and running conferences, which was somewhat meta, given the givens.
+
+On the next day I just hung out a bit and had a stroll around London, where I visited St. James' Park...
+
+<ImageContainer image={img_squirrel} style='width: 70%; height: auto;' alt="Picture of a squirrel" desc="A friendly squirrel" />
+
+... saw Buckingham Palace, ...
+
+<ImageContainer image={img_buckingham} style='width: 70%; height: auto;' alt="Picture of Buckingham Palace" desc="Buckingham Palace" />
+
+... and Big Ben.
+
+<ImageContainer image={img_bigben} style='width: 70%; height: auto;' alt="Picture of Big Ben" desc="Big Ben" />

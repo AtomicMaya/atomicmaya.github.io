@@ -3,8 +3,43 @@ title: "Participating in the Central-Infosec CTF!"
 description: "The Central Infosec CTF! I didn't do much of it, but here's my takeaways."
 pubDate: 'Apr 20 2021'
 readingTime: 3
-image: 'https://www.centralinfosec.com/blog/img/central-infosec-shield-black.png'
+image: '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/central-infosec-shield-black.png'
 keywords:
 - Information Security
 - CTF
 ---
+<style>{`.card { color: #b5e853; background-color: #1e1e1e;cursor: pointer;text-decoration: underline; } `}</style>
+
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro';
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro';
+import LocalLink from '../../../components/stub/link/LocalLink.astro';
+
+## The write-ups
+
+<div class="d-flex flex-row justify-content-center align-items-center">
+    <div class="col-md-4"><a rel="noopener" href="/post/2021/2021-04-20_central-infosec-ctf-python"><div class="card text-center p-4">PYTHON CHALLENGES WRITE-UP</div></a></div>
+    <div class="col-md-4"><a rel="noopener" href="/post/2021/2021-04-20_central-infosec-ctf-hack-the-static-hard"><div class="card text-center p-4">STATIC CODE ANALYSIS CHALLENGE WRITE-UP</div></a></div>
+    <div class="col-md-4"><a rel="noopener" href="/post/2021/2021-04-20_central-infosec-ctf-hack-the-maze-hard"><div class="card text-center p-4">GAME EXPLOITATION CHALLENGE WRITE-UP</div></a></div>
+</div>
+
+<br/>
+
+I gave them each a page for legibility's sake. Also, you want to preserve your scroll finger.
+
+<hr/>
+
+## The story
+
+These last two weeks, I helped out the "Advanced Persistent Team", composed of my friends <TwitterLink url="https://twitter.com/lennaert89" text="Lennaert" />, <TwitterLink url="https://twitter.com/ddsgerard" text="Gerard" /> and <TwitterLink url="https://twitter.com/ScottMcGready" text="Scott" /> in the <ExternalLink url="https://ctf.centralinfosec.com/" text="Central Infosec CTF" />.
+
+Now, I'm not as good as some of the others for all of these CTF challenges, but I'm not too shabby at unmuddling code. So that's what I did, working on Python challenges, JavaScript challenges, and attempting some cryptography challenges. I'll mostly focus on the code related CTF's, because those are the ones I had the most fun with.
+
+I couldn't work on the challenge virtual machine itself for quite some time, because of how my host machine was set up. My host is usually used as a development machine, and as such runs Docker and Hyper-V. But since Hyper-V is janky AF, I run my virtual machines on VMWare Workstation Pro. The particular setup of this CTF however made it so that you need to access the machine from the same Virtual Network, which usually works fine. However, Hyper-V's network adapters were interfering with that process, and it took me a while to get around that hurdle. During that time I relied on the files that my colleagues sent me.
+
+As such, I started with the Python challenges, which were some code analysis and reversal challenges. You can find that write-up <LocalLink url="/post/2021/2021-04-20_central-infosec-ctf-python" text="here" />.
+
+I then moved on to the static code analysis challenge, which involved analyzing some obfuscated JavaScript and finding a password hardcoded in a website. You can find that write-up <LocalLink url="/post/2021/2021-04-20_central-infosec-ctf-hack-the-static-hard" text="here" />.
+
+Finally, I fixed my VM setup and was able to access the game exploitation challenge, which involved breaking a game to access a flag. You can find that write-up <LocalLink url="/post/2021/2021-04-20_central-infosec-ctf-hack-the-maze-hard" text="here" />.
+
+I hope you enjoy these various write-ups as much as I enjoyed the challenges.

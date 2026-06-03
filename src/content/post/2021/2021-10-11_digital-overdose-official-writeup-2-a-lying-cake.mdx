@@ -9,3 +9,101 @@ keywords:
 - Write Up
 - Cryptography
 ---
+
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import LocalLink from '../../../components/stub/link/LocalLink.astro'
+import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
+
+import { Image } from "astro:assets";
+
+import description from '../../../assets/images/post/2021/2021-10-11_ctf/portal/description.png'
+import hint from '../../../assets/images/post/2021/2021-10-11_ctf/portal/hint.png'
+
+This is the official developer writeup for the challenge "A door by any other name" that was created for the <ExternalLink url='https://digitaloverdose.tech/ctf/2021-autumn' text='Digital Overdose Autumn 2021 CTF' />.
+
+The two other writeups published for this event are:
+
+- <LocalLink url='/post/2021/2021-10-11_digital-overdose-official-writeup-1-outage' text='Outage' />
+- <LocalLink url='/post/2021/2021-10-11_digital-overdose-official-writeup-3-c4' text='C1 - I think this should be C4' />
+
+### Summary
+
+- [Challenge description and statistics](#desc)
+- [Context](#context)
+- [Writeup](#writeup)
+
+<br/>
+
+---
+
+<br/>
+
+<h3 id='desc'>Challenge description and statistics</h3>
+
+<div class='media-container'>
+	<Image src={description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
+</div>
+
+The text reads:
+
+Description Intentionally Left Blank
+
+Out of the 41 correct submissions (First blood by BTeam), this challenge was rated 100% by all contestants.
+
+---
+
+<br/>
+
+<h3 id='context'>Context</h3>
+
+I sometimes take inspiration from games for ideas. This time, I was inspired to make a steganography challenge.
+
+The basis for the challenge was the catchphrase "The cake is a lie", which is a very popular phrase from the game Portal, released in 2007.
+
+It is seen in various areas in the game and is intended to warn the player that one of the game's supporting characters is in fact deceiving them. Perfect, I though, for a steganography challenge.
+
+---
+
+<br/>
+
+<h3 id='writeup'>Writeup</h3>
+
+The challenge page itself has no description (as it was marked "Intentionally Left Blank"). The title however, tells players to look for synonyms of the word door ("A door by any other name"). Among those synonyms is the word "Portal".
+
+Two kinds of players then exist, those that immediately identified the game and were then able to find the actual challenge locaction, and those that didn't who were then prompted to look around the platform.
+
+The category description was "T​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​h​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​c​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​k​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​s​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​l​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e"
+
+Well, do you not see what is going on in this text? No? That is intended, perhaps you need to look at what you don't see. This, helpfully, can be viewed by inspecting the concerned element:
+
+<div class='media-container'>
+  <Image src={hint} style="width: 80%; height: auto" alt='ZWS in the code' />
+</div>
+
+<br/>
+There exist a number of very interesting characters called "Zero-width space" characters, which can be found in unicode: <code>U+200B</code>, <code>U+200C</code>, <code>U+2060</code> and <code>U+FEFF</code>.
+
+By pasting the text into a notepad, or a scripting language terminal, we can then work with the zero-width spaces in this text.
+
+Informatively, there are 17 alphabetic characters (including " ") in the sentence.
+The set of characters used for flags always contains visible print characters.
+
+To solve this challenge, one can either manually count the special characters and then convert each number to the equivalent ASCII character, or one can script the behavior, which is what we'll do below.
+
+<div class="d-flex media-container">
+```py
+text = "T​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​h​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​c​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​k​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​s​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​l​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e"
+result = []
+alphabet = list(range(ord('a'), ord('z') + 1)) + list(range(ord('A'), ord('Z') + 1)) + [ord(" ")]
+for i in range(len(text)):
+	if ord(text[i]) in alphabet and i < len(text):
+		result += [0]
+	else:
+		result[-1] += 1
+
+print("".join([chr(a) for a in result]))
+```
+</div>
+
+This prints out <code>{`DO{1$_1NV1$1BL3}\\x00`}</code>, which makes the flag <code>{`DO{1$_1NV1$1BL3}`}</code>

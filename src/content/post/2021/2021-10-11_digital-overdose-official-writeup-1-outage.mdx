@@ -8,3 +8,99 @@ keywords:
 - CTF
 - Write Up
 ---
+
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import LocalLink from '../../../components/stub/link/LocalLink.astro'
+import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
+
+import { Image } from "astro:assets";
+
+import description from '../../../assets/images/post/2021/2021-10-11_ctf/outage/description.png'
+
+This is the official developer writeup for the challenge 'Outage - The usual suspect' that was created for the <ExternalLink url='https://digitaloverdose.tech/ctf/2021-autumn' text='Digital Overdose Autumn 2021 CTF' />.
+
+The two other writeups published for this event are:
+
+- <LocalLink url='/post/2021/2021-10-11_digital-overdose-official-writeup-2-a-lying-cake' text='A door by any other name' />
+- <LocalLink url='/post/2021/2021-10-11_digital-overdose-official-writeup-3-c4' text='C1 - I think this should be C4' />
+
+### Summary
+
+- [Challenge description and statistics](#desc)
+- [Context](#context)
+- [Writeup](#writeup)
+
+<br/>
+
+---
+
+<br/>
+
+<h3 id='desc'>Challenge description and statistics</h3>
+
+<div class='media-container'>
+    <Image src={description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
+</div>
+
+The text reads:
+
+Digital Overdose has a website, and you can access some information about it without really needing to visit, a bit like a phone book of sorts.
+
+Find the flag :)
+
+
+Out of the 63 correct submissions (first blood by <TwitterLink url='https://twitter.com/pidnull' text='pidnull' />), this challenge was rated 100% by all contestants.
+
+---
+
+<br/>
+
+<h3 id='context'>Context</h3>
+
+There is a quite a common meme nowadays when it comes to availability outages on the Internet, because it usually comes down to the same exact type of failure, most accurately summed up by:
+
+<TwitterEmbed text="It's always DNS ...
+
+#sysadmin #haiku" url='https://x.com/AndiMann/status/891806269626957824' author='Andi Mann' profile='@AndiMann' date='Jul 31, 2017' />
+
+---
+
+<br/>
+<h3 id='writeup'>Writeup</h3>
+
+As such, the title was already enough for most people to solve the challenge. If the player was unaware of this though, that is where the description comes in: What data can you get about a website, without visiting it. Bonus points if it is "Like an address book".
+
+This question has a few simple answers:
+
+- WHOIS data
+- Page metadata
+- DNS records
+
+When considering DNS, one needs to think about what type of records could be used to store information. The obvious response would be TXT records:
+
+<div class="d-flex media-container">
+```txt
+$ dig -t txt digitaloverdose.tech
+; <<>> DiG 9.11.3-1ubuntu1.11-Ubuntu <<>> -t txt digitaloverdose.tech
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57034
+;; flags: qr rd ad; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: recursion requested but not available
+
+;; QUESTION SECTION:
+;digitaloverdose.tech.          IN      TXT
+
+;; ANSWER SECTION:
+digitaloverdose.tech.   0       IN      TXT     "keybase-site-verification=YzZfhDKfOJdQ2b2Z_mMITYSzjQIN9Qd7dfYkQ5sz77k"
+digitaloverdose.tech.   0       IN      TXT     "google-site-verification=qN3ndcZtU8mXrY_HbsDCQeSzel93DrZAWidDZ5Ol1gY"
+digitaloverdose.tech.   0       IN      TXT     "DO{1T$_4LW4Y$_DN5}"
+digitaloverdose.tech.   0       IN      TXT     "google-site-verification=SNWrpKpmjvLywAg9yOnJ7f5aCy7rqMvWQZwHyVEc7yE"
+digitaloverdose.tech.   0       IN      TXT     "v=spf1 include:spf.efwd.registrar-servers.com ~all"
+```
+</div>
+
+Huh, what's that in line 15? It is a flag!
+
+The flag is <code>{`DO{1T$_4LW4Y$_DN5}`}</code>

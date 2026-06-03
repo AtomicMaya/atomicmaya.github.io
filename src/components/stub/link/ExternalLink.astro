@@ -5,8 +5,7 @@ interface Props {
 }
 
 const { text, url } = Astro.props;
+import Link from './Link.astro'
 ---
 
-<a class="content-link" href={url} target="_blank"
-    ><em class="fas fa-external-link-square-alt me-1"></em><span>{text}</span></a
->
+<Link url={url} text={text} icon="fas fa-external-link-square-alt" />

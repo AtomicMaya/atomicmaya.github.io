@@ -9,3 +9,177 @@ keywords:
 - Programming
 - Write Up
 ---
+
+#### Write-ups
+
+- [Loop in a Loop](#loop-in-a-loop)
+- [Reverse the Answer](#reverse-the-answer)
+- [Square Sum](#square-sum)
+
+<h4 id='loop-in-a-loop'>Loop in a Loop (100 points)</h4>
+
+This challenge was a simple code reversal challenge, written in C++.
+
+<div class='d-flex media-container'>
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+  string flag;
+  cout << "Enter the flag: ";
+  cin >> flag;
+
+  for (int i=0; i < flag.length(); i++) {
+    for (int j=i; j < flag.length() - 1; j++) {
+      char x = flag[j];
+      flag[j] = flag[j+1];
+      flag[j+1] = x;
+    }
+  }
+
+  if (flag == "CFb5cp0rm1gK{1r4nT_m4}6")
+    cout << "Congrats. That's the flag!" << endl;
+  else
+    cout << "Wrong flag. Bye" << endl;
+
+  return 0;
+}
+```
+</div>
+
+I rarely do C++ and never when I could use something else, so the solution will be in Python.
+
+But first, analysis:
+
+- The code takes a flag as input.
+- It then loops on all indices, and then initiates a second loop on all remaining indices.
+- The code inverts the characters at positions <code>j</code> and <code>j+1</code>.
+
+To reverse this we do the exact same loop with reversed parameters (i: length -> 0, j: length -> i), and then print the original flag:
+
+<div class='d-flex media-container'>
+```py
+flag = list("CFb5cp0rm1gK{1r4nT_m4}6")
+
+for i in range(len(flag) - 1, -1, -1):
+    for j in range(len(flag) - 1, i, -1):
+        flag[j], flag[j-1] = flag[j-1], flag[j]
+
+print("".join(flag))
+```
+</div>
+
+The flag is <code>{`KCTF{b451c_pr06r4mm1ng}`}</code>
+
+---
+
+<br/>
+
+<h4 id='reverse-the-answer'>Reverse the Answer (50 points)</h4>
+
+This is a coding challenge aimed at the resolution of a mathematical problem.
+
+The statement of the problem is the following:
+
+<div style='color: lime;'>
+- Let <code>x = 1</code>
+- Let <code>calculation = (x*(x+1)) + (2 *(x + 1))</code>
+- Let <code>reversed_calc = reversed number of calculation</code> [for example if <code>calculation = 123</code>, reversed_calc will be <code>321</code>]
+- If <code>reversed_calc</code> can be divided by <code>4</code>without reminder then <code>answer = answer + reversed_calc</code>
+- Repeat all the calculations until you have <code>x = 543</code>
+- The final answer will be the flag when <code>x = 543</code>
+- Flag Format: <code>{`KCTF{answer_here}`}</code> Example Flag : <code>{`KCTF{123}`}</code>
+</div>
+
+We perform the loop for x going from 1 to 543.
+
+To facilitate the calculation, we write the following program, in Python:
+
+<div class='d-flex media-container'>
+```py
+x = 1
+answer = 0
+
+while x <= 543:
+  calculation = (x + 2) * (x + 1)
+  rev = int(str(calculation)[::-1])
+  if rev % 4 == 0:
+      answer += rev
+  x += 1
+
+print(answer)
+```
+</div>
+
+This produces <code>12252696</code>, so the flag is <code>KCTF{12252696}</code>.
+
+---
+
+<br/>
+
+<h4 id='square-sum'>Square Sum (50 points)</h4>
+
+<p style='color: lime;'>Have you ever heard the term "The sum of two squares"?</p>
+
+<p style='color: lime;'>It's like the following :</p>
+
+<div class='d-flex media-container'>
+```txt showLineNumbers=false
+4 = 0^2 + 2^2
+8 = 2^2 + 2^2
+16 = 0^2 + 4^2
+----------------------------
+5002 = 39^2 + 59^2 => 49^2 + 51^2 => 51^2 + 49^2 => 59^2 + 39^2
+```
+</div>
+
+<p style='color: lime;'>And so on. In the example of 16, if we add the square of 0 & 4 we get 16. So here we are getting two values 0 & 4. So that's the answer.</p>
+
+<p style='color: lime;'>So write a program & find out the two values of 25000. Conditions are the following:</p>
+
+<div style='color: lime;'>
+- Remove the duplicates
+- Pick the third one
+</div>
+
+<p style='color: lime;'>Flag Format: <code>{`KCTF{0,1}`}</code></p>
+
+<br/>
+
+We can produce an algorithm that loops between both bounds (or more accurately the square root of both bounds). This can quite easily be written in Python:
+
+<div class='d-flex media-container'>
+```py
+from math import sqrt
+
+for i in range(round(sqrt(25000))):
+    for j in range(round(sqrt(25000)), -1, -1):
+        if i ** 2 + j ** 2 == 25000:
+            print(f"{i} ** 2 + {j} ** 2")
+```
+</div>
+
+This produces:
+
+<div class='d-flex media-container'>
+```txt showLineNumbers=false
+6 ** 2 + 158 ** 2
+50 ** 2 + 150 ** 2
+90 ** 2 + 130 ** 2
+130 ** 2 + 90 ** 2
+150 ** 2 + 50 ** 2
+```
+</div>
+
+We can remove the duplicates:
+
+<div class='d-flex media-container'>
+```txt showLineNumbers=false
+6 ** 2 + 158 ** 2
+50 ** 2 + 150 ** 2
+90 ** 2 + 130 ** 2
+```
+</div>
+
+The third result is 90, 130 so the flag is <code>{`KCTF{90,130}`}</code>.

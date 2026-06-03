@@ -9,3 +9,121 @@ keywords:
 - DevOps
 - Travel
 ---
+
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img_day101 from '../../../assets/images/post/2022/2022-05-15_wavegame/day1-01.jpeg'
+import img_day102 from '../../../assets/images/post/2022/2022-05-15_wavegame/day1-02.jpeg'
+import img_day103 from '../../../assets/images/post/2022/2022-05-15_wavegame/day1-03.jpeg'
+import img_day104 from '../../../assets/images/post/2022/2022-05-15_wavegame/day1-04.jpeg'
+import img_day105 from '../../../assets/images/post/2022/2022-05-15_wavegame/day1-05.jpeg'
+import img_day106 from '../../../assets/images/post/2022/2022-05-15_wavegame/day1-06.jpeg'
+import img_day107 from '../../../assets/images/post/2022/2022-05-15_wavegame/day1-07.jpeg'
+
+import img_day201 from '../../../assets/images/post/2022/2022-05-15_wavegame/day2-01.jpeg'
+import img_day202 from '../../../assets/images/post/2022/2022-05-15_wavegame/day2-02.jpg'
+
+import img_day301 from '../../../assets/images/post/2022/2022-05-15_wavegame/day3-01.jpeg'
+import img_day302 from '../../../assets/images/post/2022/2022-05-15_wavegame/day3-02.jpeg'
+import img_day303 from '../../../assets/images/post/2022/2022-05-15_wavegame/day3-03.jpeg'
+import img_day304 from '../../../assets/images/post/2022/2022-05-15_wavegame/day3-04.jpeg'
+import img_day305 from '../../../assets/images/post/2022/2022-05-15_wavegame/day3-05.jpeg'
+
+import img_results from '../../../assets/images/post/2022/2022-05-15_wavegame/results.png'
+
+One of the random things I did this year was to undergo the qualifications for Wavestone's "Wavegame" competition (which is a thinly veiled recruitment strategy that focuses on university students only, led by a French consulting company).
+
+Most of the teams were from French universities, and only a handful of us were joining in from Switzerland, with 2 of us (including myself) joining from the <ExternalLink url="https://unige.ch" text="University of Geneva (UNIGE)" />, and the 4 others joining from the <ExternalLink url="https://epfl.ch" text="Ecole Polytechnique Fédérale de Lausanne (EPFL)" />, providing us with an overall heterogeneous group that had capabilities in Computer Science, Information Systems and Data Science.
+
+Due to an array of circumstances, we ended up in the "Green Wavers" track, which focused on cloud environments, devops and security, as opposed to the "Blue Wavers" (Blue Teaming) and the "Yellow Wavers" (Policy). This was a bit of a rough ride, as most of us had only peripherally worked with platforms such as AWS and the like.
+
+The competition took the shape of 3 prequalification rounds (each on the same task of a website for Paris' 2024 Olympics, but with iteratively more complex requirements):
+
+1. From a base monolithic architecture, convert it to a microservices architecture, add security groups and integrate an RDS (database) into the system;
+2. Configuring a CI/CD pipeline;
+3. Adding FinOps observations, IAM, Operations oversight, and handling resiliency.
+
+By the end of it all, we were down to 4 team members, and had placed:
+
+1. 3rd (with 75 points)
+2. 1st (with 84 points)
+3. 2nd (with 86 points)
+
+This enabled us to qualify to go to Paris for the finals, from the 11th to the 13th of May.
+
+The first day was dedicated to getting from Geneva to Paris (by means of train), dropping our stuff off at the housing we had sorted, and exploring Paris a little.
+
+<details>
+  <summary>Sightseeing (May 11th)</summary>
+  
+  <ImageContainer image={img_day101} style='width: auto; height: 350px' alt='A mural in Paris' />
+  
+  <ImageContainer image={img_day102} style='width: 70%; height: auto' alt="The 13th district's town hall" />
+  
+  <ImageContainer image={img_day103} style='width: 70%; height: auto' alt='The Pantheon' />
+  
+  <ImageContainer image={img_day104} style='width: auto; height: 350px' alt='A statue in the Luxembourg Gardens' />
+  
+  <ImageContainer image={img_day105} style='width: auto; height: 350px' alt='The Medici fountain in the Luxembourg Gardens' />
+  
+  <ImageContainer image={img_day106} style='width: auto; height: 350px' alt="A building's architectural column" />
+
+  <ImageContainer image={img_day107} style='width: 70%; height: auto' alt='The statues on the Square of the Nation, illuminated, with the picture taken at night' />
+</details>
+
+On Thursday, we headed off to Wavestone's HQ in the district "de la Défense" of Paris, for the final challenge.
+ 
+<ImageContainer image={img_day201} style='width: 70%; height: auto' alt="The district 'de la Défense' with its landmark building" />
+
+This is where things started to go... interestingly (to say the least).
+
+The final challenge for us Green Wavers was to identify and patch a production system that was under attack, and "provide a report to the board".
+
+Except, for reasons that escape me, our AWS account malfunctioned, leading the event organizers to have to reset our environments.
+
+This was fine, as the event hadn't started yet due to the organizers wanting to make sure everyone could access the environments correctly.
+
+What was not fine was that we ended up not having the same AWS resources, as those had also been reset. So, instead of having CloudTrail and logs we could grep through, we had graphs (except we had not figured out we were supposed to have CloudTrail).
+
+From the graphs, I was able to figure out the attack scenario was hitting the login feature and enumerating the RDS database. We also then were able to derive that the system was being DOS'ed purposefully to limit remediation.
+
+Whilst my colleagues were attempting to patch the systems (which is hard when you don't know what is broken), we were collating data about the attacks for the presentation.
+
+The presentation went well, at least starting from the moment where we cleared up exactly what services we had access to and they figured out it was not a standard configuration.
+
+Figuring that we had bungled the event, we went to the after party where we discussed and had a fun time on a dock on the Seine river, right below the Eiffel Tower.
+
+<ImageContainer image={img_day202} style='width: auto; height: 350px' alt="The Eiffel Tower, illuminated at night" />
+
+Near the end of the event, all the participants were called to the galley, where the announcement of the rankings was to take place.
+
+After the Blue and Yellow Wavers had their winners announced, came the time of the Green Wavers.
+
+In 3rd place, the team <em>200 IQMULUS</em> from Bordeaux's ynov campus was announced. By that time we had entirely lost any hope to landing on the podium.
+
+In 2nd place, the team <em>La Passoire</em> from utc was announced.
+
+Finally, in 1st place, to our great surprise, our team was announced.
+
+In disbelief, we accepted the prize and were quite happy with ourselves.
+
+As it turns out, the fact that we managed to keep cool without access to the needed resources and were still able to derive valuable information, as well as provide a cohesive presentation of the issues is what shifted the jury in our favor.
+
+<ImageContainer image={img_results} style='width: 70%; height: auto' alt="An image with the event's results" />
+
+After rejoining our accommodations and sleeping off the night's events, I went for a small tour of Paris before heading back to Geneva.
+
+<details>
+  <summary>Sightseeing (May 13th)</summary>
+
+  <ImageContainer image={img_day301} style='width: auto; height: 350px' alt='Picture of the Eiffel Tower, during the day' />
+  
+  <ImageContainer image={img_day302} style='width: 70%; height: auto' alt="Picture of the Trocadero Gardens" />
+  
+  <ImageContainer image={img_day303} style='width: 70%; height: auto' alt='Picture of a Parisian Street' />
+  
+  <ImageContainer image={img_day304} style='width: 70%; height: auto' alt='Picture of the Musée des Arts Décoratifs' />
+  
+  <ImageContainer image={img_day305} style='width: 70%; height: auto' alt='Picture of the Louvre Pyramid' />
+</details>

@@ -8,3 +8,97 @@ keywords:
 - CTF
 - Write Up
 ---
+
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img_tree from '../../../assets/images/post/2022/2022-01-30_rev-challenges/tree.png'
+import img_flagcode from '../../../assets/images/post/2022/2022-01-30_rev-challenges/FlagCode.png'
+import img_stringscode from '../../../assets/images/post/2022/2022-01-30_rev-challenges/StringsCode.png'
+import img_droidtree from '../../../assets/images/post/2022/2022-01-30_rev-challenges/droid-tree.png'
+import img_mainactivity from '../../../assets/images/post/2022/2022-01-30_rev-challenges/MainActivityCode.png'
+import img_stringhandler from '../../../assets/images/post/2022/2022-01-30_rev-challenges/StringHandlerCode.png'
+import img_c0754code from '../../../assets/images/post/2022/2022-01-30_rev-challenges/C0754RCode.png'
+import img_publicxml from '../../../assets/images/post/2022/2022-01-30_rev-challenges/PublicXML.png'
+import img_stringsxml from '../../../assets/images/post/2022/2022-01-30_rev-challenges/StringsXML.png'
+
+#### Write-ups
+
+- [Baby Shark](#baby-shark)
+- [Droid Flag](#droid-flag)
+
+---
+
+<br/>
+
+<h4 id='baby-shark'>Baby Shark (50 points)</h4>
+
+<p style='color: lime;'>During my holiday in Bahamas, I met a baby shark. The shark wanted to sing me something but couldn't. Can you sing that for me?</p>
+
+<p style='color: lime;'>Flag Format: {`KCTF{SomE_T3xT_h3r3}`}</p>
+
+<br/>
+
+Once the JAR is downloaded, go to <ExternalLink url='httpd://javadecompilers.com' text='javadecompilers.com' />, and upload it there.
+
+We obtain a ZIP which we then unpack, revealing the following file structure:
+
+<ImageContainer image={img_tree} style="width: auto; height: 150px;" alt="File tree" />
+
+We can see a few interesting Java files, which we'll get into quickly.
+
+The first is <code>Flag.java</code>, it is not very interesting:
+
+<ImageContainer image={img_flagcode} style="width: 80%; height: auto;" alt="A few false flags." />
+
+In <code>Strings.java</code> we can see what resembles strings that are Base64 encoded:
+
+<ImageContainer image={img_stringscode} style="width: 80%; height: auto;" alt="A few false flags." />
+
+If we throw these in a Base64 decoder, the last gives us the flag: <code>{`KCTF{7H15_W@5_345Y_R16H7?}`}</code>
+<br/>
+
+<hr/>
+
+<h4 id='droid-flag'>Droid Flag (100 points)</h4>
+
+One needs to decompile the provided APK, and understand what the decompiled code does, to retrieve the flag.
+
+Once the ZIP is downloaded, extract the APK contained within, then go to <ExternalLink url='httpd://javadecompilers.com' text='javadecompilers.com' />, and upload it there.
+
+We obtain a ZIP which we then unpack, revealing the following file structure:
+
+<ImageContainer image={img_droidtree} style="width: auto; height: 250px;" alt="Decompiled file tree." />
+
+We can see a few interesting Java files, which we'll get into quickly.
+
+The first is <code>MainActivity.java</code>, it contains a few interesting lines:
+
+<ImageContainer image={img_mainactivity} style="width: 80%; height: auto;" alt="The code for MainActivity.java." />
+
+We can see that this code calls a number of functions in the <code>StringHandler</code> class from the <code>StringHandler.java</code> file, in the following order:
+
+<code>{`$(S1){$(S3)_$(S2)_$(S4)}`}</code>
+
+<ImageContainer image={img_stringhandler} style="width: 80%; height: auto;" alt="The code for StringHandler.java." />
+
+- <code>S1</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f112s5</code>
+- <code>S2</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f113s6</code>
+- <code>S3</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f114s7</code>
+- <code>S4</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f115s8</code>
+
+Those values are:
+
+<ImageContainer image={img_c0754code} style="width: 80%; height: auto;" alt="The code for class C0754RCode." />
+
+We look for any identifier with those numbers (<code>grep</code> is useful), and find some in <code>public.xml</code>:
+
+<ImageContainer image={img_publicxml} style="width: 80%; height: auto;" alt="The public.xml file." />
+
+We then look for the names provided in <code>strings.xml</code>:
+
+<ImageContainer image={img_stringsxml} style="width: 80%; height: auto;" alt="The strings.xml file." />
+
+In <code>StringHandler.java</code> we see that the values for <code>S2</code>, <code>S3</code> and <code>S4</code> are then reversed, which makes the final flag:<br/><code>{`$(S1){$(S3)_$(S2)_$(S4)}`}</code> -> <code>{`KCTF{aNdR01D_s1MpL3_r3V3rS3}`}</code>

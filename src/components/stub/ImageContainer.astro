@@ -1,0 +1,18 @@
+---
+
+import { Image } from "astro:assets";
+
+interface Props {
+    image: ImageMetadata;
+    alt: string;
+    desc?: string;
+    style: string;
+}
+
+const { image, desc, alt, style } = Astro.props;
+---
+
+<div class='media-container mb-3'>
+  <Image src={image} style={style} alt={alt} />
+  <span><em>{desc ?? alt}</em></span>
+</div>

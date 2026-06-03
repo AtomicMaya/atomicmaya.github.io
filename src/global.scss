@@ -1,10 +1,7 @@
 @use "assets/css/jekyll-hacker.scss";
 @use "assets/css/containers.scss";
 @use "assets/css/context.scss";
-@import "assets/css/prism-vsc-dark-plus.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import "../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.css";
-@import "../node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css";
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 @import "assets/css/custom-fonts.css";
 
@@ -156,4 +153,51 @@ a.content-link {
     span {
         text-decoration: underline;
     }
+}
+
+details {
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  background: #242424;
+  color: #e0e0e0;
+}
+
+details summary {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.25em 0;
+  outline: none;
+  list-style: none;
+  color: #f0f0f0;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* custom triangle marker */
+details summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 0.5em;
+  font-size: 0.8em;
+  color: #888;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+  color: #aaa;
+}
+
+/* style the revealed content */
+details[open] {
+  background: #2d2d2d;
+  border-color: #555;
+}
+
+details > *:not(summary) {
+  margin-top: 0.5em;
 }
