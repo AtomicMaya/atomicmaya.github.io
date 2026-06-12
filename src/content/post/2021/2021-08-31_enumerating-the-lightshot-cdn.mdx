@@ -8,19 +8,17 @@ keywords:
 - Development
 - Privacy
 ---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
-import { Image } from "astro:assets";
-
-import page_code from '../../../assets/images/post/2021/2021-08-31_lightshot/0-page-code.png'
-import example_0 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-0.png'
-import example_1 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-1.jpg'
-import example_2 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-2.jpg'
-import example_3 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-3.jpg'
-import so from '../../../assets/images/post/2021/2021-08-31_lightshot/2-so.jpg'
-import beaned from '../../../assets/images/post/2021/2021-08-31_lightshot/3-beaned.png'
+import img_pagecode from '../../../assets/images/post/2021/2021-08-31_lightshot/0-page-code.png'
+import img_example0 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-0.png'
+import img_example1 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-1.jpg'
+import img_example2 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-2.jpg'
+import img_example3 from '../../../assets/images/post/2021/2021-08-31_lightshot/1-example-3.jpg'
+import img_stackoverflow from '../../../assets/images/post/2021/2021-08-31_lightshot/2-so.jpg'
+import img_beaned from '../../../assets/images/post/2021/2021-08-31_lightshot/3-beaned.png'
 
 import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
-import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 import GithubLink from '../../../components/stub/link/GithubLink.astro'
 import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
 
@@ -35,19 +33,19 @@ As a fun project I wanted to see how easy it was to enumerate all of the images 
 
 Spoiler alert, it is really easy.
 
-<br/>
+---
 
 ### Kowalski, Analysis!
 
-The CDN is accessible via a URL that looks like <code>hxxps[:]//prnt[.]sc/x</code> with <code>x</code> being an alphanumerical string within the <code>[0-9a-z]</code>.
+The CDN is accessible via a URL that looks like `hxxps[:]//prnt[.]sc/x` with `x` being an alphanumerical string within the `[0-9a-z]`.
 
 I upload two test images - with approximately 25 seconds between uploads - to LightShot's CDN, which are:
 
-- <code>1qvc84l</code>
-- <code>1qvc8ny</code>
+- `1qvc84l`
+- `1qvc8ny`
 
 
-We can start by seeing that both codes seem sequential in nature, and assuming we are in the <code>[0-9a-z]</code> space, show that a lot of images are constantly being uploaded to the CDN. The difference between <code>1qvc84l</code> and <code>1qvc8ny</code> is:
+We can start by seeing that both codes seem sequential in nature, and assuming we are in the `[0-9a-z]` space, show that a lot of images are constantly being uploaded to the CDN. The difference between `1qvc84l` and `1qvc8ny` is:
 
 - 'l' to 'z' = 14 characters
 - '50' to 'mz' = 17*36 = 612 characters
@@ -55,15 +53,11 @@ We can start by seeing that both codes seem sequential in nature, and assuming w
 
 We can thus see there are approximately 659 URL segments between both of my uploads (uploads excluded), which comes down to approximately 26.5 images per second. That's a lot of images (in my best Phil Swift tone).
 
-But how many images could that represent? Well using bad math, I would have told you "at least 27M images", which would be completely wrong. Someone who has been doing math for a living mentioned that just for the 7 character segment - considering that the segment cannot start with a 0 (from experimentation) - we need <code>35 * 36^6 ~= 76.12e9</code> or about 76.12 Billion possibilities. Summing up for character segments of size 1 to 7, we thus get <code>35 * 36^6 + 35 * 36^5 + 35 * 36^4 + 35 * 36^3 + 35 * 36^2 + 35 * 36 + 36 ~= 78.36e9</code> or about 78.36 Billion possibilities. That is a lot. Thankfully we seem to be at <code>1qxxxxx</code> which is somewhere at the beginning of the 7 character space (relatively to 78.36 Billion possibilities).
+But how many images could that represent? Well using bad math, I would have told you "at least 27M images", which would be completely wrong. Someone who has been doing math for a living mentioned that just for the 7 character segment - considering that the segment cannot start with a 0 (from experimentation) - we need `35 * 36^6 ~= 76.12e9` or about 76.12 Billion possibilities. Summing up for character segments of size 1 to 7, we thus get `35 * 36^6 + 35 * 36^5 + 35 * 36^4 + 35 * 36^3 + 35 * 36^2 + 35 * 36 + 36 ~= 78.36e9` or about 78.36 Billion possibilities. That is a lot. Thankfully we seem to be at `1qxxxxx` which is somewhere at the beginning of the 7 character space (relatively to 78.36 Billion possibilities).
 
 For each of these URL segments, my initial impression of parsing that URL is that the page takes a few seconds to load, loading the image asynchronously, thus requiring a more roundabout automated collection method. The image is available one of two ways, either in the image source, or as a data blob:
 
-<div class="media-container">
-    <Image src={page_code} style="width: 70%; height: auto;" alt="The code of LightShot's page" />
-</div>
-
-<br/>
+<ImageContainer image={img_pagecode} style="width: 70%; height: auto;" alt="The code of LightShot's page" />
 
 To automate this, I turned to my favorite language: Python. Also in my quiver were the Selenium WebDriver library, BeautifulSoup4 and Multiprocess.
 
@@ -71,74 +65,34 @@ By iterating over the namespace, and opening the page via Selenium in a headless
 
 You can check that first functioning attempt on <GithubLink url="https://gist.github.com/AtomicMaya/d31462e2e9ed168f7665bf9e6b698daa" text="this Gist" />.
 
-<br/>
+---
 
 ### The quicker "I hadn't noticed that" approach
 
-Meta tags. Apparently the LightShot page uses the <code>&lt;meta property="og:image" content="x"&gt;</code> tag, which contains a link to an image... which can be scraped using the <code>urllib</code> library. Thanks <TwitterLink url="https://twitter.com/bugbot4" text="Night" /> for pointing that out.
+Meta tags. Apparently the LightShot page uses the `&lt;meta property="og:image" content="x"&gt;` tag, which contains a link to an image... which can be scraped using the `urllib` library. Thanks <TwitterLink url="https://twitter.com/bugbot4" text="Night" /> for pointing that out.
 
 By refactoring my code to include this modification, it became much easier and faster and less expensive to use, due to Selenium and BS4 being made redundant. You can find it <GithubLink url="https://gist.github.com/AtomicMaya/077c84c8c6ff1d431c5e3e7c050f9fd0" text="here" />.
 
 I had not removed parallel processing on my first try, and this method is "so" efficient, that it tripped CloudFlare's DOS mitigation (or, as CloudFlare claims, the owner banned my IP specifically, see below). Oops, I apologize. However, CloudFlare <strong>is</strong> protecting a service used to share non-consensual pornography, scams and PII (regardless of own ToS) which would make a GDPR-specialized risk management firm sweat. I "fixed" it to continue my "research" and everything was nice and functional.
 
-<div class="media-container">
-    <Image src={beaned} style="width: 70%; height: auto;" alt="CloudFlare's message" />
-    <div class="text-center">
-        <caption class="text-align-center">Ooops</caption>
-    </div>
-</div>
-
-<br/>
+<ImageContainer image={img_beaned} style="width: 70%; height: auto;" alt="CloudFlare's message" desc="Ooops" />
 
 ### PII farming
 
 I did just mention scams, NCP and PII, so here are some (heavily redacted) examples!
 
-<div class="media-container">
-    <Image src={example_0} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials and PII" />
-    <div class="text-center">
-        <caption class="text-align-center">Cryptocurrency platform credentials and PII</caption>
-    </div>
-</div>
+<ImageContainer image={img_example0} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials and PII" />
 
-<br/>
-
-<div class="media-container">
-    <Image src={example_1} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials" />
-    <div class="text-center">
-        <caption class="text-align-center">Cryptocurrency platform credentials</caption>
-    </div>
-</div>
-
-<br/>
-
-<div class="media-container">
-    <Image src={example_2} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials" />
-    <div class="text-center">
-        <caption class="text-align-center">Cryptocurrency platform credentials</caption>
-    </div>
-</div>
-
-<br/>
-
-<div class="media-container">
-    <Image src={example_3} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials, PII + Credit card information" />
-    <div class="text-center">
-        <caption>Cryptocurrency platform credentials, PII + Credit card information</caption>
-    </div>
-</div>
-
-<br/>
+<ImageContainer image={img_example1} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials" />
+    
+<ImageContainer image={img_example2} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials" />
+    
+<ImageContainer image={img_example3} style="width: 70%; height: auto;" alt="Cryptocurrency platform credentials, PII + Credit card information" />
 
 It's a literal goldmine for people that wish to be malicious.
 
 To the question about why I am not going through vulnerability disclosure processes? Because the idea of scraping LightShot has been going on for a while (see below) and no one at LightShot seems to care.
 
-<div class="media-container">
-    <Image src={so} style="width: 70%; height: auto;" alt="A post on stack overflow about scraping LightShot from April 25th, 2017" />
-    <div class="text-center">
-        <caption>A post on Stack Overflow about scraping LightShot from April 25th, 2017</caption>
-    </div>
-</div>
+<ImageContainer image={img_stackoverflow} style="width: 70%; height: auto;" alt="A post on stack overflow about scraping LightShot from April 25th, 2017" />
 
 In conclusion, this is a case of *le big sigh*. Hope you've enjoyed, see you around.

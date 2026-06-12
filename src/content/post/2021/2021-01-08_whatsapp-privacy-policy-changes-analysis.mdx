@@ -7,24 +7,23 @@ keywords:
 - Information Security
 - Privacy
 ---
-
-import { Image } from "astro:assets";
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
 import TwitterLink from '../../../components/stub/link/TwitterLink.astro';
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro';
 import LocalLink from '../../../components/stub/link/LocalLink.astro';
 
-import signal_advance_inc_stock from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/signal-advance-inc-stock.png'
-import whatsapp_3rd_party_others_new from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-3rd-party-others-new.png'
-import whatsapp_3rd_party_others_original from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-3rd-party-others-original.png'
-import whatsapp_accnt_info_new_2 from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-accnt-info-new-2.png'
-import whatsapp_accnt_info_new from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-accnt-info-new.png'
-import whatsapp_accnt_info_original from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-accnt-info-original.png'
-import whatsapp_auto_collect_new from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-auto-collect-new.png'
-import whatsapp_gdpr_evasion_1 from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-gdpr-evasion-1.png'
-import whatsapp_hard_info_new from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-hard-info-new.png'
-
----
+import img_signaladvanceincstock from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/signal-advance-inc-stock.png'
+import img_whatsapp3rdpartyothersnew from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-3rd-party-others-new.png'
+import img_whatsapp3rdpartyothersoriginal from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-3rd-party-others-original.png'
+import img_whatsappaccntinfonew2 from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-accnt-info-new-2.png'
+import img_whatsappaccntinfonew from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-accnt-info-new.png'
+import img_whatsappaccntinfooriginal from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-accnt-info-original.png'
+import img_whatsappautocollectoriginal from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-auto-collect-original.png'
+import img_whatsappautocollectnew from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-auto-collect-new.png'
+import img_whatsappgdprevasion1 from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-gdpr-evasion-1.png'
+import img_whatsapphardinfonew from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/whatsapp-hard-info-new.png'
+import img_forbes from '../../../assets/images/post/2021/2021-01-08_whatsapp-privacy-policy-analysis/forbes.jpg'
 
 #### Jan. 15th Update
 
@@ -35,8 +34,6 @@ This has been announced on <ExternalLink text="their blog" url="https://web.arch
 All points in the below article are based off of factual analysis of the text, without conjecture. So unless the text of the policy changes, the previous article still holds.
 
 ---
-
-<br/>
 
 Last Monday (Jan. 4th 2021), WhatsApp announced that their privacy policy would change on Monday, Feb. 8th, 2021 for their app, also named WhatsApp.
 
@@ -54,11 +51,7 @@ DISCLAIMER: I am not a lawyer, and am perfectly able to misinterpret laws.
 - [Shot! Chaser!](#shot-chaser)
 - [My own take on the matter](#my-own-take)
 
-<br/>
-
 ---
-
-<br/>
 
 <h4 id="the-socio-historical-angle"> The socio-historical angle.</h4>
 
@@ -78,81 +71,50 @@ The change could be seen in a singular modification, which was the removal of th
 
 ##### *"Information we collect"*
 
-One of the first things that jumped out was that WhatsApp originally asked for a phone number, some basic information as well as also require that users "provide us [WhatsApp] with the phone numbers in your mobile address book on a regular basis", without any additional information as to the modalities of such exchanges of information (a pattern that will seem familiar by the end of this post), as seen in <a href="#figure-1">Fig. 1</a>.
+One of the first things that jumped out was that WhatsApp originally asked for a phone number, some basic information as well as also require that users "provide us [WhatsApp] with the phone numbers in your mobile address book on a regular basis", without any additional information as to the modalities of such exchanges of information (a pattern that will seem familiar by the end of this post), as seen in [Fig. 1](#figure-1).
 
-With the new policy change, WhatsApp seems to raise the ambiguity of the problem, still wanting uploads but also "managing the information in a way that ensures those contacts cannot be identified by us [WhatsApp]", which is ridiculous because a phone number is already enough PII (Personally Identifiable Information) to partially identify someone (see <a href="#figure-2">Fig. 2</a>).
+With the new policy change, WhatsApp seems to raise the ambiguity of the problem, still wanting uploads but also "managing the information in a way that ensures those contacts cannot be identified by us [WhatsApp]", which is ridiculous because a phone number is already enough PII (Personally Identifiable Information) to partially identify someone (see [Fig. 2](#figure-2)).
 
-<div id="figure-1" class="d-flex flex-column">
-  <div class="media-container">
-    <Image src={whatsapp_accnt_info_original} alt="The original privacy policy with the relevant passage underlined." />
-  </div>
-  <span class="mx-auto small">Fig. 1: The original data collected.</span>
+<div id="figure-1">
+  <ImageContainer image={img_whatsappaccntinfooriginal} style="width: 90%; height: auto;" alt="The original privacy policy with the relevant passage underlined" desc="Fig. 1: The original data collected" />
 </div>
 
-<br/>
+<div id="figure-2">
+  <ImageContainer nodesc="true" image={img_whatsappaccntinfonew} style="width: 90%; height: auto;" alt="The new privacy policy with the relevant passage underlined" />
 
-<div id="figure-2" class="d-flex flex-column">
-  <div class="media-container">
-    <Image src={whatsapp_accnt_info_new} alt="The new privacy policy with the relevant passage underlined." />
-  </div>
-  <div class="media-container">
-    <Image src={whatsapp_accnt_info_new_2} alt="The new privacy policy with the relevant passage underlined." />
-  </div>
-  <span class="mx-auto small">Fig. 2: The data collected under the new policy.</span>
+  <ImageContainer image={img_whatsappaccntinfonew2} style="width: 90%; height: auto;" alt="The new privacy policy with the relevant passage underlined" desc="Fig. 2: The data collected under the new policy" />
 </div>
-
-<br/>
 
 But this is only the tip of the iceberg, and also the only one where WhatsApp bothers to ask for one's informed consent (which one gives by blindly pressing *"I agree"*).
 
 When it comes to *Automatically Collected Information*, we get into muddier waters.
 
-A part of that is the *Usage and Log Information* section, wherein WhatsApp used to only collect *"service-related, diagnostic, and performance information"* (see <a href="#figure-3">Fig. 3</a>).
+A part of that is the *Usage and Log Information* section, wherein WhatsApp used to only collect *"service-related, diagnostic, and performance information"* (see [Fig. 3](#figure-3)).
 
-In the new iteration WhatsApp collects information *"<strong style="color: #ff0882">like</strong> service-related, diagnostic, and performance information."*, and then proceed to give some precise examples (such as *"the time, frequency, and duration of [one's] activities"*, or *"log files, and diagnostic, crash, website, and performance logs and reports"*). The word *like* in this context is deeply disturbing (to me, again: not a lawyer), because it seems to me that it entails that it is an example (and thus a logical subset) of the types of information WhatsApp collects, which, in addition to the log files, can be a serious breach of users' privacy. We yet again do not know the uses for all of the information that is collected. (see <a href="#figure-4">Fig. 4</a>).
+In the new iteration WhatsApp collects information *"<strong style="color: #ff0882">like</strong> service-related, diagnostic, and performance information."*, and then proceed to give some precise examples (such as *"the time, frequency, and duration of [one's] activities"*, or *"log files, and diagnostic, crash, website, and performance logs and reports"*). The word *like* in this context is deeply disturbing (to me, again: not a lawyer), because it seems to me that it entails that it is an example (and thus a logical subset) of the types of information WhatsApp collects, which, in addition to the log files, can be a serious breach of users' privacy. We yet again do not know the uses for all of the information that is collected. (see [Fig. 4](#figure-4)).
 
-<div id="figure-3" class="d-flex flex-column">
-  <div class="media-container">
-    <Image src={whatsapp_accnt_info_original} alt="The original privacy policy with the relevant passage underlined." />
-  </div>
-  <span class="mx-auto small">Fig. 3: The original data automagically collected.</span>
+<div id="figure-3">
+  <ImageContainer style="width: 90%; height: auto;" image={img_whatsappautocollectoriginal} alt="The original privacy policy with the relevant passage underlined" desc="Fig. 3: The original data automagically collected" />
 </div>
 
-<br/>
-
-<div id="figure-4" class="d-flex flex-column">
-  <div class="media-container">
-    <Image src={whatsapp_auto_collect_new} alt="The new privacy policy with the relevant passage underlined." />
-  </div>
-  <span class="mx-auto small">Fig. 4: The data automagically collected under the new policy.</span>
+<div id="figure-4">
+  <ImageContainer style="width: 90%; height: auto;" image={img_whatsappautocollectnew} alt="The new privacy policy with the relevant passage underlined" desc="Fig. 4: The data automagically collected under the new policy" />
 </div>
-
-<br/>
 
 In addition to these elements, WhatsApp has consistently admitted to collecting *"device and connection-specific information [...] such as hardware model, operating system information, battery level, signal strength, app version, browser information, mobile network, connection information (including phone number, mobile operator or ISP), language and time zone, IP address, device operations information, and identifiers <span style="color: #ff0882">(including identifiers unique to Facebook Company Products associated with the same device or account)</span>"* (<a href="#figure-5">Fig. 5</a>).
 
 The original (without the <span style="color: #ff0882">purple</span>) was already a quite invasive amount of information that was continuously harvested.<br/>
 The newest addition (in <span style="color: #ff0882">purple</span>) is cause for even more concern, because it effectively means that all of your data tethered to one phone that are a part of the Facebook monopoly of applications (WhatsApp, Facebook, Messenger, Instagram, Oculus, etc.) can account for most of your phone usage (as per the statistical increase of the presence of social media in people's lives reflected in this <ExternalLink text="article" url="https://www.cbs.nl/en-gb/news/2018/20/more-and-more-young-adults-addicted-to-social-media#:~:text=18%2F05%2F2018%2015%3A,themselves%20addicted%20is%20relatively%20lower." /> by the *Centraal Bureau voor de Statistiek* aka. The Dutch National Statistics Bureau).
 
-<div id="figure-5" class="d-flex flex-column">
-  <div class="media-container">
-    <Image src={whatsapp_hard_info_new} alt="The new privacy policy with the relevant passage underlined." />
-  </div>
-  <span class="mx-auto small">Fig. 5: The heaps of hardware data collected by WhatsApp.</span>
+<div id="figure-5">
+  <ImageContainer style="width: 90%; height: auto;" image={img_whatsapphardinfonew} alt="The new privacy policy with the relevant passage underlined" desc="Fig. 5: The heaps of hardware data collected by WhatsApp" />
 </div>
-
-<br/>
 
 <TwitterLink text="Zak Doffman" url="https://twitter.com/ukzak" /> published an <ExternalLink text="article in Forbes" url="https://www.forbes.com/sites/zakdoffman/2021/01/03/whatsapp-beaten-by-apples-new-imessage-update-for-iphone-users/?sh=6512d4f83623" /> comparing the various information that Facebook and WhatsApp collect about people, summed up in the following graphic.
 
-<div id="figure-6" class="d-flex flex-column">
-  <div width="70%" class="media-container">
-    <Image width={958} height={555} src="https://specials-images.forbesimg.com/imageserve/5ff9a6dcf17443be3d98d670/960x0.jpg" alt="Forbes' recap of data linked to users by popular messaging platforms." />
-  </div>
-  <span class="mx-auto small">Fig. 6: Forbes' <TwitterLink text="Zak Doffman" url="https://twitter.com/ukzak" /> recapitulation of data linked to users by popular messaging platforms.</span>
+<div id="figure-6">
+  <ImageContainer style="width: 90%; height: auto;" image={img_forbes} alt="Forbes' recap of data linked to users by popular messaging platforms" desc="Fig. 6: Forbes' Zak Doffman recapitulation of data linked to users by popular messaging platforms" />
 </div>
-
-<br/>
 
 It could be tempting to dismiss the breadth of PII collected by WhatsApp in the face of the amount of PII collected by Facebook Messenger, but when comparing the data collected with the likes of Signal and iMessage, one can ask themselves how services that do virtually the exact same thing could have so many varying requirements, and how one can -- in the long run -- reduce their digital footprint.
 
@@ -160,9 +122,9 @@ It could be tempting to dismiss the breadth of PII collected by WhatsApp in the 
 
 We saw that WhatsApp now regularly acquires user's contacts, usually from one's address book.
 
-Originally, the only thing that one provided was *"[one's] phone number from [another's] mobile address book"*, whether you were registered or not with WhatsApp (see <a href="#figure-7">Fig. 7</a>).
+Originally, the only thing that one provided was *"[one's] phone number from [another's] mobile address book"*, whether you were registered or not with WhatsApp (see [Fig. 7](#figure-7)).
 
-With the new update however, it isn't just someone else's phone number you provide, but *"[one's] phone number, name, and other information <span style="color: #ff0882">(like information from [another's] mobile address book)</span>"* (see <LocalLink text="Fig. 8" url="#figure-8" />). That last bit is a clear increase in the scale of information collected about other users, and we still don't know why all these data are being collected for.
+With the new update however, it isn't just someone else's phone number you provide, but *"[one's] phone number, name, and other information <span style="color: #ff0882">(like information from [another's] mobile address book)</span>"* (see [Fig. 8](#figure-8)). That last bit is a clear increase in the scale of information collected about other users, and we still don't know why all these data are being collected for.
 
 Another point in the new policy relates to liability, as no one knows whether or not they actually have <em style="color: #ff0882">"lawful rights to collect, use, and share"</em> one another's information, or if they could be sued for having someone else's phone number in their address books.
 
@@ -170,23 +132,13 @@ Think about it, we all store varying amounts of information regarding other peop
 
 Imagine this in an academic context, or an enterprise context, whether having added someone to your contacts 6 years ago makes you vulnerable to a lawsuit. Even worse, what happens if the number that was once associated to a friend of yours gets recirculated for someone else ? Could this person sue you ? <em style="color: #ff0882">Apparently yes</em>.
 
-<div id="figure-7" class="d-flex flex-column">
-  <div class="media-container">
-    <Image src={whatsapp_3rd_party_others_original} alt="The original privacy policy with the relevant passage underlined." />
-  </div>
-  <span class="mx-auto small">Fig. 7: The info WhatsApp originally collected from your address book.</span>
+<div id="figure-7">
+  <ImageContainer image={img_whatsapp3rdpartyothersoriginal} style="width: 90%; height: auto;" alt="The original privacy policy with the relevant passage underlined" desc="Fig. 7: The info WhatsApp originally collected from your address book" />
 </div>
 
-<br/>
-
-<div id="figure-8" class="d-flex flex-column">
-  <div class="media-container">
-  <Image src={whatsapp_3rd_party_others_new} alt="The new privacy policy with the relevant passage underlined." />
-  </div>
-  <span class="mx-auto small">Fig. 8: The heaps of data now collected from your address book.</span>
+<div id="figure-8">
+  <ImageContainer image={img_whatsapp3rdpartyothersnew} style="width: 90%; height: auto;" alt="The new privacy policy with the relevant passage underlined" desc="Fig. 8: The heaps of data now collected from your address book" />
 </div>
-
-<br/>
 
 ###### Example
 
@@ -241,11 +193,8 @@ Signal for example has had a huge boost in popularity after being promoted by pu
 
 A funny side effect of this gain in popularity for Signal is the increase in <span style="color: #ff0882">unrelated stocks</span>, such as the *OTC:SIGL* (Signal Advance Inc.) stock prices.
 
-<div id="signal-advance-stock" class="d-flex flex-column">
-  <div class="media-container">
-    <Image src={signal_advance_inc_stock} alt="The stock price of SIGNAL ADVANCE INC." />
-  </div>
-  <span class="mx-auto small">Fig. 9: The <em>OTC:SIGL</em> stock price as of Jan. 12th 2021</span>
+<div id="signal-advance-stock">
+    <ImageContainer style="width: 90%; height: auto;" image={img_signaladvanceincstock} alt="The stock price of SIGNAL ADVANCE INC" desc="Fig. 9: The OTC:SIGL stock price as of Jan. 12th 2021" />
 </div>
 
 <br/>

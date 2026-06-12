@@ -9,13 +9,12 @@ keywords:
 - CTF
 - Write Up
 ---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
-import { Image } from "astro:assets";
-
-import login_page from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/login-page.png'
-import page_source from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/page-source.png'
-import result from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/result.gif'
-import step1 from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/step1.png'
+import img_loginpage from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/login-page.png'
+import img_pagesource from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/page-source.png'
+import img_result from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/result.gif'
+import img_step1 from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-static/step1.png'
 
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 
@@ -33,39 +32,23 @@ The challenge consists of finding the statically encoded credentials to then fin
 - [Step 3: Determining the password validation scheme](#step-03)
 - [Step 4: Finding the password](#step-04)
 
-<br/>
-
 ---
-
-<br/>
 
 <h4 id="step-01">Step 1: Visiting the page</h4>
 
-The first step in this challenge is actually finding it. As per the <code>$MACHINE_IP/robots.txt</code> file, the URL for the challenge is <code>$MACHINE_IP/hack-the-static-hard</code>, and as we load it up in a browser, we see the following page:
+The first step in this challenge is actually finding it. As per the `$MACHINE_IP/robots.txt` file, the URL for the challenge is `$MACHINE_IP/hack-the-static-hard`, and as we load it up in a browser, we see the following page:
 
-<div class="d-flex flex-row align-items-center media-container">
-    <div class="d-flex">
-        <Image src={login_page} style="width: 70%; height: auto;" alt="Challenge page" />
-    </div>
-</div>
-
-<br/>
+<ImageContainer image={img_loginpage} style="width: 70%; height: auto" alt="Challenge page" />
 
 As is intimated with the name of the challenge, we'll have to work with the page's static assets. And since it is a login behavior we are targeting (and not some hidden values), we'll take a look at anything related to scripting, usually in the form of some JavaScript.
 
-To check out the script, we will first check the source code for a <code>&lt;script&gt;</code> tag, and check if it is either loading a script from somewhere, or if it is embedded into the page. To do this, we right click the page and press <code>Inspect element</code>, which renders the following in the sidepane:
+To check out the script, we will first check the source code for a <code>&lt;script&gt;</code> tag, and check if it is either loading a script from somewhere, or if it is embedded into the page. To do this, we right click the page and press `Inspect element`, which renders the following in the sidepane:
 
-<div class="d-flex flex-row align-items-center media-container">
-    <div class="d-flex">
-        <Image src={page_source} style="width: 70%; height: auto;" alt="Challenge page source code" />
-    </div>
-</div>
+<ImageContainer image={img_pagesource} style="width: 70%; height: auto;" alt="Challenge page source code" />
 
-<br/>
+The two circled areas are the function that is called when the `"Login"` button is pressed, and the second is the actual script, which contains that function.
 
-The two circled areas are the function that is called when the <code>"Login"</code> button is pressed, and the second is the actual script, which contains that function.
-
-<br/>
+---
 
 <h4 id="step-02">Step 2: Deobfuscating the script</h4>
 
@@ -131,7 +114,7 @@ function checkUsernameAndPassword() {
 
 <br/>
 
-This sets up an array of strings and function names. Quite nice, let's rename all occurences of <code>_0x50da</code> in our code to <code>data</code>, because that will make things easier.
+This sets up an array of strings and function names. Quite nice, let's rename all occurences of `_0x50da` in our code to `data`, because that will make things easier.
 
 <div class="mx-auto">
 ```javascript
@@ -157,7 +140,7 @@ function checkUsernameAndPassword() {
 
 What does this section do? Well, it certainly doesn't make itself readable, that's for sure.
 
-What we can say is that it is an unnamed function that is directly executed, and it takes 2 parameters: our list of values and functions, and the number <code>0x72</code> (which is the hexadecimal value of <code>114</code>). So what we can do is rename <code>_0x374ae7</code> to <code>data</code> (again) and rename <code>_0x50da49</code> to <code>n</code>:
+What we can say is that it is an unnamed function that is directly executed, and it takes 2 parameters: our list of values and functions, and the number `0x72` (which is the hexadecimal value of `114`). So what we can do is rename `_0x374ae7` to `data` (again) and rename `_0x50da49` to `n`:
 
 <div class="mx-auto">
 ```javascript
@@ -178,7 +161,7 @@ function checkUsernameAndPassword() {
 ```
 </div>
 
-In the middle of our unnamed function we have a named function called <code>dataGetter49</code> (which just rolls of the tongue). It takes a value related to <code>n</code>, which is <code>++n</code>. What <code>++n</code> really is doing to <code>n</code> is saying: "Hey, before you go and do anything, here's a 1 on me". Effectively, at the moment it is then used, the value of <code>n</code> is <code>n + 1</code>.<br/>Since it seems to be muddling with the contents of data, we will rename the internal function to <code>dataMover</code>.
+In the middle of our unnamed function we have a named function called `dataGetter49` (which just rolls of the tongue). It takes a value related to `n`, which is `++n`. What `++n` really is doing to `n` is saying: "Hey, before you go and do anything, here's a 1 on me". Effectively, at the moment it is then used, the value of `n` is `n + 1`.<br/>Since it seems to be muddling with the contents of data, we will rename the internal function to `dataMover`.
 
 Let's make our code reflect those changes:
 
@@ -204,7 +187,7 @@ function checkUsernameAndPassword() {
 
 <br/>
 
-Finally, and it's a feature of JavaScript that is heavily abused when dealing with obfuscation, since all JavaScript variables have the <code>prototype</code> structure, you can call a function on them using the string accessor. This is what we see with <code>data['push'](...)</code>, which is the annoying way of writing <code>data.push(...)</code>.
+Finally, and it's a feature of JavaScript that is heavily abused when dealing with obfuscation, since all JavaScript variables have the `prototype` structure, you can call a function on them using the string accessor. This is what we see with `data['push'](...)`, which is the annoying way of writing `data.push(...)`.
 
 Let's follow up on those changes:
 
@@ -231,18 +214,11 @@ function checkUsernameAndPassword() {
 
 If we were to run lines 2 until 11 in a JavaScript console, and then ask the console to give us the contents of the data variable we would see the following:
 
-<div class="d-flex flex-row align-items-center media-container">
-  <div class="d-flex">
-    <Image src={step1} style="width: 70%; height: auto;" alt="New content in data." />
-  </div>
-</div>
-
-<br/>
+<ImageContainer image={img_step1} style="width: 70%; height: auto;" alt="New content in data" />
 
 We can run it as many times as we want, and that isn't going to change, so we might as well replace lines 2 until 11 of the entire script with:
 
 <div class="mx-auto">
-<markdown ngPreserveWhitespaces lineNumbers >
 ```javascript
 function checkUsernameAndPassword() {
   var data = ["password", "user_id", "value", "username", "V0hwQ05FNVhWVEJPUkdONlBUMD0",
@@ -251,11 +227,10 @@ function checkUsernameAndPassword() {
 // ...
 }
 ```
-</markdown>
 </div>
 <br/>
 
-Onwards then, let us now look at the function <code>dataGetter</code>:
+Onwards then, let us now look at the function `dataGetter`:
 
 <div class="mx-auto">
 ```javascript
@@ -273,16 +248,17 @@ function checkUsernameAndPassword() {
 }
 ```
 </div>
+
 <br/>
 
-What does this function do? Well, it takes two parameters. The first one is subtracted by <code>0x0</code>, which is the hexadecimal format for the number <code>0</code>.<br/>
+What does this function do? Well, it takes two parameters. The first one is subtracted by `0x0`, which is the hexadecimal format for the number `0`.<br/>
 This line is however far from useless: Given the dynamic nature of javascript, if a number were to be provided in string format, this simple operation would do the job of converting the value to a number for certain.
 
-What it then does is access our <code>data</code> variable (an array) at the index defined by the variable we just converted to a number, and then returns that value.
+What it then does is access our `data` variable (an array) at the index defined by the variable we just converted to a number, and then returns that value.
 
-The <code>_0x50da49</code> has absolutely no effect whatsoever on this function, and thus can be removed.
+The `_0x50da49` has absolutely no effect whatsoever on this function, and thus can be removed.
 
-As such, we've determined that the function acts as a data "getter" sorts, so we can rename it to <code>dataGetter</code>.
+As such, we've determined that the function acts as a data "getter" sorts, so we can rename it to `dataGetter`.
 
 Let's put these changes in writing:
 
@@ -383,7 +359,7 @@ function checkUsernameAndPassword() {
 
 <br/>
 
-Ok, this has gotten <strong>much</strong> better. But we can still play around with a few things, notably replacing the prototype string accessors, transforming the JavaScript WTF values into their actual counterparts (<code>![] => false</code> and <code>!![] => true</code>), and maybe transforming the ternary operators (which are one-liner if-else statements in the form of <code>condition ? do_if_condition_true : do_if_condition_false</code>) into actual if-else statements:
+Ok, this has gotten <strong>much</strong> better. But we can still play around with a few things, notably replacing the prototype string accessors, transforming the JavaScript WTF values into their actual counterparts (`![] => false` and `!![] => true`), and maybe transforming the ternary operators (which are one-liner if-else statements in the form of `condition ? do_if_condition_true : do_if_condition_false`) into actual if-else statements:
 
 <div class="mx-auto">
 ```javascript
@@ -415,17 +391,17 @@ function checkUsernameAndPassword() {
 
 Woow, far out! This has made the code readable, and lets us progress onto the next part!
 
-<br/>
+---
 
 <h4 id="step-03">Step 3: Determining the password validation scheme</h4>
 
 Well, we now have found the diagram for how this works. But what makes the engines turn? How does it work?
 
-If you would look at line 11, the first thing to notice is that it is looking for whether or not the username provided in the form is <code>"Admin"</code>.
+If you would look at line 11, the first thing to notice is that it is looking for whether or not the username provided in the form is `"Admin"`.
 
-If that condition is met, it will set the <code>isAdmin</code> hidden field to <code>true</code>.
+If that condition is met, it will set the `isAdmin` hidden field to `true`.
 
-Then we get into a condition we haven't "decoded" yet. Firstly, <code>window.btoa</code> and <code>window.atob</code> are functions that exist by default in JavaScript, so let us check what they produce with our two static values:
+Then we get into a condition we haven't "decoded" yet. Firstly, `window.btoa` and `window.atob` are functions that exist by default in JavaScript, so let us check what they produce with our two static values:
 
 <div class="mx-auto">
 ```javascript startLineNumber=13
@@ -442,14 +418,16 @@ if (window.btoa(document.getElementById("password").value) == "WHpCNE5XVTBORGN6P
 
 So this password validation scheme is the following:
 
-1. It checks whether or not the username entered <code>"Admin"</code>. It sets the <code>isAdmin</code> page value to 1, which here stands for true.
-2. If that is the case, it will then check whether the password entered is correct and if that is right, sets a hidden <code>user_id</code> field to some obscure value (<code>"XzB4NDI1MjE2"</code>), which is what the form uses to check for the password's validity.
-3. Otherwise, it resets the <code>isAdmin</code> page value.
-4. If the username was incorrect, it sets the hidden <code>user_id</code> field to a value that won't be recognised by the password validity checker.
+1. It checks whether or not the username entered `"Admin"`. It sets the `isAdmin` page value to 1, which here stands for true.
+2. If that is the case, it will then check whether the password entered is correct and if that is right, sets a hidden `user_id` field to some obscure value (`"XzB4NDI1MjE2"`), which is what the form uses to check for the password's validity.
+3. Otherwise, it resets the `isAdmin` page value.
+4. If the username was incorrect, it sets the hidden `user_id` field to a value that won't be recognised by the password validity checker.
+
+---
 
 <h4 id="step-04">Step 4: Finding the password</h4>
 
-Well, this doesn't help us much. Or does it? If you look at the naming convention of the two functions (<code>atob</code> and <code>btoa</code>) you might notice that they are two sides of the same coin. The one goes "[from] <code>a</code> to <code>b</code>" and the other goes "[from] <code>b</code> to <code>a</code>".
+Well, this doesn't help us much. Or does it? If you look at the naming convention of the two functions (`atob` and `btoa`) you might notice that they are two sides of the same coin. The one goes "[from] `a` to `b`" and the other goes "[from] `b` to `a`".
 
 So if we apply that principle to our code, and remember our first algebra classes, then we know that if you do one thing to one side, then you do the same to the other:
 
@@ -470,13 +448,9 @@ document.getElementById("password").value == "XzB4NWU0NDcz=="
 
 <br/>
 
-We now know of a username (<code>"Admin"</code>) and a password (<code>"XzB4NWU0NDcz=="</code>). Let's go grab the flag!
+We now know of a username (`"Admin"`) and a password (`"XzB4NWU0NDcz=="`). Let's go grab the flag!
 
-<div class="d-flex flex-row align-items-center media-container">
-  <div class="d-flex">
-    <Image src={result} style="width: 70%; height: auto;" alt="The flag." />
-  </div>
-</div>
+<ImageContainer image={img_result} style="width: 70%; height: auto;" alt="The flag" />
 
 <br/>
 

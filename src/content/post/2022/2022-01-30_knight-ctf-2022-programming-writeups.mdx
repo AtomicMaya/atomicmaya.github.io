@@ -16,6 +16,8 @@ keywords:
 - [Reverse the Answer](#reverse-the-answer)
 - [Square Sum](#square-sum)
 
+---
+
 <h4 id='loop-in-a-loop'>Loop in a Loop (100 points)</h4>
 
 This challenge was a simple code reversal challenge, written in C++.
@@ -54,7 +56,7 @@ But first, analysis:
 
 - The code takes a flag as input.
 - It then loops on all indices, and then initiates a second loop on all remaining indices.
-- The code inverts the characters at positions <code>j</code> and <code>j+1</code>.
+- The code inverts the characters at positions `j` and `j+1`.
 
 To reverse this we do the exact same loop with reversed parameters (i: length -> 0, j: length -> i), and then print the original flag:
 
@@ -74,8 +76,6 @@ The flag is <code>{`KCTF{b451c_pr06r4mm1ng}`}</code>
 
 ---
 
-<br/>
-
 <h4 id='reverse-the-answer'>Reverse the Answer (50 points)</h4>
 
 This is a coding challenge aimed at the resolution of a mathematical problem.
@@ -83,12 +83,12 @@ This is a coding challenge aimed at the resolution of a mathematical problem.
 The statement of the problem is the following:
 
 <div style='color: lime;'>
-- Let <code>x = 1</code>
-- Let <code>calculation = (x*(x+1)) + (2 *(x + 1))</code>
-- Let <code>reversed_calc = reversed number of calculation</code> [for example if <code>calculation = 123</code>, reversed_calc will be <code>321</code>]
-- If <code>reversed_calc</code> can be divided by <code>4</code>without reminder then <code>answer = answer + reversed_calc</code>
-- Repeat all the calculations until you have <code>x = 543</code>
-- The final answer will be the flag when <code>x = 543</code>
+- Let `x = 1`
+- Let `calculation = (x*(x+1)) + (2 *(x + 1))`
+- Let `reversed_calc = reversed number of calculation` [for example if `calculation = 123`, reversed_calc will be `321`]
+- If `reversed_calc` can be divided by `4`without reminder then `answer = answer + reversed_calc`
+- Repeat all the calculations until you have `x = 543`
+- The final answer will be the flag when `x = 543`
 - Flag Format: <code>{`KCTF{answer_here}`}</code> Example Flag : <code>{`KCTF{123}`}</code>
 </div>
 
@@ -112,11 +112,9 @@ print(answer)
 ```
 </div>
 
-This produces <code>12252696</code>, so the flag is <code>KCTF{12252696}</code>.
+This produces `12252696`, so the flag is <code>{`KCTF{12252696}`}</code>.
 
 ---
-
-<br/>
 
 <h4 id='square-sum'>Square Sum (50 points)</h4>
 

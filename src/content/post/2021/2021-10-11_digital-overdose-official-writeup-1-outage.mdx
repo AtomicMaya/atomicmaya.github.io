@@ -14,9 +14,9 @@ import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 import LocalLink from '../../../components/stub/link/LocalLink.astro'
 import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
 
-import { Image } from "astro:assets";
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
-import description from '../../../assets/images/post/2021/2021-10-11_ctf/outage/description.png'
+import img_description from '../../../assets/images/post/2021/2021-10-11_ctf/outage/description.png'
 
 This is the official developer writeup for the challenge 'Outage - The usual suspect' that was created for the <ExternalLink url='https://digitaloverdose.tech/ctf/2021-autumn' text='Digital Overdose Autumn 2021 CTF' />.
 
@@ -31,17 +31,11 @@ The two other writeups published for this event are:
 - [Context](#context)
 - [Writeup](#writeup)
 
-<br/>
-
 ---
-
-<br/>
 
 <h3 id='desc'>Challenge description and statistics</h3>
 
-<div class='media-container'>
-    <Image src={description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
-</div>
+<ImageContainer image={img_description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
 
 The text reads:
 
@@ -54,8 +48,6 @@ Out of the 63 correct submissions (first blood by <TwitterLink url='https://twit
 
 ---
 
-<br/>
-
 <h3 id='context'>Context</h3>
 
 There is a quite a common meme nowadays when it comes to availability outages on the Internet, because it usually comes down to the same exact type of failure, most accurately summed up by:
@@ -66,7 +58,6 @@ There is a quite a common meme nowadays when it comes to availability outages on
 
 ---
 
-<br/>
 <h3 id='writeup'>Writeup</h3>
 
 As such, the title was already enough for most people to solve the challenge. If the player was unaware of this though, that is where the description comes in: What data can you get about a website, without visiting it. Bonus points if it is "Like an address book".

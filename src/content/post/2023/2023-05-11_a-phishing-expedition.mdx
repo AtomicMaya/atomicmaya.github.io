@@ -10,3 +10,330 @@ keywords:
 - Reverse Engineering
 - Technical
 ---
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import GithubLink from '../../../components/stub/link/GithubLink.astro'
+import LocalLink from '../../../components/stub/link/LocalLink.astro'
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img_fpw from '../../../assets/images/post/2023/2023-05-11_a-phishing-expedition/fpw.png'
+import img_impersonation from '../../../assets/images/post/2023/2023-05-11_a-phishing-expedition/impersonation.png'
+
+"Well, this is new!" is probably one of the sentences going through your head right now, if you've been keeping track of this blog.
+
+And you would be entirely correct, as this is my first time collaborating with industry peers Emily Dennison (<TwitterLink url="https://twitter.com/nyxilar" text="@nylixar" />) and Oli Hough (<TwitterLink url="https://twitter.com/olihoughio" text="@olihoughio" />) to investigate what seems to be a sophisticated phishing kit, used by a threat actor we are uncertain about (possibly **0ktapus** or **Scatter Swine**), that we have in the meantime named **<em>SecuriPhish</em>**.
+
+But I'm getting ahead of myself.
+
+#### Summary
+
+- [A discovery of phishes](#a-discovery-of-phishes)
+- [Who were they phishing as?](#phishing-as)
+- [What were they phishing for?](#phishing-for)
+- [How the phish did it work?](#how-phish)
+  - [Payload - Stage 1](#stage-1)
+  - [Payload - Stage 2](#stage-2)
+- [Learning about the phishies](#how-phin)
+
+---
+
+<h4 id="a-discovery-of-phishes">A discovery of phishes</h4>
+
+All of this started a fateful <em>&lt;insert time of day here&gt;</em>, when one of my friends received a phishing email.
+
+This would be an ordinary everyday occurrence, had she not been using that email address for a singular service: the domain name registrar Namecheap.
+
+Did Namecheap get popped? Magic 8-ball says probably not.
+
+But Namecheap uses a service called SendGrid to send out emails, which is owned by Twilio, which was allegedly the victim of a breach on June 29th, 2022 (related article <ExternalLink url="https://techcrunch.com/2022/10/28/twilio-june-data-breach" text="here" />, related Twilio investigation <ExternalLink url="https://www.twilio.com/blog/august-2022-social-engineering-attack" text="here" />).
+
+So although not a definite link, it is quite possible my friend's email address was sourced from that breach.
+
+<ImageContainer image={img_impersonation} style="width: 70%; height: auto;" alt="A received phishing email" />
+
+But that's besides the point.
+
+---
+
+<h4 id="phishing-as">Who were they phishing as?</h4>
+But Namecheap, or DHL (as in the above email screenshot), were not the only companies that were impersonated.
+
+In fact, there's so many that we may actually want to categorize them in a non-exhaustive list:
+
+* Entertainment
+  * iTunes
+  * Apple
+  * Netflix
+* Tech
+  * Aruba
+  * Hostinger
+  * Strato
+* Cryptocurrency
+  * Ledger
+  * Metamask
+* Banking
+  * UBS
+  * Banque Agricole
+  * Postbank
+  * BNP Paribas
+  * ...
+* Postal Services
+  * DHL
+  * Deutsche Post
+  * UPS
+  * ...
+
+So, that is a lot of well-known names... <g-emoji class="g-emoji" alias="telescope" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f605.png">😅</g-emoji>
+
+And since the emails can <em>look</em> convincing, some people may be ensnared into the phishing campaign.
+
+I've been asked not to disclose the URL's and scans thereof at this time.
+
+---
+
+<h4 id="phishing-for">What were they phishing for?</h4>
+
+From what we've seen, the main target of these phishes involves the user logging into their account.
+
+This would point to an operation aiming to harvest credentials, and possibly benefit from the ever so frequent scourge that is password reuse between services.
+
+In the end, the key motivation to this kind of operation is usually to be able to take control of people's accounts and gain from it financially.
+
+---
+
+<h4 id="how-phish">How the phish did it work?</h4>
+
+So! This is where we get to the technical bits. (The part you've assumedly <em>all</em> been impatiently waiting for <g-emoji class="g-emoji" alias="telescope" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f609.png">😉</g-emoji>)
+
+Most of the affected domains have a redirect chain to reach a specific domain:
+
+```js showLineNumbers=false
+window.location.replace("https://$DOMAIN/STDWGuWIRi7Y2loN94MZzgjEiADRVnSiC90msq4aoQmOKFZay6ZuH3H5BpvcLh/")
+```
+
+<br/>
+The domain, once more, isn't shared.
+
+The string that follows the domain is presumably either static or fully random. The case for the former would be to limit indexing and accidental discovery, and the latter would be to track connections to perform anti-analysis actions.
+
+<h5 id="stage-1">Payload - Stage 1</h5>
+
+This domain hosts a script which is the first stage in a multi-stage loader, shown below in a decompressed way:
+
+```js
+var _0xc67e=["","split","0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/","slice","indexOf","","",".","pow","reduce","reverse","0"];
+function _0xe53c(d,e,f){
+  var g=_0xc67e[2][_0xc67e[1]](_0xc67e[0]);
+  var h=g[_0xc67e[3]](0,e);
+  var i=g[_0xc67e[3]](0,f);
+  var j=d[_0xc67e[1]](_0xc67e[0])[_0xc67e[10]]()[_0xc67e[9]](
+    function(a,b,c){
+      if(h[_0xc67e[4]](b)!==-1)
+        return a+=h[_0xc67e[4]](b)*(Math[_0xc67e[8]](e,c))
+    }
+    ,0
+  );
+  var k=_0xc67e[0];
+  while(j>0){
+    k=i[j%f]+k;
+    j=(j-(j%f))/f
+  }
+  return k||_0xc67e[11]
+}
+
+eval(function(h,u,n,t,e,r){
+  r="";
+  for(var i=0,len=h.length;i< len;i++){
+    var s="";
+    while(h[i]!==n[e]){
+      s+=h[i];
+      i++
+    }
+    for(var j=0;j< n.length;j++)
+      s=s.replace(new RegExp(n[j],"g"),j);
+    r+=String.fromCharCode(_0xe53c(s,e,10)-t)
+  }
+  return decodeURIComponent(escape(r))
+}("HrHTvrJHTvvJvTvrvHTvrJJTvvJrT /* elision */ rTvvvvT",93,"JrvHThdNm",45,4,28))
+```
+
+<br/>
+
+So... what the heck is this?
+
+Well it's obfuscated JavaScript! But beyond that it's an initial anti-analysis feature.
+
+Let's start from the top of the call stack, which is the anonymous `function (h,u,n,t,e,r)`. We instantly see that the result of the function is evaluated, which means it is probably a different obfuscated script (and as such needs to instantly be modified in order to avoid executing anything potentially malicious on our machine).
+
+```js
+eval(function(h,u,n,t,e,r){
+  r="";
+  for(var i=0,len=h.length;i< len;i++){
+    var s="";
+    while(h[i]!==n[e]){
+      s+=h[i];
+      i++
+    }
+    for(var j=0;j< n.length;j++)
+      s=s.replace(new RegExp(n[j],"g"),j);
+    r+=String.fromCharCode(_0xe53c(s,e,10)-t)
+  }
+  return decodeURIComponent(escape(r))
+}("HrHTvrJHTvvJvTvrvHTvrJJTvvJrT /* elision */ rTvvvvT",93,"JrvHThdNm",45,4,28))
+```
+
+<br/>
+
+The string `r` defined at line 2 is the accumulator for the deobfuscated script.
+
+The function the iterates over the entire provided string, and fills the `s` buffer (line 4) up until it hits the character `'H'` (or `n[e]` a.k.a. `n[4]`), showing us what the delimiter is.
+
+The function then iterates over the `s` buffer, replacing the characters also found in the provided `n` string by the index value at which they are found.
+
+For the string `'vrJH'` we can then see the following progression:
+
+```txt showLineNumbers=false
+vrJH vr0H
+vr0H v10H
+v10H 210H
+210H 2103
+2103 2103
+2103 2103
+2103 2103
+2103 2103
+2103 2103
+```
+
+<br/>
+
+This final string is then injected into `_0xe53c`, a number to ASCII character code converter:
+
+```js
+function _0xe53c(d,e,f){
+  var g="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/".split("");
+  var h=g.slice(0,e);
+  var i=g.slice(0,f);
+  var j=d.split("").reverse().reduce(
+    function(a,b,c){
+      if (h.indexOf(b)!==-1)
+        return a+=h.indexOf(b)*(Math.pow(e,c))
+      },0
+  );
+  var k="";
+  while(j>0){
+    k=i[j%f]+k;j=(j-(j%f))/f
+  }
+  return k||"0"
+}
+```
+
+<br/>
+
+Let's break this down:
+
+* `g` is a character alphabet.
+* `h` is a slice of `g` based on `e`: `['0','1','2','3']`
+* `i` is a slice of `g` based on `f`: `['0','1','2','3','4','5','6','7','8','9']`
+* `j` takes every character in the provided string and check whether it is in `['0','1','2','3']` (`h`) works with a quaternary representation conversion (base 4).
+
+That last bit wasn't really clear, so let's show the process that the code would use on the `vrJH` sequence defined earlier, which was initially converted to `2103`:
+
+```txt showLineNumbers=false
+0+=[0,1,2,3].indexOf(3)*Math.pow(4,0)       Add 3   (3*1)
+3+=[0,1,2,3].indexOf(0)*Math.pow(4,1)       Add 0   (0*4)
+3+=[0,1,2,3].indexOf(1)*Math.pow(4,2)       Add 16  (1*16)
+19+=[0,1,2,3].indexOf(2)*Math.pow(4,3)      Add 128 (2*64)
+Final value: 147
+```
+
+<br/>
+
+Okay, but that's just a single number, what happens next?
+
+Well, it gets an arbitrary 45 subtracted from it, then gets converted to ASCII text.
+
+So in finality our sequence looks like so:
+
+```txt showLineNumbers=false
+Payload:    HrHTvrJHTvvJvTvrvHTvrJJTvvJrTvrrvTvrHJTvrvHTrJHrTvrrJTvrJvTvvJrTvrJHTrHHrTrHHrTvrrvTvrJJTvJHvTvvJJTvvJJTvrHJTrrrrTrrrvTvvvJT
+Strip:      HrH | (T) | vrJH | (T) | vvJv | (T) | vrvH | (T) | vrJJ | (T) | vvJr | (T) | vrrv | (T) ...
+Convert:    313 |       2103 |       2202 |       2123 |       2100 |       2201 |       2112 | ...
+Pre-ASCII:   55 |        147 |        162 |        155 |        144 |        161 |        150 | ...
+Pre-ASCII:   10 |        102 |        117 |        110 |         99 |        116 |        105 | ...
+Post-ASCII:  \n |          f |          u |          n |          c |          t |          i | ...
+```
+
+<br/>
+
+... and we have the start of another function!
+
+<h5 id="stage-2">Payload - Stage 2</h5>
+
+The second stage was much longer, so I won't go posting walls of code here, but I will summarize what it does and how it works.
+
+This script is focused primarily on fingerprinting the browser and the underlying device, in order to complicate the life of people trying to analyze it.
+
+Several functions are used to test that the browser is an authentic browser, and not some form of emulation:
+
+  * `testPRX`: Tests a feature known as function proxying, which allows standard operations  in objects to be redefined as well as add new custom behavior to them.
+  * `compareWorker`: Tests a feature that allows the creation of worker threads.
+  * `getFPW`: Gets a list of keywords defined in JavaScript
+  * `iframeTest`: Checks whether some scripts can be executed in an iframe, allowing for some form of XSS.
+  * `isFakeCanvas`: Checks whether or not the browser has a native canvas or emulates one instead.
+  * `handleOrientation`: Determines the orientation status of the screen.
+  * `getPointerType`: Gets the type of pointer that the browser uses.
+  * `getHoverType`: Retrieves all hover methods supported by the browser.
+  * `cssHairlinesSupport`: Checks whether or not the browser supports the hairline feature.
+  * `is_touch_device`: Checks whether the device is a touch device like a phone or tablet.
+  * `getMethods`: Gets a list of the internal functions.
+  * `getAllMethods`: Gets a list of all the defined functions.
+  * `optimizeText`: Unknown because it crashed the browser when I ran it through the debugger.
+  * `checkCondition`: Checks whether the above points qualify a browser to be a valid target.
+
+<ImageContainer image={img_fpw}  style="width: 70%; height: auto;" alt="The fingerprint keywords" />
+
+Everything then gets grouped up in an `fp_collect` parameter (below), which is then sent off for validation, upon which our investigation ended because we were being redirected to a sinkhole endpoint.
+
+```json
+{
+  5:"fgavbCuphbGknz",
+  rfyns:"rpvirq_uphbg_fv",rfyns:"fravyevnUffp",
+  "eribu":"eribu","ravs":"ergavbc",
+  ["SQC av-gyvho gvXorJ","erjrvI SQC rtqR gsbfbepvZ","erjrvI SQC zhvzbeuP","erjrvI SQC rzbeuP","erjrvI SQC"]:"favthyc",
+  {
+    6:"bvgnEyrkvCrpvirQj",97:"ugcrQyrkvCf",97:"ugcrQebybPf",7856:"gutvrUyvniNf",5746:"ugqvJyvniNf",5356:"gutvrUf",5746:"ugqvJf",614:"gutvrUp",978:"ugqvJp",5:"grfssBLrtnCj",5:"grfssBKrtnCj",
+    336:"LarrepFj",5746-:"KarrepFj",978:"ugqvJeraaVj",5746:"ugqvJerghBj",7856:"gutvrUerghBj",
+    614:"gutvrUeraaVj"
+  }:"arrepf",
+  "25658557":"ohFgphqbec",
+  rheg:"ravYab",
+  "raba":"gartNerfHynvprcf",
+  "69.2306.5.566/tqR 18.280/vensnF 5.5.5.566/rzbeuP (bxprT rxvy ,YZGUX) 18.280/gvXorJryccN (91k ;91avJ ;5.56 GA fjbqavJ) 5.0/nyyvmbZ":"gartNerfh",
+  "78avJ":"zebsgnyc",
+  ["ar","FH-ar"]:"frtnhtany","FH-ar":"rtnhtany",
+  16:"lpareehpabPrenjqenu",6-:"lebzrZrpvirq",6-:"abvgngarveBgrO",5:"abvgngarveBPq",
+  rheg:"fnianPqrgfheg",
+  330937:"tavzvg",
+  []:"bffnpvCcs",
+  rfyns:"qenbOlrx",rfyns:"ebeeRpbQpeFrznesV",
+  [6-,6-]:"lerggno",
+  "61782s5r91nr0o949o7q4sp25764s19o":"jcs","s6p6q255n59n1n768876406r03o9o9pq":"ocs"
+}
+```
+
+---
+
+<h4 id="how-phin">Learning about the phishies</h4>
+
+Actors involved in large scale phishing are definitely getting more sophisticated as time goes on.
+
+Phishing kits and spellcheck make it much harder for the average person to detect a phishing email, and these are things that are available to the highly motivated (and well-funded) threat actor. Mind you, we are not talking about the "You have $35M in an account from a recently departed relative in Kenya" type phish, although those remain prevalent.
+
+The scale of breaches leading to such phishing campaigns is massive, which is why we don't necessarily see them as often.
+
+Actions like single-service email addresses allow for immediate identification of the exposed service, which can lead to a threat actor burning a breach, which they may not always be inclined to do.
+
+From a technical perspective, phishing kit developers are getting better at thwarting people performing analysis, although this is reliant on analysts not having machines specifically designed for being burnt.
+
+Additionally, I could see from the code that many of the anti-analysis features have been cobbled together from different sources, so these are things that exists in service codebases "somewhere".

@@ -26,15 +26,19 @@ const years = [...new Set(postsLists.map(e => e.data.pubDate.getFullYear()))].so
 			color: #f7f7f7;
 			border: 1px solid #f7f7f799;
 		}
+		
+		hr {
+			margin: 1rem 0 !important;
+		}
 	}
 </style>
 <MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	{
 		years.map(y => 
-		<h2 class="mt-1 year-section text-center">{y}</h2>
-		<hr/>
+		<h2 class="my-0 year-section text-center">{y}</h2>
+		<hr class="my-2" />
 		<section>
-			<div class="d-flex flex-row flex-wrap">
+			<div class="d-flex flex-column">
 				{
 					posts.filter((post) => post.data.pubDate.getFullYear() == y).map((post) => 
 						<PostCard {...post} />
@@ -42,7 +46,7 @@ const years = [...new Set(postsLists.map(e => e.data.pubDate.getFullYear()))].so
 				}
 			</div>
 		</section>
-		<hr/>
+		<hr class="my-3" />
 		)
 	}
 </MainBody>

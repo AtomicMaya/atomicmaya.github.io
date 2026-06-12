@@ -7,16 +7,14 @@ keywords:
 - OSINT
 - CTF
 ---
-
-import { Image } from "astro:assets";
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
 import TwitterLink from '../../../components/stub/link/TwitterLink.astro';
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro';
-import LocalLink from '../../../components/stub/link/LocalLink.astro';
 
-import discord_layout from '../../../assets/images/post/2021/2021-02-22_tracelabs-with-hacksouth/discord-layout.png'
-import excel_case from '../../../assets/images/post/2021/2021-02-22_tracelabs-with-hacksouth/excel-case.png'
-import excel_stats from '../../../assets/images/post/2021/2021-02-22_tracelabs-with-hacksouth/excel-stats.png'
+import img_discordlayout from '../../../assets/images/post/2021/2021-02-22_tracelabs-with-hacksouth/discord-layout.png'
+import img_excelcase from '../../../assets/images/post/2021/2021-02-22_tracelabs-with-hacksouth/excel-case.png'
+import img_excelstats from '../../../assets/images/post/2021/2021-02-22_tracelabs-with-hacksouth/excel-stats.png'
 
 On the weekend of the 22nd, I participated once more in the TraceLabs OSINT CTF. For context, this CTF is a bit different from other CTF's. It's not something where you compromise machines or map some networks. It's something where you actually try to dig up as much information as possible on missing people, as per the cases provided to TraceLabs by various law enforcement departments.
 
@@ -35,11 +33,7 @@ After participating in the event, I thought it would be nice to have a bit of an
 - [Much ado about documentation](#much-ado-about-docs)
 - [My personal conclusions](#my-conclusions)
 
-<br/>
-
 ---
-
-<br/>
 
 <h4 id="the-before-times">Pre-emptive organization</h4>
 
@@ -55,15 +49,9 @@ Another part of the preparation stage is to get all of the tools fired up and re
 
 The other thing with this VM is that it also contains the browser on which my nurtured sock account resides. One thing that beginner OSINTeers will often get trapped by is the creation of social media accounts. Most platforms, for example Facebook, have systems in place to detect irregular account creation, which includes the usage of less trusted email domains, or certain significant activity patterns. I will divulge my ways in an upcoming post, but I will first need to create another sock account and document along the way -- I would not want to burn my main sock account.
 
-<br/>
-
 Finally, the last important step is getting all of the CTF team members on Discord. Why Discord? Well, it allows for some instant communication, screen sharing and is also pretty convenient and comfortable for us to use. We have it built quite simply:
 
-<div class="media-container">
-    <Image src={discord_layout} style="width: auto; max-height: 300px;"  alt="A snapshot of our Discord channel layout in our CTF server."/>
-</div>
-
-<br/>
+<ImageContainer image={img_discordlayout} style="width: auto; max-height: 300px;" alt="A snapshot of our Discord channel layout in our CTF server"/>
 
 We then have one category per case assigned, for eventual evidentiary sanity checks -- which is the process of asking a teammate to check whether what we found is conclusive or whether it is a red herring.
 
@@ -115,23 +103,11 @@ Having a template Excel workbook to start with is ideal, and it helps keep track
 
 Additionally I use background colors to see what the status of a piece of intelligence is: <strong><span style="background-color: white; color: black;padding: 2px;">WHITE</span></strong> means unsubmitted, <strong><span style="background-color: orangered; color: black; padding: 2px;">ORANGE</span></strong> means submitted, <strong><span style="background-color: #70AD47; color: black; padding: 2px;">GREEN</span></strong> means accepted and <strong><span style="background-color: red; color: black; padding: 2px;">RED</span></strong> means rejected.
 
-<br/>
-
-<div class="media-container">
-    <Image src={excel_case} style="width: 70%; height: auto;" alt="A redacted case information aggregation spreadsheet from the TraceLabs CTF." />
-</div>
-
-<br/>
+<ImageContainer image={img_excelcase} style="width: 70%; height: auto;" alt="A redacted case information aggregation spreadsheet from the TraceLabs CTF" />
 
 This all feeds into a statistics Excel page which I use to see my contribution to the event (as a not-so-veiled ego boosting technique). It shows the score on a per case basis and the amount of evidence accepted per case too.
 
-<br/>
-
-<div class="media-container">
-    <Image src={excel_stats} style="width: 70%; height: auto;"  alt="The statistics spreadsheet from the TraceLabs CTF." />
-</div>
-
-<br/>
+<ImageContainer image={img_excelstats} style="width: 70%; height: auto;" alt="The statistics spreadsheet from the TraceLabs CTF" />
 
 The main advantage to this technique is that one only needs to copy-paste the data into the corresponding fields to submit the intelligence, making it all in all quite easy to deal with, without forgetting to submit any intelligence.
 

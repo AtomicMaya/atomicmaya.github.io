@@ -15,10 +15,10 @@ import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 import LocalLink from '../../../components/stub/link/LocalLink.astro'
 import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
 
-import { Image } from "astro:assets";
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
-import description from '../../../assets/images/post/2021/2021-10-11_ctf/portal/description.png'
-import hint from '../../../assets/images/post/2021/2021-10-11_ctf/portal/hint.png'
+import img_description from '../../../assets/images/post/2021/2021-10-11_ctf/portal/description.png'
+import img_hint from '../../../assets/images/post/2021/2021-10-11_ctf/portal/hint.png'
 
 This is the official developer writeup for the challenge "A door by any other name" that was created for the <ExternalLink url='https://digitaloverdose.tech/ctf/2021-autumn' text='Digital Overdose Autumn 2021 CTF' />.
 
@@ -33,17 +33,11 @@ The two other writeups published for this event are:
 - [Context](#context)
 - [Writeup](#writeup)
 
-<br/>
-
 ---
-
-<br/>
 
 <h3 id='desc'>Challenge description and statistics</h3>
 
-<div class='media-container'>
-	<Image src={description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
-</div>
+<ImageContainer image={img_description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
 
 The text reads:
 
@@ -52,8 +46,6 @@ Description Intentionally Left Blank
 Out of the 41 correct submissions (First blood by BTeam), this challenge was rated 100% by all contestants.
 
 ---
-
-<br/>
 
 <h3 id='context'>Context</h3>
 
@@ -65,8 +57,6 @@ It is seen in various areas in the game and is intended to warn the player that 
 
 ---
 
-<br/>
-
 <h3 id='writeup'>Writeup</h3>
 
 The challenge page itself has no description (as it was marked "Intentionally Left Blank"). The title however, tells players to look for synonyms of the word door ("A door by any other name"). Among those synonyms is the word "Portal".
@@ -77,12 +67,9 @@ The category description was "T​​​​​​​​​​​​​​​​�
 
 Well, do you not see what is going on in this text? No? That is intended, perhaps you need to look at what you don't see. This, helpfully, can be viewed by inspecting the concerned element:
 
-<div class='media-container'>
-  <Image src={hint} style="width: 80%; height: auto" alt='ZWS in the code' />
-</div>
+<ImageContainer image={img_hint} style="width: 80%; height: auto" alt='ZWS in the code' />
 
-<br/>
-There exist a number of very interesting characters called "Zero-width space" characters, which can be found in unicode: <code>U+200B</code>, <code>U+200C</code>, <code>U+2060</code> and <code>U+FEFF</code>.
+There exist a number of very interesting characters called "Zero-width space" characters, which can be found in unicode: `U+200B`, `U+200C`, `U+2060` and `U+FEFF`.
 
 By pasting the text into a notepad, or a scripting language terminal, we can then work with the zero-width spaces in this text.
 

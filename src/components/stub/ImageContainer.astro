@@ -6,13 +6,14 @@ interface Props {
     image: ImageMetadata;
     alt: string;
     desc?: string;
+    nodesc?: boolean;
     style: string;
 }
 
-const { image, desc, alt, style } = Astro.props;
+const { image, desc, nodesc, alt, style } = Astro.props;
 ---
 
 <div class='media-container mb-3'>
   <Image src={image} style={style} alt={alt} />
-  <span><em>{desc ?? alt}</em></span>
+  {!nodesc && <span class="small text-center mt-1"><caption><em>{desc ?? alt}</em></caption></span>}
 </div>

@@ -14,20 +14,21 @@ import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 import LocalLink from '../../../components/stub/link/LocalLink.astro'
 
 import { Image } from "astro:assets";
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
-import md5 from '../../../assets/images/post/2022/2022-01-30_misc-challenges/MD5.png'
-import gif from '../../../assets/images/post/2022/2022-01-30_misc-challenges/challenge.gif'
+import img_md5 from '../../../assets/images/post/2022/2022-01-30_misc-challenges/MD5.png'
+import img_gif from '../../../assets/images/post/2022/2022-01-30_misc-challenges/challenge.gif'
 
-<h4>Write-ups</h4>
+#### Write-ups
 
 - [Find Pass Code - 2](#find-pass-code-2)
 - [QR Code from the Future](#qr-code-from-the-future)
 
-<hr/>
+---
 
 <h4 id='find-pass-code-2'>Find Pass Code - 2 (150 points)</h4>
 
-This challenge was in the Web category, and relied on knowledge from the first challenge, mainly that it required the userr to append <code>?source</code> to the URL in order to print out the page's PHP source code.
+This challenge was in the Web category, and relied on knowledge from the first challenge, mainly that it required the userr to append `?source` to the URL in order to print out the page's PHP source code.
 
 This yields the following code:
 
@@ -57,29 +58,26 @@ if (isset($_GET["source"])) {
 ```
 </div>
 
-The first thing that struck me was the fact that it was comparing the passcode entered against its MD5 hash. However, with one-way hashing functions, that shouldn't be the case (<code>H(X) != X</code>).
+The first thing that struck me was the fact that it was comparing the passcode entered against its MD5 hash. However, with one-way hashing functions, that shouldn't be the case (`H(X) != X`).
 
-However, we can see the <code>$old_pass_codes = array("0e215962017", "0e730083352", "0e807097110", "0e840922711");</code> array, which piqued my curiosity.
+However, we can see the `$old_pass_codes = array("0e215962017", "0e730083352", "0e807097110", "0e840922711");` array, which piqued my curiosity.
 
 I'd remembered a story on Twitter about magic hashes, habitually preceded by the number 0e. (More here: <ExternalLink url='https://www.whitehatsec.com/blog/magic-hashes/' text='Magic Hashes' />)
 
 So I searched for an index of magic hashes until I found this website: <ExternalLink url='https://blog.csdn.net/u013512548/article/details/108213295' text='魔术hash on CSDN' />.
 
-<div class='d-flex media-container'>
-  <Image src={md5} style="width: 60%; height: auto;" alt="Magic MD5 hashes" />
-</div>
+<ImageContainer image={img_md5} style="width: 60%; height: auto;" alt="Magic MD5 hashes" />
 
-There were the 3 first hashes, so I took the fourth: <code>0e1137126905</code>.
+There were the 3 first hashes, so I took the fourth: `0e1137126905`.
 
 Enter that into the platform and we get the flag: <code>{`KCTF{ShOuD_wE_cOmPaRe_MD5_LiKe_ThAt__Be_SmArT}`}</code>.
 
-<hr/>
+---
 
 <h4 id='qr-code-from-the-future'>QR Code from the Future (100 points)</h4>
 
-<div class='d-flex media-container'>
-  <Image src={gif} style="width: 40%; height: auto;" alt="provided QR-code GIF" />
-</div>
+<ImageContainer image={img_gif} style="width: 40%; height: auto;" alt="provided QR-code GIF" />
+
 
 The first step is to de-animate the GIF. For this, we can go to EZGIF or use FFMPEG, like so:
 
@@ -90,7 +88,7 @@ ffmpeg.exe -i .\QR_Code_From_The_Future.gif -vsync 0 gif-images/%02d.png
 ```
 </div>
 
-We can then use zbarimg (from the <code>zbar-tools</code> package) to read the QR codes (zbarimg socket errors can be expected and ignored):
+We can then use zbarimg (from the `zbar-tools` package) to read the QR codes (zbarimg socket errors can be expected and ignored):
 
 <div class='d-flex media-container'>
 ```sh
@@ -101,11 +99,11 @@ rm gif_contents
 ```
 </div>
 
-FFMPEG takes the image provided with the GIF as input (<code>-i</code>), synchroneously (<code>-vsync 0</code>). It then saves it to <code>gif-images</code>, a directory that needs to exist.
+FFMPEG takes the image provided with the GIF as input (`-i`), synchroneously (`-vsync 0`). It then saves it to `gif-images`, a directory that needs to exist.
 
-<code>%02</code> is so we don't have a flag out of order, it is just the number of leading zeros for that.
+`%02` is so we don't have a flag out of order, it is just the number of leading zeros for that.
 
-Find checks all files in the directory gif-images that are PNG files. We feed each of these images to zbarimg which produces a code, which we store, remove the QR-Code: segment preceding it and append it to <code>gif_contents</code>.
+Find checks all files in the directory gif-images that are PNG files. We feed each of these images to zbarimg which produces a code, which we store, remove the QR-Code: segment preceding it and append it to `gif_contents`.
 
 This produces the string <code>{`}pvznalq_bg_pvgngf_zbes_qriybir_gbt_rqbp_ED{SGPX`}</code>, which, when flipped, gives the string <code>{`XPGS{DE_pbqr_tbg_ribyirq_sebz_fgngvp_gb_qlanzvp}`}</code>, which itself is a simple ROT13 encryption.
 

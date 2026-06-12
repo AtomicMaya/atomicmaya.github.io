@@ -201,3 +201,7 @@ details[open] {
 details > *:not(summary) {
   margin-top: 0.5em;
 }
+
+hr {
+    margin: 2rem 0 !important;
+}

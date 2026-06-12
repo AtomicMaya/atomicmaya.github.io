@@ -31,8 +31,6 @@ import img_stringsxml from '../../../assets/images/post/2022/2022-01-30_rev-chal
 
 ---
 
-<br/>
-
 <h4 id='baby-shark'>Baby Shark (50 points)</h4>
 
 <p style='color: lime;'>During my holiday in Bahamas, I met a baby shark. The shark wanted to sing me something but couldn't. Can you sing that for me?</p>
@@ -49,11 +47,11 @@ We obtain a ZIP which we then unpack, revealing the following file structure:
 
 We can see a few interesting Java files, which we'll get into quickly.
 
-The first is <code>Flag.java</code>, it is not very interesting:
+The first is `Flag.java`, it is not very interesting:
 
 <ImageContainer image={img_flagcode} style="width: 80%; height: auto;" alt="A few false flags." />
 
-In <code>Strings.java</code> we can see what resembles strings that are Base64 encoded:
+In `Strings.java` we can see what resembles strings that are Base64 encoded:
 
 <ImageContainer image={img_stringscode} style="width: 80%; height: auto;" alt="A few false flags." />
 
@@ -74,31 +72,31 @@ We obtain a ZIP which we then unpack, revealing the following file structure:
 
 We can see a few interesting Java files, which we'll get into quickly.
 
-The first is <code>MainActivity.java</code>, it contains a few interesting lines:
+The first is `MainActivity.java`, it contains a few interesting lines:
 
 <ImageContainer image={img_mainactivity} style="width: 80%; height: auto;" alt="The code for MainActivity.java." />
 
-We can see that this code calls a number of functions in the <code>StringHandler</code> class from the <code>StringHandler.java</code> file, in the following order:
+We can see that this code calls a number of functions in the `StringHandler` class from the `StringHandler.java` file, in the following order:
 
 <code>{`$(S1){$(S3)_$(S2)_$(S4)}`}</code>
 
 <ImageContainer image={img_stringhandler} style="width: 80%; height: auto;" alt="The code for StringHandler.java." />
 
-- <code>S1</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f112s5</code>
-- <code>S2</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f113s6</code>
-- <code>S3</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f114s7</code>
-- <code>S4</code> gets a value defined in class <code>C074SR</code> where the identifier is <code>f115s8</code>
+- `S1` gets a value defined in class `C074SR` where the identifier is `f112s5`
+- `S2` gets a value defined in class `C074SR` where the identifier is `f113s6`
+- `S3` gets a value defined in class `C074SR` where the identifier is `f114s7`
+- `S4` gets a value defined in class `C074SR` where the identifier is `f115s8`
 
 Those values are:
 
 <ImageContainer image={img_c0754code} style="width: 80%; height: auto;" alt="The code for class C0754RCode." />
 
-We look for any identifier with those numbers (<code>grep</code> is useful), and find some in <code>public.xml</code>:
+We look for any identifier with those numbers (`grep` is useful), and find some in `public.xml`:
 
 <ImageContainer image={img_publicxml} style="width: 80%; height: auto;" alt="The public.xml file." />
 
-We then look for the names provided in <code>strings.xml</code>:
+We then look for the names provided in `strings.xml`:
 
 <ImageContainer image={img_stringsxml} style="width: 80%; height: auto;" alt="The strings.xml file." />
 
-In <code>StringHandler.java</code> we see that the values for <code>S2</code>, <code>S3</code> and <code>S4</code> are then reversed, which makes the final flag:<br/><code>{`$(S1){$(S3)_$(S2)_$(S4)}`}</code> -> <code>{`KCTF{aNdR01D_s1MpL3_r3V3rS3}`}</code>
+In `StringHandler.java` we see that the values for `S2`, `S3` and `S4` are then reversed, which makes the final flag:<br/><code>{`$(S1){$(S3)_$(S2)_$(S4)}`}</code> -> <code>{`KCTF{aNdR01D_s1MpL3_r3V3rS3}`}</code>

@@ -10,14 +10,13 @@ keywords:
 - Development
 - Web
 ---
-
 import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 import LocalLink from '../../../components/stub/link/LocalLink.astro'
 
-import { Image } from "astro:assets";
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
-import description from '../../../assets/images/post/2021/2021-10-11_ctf/c4/description.png'
+import img_description from '../../../assets/images/post/2021/2021-10-11_ctf/c4/description.png'
 
 This is the official developer writeup for the challenge "C1 - I think this should be C4" that was created for the <ExternalLink url='https://digitaloverdose.tech/ctf/2021-autumn' text='Digital Overdose Autumn 2021 CTF' />.
 
@@ -37,9 +36,8 @@ The two other writeups published for this event are:
 <br/>
 
 <h3 id='desc'>Challenge description and statistics</h3>
-<div class='media-container'>
-    <Image src={description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
-</div>
+
+<ImageContainer image={img_description} style="width: 80%; height: auto;" alt="Challenge description on RACTF" />
 
 The text reads:
 
@@ -51,8 +49,6 @@ Out of the 5 correct submissions (First blood by Ruy-Lopez), this challenge was 
 
 ---
 
-<br/>
-
 <h3 id='context'>Context</h3>
 
 For a while now I have been producing source analysis / reversal challenges at various CTFs, be it AppSecVillage@RSACon, AppSecVillage@DefCon29, ShellConLA, or others.
@@ -63,21 +59,19 @@ However, this is not steganography, and some work is involved.
 
 ---
 
-<br/>
-
 <h3 id='writeup'>Writeup</h3>
 
 The challenge is provided in the form of 4 files:
 
-- <code>index.html</code>: The core markup file, it deals with setting up the various challenge elements.
-- <code>styles.css</code>: The styles sheet, which can be safely ignored.
-- <code>f0.js</code>: The main script, it deals with reacting to user input and providing <code>m</code> - an empty dictionary - to the ecosystem.
-- <code>f1.js</code>: Adds an anonymous namespace into m and calls the comparison function therein. This file is the big fish, and is heavily obfuscated.
+- `index.html`: The core markup file, it deals with setting up the various challenge elements.
+- `styles.css`: The styles sheet, which can be safely ignored.
+- `f0.js`: The main script, it deals with reacting to user input and providing `m` - an empty dictionary - to the ecosystem.
+- `f1.js`: Adds an anonymous namespace into m and calls the comparison function therein. This file is the big fish, and is heavily obfuscated.
 
 
 <h4>Deobfuscation</h4>
 
-The code, as partially seen below, is heavily obfuscated using something called JSFuck. JSFuck is an esoteric language that is composed of the characters <code>[]()!+</code>. For issues of content size (and to mess up automatic deobfuscators) I have also added the <code>*</code>.
+The code, as partially seen below, is heavily obfuscated using something called JSFuck. JSFuck is an esoteric language that is composed of the characters `[]()!+`. For issues of content size (and to mess up automatic deobfuscators) I have also added the `*`.
 
 <div class="d-flex media-container">
 ```js
@@ -89,29 +83,29 @@ The code, as partially seen below, is heavily obfuscated using something called 
 
 So, what is going on here? That... is an excellent question.
 
-Let us start with <code>Φ</code> and <code>Ξ</code>:
+Let us start with `Φ` and `Ξ`:
 
-- <code>Φ</code> is a string. Specifically it is the string <code>{'"UvSgI5/_M26b<z]Ks+e)rn!l}1=p 0Z$`3A.kf^jD>a{yBC(4Y|9;c-G%N?8xho,7:t[iWmuF&"d*LE"'}</code>. Like with any other array-like type in JS, you can then use <code>Φ[i]</code> to access the character at index <code>i</code>.
-- <code>Ξ</code> is an empty dictionary. By applying the unpack operator (<code>...</code>) in front of it, we can use it as an element in a new array, thus helping it maintain state.
+- `Φ` is a string. Specifically it is the string <code>{'"UvSgI5/_M26b<z]Ks+e)rn!l}1=p 0Z$`3A.kf^jD>a{yBC(4Y|9;c-G%N?8xho,7:t[iWmuF&"d*LE"'}</code>. Like with any other array-like type in JS, you can then use `Φ[i]` to access the character at index `i`.
+- `Ξ` is an empty dictionary. By applying the unpack operator (`...`) in front of it, we can use it as an element in a new array, thus helping it maintain state.
 
-Now what about the <code>(+!+[]+!+[])**(+![])</code> and similar things?
+Now what about the `(+!+[]+!+[])**(+![])` and similar things?
 
 Well, if you try out these patterns in the console, you'll get the following results:
 
-- <code>+![]</code> is equal to <code>0</code>
-- <code>+!+[]</code> is equal to <code>1</code>
+- `+![]` is equal to `0`
+- `+!+[]` is equal to `1`
 
-So <code>(+!+[]+!+[])</code> is equal to <code>1+1</code> and thus <code>2</code>.
+So `(+!+[]+!+[])` is equal to `1+1` and thus `2`.
 
-The <code>**</code> operator is the power operator, as in <code>a ** b</code> is equal to <code>a</code>, to the power of <code>b</code>.
+The `**` operator is the power operator, as in `a ** b` is equal to `a`, to the power of `b`.
 
-So our current pattern is regularly <code>2**(n)</code>. Why is that?
+So our current pattern is regularly `2**(n)`. Why is that?
 
 This may remind people of binary notation of numbers, but for those that have missed it, the way to write in binary is to decompose the number into a sum of powers of 2.
 
-<code>0b10100111 = 2**7+2**5+2**2+2**1+2**0 = 167</code>. It is much shorter to write then <code>1+1+1+1+1+1+1+1...+1+1</code> (167 times) and as such is lighter than the   default JSFuck implementation and also harder to automatically deobfuscate using a tool.
+`0b10100111 = 2**7+2**5+2**2+2**1+2**0 = 167`. It is much shorter to write then `1+1+1+1+1+1+1+1...+1+1` (167 times) and as such is lighter than the   default JSFuck implementation and also harder to automatically deobfuscate using a tool.
 
-Afterwards, since you access characters in <code>Φ</code>, and are appending them one to another, you are producing a new string, which is then a method in JavaScript.
+Afterwards, since you access characters in `Φ`, and are appending them one to another, you are producing a new string, which is then a method in JavaScript.
 
 If you didn't want to deobfuscate manually however, you could have used a breakpoint at the correct line to possibly bypass this step.
 
@@ -178,7 +172,7 @@ bm_n=[];for(bm_j=0;bm_j<4;bm_j++){bm_n.push([]);for(bm_i=0;bm_i<4;bm_i++)bm_n[bm
 
 At this point, you are probably thinking something along the lines of <em>"What the hell, Maya?"</em>... and I wouldn't blame you if you did.
 
-So, what is going on here? One thing that gave a few people an idea to start with was the <code>get__s</code> method. Why? Because it is instantly recognizeable as Rijndael's SBox, a permutation table used in the AES algorithm.
+So, what is going on here? One thing that gave a few people an idea to start with was the `get__s` method. Why? Because it is instantly recognizeable as Rijndael's SBox, a permutation table used in the AES algorithm.
 
 This knowledge was not advantageous though, because the algorithm written here is not perfect. There is in fact an intentional mistake when it comes to the generation of subkeys, which breaks tools used for the decryption of the encrypted message.
 
@@ -273,30 +267,30 @@ this[0][0]=c;
 
 Well. This doesn't really help. Let's break it down.
 
-- <code>_</code>: The 192-bit AES key, which -- unhelpfully -- spells out <code>{`¬FLAG{TH1$_1$_B1T_T4NG0}`}</code> (a false flag, <em>because of course</em>).
-- <code>__</code>: The encrypted flag.
-- <code>p</code>: A function that pads a provided message to a length divisible by 16 (128-bit). It is reversible because the X newly added elements are all of value X.
-- <code>u</code>: Converts a string into the list of ASCII values it is composed of.
-- <code>stb</code>: Converts a list of all the values to a list of blocks, that are 128-bit.
-- <code>get__s</code>: Gets the permutated values using Rijndael's SBOX.
-- <code>xr</code>: Performs a linear XOR on a set of lists.<br/><code>xr([1,2,3,4], [9,8,7,6]) => [1^9, 2^8, 3^7, 4^6]</code>
-- <code>rcon</code>: The round constant used.
-- <code>n</code>: Number of 32-bit words composing the key.
-- <code>r</code>: Number of rounds for the algorithm.
-- <code>sk</code>: Split key into blocks of 4 32-bit words.
-- <code>ro</code>: Rotate a 32-bit word, either to the left or to the right.
-- <code>gsk</code>: Generate the subkey array for encryption/decryption
-- <code>bm</code>: Converts a block (a list of 16 elements / a 128-bit word) into a matrix (a list of 4 lists of 4 elements / of 32-bit words)
-- <code>mb</code>: Converts a matrix into a block.
-- <code>tsm</code>: Transposes a matrix of size (n*n)
-- <code>sr</code>: Shifts the rows of a matrix (row 1 is untouched, row 2 is rotated once, row 3 is rotated twice and row 4 is rotated thrice).
-- <code>gm</code>: Perfoms the GF2 (Gallois Field 2) multiplication of 2 numbers.
-- <code>zip</code>: Zips two lists together based on index.<br/><code>zip([1,2,3,4], [9,8,7,6]) => [[1,9], [2,8], [3,7], [4,6]]</code>
-- <code>mc</code>: Performs the mix column operation on the matrix.
-- <code>e</code>: The encryption function.
-- <code>h</code>: A "hashing" function, which just converts a list of numbers into a string of their hexadecimal representations, because JavaScript isn't good at comparing lists.
-- <code>t</code>: The test function, which takes user input, converts it to a list, pads it, encrypts it and checks the "hash" with the hash of the stored encrypted flag.
-- <code>c</code>: The constant interface to the code, returns the status of the function execution.
+- `_`: The 192-bit AES key, which -- unhelpfully -- spells out <code>{`¬FLAG{TH1$_1$_B1T_T4NG0}`}</code> (a false flag, <em>because of course</em>).
+- `__`: The encrypted flag.
+- `p`: A function that pads a provided message to a length divisible by 16 (128-bit). It is reversible because the X newly added elements are all of value X.
+- `u`: Converts a string into the list of ASCII values it is composed of.
+- `stb`: Converts a list of all the values to a list of blocks, that are 128-bit.
+- `get__s`: Gets the permutated values using Rijndael's SBOX.
+- `xr`: Performs a linear XOR on a set of lists.<br/>`xr([1,2,3,4], [9,8,7,6]) => [1^9, 2^8, 3^7, 4^6]`
+- `rcon`: The round constant used.
+- `n`: Number of 32-bit words composing the key.
+- `r`: Number of rounds for the algorithm.
+- `sk`: Split key into blocks of 4 32-bit words.
+- `ro`: Rotate a 32-bit word, either to the left or to the right.
+- `gsk`: Generate the subkey array for encryption/decryption
+- `bm`: Converts a block (a list of 16 elements / a 128-bit word) into a matrix (a list of 4 lists of 4 elements / of 32-bit words)
+- `mb`: Converts a matrix into a block.
+- `tsm`: Transposes a matrix of size (n*n)
+- `sr`: Shifts the rows of a matrix (row 1 is untouched, row 2 is rotated once, row 3 is rotated twice and row 4 is rotated thrice).
+- `gm`: Perfoms the GF2 (Gallois Field 2) multiplication of 2 numbers.
+- `zip`: Zips two lists together based on index.<br/>`zip([1,2,3,4], [9,8,7,6]) => [[1,9], [2,8], [3,7], [4,6]]`
+- `mc`: Performs the mix column operation on the matrix.
+- `e`: The encryption function.
+- `h`: A "hashing" function, which just converts a list of numbers into a string of their hexadecimal representations, because JavaScript isn't good at comparing lists.
+- `t`: The test function, which takes user input, converts it to a list, pads it, encrypts it and checks the "hash" with the hash of the stored encrypted flag.
+- `c`: The constant interface to the code, returns the status of the function execution.
 
 Once we have the code broken down, the decryption function can be written as such:
 
