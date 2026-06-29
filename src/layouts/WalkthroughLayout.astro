@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/stub/FormattedDate.astro';
+import MainBody from './MainBody.astro';
+import WalkthroughAuthor from '../components/WalkthroughAuthor.astro';
+
+type Props = CollectionEntry<'walkthroughs'>['data'];
+
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	keywords,
+	readingTime,
+	platform,
+	platformLink,
+	category,
+	author,
+	authorLink,
+	authorIcon,
+} = Astro.props;
+---
+<style lang="scss">
+	@use "sass:color";
+	.tag-viewer {
+		font-size: smaller;
+		color: color.adjust(#d0d0d0, $lightness: -15%);
+		display: flex;
+		margin-bottom: 0;
+		flex-wrap: wrap;
+		padding: 0;
+		align-items: center;
+
+	span {
+		margin: .1rem .2rem;
+		padding: 0.5rem;
+		border-radius: .5rem;
+		background-color: #484848;
+	}
+}
+</style>
+<MainBody title={title + " | maya's blog"} description={description ?? "A walkthrough on maya's blog"}>
+	<article>
+		<div class="prose">
+			<h1>~$ { title }</h1>
+			<p class="mb-3">Posted on <FormattedDate date={pubDate} />.{updatedDate && <span> / Updated on <FormattedDate date={updatedDate} />.</span>} | {readingTime && <span>Est. reading time: {readingTime} minutes</span>}</p>
+			{keywords &&
+				<p class="tag-viewer mb-2"><strong>Tags:&nbsp;</strong>{keywords.map(kw => <span><a href={`/tags/${kw}`}>{kw}</a></span>)}</p>
+			}
+			<hr/>
+			<WalkthroughAuthor
+				author={author}
+				authorLink={authorLink}
+				authorIcon={authorIcon}
+				category={category}
+				platform={platform}
+				platformLink={platformLink}
+			/>
+			<slot />
+		</div>
+	</article>
+</MainBody>

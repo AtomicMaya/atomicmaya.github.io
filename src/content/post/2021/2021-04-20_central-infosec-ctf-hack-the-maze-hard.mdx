@@ -11,6 +11,7 @@ keywords:
 ---
 import LocalLink from '../../../components/stub/link/LocalLink.astro'
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 import img_checkmaze from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-maze/check_maze.png'
 import img_experiment from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/hack-the-maze/experiment.gif'
@@ -80,7 +81,7 @@ Simply put, it sends it's current coordinates, and the future coordinates depend
 
 By breaking down the source code we find the following:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```javascript
 var e,t,n=document.getElementById("mazecanvas"),a=n.getContext("2d"),i=3,l=3,r=1300,c=706;
 function o(e,t,n){f(i,l,15,15),i=e,l=t,a.beginPath(),a.rect(e,t,15,15),a.closePath(),a.fillStyle=n,a.fill()}
@@ -125,7 +126,7 @@ e=setInterval(
   1e3
 )
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -145,7 +146,7 @@ The final bit of this code is the `e` interval, which executes the anonymous fun
 
 This is going to be complicated to mess with, so let's just focus on our various POST requests and try messing with those:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```javascript
 var g={movingAllowed:u,currRectX:i,currRectY:l,newX:s,newY:h};
 $.ajax({url:"check_maze",type:"POST",dataType:"json",data:g,
@@ -159,7 +160,7 @@ url:"create_maze",method:"POST",
 
 $.ajax({url:"update_maze",method:"POST",success:function(e){t=e}})
 ```
-</div>
+</CodeContainer>
 
 ---
 
@@ -173,7 +174,7 @@ By opening up the console (`Ctrl+Shift+I`) and the `Console` tab, we can play ar
 
 So, let's build the request!
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```javascript
 // Move the function out of the way.
 function onSuccess(t) {
@@ -200,7 +201,7 @@ var payload = {
 // Executing the request
 $.ajax({url:"check_maze",type:"POST",dataType:"json",data:payload,success:function(t){onSuccess(t)}})
 ```
-</div>
+</CodeContainer>
 <br/>
 
 And now let's try it out!
@@ -221,7 +222,7 @@ So this process is iterative: We go to a set of coordinates, we take note of the
 
 It takes a bit, but let us come up with some automation!
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 # currentX, currentY, newX, newY
 coords = [(3,3,3,3)]
@@ -239,7 +240,7 @@ print(coords)
 # [(3, 3, 3, 3), (3, 3, 6, 3), (6, 3, 9, 3), (9, 3, 12, 3), (12, 3, 15, 3),
 #   (15, 3, 18, 3), (18, 3, 21, 3), (21, 3, 24, 3), (24, 3, 27, 3)]
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -247,7 +248,7 @@ Ok, now we have a small function, that moves us from one point to the next, but 
 
 So now the key is to implement the other directions (down: +Y, left: -X, up: -Y), which will be quite similar to our previous `addX` function. The main difference is in the loop because the bounds and operators are relevant to the axis they are affecting.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def addY(startX, startY, endY, co):
   co = co[:]
@@ -267,7 +268,7 @@ def subY(startX, startY, endY, co):
     co += [(startX, startY - i * 3, startX, startY - (i+1)*3)]
   return co
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -275,7 +276,7 @@ But now that we have this, we will want to make it be more than just a coordinat
 
 To that end, the `build_request` function, which takes our current / new coordinates as parameters and generates the request as a string, and the `export` function, which takes the entire coordinate list and builds the requests iteratively.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def build_request(x,y,nx,ny):
   return '$.ajax({url:"check_maze",type:"POST",dataType:"json",' + \
@@ -298,7 +299,7 @@ print(build_request(3,3,6,3))
 # $.ajax({url:"check_maze",type:"POST",dataType:"json",
 # data:{movingAllowed: "1",currRectX: "3",currRectY: "3",newX: "6",newY: "3"},success:function(t){ onSuccess(t) }})
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -310,14 +311,14 @@ I did this with some granularity, and saved "snapshots" of my work (basically a 
 
 Also, since typing the function name was an annoyance each time, I shortened it with the following anonymous functions.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 _addx = lambda co, newx: addX(co[-1][2], co[-1][3], newx, co)
 _subx = lambda co, newx: subX(co[-1][2], co[-1][3], newx, co)
 _addy = lambda co, newy: addY(co[-1][2], co[-1][3], newy, co)
 _suby = lambda co, newy: subY(co[-1][2], co[-1][3], newy, co)
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -326,7 +327,7 @@ And then the hunt for coordinates. It basically involved analysing the POST requ
 <details>
   <summary>Coordinates Code (Long / Click to expand)</summary>
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 c = [(3,3,3,3)]
 c1 = _addx(c, 27)
@@ -461,7 +462,7 @@ c126 = _addy(c125, 117)
 
 export(c126)
 ```
-</div>
+</CodeContainer>
 </details>
 
 <br/>

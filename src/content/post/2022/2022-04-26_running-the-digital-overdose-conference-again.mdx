@@ -14,6 +14,7 @@ keywords:
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 import img_cover from '../../../assets/images/post/2022/2022-04-26_running-the-digital-overdose-conference-again/conference_cover_2022.png'
 import img_streamasset from '../../../assets/images/post/2022/2022-04-26_running-the-digital-overdose-conference-again/stream-asset.png'
@@ -91,7 +92,7 @@ How did I make that, you ask? (Or if you didn't, that's a shame, you're still fi
 
 Well the initial part is an FFMPEG script (below) that takes the MP3 and generates the waveform.
 
-<div class='d-flex media-container'>
+<CodeContainer>
 ```bash
 ffmpeg -y -i ./_track01_24k.wav -i ./trackbg_full.png -ar 96K -ss 00:00:00 -to 00:04:32 -pix_fmt yuv422p \
  -colorspace bt2020nc -color_primaries bt2020 -color_trc smpte2084 -dst_range 1 -src_range 1 -color_range 2 \
@@ -103,19 +104,19 @@ ffmpeg -y -i ./_track01_24k.wav -i ./trackbg_full.png -ar 96K -ss 00:00:00 -to 0
  colorkey=color=black,hue=H=t,split=2[x1][x2];[x1]vflip[x3];[x2][x3]vstack[v1];
  [v1]split=2[x4][x5];[x4]hflip[x6]; [x6][x5]hstack[v2]; [img][v2]overlay=474:20" __track01.nut
 ```
-</div>
+</CodeContainer>
 
 The second part is transforming the `.nut` file to a `.mp4` file, as follows:
 
-<div class='d-flex media-container'>
+<CodeContainer>
 ```bash showLineNumbers=false
 ffmpeg -i ./__track01.nut -c:v copy -c:a aac __track01.mp4
 ```
-</div>
+</CodeContainer>
 
 The third part is creating a Blender VSE system that will render it. Now of course, having 25 tracks to do this to, we choose to automate everything. And it turns out Blender does accept Python for most of its context specific work!
 
-<div class='d-flex media-container'>
+<CodeContainer>
 ```python
 seq = bpy.context.scene.sequence_editor
 for strip in seq.sequences:
@@ -145,7 +146,7 @@ for i in range(len(values)):
 
 bpy.context.scene.render.filepath = f'/home/atomic/code/conference-resources/MUSIC/TRACK{str(t).zfill(2)}.mp4'
 ```
-</div>
+</CodeContainer>
 
 It may take a short while to set up, but this is actual time-saving automation. Not like this tweet echoing a programming meme would have you think:
 

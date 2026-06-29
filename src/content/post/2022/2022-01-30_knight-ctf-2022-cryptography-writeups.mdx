@@ -10,6 +10,7 @@ keywords:
 - Write Up
 ---
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 #### Write-ups
 
@@ -23,11 +24,11 @@ import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 
 The challenge provided a file called `knock.txt`, which contained the following text:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```txt showLineNumbers=false
 ... ......  . .....  . ...  ... .....  . .....  .... ..  . ...  ... .  .. ...  .. .  .. ..  .... ..
 ```
-</div>
+</CodeContainer>
 
 The description for the challenge was the following:
 
@@ -66,7 +67,7 @@ This means we're dealing with a matrix with 4 lines and 6 columns, with two equi
 
 From there we are able to split the message into (row, column) pairs:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```txt showLineNumbers=false
 ... ...... -> 3,6
 . .....    -> 1,5
@@ -81,11 +82,11 @@ From there we are able to split the message into (row, column) pairs:
 .. ..      -> 2,2
 .... ..    -> 4,2
 ```
-</div>
+</CodeContainer>
 
 By transposing the pairs with the values in our matrix, we get:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```txt showLineNumbers=false
 ... ...... -> 3,6 -> s
 . .....    -> 1,5 -> e
@@ -100,7 +101,7 @@ By transposing the pairs with the values in our matrix, we get:
 .. ..      -> 2,2 -> h
 .... ..    -> 4,2 -> u
 ```
-</div>
+</CodeContainer>
 
 This spells out `se(c|k)reu(c|k)nighu`. This... doesn't make much sense, but we can already guess the result as being secretknight. There must have been an issue with the encryption script.
 
@@ -112,15 +113,15 @@ The final flag was: <code>{`KCTF{secretknight}`}</code>.
 
 The challenge provided a file called `cipher.txt`, which contained the following text:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```txt showLineNumbers=false
 H@WExefjpwfo\x015(#\x06\x16\x02#\x00\x15\x07\x04
 ```
-</div>
+</CodeContainer>
 
 It also provided a Python file called `enc.py` which contained the following script:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```py
 m, n = 21, 22
 def f(word, key):
@@ -144,7 +145,7 @@ ct = open("cipher.txt", "w")
 ct.write(ciphertext)
 ct.close()
 ```
-</div>
+</CodeContainer>
 
 Finally, the description for the challenge was the following:
 
@@ -164,7 +165,7 @@ Before launching ourselves in the reversal / decryption process, let us decompos
 
 This is in the Cryptography category because it deals with a Feistel Cipher, but it also has a lot to do with programming. We createt `dec.py` to perform the opposite operations on the provided ciphertext:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```py
 def f(word, key):
     out = ""
@@ -192,7 +193,7 @@ f = open("plain.txt", "w")
 f.write(flag)
 f.close()
 ```
-</div>
+</CodeContainer>
 
 The main takeaway is that the operations in lines 13 to 19 are simply in the reverse order than the original encryption code.
 
@@ -204,7 +205,7 @@ The flag - found in `plain.txt` - is: <code>{`KCTF{feistel_cipher_ftw}`}</code>.
 
 The challenge provided `private.pem`, a private key, which looked like this (although some of it is omitted for brevity):
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```txt showLineNumbers=false
 -----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAyiytHt1AKzYLwZPm1dd9uT7LgsqVj0eSLpheNd0H4xyiZCYG
@@ -214,13 +215,13 @@ ZtRYnNtGNnq7A/ubyFalExm61QNewfy71h6xhM/❌IEIoNT0VfMOIzcq0Jmoh+v6k
 xqG9YAHVmm4iJzcHeMdzLwmzR6D/x6+k2cFWwox6PxvA7ikJQEYr
 -----END RSA PRIVATE KEY-----
 ```
-</div>
+</CodeContainer>
 
 It also provided `flag.enc`, the encrypted flag.
 
 My approach to this challenge was to bruteforce all the possible certs that could be generated:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```py
 from codecs import open as copen
 import string
@@ -238,15 +239,15 @@ for i in list(string.ascii_letters) + list(string.digits) + ['+']:
     f.writelines(d)
     f.close()
 ```
-</div>
+</CodeContainer>
 
 We then attempt to produce a decoded file:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```sh showLineNumbers=false
 find -type f -wholename "./private-*.pem" -exec sh -c 'echo $0; SUBSTR=$(echo $0 | cut -d'/' -f 2); openssl rsautl -decrypt -inkey $0 -in ../flag.enc -out "./decoded-${SUBSTR}" 2>/dev/null' {} \;
 ```
-</div>
+</CodeContainer>
 
 This command lists all the files named `private-[letter].pem`, and executes a command to retrieve the new symbol from the file name, then using openssl's rsautl tool to decrypt the file and output it to another. The main idea is that the file that successfully gets decrypted will be of a different size.
 

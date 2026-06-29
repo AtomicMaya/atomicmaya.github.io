@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../utils/collections';
 import ISOFormattedDate from '../stub/ISOFormattedDate.astro';
 
-const posts = (await getCollection('posts')).sort(
+const posts = (await getPublishedPosts()).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 ).slice(0, 10);
 ---

@@ -15,6 +15,7 @@ import LocalLink from '../../../components/stub/link/LocalLink.astro'
 import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
 
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 import img_description from '../../../assets/images/post/2021/2021-10-11_ctf/outage/description.png'
 
@@ -70,7 +71,7 @@ This question has a few simple answers:
 
 When considering DNS, one needs to think about what type of records could be used to store information. The obvious response would be TXT records:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```txt
 $ dig -t txt digitaloverdose.tech
 ; <<>> DiG 9.11.3-1ubuntu1.11-Ubuntu <<>> -t txt digitaloverdose.tech
@@ -90,7 +91,7 @@ digitaloverdose.tech.   0       IN      TXT     "DO{1T$_4LW4Y$_DN5}"
 digitaloverdose.tech.   0       IN      TXT     "google-site-verification=SNWrpKpmjvLywAg9yOnJ7f5aCy7rqMvWQZwHyVEc7yE"
 digitaloverdose.tech.   0       IN      TXT     "v=spf1 include:spf.efwd.registrar-servers.com ~all"
 ```
-</div>
+</CodeContainer>
 
 Huh, what's that in line 15? It is a flag!
 

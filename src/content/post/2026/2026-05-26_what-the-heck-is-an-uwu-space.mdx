@@ -1,0 +1,268 @@
+---
+title: "what the heck is an uwu-space"
+description: "how i may have ended co-founding a hackspace in zurich, and helped stand up the infrastructure backbone"
+pubDate: 'May 26 2026'
+readingTime: 9
+keywords:
+- Hackspace
+- Technical
+- Community
+---
+import LocalLink from '../../../components/stub/link/LocalLink.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import FediLink from '../../../components/stub/link/FediLink.astro'
+import BlueskyLink from '../../../components/stub/link/BlueskyLink.astro'
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+import GithubLink from '../../../components/stub/link/GithubLink.astro'
+
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img_wireguarddiagram from '../../../assets/images/post/2026/2026-05-26_what-the-heck-is-an-uwu-space/diagram-wireguard.png'
+
+about one and a half years ago, the idea for a space emerged at GPN21 (June 2023), and grew in the void left by the somewhat non existent ccc chapter that used to exist in Zurich (CCC-ZH).
+
+we gained a lot of interest locally due to being somewhat detached from the CCC operationally, but still adherent to the Unvereinbarkeitserklärung (*declaration of incompatibility*) of the CCC, which enforces a certain alignment that we consider would be best for our members.
+
+and so, in November of 2025, a dozen or more creatures from the Zurich area congregated in a room in the Bitwäscherei - a collective of hackspaces in Zurich - to found a primarily queer hackspace, named "UwU-Space" and elected its committee, of which i am one of the members.
+
+---
+
+#### building something that would hold up with time
+
+one of the major issues with building an association is that one needs to have several capabilities that aren't evident from the onset, for example being able to receive payments for membership, or to be able to hold a membership roster, or to have the ability to do some form of accounting.
+
+this led us to the first adventure in the list, which was to apply for a bank account.
+
+the process wasn't entirely as easy as we'd hoped, because bank bureaucracy didn't really like our light-handed approach to the KYC process, but after a few clarifications and back-and-forths, we got there in the end.
+
+at the same time, we wanted to have some set of services available to members, which they could sign-in to using some form of social sign-on system.
+i'll go into more depth about this when i talk about the <a href="#infrastructure">infrastructure</a>
+
+---
+
+#### the sweet smell of democracy (and the ways we messed up)
+
+the committee was made up of 6 members (myself included), and we originally kicked off under the mistaken assumption that we could all agree and get along, because we'd spent so much time together building this up.
+as could be expected, this very much *didn't* happen.
+
+the disagreements were initially mild and of procedural nature, but as soon as some of the decisions veered into the interpersonal realm, we realized that this was not a tenable situation, and moved to a "the aye's have it" democracy type decision making scheme.
+we can't make everyone happy, but we can at least try to drive consensus.
+
+we also later were told that our decisions lacked transparency, so we started holding plenary sessions to talk to members and made sure that there were avenues in order to collect feedback or for them to outright voice their complaints.
+
+---
+
+#### infrastructure
+
+the first step in our grand plan to host services for our members involved deciding what we would actually end up hosting ourselves, and where to host it.
+
+initially, the "where" seemed pretty self-evident, as our friend <FediLink url="https://catgirl.center/@memdmp" text="memdmp / 7222e800" /> was hosting a machine in the Bitwäscherei - nicknamed "crunchy" - which was a hypervisor self-written by mem. despite the overall performance of the machine being acceptable, the cursedness in how we were meant to access it for maintenance made it a bit complicated, and we quickly realized we may need to shove a bit of infra into the server room ourselves.
+
+thankfully, i had a half-depth 1U server sitting around unused in my office, so after adding an SSD and making sure it was running fine, i brought it to BW in order for it to get added to the server room and wired. this machine later ended up being referred to as `uwu-main`.
+
+at that point, we were forced to address another problem, which was that the Bitwäscherei's network does not support IPv4 addressing, only IPv6.
+on paper, that doesn't sound *too* terrible, until one realizes that an not-insignificant portion of container registries are IPv4 only (and at that time so was my home network, until i decided to get on a somewhat stupidly long technical phone call with my ISP to talk about Microtik configuration only for them to realize the docs had a Microtik file which had an incorrect v6 pool size for our exact usecase and give us the correct value).
+
+so how does on magically add IPv4 to an IPv6 network?
+good question, thanks so much for asking.
+in my exact use case, i decided to go with the "jump host" technique, which involves getting a very cheap VPS, making that the DNS target for all of the relevant domains, and running <GithubLink url="https://github.com/caddyserver/caddy" text="caddy" /> in order to route traffic over a homebrew wireguard solution which not only bridged the jumphost but forced all of the IPv4 traffic through the jumphost.
+this ends up looking a bit like this (the jumphost is `uwu-jump` and our VM on crunchy is `uwu-crunchy`):
+
+<ImageContainer style="width: 90%; height: auto" image={img_wireguarddiagram} alt="" desc="" />
+
+now, a reader familiar with wireguard configs would know that wireguard doesn't natively do all of these funky force-traffic through an interface shenanigans, so how did we go about it?
+
+for that, i decided to use iptables, applied post-tunnel activation or pre-tunnel deactivation, which in code looks something like this (on `uwu-main`):
+
+<CodeContainer title="wg0.conf">
+```txt
+[Interface]
+Address = [REDACTED]:1::7:1/112, 10.0.0.1/24
+ListenPort = 51820
+PrivateKey = ${PRIVATE_KEY_uwu-main}
+
+# Enable forwarding
+PostUp = sysctl -w net.ipv4.ip_forward=1
+PostUp = sysctl -w net.ipv6.conf.all.forwarding=1
+PostUp = iptables -A FORWARD -i wg0 -o wg0 -j ACCEPT
+PostUp = ip6tables -A FORWARD -i wg0 -o wg0 -j ACCEPT
+
+# Route IPv4 through uwu-jump
+PostUp = ip route add default via 10.0.0.2 dev wg0 table 200
+PostUp = ip rule add from 10.0.0.1 table 200 priority 100
+PostUp = iptables -t nat -A POSTROUTING -o wg0 -j MASQUERADE
+
+PostDown = iptables -D FORWARD -i wg0 -o wg0 -j ACCEPT
+PostDown = ip6tables -D FORWARD -i wg0 -o wg0 -j ACCEPT
+PostDown = ip route del default via 10.0.0.2 dev wg0 table 200
+PostDown = ip rule del from 10.0.0.1 table 200 priority 100
+PostDown = iptables -t nat -D POSTROUTING -o wg0 -j MASQUERADE
+
+DNS = 9.9.9.9, 2a02:168:475d:1::53
+
+# uwu-jump
+[Peer]
+PublicKey = ${PUBLIC_KEY_uwu-jump}
+PresharedKey = ${PRESHARED_KEY_uwu-main-jump}
+AllowedIPs = [REDACTED]:1::7:2/128, 10.0.0.2/32, 0.0.0.0/0
+PersistentKeepalive = 25
+
+# uwu-crunchy
+[Peer]
+PublicKey = ${PUBLIC_KEY_uwu-crunchy}
+PresharedKey = ${PRESHARED_KEY_uwu-main-crunchy}
+AllowedIPs = [REDACTED]:1::7:3/128, 10.0.0.3/32
+PersistentKeepalive = 25
+```
+</CodeContainer>
+
+after a while we sunset `uwu-crunchy` but this is still the operative flow.
+
+at some point we also had to modify caddy with layer 4 capabilities, as it can't natively handle certain types of layer 4 traffic because caddy doesn't natively have the ability to handle raw TCP and UDP streams, which is something we ended up needing.
+
+for this, we compiled `caddy-l4` (<GithubLink url="https://github.com/mholt/caddy-l4" text="on GitHub" />) and deployed it as a standin replacement for caddy.
+
+---
+
+#### services
+
+as mentioned earlier, we wanted to have some set of services available to our members, so we started off by deploying SSO, which involved deploying <ExternalLink url="https://goauthentik.io/" text="Authentik" /> as i was already familiar with it from running my own infrastructure at home.
+this would then gate access to a number of services.
+
+selecting these services would usually try and avoid services which have the SSO tax baked in, as that is an anti-pattern in our opinion and contrary to the principles of open-source software. you can read more about the sso tax on the related directory <ExternalLink url="https://sso.tax/" text="here" />.
+
+so far we're also pretty happy with the consistency of our uptime, which is a point of pride.
+
+<br/>
+
+##### email
+
+despite knowing that self-hosting email is... a pain (to the point a common meme in the community is "no friend lets another friend host email"), we decided we needed some more-resolutely formal way of official communication... hence email.
+using a 3rd party service provider could have been an option, but this falls short of our intended goal of running all of this as lean as possible.
+
+so we ended up self-hosting <ExternalLink url="https://stalw.art/" text="Stalwart" />, which is what initially prompted the aforementioned need for us to be able to have L4 capabilities with caddy.
+
+the only other major pain is syncing the certificates issued by caddy on `uwu-jump` to `uwu-main`, but for that we have a systemd path trigger, which looks like this:
+
+<CodeContainer title="caddy-certs-stalwart.path">
+```systemd
+[Unit]
+Description=copy certs from caddy to uwu-main:[path-on-uwu-main]/cert
+
+[Path]
+PathModified=[path-to]/mail.uwu-space.ch.json
+
+[Install]
+WantedBy=multi-user.target
+```
+</CodeContainer>
+
+and we have a systemd job which looks like this:
+
+<CodeContainer title="caddy-certs-stalwart.service">
+```systemd
+[Unit]
+Description=copy certs from caddy to uwu-main:[PATH_ON_UWU_MAIN]/cert
+
+[Service]
+Type=oneshot
+ExecStart=sleep 1
+ExecStart=scp -i [PATH_TO_SSH_KEY] -o "IdentitiesOnly=yes" [PATH_TO_ACME_FOLDER]/[CRT_FILE].crt [USER]@uwu-main:[PATH_ON_UWU_MAIN]/cert/[CRT_FILE].pem
+ExecStart=scp -i [PATH_TO_SSH_KEY] -o "IdentitiesOnly=yes" [PATH_TO_ACME_FOLDER]/[KEY_FILE].key [USER]@uwu-main:[PATH_ON_UWU_MAIN]/cert/[KEY_FILE].pem
+ExecStart=scp -i [PATH_TO_SSH_KEY] -o "IdentitiesOnly=yes" [PATH_TO_ACME_FOLDER]/[JSON_FILE].json [USER]@uwu-main:[PATH_ON_UWU_MAIN]/cert/[JSON_FILE].json
+ExecStart=ssh -i [PATH_TO_SSH_KEY] -o "IdentitiesOnly=yes" [USER]@uwu-main 'chown [USER]:[USER] [PATH_ON_UWU_MAIN]/cert/*'
+ExecStart=ssh -i [PATH_TO_SSH_KEY] -o "IdentitiesOnly=yes" [USER]@uwu-main 'chmod 0775 [PATH_ON_UWU_MAIN]/cert/*'
+
+[Install]
+WantedBy=multi-user.target
+```
+</CodeContainer>
+
+this isn't ideal and doesn't yet trigger the reload target on stalwart, but gets 90% of the way there.
+
+<br/>
+
+##### git
+
+we also decided to host our own git instance, which would be the location for the code behind <ExternalLink url="https://uwu-space.ch" text="uwu-space's website" /> and the location for whatever projects would be made at the hackspace.
+
+this git instance runs <ExternalLink url="https://forgejo.org/" text="ForgeJo" />, which is something i've also had experience hosting for myself and some friends.
+
+the one caveat here that we know of is that because the git instance is on `uwu-main`, but the traffic goes via `uwu-jump`, we had to either put the L4 traffic passthrough in caddy, or do what i'd done on my own infrastructure, which was punch a tunnel using wireguard which is statefully maintained on both sides, the config of which is this:
+
+<CodeContainer title="secure-tunnel@.service">
+```systemd
+[Unit]
+Description=Setup a secure tunnel to %I
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/ssh -v -o PubkeyAuthentication=yes -F /etc/default/tunnel/secure-tunnel.config -NT %i
+
+# Restart every >2 seconds to avoid StartLimitInterval failure
+RestartSec=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+</CodeContainer>
+
+<CodeContainer title="secure-tunnel.config">
+```systemd
+Host git-v4
+   HostName 10.0.0.1
+   User uwu
+   IdentityFile [PATH_TO_FORWARDING_KEY]
+   LocalForward 0.0.0.0:222 10.0.0.1:222
+   ServerAliveInterval 25
+   GatewayPorts yes
+   ExitOnForwardFailure yes
+
+Host git-v6
+   HostName [REDACTED]:1::7:1
+   User uwu
+   IdentityFile [PATH_TO_FORWARDING_KEY]
+   LocalForward [::]:222 [[REDACTED]:1::7:1]:222
+   ServerAliveInterval 25
+   GatewayPorts yes
+   ExitOnForwardFailure yes
+```
+</CodeContainer>
+
+<br/>
+
+##### mediawiki
+
+because we have projects, we naturally need a place to document them.
+
+what better place than some wiki instance, which would of course benefit from our sso integration?
+
+this may have involved me spending way too much time dealing with the `LocalSettings.php` file, but in the end we got it running! (at <ExternalLink url="https://wiki.uwu-space.ch" text="wiki.uwu-space.ch" />).
+
+<br/>
+
+##### the website
+
+the website is a <ExternalLink url="https://gohugo.io/" text="hugo" /> pre-rendered website served from a container that is built and tagged by a CI job in forgejo, and gives people just the necessary information about the hackspace, where to find the wiki, as well as access to a form which will trigger the membership form to be sent to them.
+
+<br/>
+
+##### other miscellaneous services
+
+because of the aforementioned forms which constrain our membership application process, we wanted to host some form of document filling and signing platform, and we ended up running <ExternalLink url="https://docuseal.com" text="DocuSeal" /> for that purpose.
+
+we also host <ExternalLink url="https://docs.paperless-ngx.com/" text="Paperless-ngx" /> for our documents, and <ExternalLink url="https://vikunja.io/" text="vikunja" /> for our task management.
+
+---
+
+#### building something that can last, because some can't
+
+<strong><em>Content Warning (Start): Death</em></strong>
+
+recently, one of the beings that help make this hackspace happen and that was involved in giving it it's identity took its own life.
+
+there's not much to be said about the circumstances, especially with respect to its grieving mother, just to say that the space mourns <FediLink url="https://catgirl.center/@memdmp" text="memdmp / 7222e800" />, the beeper that ended up being critical infrastructure in our hearts.
+
+<strong><em>Content Warning (End)</em></strong>

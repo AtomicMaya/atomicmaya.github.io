@@ -1,0 +1,121 @@
+---
+title: "reflecting on work"
+description: "it has been about a year since leaving my employer, and i'm not too sure how i feel about that"
+pubDate: 'Jun 13 2026'
+readingTime: 12
+keywords:
+- Professional
+- Information Security
+---
+import LocalLink from '../../../components/stub/link/LocalLink.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import FediLink from '../../../components/stub/link/FediLink.astro'
+import BlueskyLink from '../../../components/stub/link/BlueskyLink.astro'
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+import GithubLink from '../../../components/stub/link/GithubLink.astro'
+
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img_review from '../../../assets/images/post/2026/2026-06-13_reflecting-on-work/reviews.png'
+
+it has been about a year since i've left my employer (or more accurately my employer made my position redundant), and despite having reservations about how it all went down, i am now more comfortable in actually talking about what i used to do for the roughly 2.5 years that i worked there.
+
+explaining how it ended doesn't really make sense without first talking about how i even got the job, what the job was, what i ended up doing, before getting to the conclusion.
+
+---
+
+#### how this came to be
+
+surprisingly this all started by my friend <TwitterLink url="https://twitter.com/lennaert89" text="Lennaert" /> inviting me to MCH (which i had written an extensive blog post about at the time, which you can read <LocalLink url="/post/2022/2022-07-29_heading-to-amsterdam-and-going-to-mch" text="here" />).
+
+there i met 2 people who would end up becoming my friends and later my colleagues, but it all came together a few months later in October of 2022 (a month which had other happenings) when i ended up hanging out with them whilst visiting the UK.
+
+they worked for a financial services group that had a desire to expand its reach to Switzerland, which meant that they wanted someone local and familiar with local regulations to be able to assist in some policy work between November 2022 and January 2023.
+
+but because of my background in security that these two future colleagues - who were in leadership positions - had assessed to be more than adequate, and because the ISO in charge of the group's security had just left, the group had an auspicious opening that they decided to make available to me.
+at the time this seemed ideal because of how fast it came after completing my master's degree (which you can read about <LocalLink url="/post/2023/2023-02-15_msc-fun" text="here" />) and it being a place i had a reasonable expectation that i would be able to work comfortably at whilst other changes were taking root.
+
+so that's how i ended up being the CISO of a small pre-license financial services company in Switzerland.
+
+---
+
+#### what the job was
+
+however because it was pre-license, there weren't that many activities in Switzerland, so part of the expectation was that i would be performing the (C?)ISO role across the entire group, which existed under a somewhat defined shared services model that covered Switzerland, the UK and Lithuania, the latter being replaced with Sweden at some point.
+
+so that's how 25 year old me ended up as a CISO, a role which most people would think ends up existing in a "compliance check-box" capacity.
+
+i did do some policy work across the organization (e.g. IT/Security policies or training), and was involved in compliance work (PCI-DSS audits, DORA compliance attestation, ISO 27001 audits, etc.), but that wasn't all i was doing.
+
+---
+
+#### what i ended up doing
+
+i was also actively involved in work of a technical nature, with active impact in threat reduction, but the thing is that by the nature of this role, and how the company was organized and operating, there was a lot of scope creep.
+
+the entire company was locked into the Azure Active Directory/Microsoft Entra world, but this environment was originally setup and populated with some policies and settings which were barely better than the defaults, with things like MDM enrollment, App provisioning and Defender policies being somewhat lacking in precision and definiiton.
+i quickly ended up enforcing a number of security policies across the tenant, whether on-device or on-tenant that increased the "Defender security score" a lot.
+
+but i'm not a fan of magic numbers that don't really translate to actual security capabilities, so i ended up scripting a lot of PowerShell one-shot scripts that disabled a lot of features that could be hijacked by attackers, all the while limiting the inconvenience on the end-users.
+
+i also got to manage two people that onboarded after i started, but the scope creep that affected the security function would later lead them both to depart for greener pastures, which was very hard to recover from.
+
+speaking of the scope creep, we ended up taking over app provisioning to users, in order to make sure employees weren't downloading random software from the internet (because they originally had the permissions to do so), and packaging apps to be available for download in the "Company Portal", which is a self-service interface to whatever is marked as "optional" in Microsoft Intune.
+
+this involved a lot of software packaging using <GithubLink url="https://github.com/microsoft/intune-win32-app-packaging-tool" text="Intune Win32 App Packaging Tool" />, to the point where i had a semi-automated and replicable workflow in order to provide updates to users.
+
+we also ended up deploying a lot of threat management pipelines across the company, with the most notable one being <ExternalLink url="https://docs.velociraptor.app/" text="Velociraptor" /> (<GithubLink url="https://github.com/Velocidex/velociraptor" text="on GitHub" />), which is a digital forensics and incident response tool that would help us with getting a "state of the environment" snapshot and notice any new things happening, as well as have the ability to remotely handle issues or apply patches across the tenant.
+
+this did not mean that my software engineering experience went unused, as i had multiple opportunities to write software that accomplished various goals or supported internal functions (which included some overflow from the group's engineering department, where i would deal with a project that would've otherwise been on the backburner).
+
+the most interesting ones were a service that sadly never got deployed (for reasons unrelated to the software) but had the capability to query the German stock exchange using - and extending upon - the FIX protocol (which is a standard described <ExternalLink url="https://fixtrading.org/standards/fix-protocol/" text="here" />), as well as a connector to a payments gateway in order to make the MasterCard reports directly available to the finance department, without them having to have knowledge of the inner workings of certificates and SFTP.
+
+obviously, as head of the security function, there was the expectation that we would handle ✨ *big security events* ✨ (well, incidents, etc.).
+
+we didn't have many notable security incidents over the 2.5 years where i worked there, but the most memorable events were me needing to visit Lithuania pretty soon after my job started because i noticed some of their infrastructure had been partially compromised in my first checks of the group infrastructure (which i guess was a nice gift by my predecessor), as well as an incident where one of the people which had an unenrolled laptop (due to ancientness, role and weirdness on their location in the org chart) that ended up having some form of malware sending traffic to adult / gambling sites, which was originally caught by noticing many suspicious network events (the activity had started several months after installation as we were later able to find out during incident response).
+
+the role did involve me occasionally pushing back against some forms of "progress" (for some definitions thereof), and occasionally disagreeing with other executive functions (rarely the engineering side, because their leadership was extremely competent, the aforementioned friends met at MCH).
+
+but what - officially - ended up getting the best of my role in the group was a financial incentive, because although i was paid around market average in Switzerland, and i do believe i was providing value exceeding the headcount of "1", this exceeded the cost that the company had become willing to pay in a jurisdiction where getting a license from the regulator had been locked in a legal back-and-forth for two and a half years.
+
+---
+
+#### and the conclusion
+
+the announcement of my imminent departure ended up surprising a ton of people in the company, with some reviews persisting in my thoughts such as this one:
+
+<ImageContainer style="width: auto; height: 350px" image={img_review} alt="exchange between me and a redacted individual" desc="a review i can't wholeheartedly agree with, but are still nice to get" />
+
+i've also been told that most of the people that were asked whether i had any value had responded that i was close to invaluable, so i don't really have a full understanding of what the math ended up being, but also i've since stopped caring about that.
+
+although i did a pretty comprehensive handover process across the various companies where this was relevant, i'm pretty sure my role wasn't filled in after my departure, with some bits having been redistributed onto already overworked staff, which isn't ideal.
+
+---
+
+#### i still have thoughts and opinions
+
+there's many things i could say about the work culture, but i'll leave it at saying that i knew many colleagues that were either burnt out, or burning out, or gaslighting themselves that after a long weekend and maybe 2-3 days off that they'd magically recovered from burnout.
+
+they had - obviously - in fact not recovered, but were putting the goalpost just a bit further ("one more deliverable, just one more deliverable")... and some of them ended up taking it out on other colleagues, which did nothing to improve the work culture.
+
+this mostly affected the UK and Swedish locations, so i was somewhat spared the direct effects (not that i wasn't affected, it just hit less strongly but just as consistently), so i guess i am thankful for my arrangement being primarily remote working.
+
+this confirms something i realized throughout my time at the company, which is that everyone ended up a victim of scope creep, with the headcount reducing by by about 40% over time, but the amount of projects and dependencies increasing, which had a predictable snowball effect.
+
+what didn't help was that i was in a role where i had to do some uncomfortable things, such as the event i've dubbed "red october", where one of the previous identities of one of the companies laid off a dozen or so employees and i was asked to handle disabling their access, which didn't sit right with me for a variety of reasons (driving people to precarity, some of the redundancies feeling like footguns, and underlying questionable uses of managerial power).
+
+although my departure caused a lot of confusion and incomprehension, there were a few conflicting signals that occured during handover, which went mostly smoothly, although i did find some of how it was handled to be suboptimal.
+
+the modalities of my departure were that i was given 3 month's notice with the final two months comprising of garden leave.
+i also had about two weeks worth of holidays that i didn't want to waste, so myself and some of the leadership agreed that i would do a first handover in the first week of that month covering and documenting all of my activities and tasks, then i would take about 1.5 weeks of holiday (which is <LocalLink url="/post/2025/2025-05-27_a-trip-to-montreal" text="when i went to Montreal" />), and come back to close off any loose ends and answer any additional enquiries.
+
+in both Sweden and Switzerland this worked out fantastically, but in the UK my requests for a meeting to do a first handover pass to leadership ended up  unanswered.
+then, in the middle of my holidays, i was sent a slack message asking for a meeting, which i didn't get because i was on holiday and several timezones away (i got some flak for this).
+
+when i returned, the handover continued, which led upon review to some old decisions being strongly questioned, but this cleared up quickly once i highlighted that these decisions were made in the same room where those same colleagues were, and that i had sollicited their input, as i frequently included them in the process because i valued their opinions.
+
+the UK-specific delay in the first phase of handover until i was on holiday, led to me receiving threats of postponing my garden leave. i discussed this with my leadership in Switzerland, and they were of the opinion that this was a threat they wouldn't enforce, so i am happy i had that support from the local leadership.
+
+anyways, i shouldn't reminisce too much about the not so great moments, because there were some good moments as well.
+all in all i'm quite happy i was able to spend 2.5 years working in an accepting environment, which gave me time to figure myself out and grow some more.
+i'm also quite happy to have met most of my colleagues, who generally were quite nice to work with and get things done with, most of whom i remember quite fondly.

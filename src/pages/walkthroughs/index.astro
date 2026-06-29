@@ -1,0 +1,52 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import MainBody from '../../layouts/MainBody.astro';
+import WalkthroughCard from '../../components/WalkthroughCard.astro';
+import { getPublishedWalkthroughs } from '../../utils/collections';
+
+const walkthroughsList = await getPublishedWalkthroughs()
+const walkthroughs = walkthroughsList.sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const years = [...new Set(walkthroughsList.map(e => e.data.pubDate.getFullYear()))].sort((a,b) => 0 - (a > b ? 1 : -1));
+---
+<style lang="scss">
+	.year-section {
+		h2, h3 {
+			text-align: center;
+		}
+
+		hr.dark {
+			color: #1f1f1f;
+			border: 1px solid #1f1f1f99;
+		}
+
+		hr.clear {
+			color: #f7f7f7;
+			border: 1px solid #f7f7f799;
+		}
+
+		hr {
+			margin: 1rem 0 !important;
+		}
+	}
+</style>
+<MainBody title={`Walkthroughs | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+	{
+		years.map(y =>
+		<h2 class="my-0 year-section text-center">{y}</h2>
+		<hr class="my-2" />
+		<section>
+			<div class="d-flex flex-column">
+				{
+					walkthroughs.filter((post) => post.data.pubDate.getFullYear() == y).map((post) =>
+						<WalkthroughCard {...post} />
+					)
+				}
+			</div>
+		</section>
+		<hr class="my-3" />
+		)
+	}
+</MainBody>

@@ -4,7 +4,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import MainBody from "../layouts/MainBody.astro";
 ---
 
-<MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainBody title={`copyright | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
     <h1>~$ Copyright</h1>
     <p class="mb-3">
         Posted on <FormattedDate date={new Date(2020, 10, 1)} />. <span>
@@ -21,7 +21,7 @@ import MainBody from "../layouts/MainBody.astro";
                     alt="Creative Commons License"
                     width="300"
                     style="border-width:0"
-                    src="https://atomicmaya.me/assets/images/88x31/cc-by-nc-sa.gif"
+                    src="/assets/images/88x31/cc-by-nc-sa.gif"
                     title="CCBYNCSA Label"
                 /></a
             >

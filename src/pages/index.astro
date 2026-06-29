@@ -1,9 +1,11 @@
 ---
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import MainBody from '../layouts/MainBody.astro';
+import ExternalLink from '../components/stub/link/ExternalLink.astro';
+
 ---
 
-<MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainBody title={`whoami | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
 	<h1>~$ whoami</h1>
 <h6>I'm someone, at least I think. The latter is enough, if you ask René Descartes.</h6>
 
@@ -14,7 +16,7 @@ import MainBody from '../layouts/MainBody.astro';
   <li>🏳️‍🌈</li>
   <li><g-emoji class="g-emoji" alias="telescope" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f52d.png">🔭</g-emoji> I'm a cyber security professional, a developer, an OSINT enthusiast, a CTF player, and a volunteer to be found at a great number of events.</li>
   <!--<li><g-emoji class="g-emoji" alias="seedling" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f331.png">🌱</g-emoji> I'm currently learning Coding for OSINT.</li>-->
-  <li><g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji> I am one of the Community Managers at <a target="_blank" href="https://digitaloverdose.tech/" rel="noopener"><em class="fas fa-external-link-square-alt"></em> Digital Overdose</a>, an infosec community on Discord, where I also organize the <a target="_blank" href="https://digitaloverdose.tech/conference" rel="noopener"><em class="fas fa-external-link-square-alt"></em> D.O. Conference</a>!</li>
+  <li><g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji> I am one of the Community Managers at <ExternalLink url="https://digitaloverdose.tech/" text="Digital Overdose" /> and organizer of the <ExternalLink url="https://digitaloverdose.tech/" text="D.O. Conference" />!</li>
   <!--li><g-emoji class="g-emoji" alias="two_men_holding_hands" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f9d1.png">👬</g-emoji> I'm looking to collaborate on InfoSec, OSINT, Development and any combination thereof.</li-->
   <li><g-emoji class="g-emoji" alias="speech_balloon" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ac.png">💬</g-emoji> Ask me about Development, Security and OSINT. Maybe also about various CTF challenges!</li>
   <li><g-emoji class="g-emoji" alias="zap" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/26a1.png">⚡</g-emoji> Fun fact: I enjoy nerding out about fun things.</li>
@@ -60,6 +62,5 @@ My solution? Redo my last year.</p>
 <p>So, what next?<br/>
 After some searching, I enrolled in the University of Geneva, in the Institute for Information Systems and Service Sciences, where I obtained a Bachelor's degree, and recently finished my Master's Degree.</p>
 <p>There, I got more and more involved in security and sideloaded infosec.</p>
-
 
 </MainBody>

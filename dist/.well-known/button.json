@@ -1,0 +1,11 @@
+{
+  "$schema": "https://codeberg.org/LunarEclipse/well-known-button/raw/branch/main/drafts/button-2024-06.schema.json",
+  "buttons": [
+    {
+      "id": "88x31-button",
+      "uri": "https://atomicmaya.me/atomicmaya_me.png",
+      "alt": "a dark button with green contour and detailing, on the left is an atom with a Δ (delta) symbol, on the right is the text 'maya' subtitled by '[REDACTED]'",
+      "link": "https://atomicmaya.me"
+    }
+  ]
+}

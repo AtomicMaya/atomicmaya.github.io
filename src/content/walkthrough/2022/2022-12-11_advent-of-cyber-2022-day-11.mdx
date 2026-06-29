@@ -1,0 +1,52 @@
+---
+title: "Advent of Cyber 2022 - Day 11"
+description: "Walkthrough - AoC 2022 - Day 11 - \"Not all gifts are nice\""
+pubDate: 'Dec 11 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Blue Team: Memory Forensics"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img1 from '../../../assets/images/walkthrough/thm/aoc-2022/day11/1.png'
+import img2 from '../../../assets/images/walkthrough/thm/aoc-2022/day11/2.png'
+import img4 from '../../../assets/images/walkthrough/thm/aoc-2022/day11/4.png'
+
+### Question 1
+
+> What is the Windows version number that the memory image captured?
+
+We run `python3 vol.py -f workstation.vmem windows.info`:
+
+<ImageContainer image={img1} style="width: 70%; height: auto;" alt="Screenshot of volatility's output." desc="Oh no... not Windows." />
+
+Answer: `10`
+
+### Question 2
+
+> What is the name of the binary/gift that secret Santa left?
+
+We run `python3 vol.py -f workstation.vmem windows.pslist`:
+
+<ImageContainer image={img2} style="width: 70%; height: auto;" alt="Screenshot of volatility's output." desc="I looooove gifts." />
+
+Answer: `mysterygift.exe`
+
+### Question 3
+
+> What is the Process ID (PID) of this binary?
+
+We check the associated column.
+
+Answer: `2040`
+
+### Question 4
+
+> Dump the contents of this binary. How many files are dumped?
+
+We run `python3 vol.py -f workstation.vmem windows.dumpfiles --pid 2040` and then count the number of results.
+
+<ImageContainer image={img4} style="width: 70%; height: auto;" alt="Screenshot of volatility's output." desc="There probably was a programatic solution to count the number of lines." />
+
+Answer: `16`

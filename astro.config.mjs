@@ -1,7 +1,6 @@
 // @ts-check
 
 import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links";
 import { defineConfig, fontProviders, sharpImageService } from 'astro/config';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -12,7 +11,7 @@ import expressiveCode from 'astro-expressive-code';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://atomicmaya.me',
-    integrations: [expressiveCode(), mdx(), sitemap(), pluginLineNumbers()],
+    integrations: [expressiveCode(), mdx(), pluginLineNumbers()],
     build: {
         assets: 'assets'
     },

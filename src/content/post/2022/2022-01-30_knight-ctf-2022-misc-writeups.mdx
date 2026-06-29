@@ -15,6 +15,7 @@ import LocalLink from '../../../components/stub/link/LocalLink.astro'
 
 import { Image } from "astro:assets";
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 import img_md5 from '../../../assets/images/post/2022/2022-01-30_misc-challenges/MD5.png'
 import img_gif from '../../../assets/images/post/2022/2022-01-30_misc-challenges/challenge.gif'
@@ -32,7 +33,7 @@ This challenge was in the Web category, and relied on knowledge from the first c
 
 This yields the following code:
 
-<div class='d-flex media-container'>
+<CodeContainer>
 ```php
 require "flag.php";
 $old_pass_codes = array("0e215962017", "0e730083352", "0e807097110", "0e840922711");
@@ -56,7 +57,7 @@ if (isset($_GET["source"])) {
   print show_source(__FILE__);
 }
 ```
-</div>
+</CodeContainer>
 
 The first thing that struck me was the fact that it was comparing the passcode entered against its MD5 hash. However, with one-way hashing functions, that shouldn't be the case (`H(X) != X`).
 
@@ -81,23 +82,23 @@ Enter that into the platform and we get the flag: <code>{`KCTF{ShOuD_wE_cOmPaRe_
 
 The first step is to de-animate the GIF. For this, we can go to EZGIF or use FFMPEG, like so:
 
-<div class='d-flex media-container'>
+<CodeContainer>
 ```bash
 mkdir ./gif-images
 ffmpeg.exe -i .\QR_Code_From_The_Future.gif -vsync 0 gif-images/%02d.png
 ```
-</div>
+</CodeContainer>
 
 We can then use zbarimg (from the `zbar-tools` package) to read the QR codes (zbarimg socket errors can be expected and ignored):
 
-<div class='d-flex media-container'>
+<CodeContainer>
 ```sh
 find . -type f -wholename "*/gif-images/*.png" -exec sh -c 'RES=$(zbarimg $0 --raw -q); SUBSTR=$(echo $RES | cut -d':' -f 2); echo -n $SUBSTR;' { } \; > gif_contents 2>/dev/null
 echo "" >> gif_contents
 cat gif_contents
 rm gif_contents
 ```
-</div>
+</CodeContainer>
 
 FFMPEG takes the image provided with the GIF as input (`-i`), synchroneously (`-vsync 0`). It then saves it to `gif-images`, a directory that needs to exist.
 

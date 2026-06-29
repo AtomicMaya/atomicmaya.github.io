@@ -17,7 +17,7 @@ const { title, description, pubDate, updatedDate, keywords, readingTime, image }
 		flex-wrap: wrap;
 		padding: 0;
 		align-items: center;
-	
+
 	span {
 		margin: .1rem .2rem;
 		padding: 0.5rem;
@@ -28,12 +28,12 @@ const { title, description, pubDate, updatedDate, keywords, readingTime, image }
 
 
 </style>
-<MainBody title={title + " | AtomicMaya's blog"} description={description ?? "A blog post on maya's blog"}>
+<MainBody title={title + " | maya's blog"} description={description ?? "A blog post on maya's blog"}>
 	<article>
 		<div class="prose">
 			<h1>~$ { title }</h1>
 			<p class="mb-3">Posted on <FormattedDate date={pubDate} />.{updatedDate && <span> / Updated on <FormattedDate date={updatedDate} />.</span>} | {readingTime && <span>Est. reading time: {readingTime} minutes</span>}</p>
-			{keywords && 
+			{keywords &&
 				<p class="tag-viewer mb-2"><strong>Tags:&nbsp;</strong>{keywords.map(kw => <span><a href={`/tags/${kw}`}>{kw}</a></span>)}</p>
 			}
 			<hr/>
@@ -41,4 +41,3 @@ const { title, description, pubDate, updatedDate, keywords, readingTime, image }
 		</div>
 	</article>
 </MainBody>
-

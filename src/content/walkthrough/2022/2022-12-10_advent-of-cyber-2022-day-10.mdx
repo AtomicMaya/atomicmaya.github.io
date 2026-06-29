@@ -1,0 +1,83 @@
+---
+title: "Advent of Cyber 2022 - Day 10"
+description: "Walkthrough - AoC 2022 - Day 10 - \"You're a mean one, Mr. Yeti\""
+pubDate: 'Dec 10 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Red Team: Hack a Game"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img1_1 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/1.1.png'
+import img1_2 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/1.2.png'
+import img1_3 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/1.3.png'
+import img1_4 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/1.4.png'
+import img1_5 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/1.5.png'
+import img1_6 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/1.6.png'
+import img1_7 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/1.7.png'
+import img2_1 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/2.1.png'
+import img2_2 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/2.2.png'
+import img2_3 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/2.3.png'
+import img2_4 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/2.4.png'
+import img2_5 from '../../../assets/images/walkthrough/thm/aoc-2022/day10/2.5.png'
+
+### Question 1
+
+> What is the Guard's flag?
+
+First we prompt the guard.
+
+<ImageContainer image={img1_1} style="width: 70%; height: auto;" alt="Screenshot of one of the game's input modals." desc="Pick a number, any number!" />
+
+We then search any register that was equal to the number provided.
+
+<ImageContainer image={img1_2} style="width: 70%; height: auto;" alt="Screenshot of the memory search system." desc="I too, have used CheatEngine back in the days." />
+
+Once we have the register we bookmark it.
+
+<ImageContainer image={img1_3} style="width: 70%; height: auto;" alt="Screenshot of a newly bookmarked register." desc="At least we won't be looking for that agin." />
+
+We re-prompt the guard, check the value in the register, throw as-is in python, and it spits out the decimal version.
+
+<ImageContainer image={img1_4} style="width: 70%; height: auto;" alt="Screenshot of Python converting an integer." desc="If it works, it ain't stupid." />
+
+We enter this version:
+
+<ImageContainer image={img1_5} style="width: 70%; height: auto;" alt="Screenshot of one of the game's input modals." desc="lucky guess!" />
+
+The guard lets us through.
+
+<ImageContainer image={img1_6} style="width: 70%; height: auto;" alt="Screenshot of an in-game NPC interaction." desc="Yup, I'm a witch... you got me!" />
+
+We interact again to obtain the flag:
+
+<ImageContainer image={img1_7} style="width: 70%; height: auto;" alt="Screenshot of an in-game NPC interaction." desc="Sure you aren't!" />
+
+Answer: `THM{5_star_Fl4gzzz}`
+
+### Question 2
+
+> What is the Yeti's flag?
+
+This time around we just look at decreasing registers.
+
+<ImageContainer image={img2_1} style="width: 70%; height: auto;" alt="A screenshot of register search." desc="That's a lotta registers." />
+
+Once we iterate, we have an arbitrarily small amount of registers.
+
+<ImageContainer image={img2_2} style="width: 70%; height: auto;" alt="A screenshot of register search." desc="That's considerably less registers." />
+
+We freeze it at 100.
+
+<ImageContainer image={img2_3} style="width: 70%; height: auto;" alt="A screenshot of register search." desc="TADAAAA, I AM IMMORTAL!!" />
+
+We survive.
+
+<ImageContainer image={img2_4} style="width: 70%; height: auto;" alt="Screenshot of the game." desc="And now we talk to the Yeti." />
+
+The Yeti gives us the flag:
+
+<ImageContainer image={img2_5} style="width: 70%; height: auto;" alt="Screenshot of an in-game NPC interaction." nodesc />
+
+Answer: `THM{yetiyetiyetiflagflagflag}`

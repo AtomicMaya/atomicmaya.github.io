@@ -1,0 +1,23 @@
+---
+import { getPublishedPosts } from '../../utils/collections';
+import Tag from '../stub/Tag.astro';
+
+const kw = (await getPublishedPosts()).map(x => x.data.keywords ?? []);
+let tags: { [id: string]: number; } = {}
+for (let k = 0; k < kw.length; k++) {
+  for (let w = 0; w < kw[k].length; w++) {
+    if (!(kw[k][w] in tags)) {
+      tags[kw[k][w]] = 1;
+    } else {
+      tags[kw[k][w]] += 1;
+    }
+  }
+}
+---
+<h4>~$ Tags</h4>
+
+<div class="d-flex flex-wrap">
+{
+  Object.entries(tags).sort((a, b) => b[1] - a[1]).map(x => <Tag stub={x[0]} count={x[1]} />)
+}
+</div>

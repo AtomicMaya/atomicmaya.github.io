@@ -1,0 +1,23 @@
+---
+
+interface Props {
+	stub: string,
+	count: number
+}
+
+const { stub, count } = Astro.props;
+---
+<style>
+a > span {
+  margin: .25rem; padding: .5rem;
+  background-color: #2e2e2e;
+  border-radius: .25rem;
+  font-size: smaller;
+}
+
+a {
+  margin: .5rem 0;
+}
+</style>
+
+<a href={"/tags/" + encodeURI(stub) + "/"}><span>{stub} ({count})</span></a>

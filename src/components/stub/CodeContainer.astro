@@ -1,0 +1,12 @@
+---
+interface Props {
+    title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class='media-container mb-4'>
+  {title && <span class="text-center"><caption>{title}</caption></span>}
+  <slot/>
+</div>

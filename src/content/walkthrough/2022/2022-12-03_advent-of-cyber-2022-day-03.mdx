@@ -1,0 +1,71 @@
+---
+title: "Advent of Cyber 2022 - Day 3"
+description: "Walkthrough - AoC 2022 - Day 3 - \"Nothing escapes detective McRed\""
+pubDate: 'Dec 03 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Red Team: OSINT"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+
+import img1 from '../../../assets/images/walkthrough/thm/aoc-2022/day03/1.png'
+import img2_1 from '../../../assets/images/walkthrough/thm/aoc-2022/day03/2.1.png'
+import img2_2 from '../../../assets/images/walkthrough/thm/aoc-2022/day03/2.2.png'
+import img2_3 from '../../../assets/images/walkthrough/thm/aoc-2022/day03/2.3.png'
+import img4 from '../../../assets/images/walkthrough/thm/aoc-2022/day03/4.png'
+
+### Question 1
+
+> What is the name of the Registrar for the domain santagift.shop?
+
+We take a look using the ICANN Lookup website: <ExternalLink url="https://lookup.icann.org/en/lookup" text="https://lookup.icann.org/en/lookup" />
+
+<ImageContainer image={img1} style="width: auto; height: 300px;" alt="A screenshot of the ICANN website." desc="ICANN be useful." />
+
+Answer: `NAMECHEAP INC`
+
+### Question 2
+
+> Find the website's source code (repository) on <ExternalLink url="https://github.com/" text="github.com" /> and open the file containing sensitive credentials. Can you find the flag?
+
+There it's just a matter of looking for the URL, and finding the oldest repository involved.
+
+<ImageContainer image={img2_1} style="width: 70%; height: auto;" alt="A screenshot of a GitHub search result." desc="Plenty of valuable bits to search for." />
+
+There we look for interesting files, such as for example `config.php`.
+
+<ImageContainer image={img2_2} style="width: 70%; height: auto;" alt="A screenshot of a file in the GitHub repository named 'config.php'" desc="Oh no." />
+
+This produces a flag:
+
+<ImageContainer image={img2_3} style="width: 70%; height: auto;" alt="A screenshot of 'config.php', revealing a flag." desc="My secretses." />
+
+Answer: `{THM_OSINT_WORKS}`
+
+### Question 3
+
+> What is the name of the file containing passwords?
+
+(See Q2)
+
+Answer: `config.php`
+
+### Question 4
+
+> What is the name of the QA server associated with the website?
+
+If we scroll down in the file a bit, we can see the following:
+
+<ImageContainer image={img4} style="width: 70%; height: auto;" alt="A screenshot of hardcoded credentials." desc="This somehow got worse." />
+
+Answer: `qa.santagift.shop`
+
+### Question 5
+
+> What is the DB_PASSWORD that is being reused between the QA and PROD environments?
+
+(See Q4)
+
+Answer: `S@nta2022`

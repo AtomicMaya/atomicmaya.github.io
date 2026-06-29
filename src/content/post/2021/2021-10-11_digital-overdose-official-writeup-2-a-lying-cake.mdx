@@ -16,6 +16,7 @@ import LocalLink from '../../../components/stub/link/LocalLink.astro'
 import TwitterEmbed from '../../../components/stub/TwitterEmbed.astro'
 
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 import img_description from '../../../assets/images/post/2021/2021-10-11_ctf/portal/description.png'
 import img_hint from '../../../assets/images/post/2021/2021-10-11_ctf/portal/hint.png'
@@ -78,7 +79,7 @@ The set of characters used for flags always contains visible print characters.
 
 To solve this challenge, one can either manually count the special characters and then convert each number to the equivalent ASCII character, or one can script the behavior, which is what we'll do below.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```py
 text = "T​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​h​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​c​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​k​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​s​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​a​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​l​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​i​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​e"
 result = []
@@ -91,6 +92,6 @@ for i in range(len(text)):
 
 print("".join([chr(a) for a in result]))
 ```
-</div>
+</CodeContainer>
 
 This prints out <code>{`DO{1$_1NV1$1BL3}\\x00`}</code>, which makes the flag <code>{`DO{1$_1NV1$1BL3}`}</code>

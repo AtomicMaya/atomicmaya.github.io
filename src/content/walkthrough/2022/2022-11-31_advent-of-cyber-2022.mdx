@@ -1,0 +1,46 @@
+---
+title: "Advent of Cyber 2022"
+description: "Advent of Cyber 2022 - Index"
+pubDate: 'Nov 31 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+---
+
+Every year since 2019, TryHackMe has been hosting an event called Advent Of Cyber, which - much like the Advent of Code event it is inspired by - takes place from the 1st to the 24th of December.
+
+2022 marked the fourth installment of this event, located here on [TryHackMe](https://tryhackme.com/room/adventofcyber4).
+
+Each "day" has been split off in a separate walkthrough, for legibility's sake. Also, you may want to preserve your scroll finger.
+
+<h3 id="index">Index</h3>
+
+export const days = [
+  { n: 1,  title: "Someone's coming to town!", slug: "2022-12-01_advent-of-cyber-2022-day-01" },
+  { n: 2,  title: "Santa's Naughty & Nice Log", slug: "2022-12-02_advent-of-cyber-2022-day-02" },
+  { n: 3,  title: "Nothing escapes detective McRed", slug: "2022-12-03_advent-of-cyber-2022-day-03" },
+  { n: 4,  title: "Scanning through the snow", slug: "2022-12-04_advent-of-cyber-2022-day-04" },
+  { n: 5,  title: "He knows when you're awake", slug: "2022-12-05_advent-of-cyber-2022-day-05" },
+  { n: 6,  title: "It's beginning to look a lot like phishing", slug: "2022-12-06_advent-of-cyber-2022-day-06" },
+  { n: 7,  title: "Maldocs roasting on an open fire", slug: "2022-12-07_advent-of-cyber-2022-day-07" },
+  { n: 8,  title: "Last Christmas I gave you my ETH", slug: "2022-12-08_advent-of-cyber-2022-day-08" },
+  { n: 9,  title: "Dock the halls", slug: "2022-12-09_advent-of-cyber-2022-day-09" },
+  { n: 10, title: "You're a mean one, Mr. Yeti", slug: "2022-12-10_advent-of-cyber-2022-day-10" },
+  { n: 11, title: "Not all gifts are nice", slug: "2022-12-11_advent-of-cyber-2022-day-11" },
+  { n: 12, title: "Forensic McBlue to the REVscue!", slug: "2022-12-12_advent-of-cyber-2022-day-12" },
+  { n: 13, title: "Simply having a wonderful pcap time", slug: "2022-12-13_advent-of-cyber-2022-day-13" },
+  { n: 14, title: "I'm dreaming of secure web apps", slug: "2022-12-14_advent-of-cyber-2022-day-14" },
+  { n: 15, title: "Santa is looking for a sidekick", slug: "2022-12-15_advent-of-cyber-2022-day-15" },
+  { n: 16, title: "SQLI's the king, the carolers sing", slug: "2022-12-16_advent-of-cyber-2022-day-16" },
+];
+
+<div class="d-flex flex-column m-1">
+  {days.map(d => (
+    <a class="no-underline" rel="noopener" href={`/walkthrough/2022/${d.slug}`}>
+      <div class="d-flex flex-row card mb-1">
+        <div class="col-md-2 p-3">DAY {d.n}</div>
+        <div class="col-md-10 p-3">{d.title}</div>
+      </div>
+    </a>
+  ))}
+</div>

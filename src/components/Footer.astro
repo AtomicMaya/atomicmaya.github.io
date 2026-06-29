@@ -9,7 +9,7 @@ const today = new Date();
         <p class="py-0 my-0"><u>creatures i find cool</u></p>
 
         <div
-            class="d-flex flex-row flex-wrap justify-content-center p-2 my-0 align-items-center"
+            class="d-flex flex-row flex-wrap justify-content-center p-2 my-0 mx-auto align-items-center" style="max-width: 80%"
         >
             {
                 friend88x31List.map((eeto) => (
@@ -20,6 +20,7 @@ const today = new Date();
                                     src={eeto.image}
                                     alt={eeto.alt}
                                     loading="lazy"
+                                    class="pixelated"
                                 />
                             </a>
                         )}
@@ -28,6 +29,7 @@ const today = new Date();
                                 src={eeto.image}
                                 alt={eeto.alt}
                                 loading="lazy"
+                                class="pixelated"
                             />
                         )}
                     </span>
@@ -35,9 +37,10 @@ const today = new Date();
             }
         </div>
 
+        <div class="my-2"><span>this site has a <a href="/.well-known/button.json">.well-known/button.json</a></span></div>
         <p class="py-0 my-0"><u>buttons</u></p>
         <div
-            class="d-flex flex-row flex-wrap justify-content-center p-2 my-0 align-items-center"
+            class="d-flex flex-row flex-wrap justify-content-center p-2 my-0 mx-auto align-items-center" style="max-width: 80%"
         >
             {
                 other88x31List.map((eeto) => (
@@ -48,6 +51,7 @@ const today = new Date();
                                     src={eeto.image}
                                     alt={eeto.alt}
                                     loading="lazy"
+                                    class="pixelated"
                                 />
                             </a>
                         )}
@@ -56,6 +60,7 @@ const today = new Date();
                                 src={eeto.image}
                                 alt={eeto.alt}
                                 loading="lazy"
+                                class="pixelated"
                             />
                         )}
                     </span>
@@ -87,5 +92,9 @@ const today = new Date();
 
     img {
         padding: 2pt 4pt;
+    }
+
+    .pixelated {
+        image-rendering: pixelated;
     }
 </style>

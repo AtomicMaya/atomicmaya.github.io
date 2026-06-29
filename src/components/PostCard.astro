@@ -1,106 +1,109 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import FormattedDate from './stub/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "./stub/FormattedDate.astro";
 
-type Props = CollectionEntry<'posts'>;
+type Props = CollectionEntry<"posts">;
 
 const post = Astro.props;
 ---
+
 <style lang="scss">
-	.card {
-		background-color: #222222;
-		color: white;
+    .card {
+        background-color: #222222;
+        color: white;
 
-		.card-body {
-			display: flex;
-			flex-direction: column;
-		}
-		
-		.card-img-top {
-			height: 100px;
-			object-fit: cover;
-			object-position: top;
-		}
-		
-		a {
-			margin-left: 0 !important;
-		}
-		
-		.card-title {
-			color: #b5e853
-		}
-		
-		.card-read-more {
-			text-align: right;
-			margin-left: auto;
-			line-height: 1;
-			letter-spacing: 0px;
-			text-decoration: underline !important
-			{/* color: rgba(96,6,6); */ }
-		}
-		
-		h6 {
-			margin: 0;
-			font-size: small;
-			font-weight: 500;
-		}
-		
-		.card-link-container {
-			flex-wrap: wrap;
-			
-			a {
-				text-decoration: none;
-			}
-			
-			.card-tag, .card-author {
-				white-space: nowrap;
-				overflow-x: hidden;
-				padding: 4px;
-				border-radius: 5px;
-				margin: 1px;
-			}
-			
-			.card-tag {
-				margin: .25rem; padding: .5rem;
-				background-color: #2e2e2e;
-				border-radius: .25rem;
-				font-size: smaller;
-			}
-			
-			.card-author {
-				color: white;
-				background-color: #818181;
-			}
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
 
-      .tag-container {
-        max-width: 55%;
-        min-width: 0;
-      }
-		}
-		
-	}
+        .card-img-top {
+            height: 100px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        a {
+            margin-left: 0 !important;
+        }
+
+        .card-title {
+            color: #b5e853;
+        }
+
+        .card-read-more {
+            text-align: right;
+            margin-left: auto;
+            line-height: 1;
+            letter-spacing: 0px;
+            text-decoration: underline !important
+               {
+                /* color: rgba(96,6,6); */
+            }
+        }
+
+        h6 {
+            margin: 0;
+            font-size: small;
+            font-weight: 500;
+        }
+
+        .card-link-container {
+            flex-wrap: wrap;
+
+            a {
+                text-decoration: none;
+            }
+
+            .card-tag,
+            .card-author {
+                white-space: nowrap;
+                overflow-x: hidden;
+                padding: 4px;
+                border-radius: 5px;
+                margin: 1px;
+            }
+
+            .card-tag {
+                margin: 0.25rem;
+                padding: 0.5rem;
+                background-color: #2e2e2e;
+                border-radius: 0.25rem;
+                font-size: smaller;
+            }
+
+            .card-author {
+                color: white;
+                background-color: #818181;
+            }
+
+            .tag-container {
+                max-width: 55%;
+                min-width: 0;
+            }
+        }
+    }
 </style>
 <div class="w-100 d-flex card h-100 align-items-stretch justify-content-between m-2 p-0">
   {/*post.data.image && <a class="card-read-more" href={`/post/${post.id}/`}><img loading="lazy" class="card-img-top" src={post.data.image.src} alt="Card image"></a>*/}
-  
-  <div class="card-body w-100 ">
-    <h6 class="card-title mb-1"><em><FormattedDate date={post.data.pubDate} /></em></h6>
-    
-    <h5 class="card-title">{ post.data.title }</h4>
-    
-    {post.data.description && <p class="mb-1">{post.data.description}</p>}
-    
+
+  <div class="card-body w-100">
+    <a href={`/post/${post.id}`} class="no-underline">
+      <div>
+        <h6 class="card-title mb-1"><em><FormattedDate date={post.data.pubDate} /></em></h6>
+
+        <h5 class="card-title">{post.data.title}</h5>
+
+        {post.data.description && (<p class="mb-1">{post.data.description}</p>)}
+      </div>
+    </a>
     <div class="d-flex flex-row card-link-container mt-1 align-items-center">
       <div class="d-flex flex-row flex-wrap justify-content-start me-auto tag-container">
-        {post.data.keywords &&
-          (post.data.keywords as string[]).map(e => <a class="card-tag p-2 mx-1" href={"/tags/" + e + "/"}>
-            <span>{e}</span>
-          </a>)
-        }
+        {post.data.keywords && (post.data.keywords as string[]).map((e) => (<a class="card-tag p-2 mx-1" href={"/tags/" + encodeURI(e) + "/"}><span>{e}</span></a>))}
       </div>
       <div class="d-flex flex-row justify-content-end">
-        <a class="small card-read-more" href={`/post/${post.id}`}>&gt;&gt;&gt; Read More  {post.data.readingTime && <span>({post.data.readingTime} min.)</span>}</a>
+        <a class="small card-read-more" href={`/post/${post.id}`}>&gt;&gt;&gt; Read More {post.data.readingTime && (<span>({post.data.readingTime} min.)</span>)}</a        >
       </div>
-    </div>			
+    </div>
   </div>
 </div>

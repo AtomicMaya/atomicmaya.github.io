@@ -1,0 +1,103 @@
+---
+title: "Advent of Cyber 2022 - Day 13"
+description: "Walkthrough - AoC 2022 - Day 13 - \"Simply having a wonderful pcap time\""
+pubDate: 'Dec 13 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Blue Team: Packet Analysis"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img1 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/1.png'
+import img2 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/2.png'
+import img4 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/4.png'
+import img5 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/5.png'
+import img6 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/6.png'
+import img7 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/7.png'
+import img8 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/8.png'
+import img9 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/9.png'
+import img10_1 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/10.1.png'
+import img10_2 from '../../../assets/images/walkthrough/thm/aoc-2022/day13/10.2.png'
+
+### Question 1
+
+> View the "Protocol Hierarchy" menu. What is the "Percent Packets" value of the "Hypertext Transfer Protocol"?
+
+<ImageContainer image={img1} style="width: 70%; height: auto;" alt="Screenshot of Wireshark's Protocol Hierarchy menu" nodesc />
+
+Answer: `0.3`
+
+### Question 2
+
+> View the "Conversations". Navigate to the TCP section. Which port number has received more than 1000 packets?
+
+<ImageContainer image={img2} style="width: 70%; height: auto;" alt="Screenshot of Wireshark's TCP conversations" nodesc />
+
+Answer: `3389`
+
+### Question 3
+
+> What is the service name of the used protocol that received more than 1000 packets?
+
+Answer: `RDP`
+
+### Question 4
+
+> Filter the DNS packets. What are the domain names? Enter the domains in alphabetical order and defanged format. (format: `domain[.]zzz,domain[.]zzz`)
+
+<ImageContainer image={img4} style="width: 70%; height: auto;" alt="Screenshot of filtered DNS packets" nodesc />
+
+Answer: `bestfestivalcompany[.]thm,cdn[.]bandityeti[.]thm`
+
+### Question 5
+
+> Filter the HTTP packets. What are the names of the requested files? Enter the names in alphabetical order and in defanged format. (format: `file[.]xyz,file[.]xyz`)
+
+<ImageContainer image={img5} style="width: 70%; height: auto;" alt="Screenshot of filtered HTTP packets" nodesc />
+
+Answer: `favicon[.]ico,mysterygift[.]exe`
+
+### Question 6
+
+> Which IP address downloaded the executable file? Enter your answer in defanged format.
+
+<ImageContainer image={img6} style="width: 70%; height: auto;" alt="Screenshot showing the IP that downloaded the executable" nodesc />
+
+Answer: `10[.]10[.]29[.]186`
+
+### Question 7
+
+> Which domain address hosts the malicious file? Enter your answer in defanged format.
+
+<ImageContainer image={img7} style="width: 70%; height: auto;" alt="Screenshot showing the malicious file's host" nodesc />
+
+Answer: `cdn[.]bandityeti[.]thm`
+
+### Question 8
+
+> What is the "user-agent" value used to download the non-executable file?
+
+<ImageContainer image={img8} style="width: 70%; height: auto;" alt="Screenshot of the user-agent header" nodesc />
+
+Answer: `Nim httpclient/1.6.8`
+
+### Question 9
+
+> Export objects from the PCAP file. Calculate the file hashes. What is the sha256 hash value of the executable file?
+
+<ImageContainer image={img9} style="width: 70%; height: auto;" alt="Screenshot of sha256 hash computation" nodesc />
+
+Answer: `0ce160a54d10f8e81448d0360af5c2948ff6a4dbb493fe4be756fc3e2c3f900f`
+
+### Question 10
+
+> Search the hash value of the executable file on VirusTotal. Navigate to the "Behaviour" section. There are multiple IP addresses associated with this file.
+>
+> What are the connected IP addresses? Enter the IP addressed defanged and in numerical order. (format: IPADDR,IPADDR)
+
+<ImageContainer image={img10_1} style="width: 70%; height: auto;" alt="Screenshot of VirusTotal behaviour section" nodesc />
+
+<ImageContainer image={img10_2} style="width: 70%; height: auto;" alt="Screenshot of VirusTotal behaviour section" nodesc />
+
+Answer: `20[.]99[.]133[.]109,20[.]99[.]184[.]37,23[.]216[.]147[.]64,23[.]216[.]147[.]76`

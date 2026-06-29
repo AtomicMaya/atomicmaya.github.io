@@ -15,6 +15,7 @@ import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
 import FediLink from '../../../components/stub/link/FediLink.astro'
 
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 import img_map from '../../../assets/images/post/2023/2023-08-21_i-went-to-c3camp/map.png'
 import img_train from '../../../assets/images/post/2023/2023-08-21_i-went-to-c3camp/noot-noot.png'
@@ -176,6 +177,7 @@ The war crimes bit may have gotten your mind spinning and asking "wait, the fuck
 
 However! This was not enough. Just sending JSFuck over the post is not funny enough. So why not encode it in a TCP/IP packet and encode it as hex? Well that is what I thought, and what my friend <TwitterLink url="https://twitter.com/scottmcgready" text="Scott McGready" /> ended up getting in the mail (see below).
 
+<CodeContainer>
 ```text showLineNumbers=false
 00 1C 73 00 11 99 60 E9 AA 1D 2D 33 08 00 45 00
 00 A8 00 01 00 00 40 06 27 28 B9 C7 6C 99 AC 43
@@ -190,6 +192,7 @@ However! This was not enough. Just sending JSFuck over the post is not funny eno
 5D 5D 2B 28 21 5B 5D 2B 5B 5D 29 5B 21 2B 5B 5D
 2B 21 2B 5B 5D 5D
 ```
+</CodeContainer>
 
 <br/>
 

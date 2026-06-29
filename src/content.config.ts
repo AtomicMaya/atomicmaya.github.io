@@ -15,8 +15,30 @@ const posts = defineCollection({
 			updatedDate: z.coerce.date().optional(),
 			readingTime: z.optional(z.number()),
 			image: z.optional(image()),
-			keywords: z.optional(z.array(z.string()))
+			keywords: z.optional(z.array(z.string())),
+			wip: z.optional(z.boolean()),
 		}),
 });
 
-export const collections = { posts };
+const walkthroughs = defineCollection({
+	loader: glob({ base: './src/content/walkthrough', pattern: '**/*.{md,mdx}' }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.optional(z.string()),
+			pubDate: z.coerce.date(),
+			updatedDate: z.coerce.date().optional(),
+			readingTime: z.optional(z.number()),
+			image: z.optional(image()),
+			keywords: z.optional(z.array(z.string())),
+			platform: z.optional(z.string()),
+			platformLink: z.optional(z.string()),
+			category: z.optional(z.string()),
+			author: z.optional(z.string()),
+			authorLink: z.optional(z.string()),
+			authorIcon: z.optional(z.string()),
+			wip: z.optional(z.boolean()),
+		}),
+});
+
+export const collections = { posts, walkthroughs };

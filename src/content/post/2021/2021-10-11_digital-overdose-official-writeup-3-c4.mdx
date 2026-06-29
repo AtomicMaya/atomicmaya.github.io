@@ -15,6 +15,7 @@ import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 import LocalLink from '../../../components/stub/link/LocalLink.astro'
 
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 
 import img_description from '../../../assets/images/post/2021/2021-10-11_ctf/c4/description.png'
 
@@ -73,13 +74,13 @@ The challenge is provided in the form of 4 files:
 
 The code, as partially seen below, is heavily obfuscated using something called JSFuck. JSFuck is an esoteric language that is composed of the characters `[]()!+`. For issues of content size (and to mess up automatic deobfuscators) I have also added the `*`.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```js
 ((Φ, ...Ξ)=>[][Φ[(+!+[]+!+[])**(+![])+(+!+[]+!+[])**(+!+[])+(+!+[]+!+[])**(+!+[]+!+[]+!+[])+(+!+[]+!+[])**(+!+[]+!+[]+!+[]+!+[])]+Φ[
 ...
 (+!+[]+!+[])**(+!+[]+!+[]+!+[]+!+[])]](Ξ))('UvSgI5/_M26b<z]Ks+e)rn!l}1=p 0Z$`3A.kf^jD>a{yBC(4Y|9;c-G%N?8xho,7:t[iWmuF&"d*LE', m)
 ```
-</div>
+</CodeContainer>
 
 So, what is going on here? That... is an excellent question.
 
@@ -111,7 +112,7 @@ If you didn't want to deobfuscate manually however, you could have used a breakp
 
 Once deobfuscated, the code looks like this:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```js
 ((Φ, ...Ξ)=>[]['pop']['constructor']('const _=[0xf4,0x39,0xd1,0xc0,0x55,0x84,0x36,0x28,0xd7,0x2a,0xb9,0x93,0x2a,0x18,0xb1,0x72,0x6c,0xcd,0xcf,0x4b,0xd4,0x4c,\
 0x7d,0xe4,0xab,0xf0,0x23,0x53,0x24,0x5c,0x2a,0x42,0xf8,0x0e,0x26,0xfc,0xd4,0x5c,0xc1,0x71,0xef,0xa9,0x82,0x3d,0x7b,0x49,0xa2,0xdc];\
@@ -168,7 +169,7 @@ bm_n=[];for(bm_j=0;bm_j<4;bm_j++){bm_n.push([]);for(bm_i=0;bm_i<4;bm_i++)bm_n[bm
   {if(t(n)) return e({status:!0,flag:n}),!0}else e({status:!1});\
   return !1;};this[0][0]=c;')['call'](Ξ))('UvSgI5/_M26b<z]Ks+e)rn!l}1=p 0Z$`3A.kf^jD>a{yBC(4Y|9;c-G%N?8xho,7:t[iWmuF&"d*LE', m)
 ```
-</div>
+</CodeContainer>
 
 At this point, you are probably thinking something along the lines of <em>"What the hell, Maya?"</em>... and I wouldn't blame you if you did.
 
@@ -180,7 +181,7 @@ Another point is that although the AES algoritm implements many steps, most of t
 
 So, what does the "unclumped" algorithm look like? See below.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```js
 const _ = [0xAC, 0x46, 0x4C, 0x41, 0x47, 0x7B, 0x54, 0x48, 0x31, 0x24, 0x5F, 0x31, 0x24, 0x5F, 0x42, 0x31, 0x54, 0x5F,
  0x54, 0x34, 0x4E, 0x47, 0x30, 0x7D]
@@ -263,7 +264,7 @@ const c=(n,e)=>{if(document.getElementById("rGZsYWd7UzFLM30=")&&n.length%2==0){i
 
 this[0][0]=c;
 ```
-</div>
+</CodeContainer>
 
 Well. This doesn't really help. Let's break it down.
 
@@ -294,7 +295,7 @@ Well. This doesn't really help. Let's break it down.
 
 Once we have the code broken down, the decryption function can be written as such:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```js
 
 function unpad(block) {
@@ -363,6 +364,6 @@ function decrypt(msg, key) {
 	return unpad(result)
 }
 ```
-</div>
+</CodeContainer>
 
 So... yeah... this produces the flag: <code>{`DO{Y0UVE_JU$T_D34LT_W1TH_AES-ECB}`}</code>. It may have been slightly <em>too</em> hard, not too sorry about that.

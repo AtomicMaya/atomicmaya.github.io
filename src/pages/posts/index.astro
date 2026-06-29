@@ -2,9 +2,9 @@
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 import MainBody from '../../layouts/MainBody.astro';
 import PostCard from '../../components/PostCard.astro';
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../utils/collections';
 
-const postsLists = await getCollection('posts')
+const postsLists = await getPublishedPosts()
 const posts = postsLists.sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -16,31 +16,31 @@ const years = [...new Set(postsLists.map(e => e.data.pubDate.getFullYear()))].so
 		h2, h3 {
 			text-align: center;
 		}
-		
+
 		hr.dark {
 			color: #1f1f1f;
 			border: 1px solid #1f1f1f99;
 		}
-		
+
 		hr.clear {
 			color: #f7f7f7;
 			border: 1px solid #f7f7f799;
 		}
-		
+
 		hr {
 			margin: 1rem 0 !important;
 		}
 	}
 </style>
-<MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainBody title={`Posts | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
 	{
-		years.map(y => 
+		years.map(y =>
 		<h2 class="my-0 year-section text-center">{y}</h2>
 		<hr class="my-2" />
 		<section>
 			<div class="d-flex flex-column">
 				{
-					posts.filter((post) => post.data.pubDate.getFullYear() == y).map((post) => 
+					posts.filter((post) => post.data.pubDate.getFullYear() == y).map((post) =>
 						<PostCard {...post} />
 					)
 				}

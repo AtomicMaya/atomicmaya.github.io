@@ -24,9 +24,6 @@
 
         renderScript = pkgs.writeShellScriptBin "render" ''
           npm run build --verbose
-          echo "Removing weird compilation artifacts..."
-          rm -r ./dist/atomicmayame/browser/202*
-          echo "Removed weird compilation artifacts..."
         '';
 
         renderTestScript = pkgs.writeShellScriptBin "render-test" ''

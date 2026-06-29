@@ -1,0 +1,55 @@
+---
+title: "Advent of Cyber 2022 - Day 4"
+description: "Walkthrough - AoC 2022 - Day 4 - \"Scanning through the snow\""
+pubDate: 'Dec 04 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Red Team: Scanning"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img1 from '../../../assets/images/walkthrough/thm/aoc-2022/day04/1.png'
+import img3_1 from '../../../assets/images/walkthrough/thm/aoc-2022/day04/3.1.png'
+import img3_3 from '../../../assets/images/walkthrough/thm/aoc-2022/day04/3.3.png'
+import img4 from '../../../assets/images/walkthrough/thm/aoc-2022/day04/4.png'
+
+### Question 1
+
+> What is the name of the HTTP server running on the remote host?
+
+We run `nmap` in service discovery mode like so: `nmap -sV -sS $IP`
+
+<ImageContainer image={img1} style="width: 70%; height: auto;" alt="Nmap scan results." desc="Oooh, fun ports." />
+
+Answer: `Apache`
+
+### Question 2
+
+> What is the name of the service running on port 22 on the QA server?
+
+Answer: `ssh`
+
+### Question 3
+
+> What is the name of the service running on port 22 on the QA server?
+
+We access the SMB share by accessing `smb://$IP` in our file explorer. There we see three shares, including `admins`. There we log in with the credentials provided in the challenge `ubuntu:S@nta2022`.
+
+<ImageContainer image={img3_1} style="width: 70%; height: auto;" alt="A file explorer showing the directory of a samba share." desc="Login? Succesful." />
+
+We find the `flag.txt` file:
+
+<ImageContainer image={img3_3} style="width: 70%; height: auto;" alt="A screenshot of the 'flag.txt' file" desc="Here's our flag." />
+
+Answer: `{THM_SANTA_SMB_SERVER}`
+
+### Question 4
+
+> What is the password for the username santahr?
+
+We look into the `userlist.txt` file and find the correct password:
+
+<ImageContainer image={img4} style="max-height: 300px;" alt="Screenshot of the 'userlist.txt' file, it shows several username/password combinations." desc="Terrible password policy on display here." />
+
+Answer: `santa25`

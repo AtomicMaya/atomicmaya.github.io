@@ -5,12 +5,12 @@ import ISOFormattedDate from '../components/stub/ISOFormattedDate.astro';
 import MainBody from '../layouts/MainBody.astro';
 
 const formatDate = (dateTime: Date) => dateTime.toISOString().split("T")[0];
-//let years = ((start: number, stop: number, step = 1) =>
-//  Array(Math.ceil((stop - start) / step)).fill(start).map((x, y) => x + y * step))(2024, (new Date()).getFullYear() + 1)
+let years = ((start: number, stop: number, step = 1) =>
+  Array(Math.ceil((stop - start) / step)).fill(start).map((x, y) => x + y * step))(2024, (new Date()).getFullYear() + 1)
 let now = new Date();
 ---
 
-<MainBody title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<MainBody title={`calendar | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
     <h1>~$ calendar</h1>
 
     <p>Find me here!</p>
@@ -25,21 +25,13 @@ let now = new Date();
 
     <h2>Past events</h2>
 
-    <h3>2026</h3>
+    {years.slice().reverse().map(year => (
+        <>
+            <h3>{year}</h3>
 
-    <ul>
-        {CalendarData.filter( e => (e.endDate ?? e.startDate) < now && e.startDate.getFullYear() == 2026).map( e => <li class="pb-1"><strong><ISOFormattedDate date={e.startDate} /></strong>{e.endDate && " - "}{e.endDate && <strong><ISOFormattedDate date={e.endDate} /></strong>}:<br /><em>{e.eventName}, {e.location}</em></li>)}
-    </ul>
-
-    <h3>2025</h3>
-
-    <ul>
-        {CalendarData.filter( e => e.startDate.getFullYear() == 2025).map( e => <li class="pb-1"><strong><ISOFormattedDate date={e.startDate} /></strong>{e.endDate && " - "}{e.endDate && <strong><ISOFormattedDate date={e.endDate} /></strong>}:<br /><em>{e.eventName}, {e.location}</em></li>)}
-    </ul>
-
-    <h3>2024</h3>
-
-    <ul>
-        {CalendarData.filter( e => e.startDate.getFullYear() == 2024).map( e => <li class="pb-1"><strong><ISOFormattedDate date={e.startDate} /></strong>{e.endDate && " - "}{e.endDate && <strong><ISOFormattedDate date={e.endDate} /></strong>}:<br /><em>{e.eventName}, {e.location}</em></li>)}
-    </ul>
+            <ul>
+                {CalendarData.filter( e => (e.endDate ?? e.startDate) < now && e.startDate.getFullYear() == year).map( e => <li class="pb-1"><strong><ISOFormattedDate date={e.startDate} /></strong>{e.endDate && " - "}{e.endDate && <strong><ISOFormattedDate date={e.endDate} /></strong>}:<br /><em>{e.eventName}, {e.location}</em></li>)}
+            </ul>
+        </>
+    ))}
 </MainBody>

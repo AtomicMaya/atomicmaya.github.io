@@ -12,6 +12,7 @@ keywords:
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
 import { Image } from "astro:assets"
 
 import img_p1s1 from '../../../assets/images/post/2021/2021-04-20_central-infosec-ctf/python-01/step1.png'
@@ -41,7 +42,7 @@ The challenges consist of Python code to analyse and reverse, in order to find a
 
 The first challenge, located at the URL `$MACHINE_IP/python-01`, is a small python script that refreshes a few basics of string operations in Python, which you can see below.
 
-<div class="mx-auto">
+<CodeContainer>
 ```python
 str1 = "P"
 str2 = "7H0N"
@@ -51,7 +52,7 @@ str2 = "57R"
 print("Central-InfoSec" + "{" + str1 + "_" + str2 + "_" + str3 + "}")
 # Output: Central-InfoSec{???}
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -113,7 +114,7 @@ This last bit is the bit that does the work of showing the flag, which is <code>
 
 The second challenge, located at the URL `$MACHINE_IP/python-02`, is a small script that goes on about string replacement. The key is to go from the output (<code>{`Central-InfoSec{$7R1N9_R3PL@C3M3N7_$47645558}`}</code>) and reverse the code to find the input (<code>{`"Central-InfoSec{???}"`}</code>).
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 flag = "Central-InfoSec{???}"
 flag = flag.replace("5","$",2)
@@ -126,7 +127,7 @@ print(flag)
 # Input: Central-InfoSec{???}
 # Output: Central-InfoSec{$7R1N9_R3PL@C3M3N7_$47645558}
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -140,7 +141,7 @@ So to reverse this we are going to define the input as the original output, do e
 
 To do this we're going to be writing the following script:
 
-<div class="d-flex  media-container">
+<CodeContainer>
 ```python
 flag = "Central-InfoSec{$7R1N9_R3PL@C3M3N7_$47645558}"
 flag = flag.replace("58","8",1)
@@ -152,7 +153,7 @@ print(flag)
 # Input: Central-InfoSec{$7R1N9_R3PL@C3M3N7_$47645558}
 # Output: Central-InfoSec{57R1N9_R3PL@C3M3N7_55762558}
 ```
-</div>
+</CodeContainer>
  
 <br/>
 
@@ -164,7 +165,7 @@ This means our original string was <code>{`Central-InfoSec{57R1N9_R3PL@C3M3N7_55
 
 The third challenge, located at the URL `$MACHINE_IP/python-03`, is a small script that goes on about string replacement. The key is to go from the output (<code>{`"Central-InfoSec{$7R1N9_R3PL@C3M3N7_$47645558}"`}</code>) and reverse the code to find the input (<code>{`"Central-InfoSec{???}"`}</code>).
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def encodeNumbers(statement, num1, num2):
     number1 = str(num1)
@@ -184,7 +185,7 @@ print(flag)
 # Input: Central-InfoSec{???}
 # Output: Central-InfoSec{4NC0D4D_NUM84R31_131140}
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -192,7 +193,7 @@ So, before doing anything, let's find out what this code does.
 
 The first thing it does is define a function (which you can notice by the `def` keyword), named `encodeNumbers`. A function is a block of code you want to run multiple times without having to rewrite the code each time, and is quite useful in programming.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def encodeNumbers(statement, num1, num2):
     number1 = str(num1)
@@ -200,7 +201,7 @@ def encodeNumbers(statement, num1, num2):
     statement = statement.replace(number1,number2)
     return statement
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -220,7 +221,7 @@ What this function is doing is replacing every occurence of `num1` by the sum of
 
 So to reverse this function, we make it take the exact same numbers, but invert the order in the `replace` statement.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def decodeNumbers(statement, num1, num2):
     number1 = str(num1)
@@ -228,13 +229,13 @@ def decodeNumbers(statement, num1, num2):
     statement = statement.replace(number2,number1)
     return statement
 ```
-</div>
+</CodeContainer>
  
 <br/>
 
 We then do like before and reverse the order of operations in order to obtain:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python startLineNumber=7
 flag = "Central-InfoSec{4NC0D4D_NUM84R31_131140}"
 flag = decodeNumbers(flag,7,3)
@@ -248,7 +249,7 @@ print(flag)
 # Input: Central-InfoSec{4NC0D4D_NUM84R31_131140}
 # Output: Central-InfoSec{3NC0D3D_NUM83R5_15130}
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -262,7 +263,7 @@ This means our original string was <code>{`Central-InfoSec{3NC0D3D_NUM83R5_15130
 
 The fourth challenge, located at the URL `$MACHINE_IP/python-04`, is a script that deals with function analysis. The key is to invert the function and go from the output (<code>{`"Central-InfoSec{OPU==_DCUG==_64}"`}</code>) and reverse certain operations to find the input (<code>{`"Central-InfoSec{???}"`}</code>).
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def b64encode(s, n):
     return ''.join(chr((ord(char) - ord('a') + n) % 26 + 97) for char in s.lower())
@@ -282,7 +283,7 @@ print (flag1 + flag2a + flag2b + flag2c + flag2d + flag2e + flag3)
 # Input: Central-InfoSec{???}"
 # Output: Central-InfoSec{OPU==_DCUG==_64}
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -290,12 +291,12 @@ print (flag1 + flag2a + flag2b + flag2c + flag2d + flag2e + flag3)
 
 Like the previous challenge, let us start by looking at the function:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def b64encode(s, n):
     return ''.join(chr((ord(char) - ord('a') + n) % 26 + 97) for char in s.lower())
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -315,7 +316,7 @@ Finally, the `''.join(...)` is a function used to merge all the elements of a li
 
 So we can rewrite our `b64encode` function like so:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def b64encode(s, n):
     result = []                                     # Start our list
@@ -328,7 +329,7 @@ def b64encode(s, n):
         result.append(chr(new_value))               # Add it to the list
     return ''.join(result)                          # Merge the list elements into a string
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
@@ -336,7 +337,7 @@ To reverse that function is now easier: We need to do much of the same, but inst
 
 However, since the modulo doesn't have a very well defined behavior in Python when it comes to potential negative numbers, we will also add 26 for good measure before we do the modulo operation, just to be safe.
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def b64decode(s, n):
     result = []                                     # Start our list
@@ -350,24 +351,24 @@ def b64decode(s, n):
         result.append(chr(new_value))               # Add it to the list
     return ''.join(result)                          # Merge the list elements into a string
 ```
-</div>
+</CodeContainer>
  
 <br/>
 
 If you want to rewrite this as a shorter version, you can always write:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 def b64decode(s, n):
     return ''.join(chr((ord(char) - ord('a') - n + 26) % 26 + ord('a')) for char in s.lower())
 ```
-</div>
+</CodeContainer>
 
 <br/>
 
 <h5>2. Working on the challenge</h5>
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python startLineNumber=4
 flag1 = "Central-InfoSec{"
 flag2a = "???"
@@ -384,7 +385,7 @@ print (flag1 + flag2a + flag2b + flag2c + flag2d + flag2e + flag3)
 # Input: Central-InfoSec{???}
 # Output: Central-InfoSec{OPU==_DCUG==_64}
 ```
-</div>
+</CodeContainer>
  
 <br/>
 
@@ -406,7 +407,7 @@ This makes the original flag be <code>{`Central-InfoSec{not_base_64}`}</code> (w
 
 The fifth challenge, located at the URL `$MACHINE_IP/python-04`, is a script that deals with function analysis. The key is to invert the function and go from the output (<code>{`"Central-InfoSec{OPU==_DCUG==_64}"`}</code>) and reverse certain operations to find the input (<code>{`"Central-InfoSec{???}"`}</code>).
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python
 flag1 = "Central-InfoSec{"
 flag2a = "??_"
@@ -421,7 +422,7 @@ print(flag1 + flag2d + flag3);
 # Input: Central-InfoSec{???}
 # Output: Central-InfoSec{84@RD?7415C74@7851}
 ```
-</div>
+</CodeContainer>
  
 <br/>
 
@@ -431,7 +432,7 @@ This python script is a bit simpler in structure, but is a bit harder to analyze
 
 It gets confusing fast, so let's break it down a little:
 
-<div class="d-flex media-container">
+<CodeContainer>
 ```python startLineNumber=6
 flag2d = "8".join((flag2a + flag2b + flag2c).split("_"))[::-1]     # 84@RD?7415C74@7851
 flag2d_alpha = (flag2a + flag2b + flag2c)                          # Op4: "15_" + ?
@@ -439,7 +440,7 @@ flag2d_bis = flag2d_alpha.split("_")                               # Op3: "15_7@
 flag2d_ter = "8".join(flag2d_bis)                                  # Op2: ["15", "7@47C5147?DR@4", ""]
 flag2d_quat = flag2d_ter[::-1]                                     # Op1: "1587@47C5147?DR@48"
 ```
-</div>
+</CodeContainer>
 
 <br/>
 

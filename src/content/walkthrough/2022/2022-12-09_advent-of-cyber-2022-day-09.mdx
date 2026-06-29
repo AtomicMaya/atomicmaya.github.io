@@ -1,0 +1,110 @@
+---
+title: "Advent of Cyber 2022 - Day 9"
+description: "Walkthrough - AoC 2022 - Day 9 - \"Dock the halls\""
+pubDate: 'Dec 09 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Red Team: Pivoting"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img1 from '../../../assets/images/walkthrough/thm/aoc-2022/day09/1.png'
+import img2 from '../../../assets/images/walkthrough/thm/aoc-2022/day09/2.png'
+import img3 from '../../../assets/images/walkthrough/thm/aoc-2022/day09/3.png'
+import img6 from '../../../assets/images/walkthrough/thm/aoc-2022/day09/6.png'
+import img7 from '../../../assets/images/walkthrough/thm/aoc-2022/day09/7.png'
+import img9 from '../../../assets/images/walkthrough/thm/aoc-2022/day09/9.png'
+import img10 from '../../../assets/images/walkthrough/thm/aoc-2022/day09/10.png'
+
+### Question 1
+
+> Deploy the attached VM, and wait a few minutes. What ports are open?
+
+Run `nmap -sV -sS $IP`
+
+<ImageContainer image={img1} style="width: 70%; height: auto;" alt="Screenshot of an 'nmap' output, showing only the port 80 open." desc="Well... that's not a lot to work with..." />
+
+Answer: `80`
+
+### Question 2
+
+> What framework is the web application developed with?
+
+Browse to the page.
+
+<ImageContainer image={img2} style="width: 70%; height: auto;" alt="Screenshot of the web page." desc="Thankfully the version info is right *there*" />
+
+Answer: `Laravel`
+
+### Question 3
+
+> What CVE is the application vulnerable to?
+
+We search for `laravel` and use the `info` term to get the details of the CVE.
+
+<ImageContainer image={img3} style="width: auto; height: 300px;" alt="Screenshot of exploit-db results for laravel." desc="Damn, exploitDB is convenient." />
+
+Answer: `CVE-2021-3129`
+
+### Question 4
+
+> What command can be used to upgrade the last opened session to a Meterpreter session?
+
+From the explanation we find:
+
+<ImageContainer image={img6} style="width: 70%; height: auto;" alt="Screenshot of meterpreter output." nodesc />
+
+Answer: `sessions -u -1`
+
+### Question 5
+
+> What file indicates a session has been opened within a Docker container?
+
+From the internet: `/.dockerenv`
+
+Answer: `/.dockerenv`
+
+### Question 6
+
+> What file often contains useful credentials for web applications?
+
+See (Question 4)
+
+Answer: `.env`
+
+### Question 7
+
+> What database table contains useful credentials?
+
+We find the table schema dump, there is a table called `users`:
+
+<ImageContainer image={img7} style="width: 70%; height: auto;" alt="Screenshot of the metasploit output of a postgresql connection." desc="Santa is certainly not the only exec who's security officer cries themselves to sleep at night." />
+
+Answer: `users`
+
+### Question 8
+
+> What is Santa's password?
+
+Answer: `p4$$w0rd`
+
+### Question 9
+
+> What ports are open on the host machine?
+
+We run `proxychains -q nmap -n -sT -Pn -p 22,80,443,5432 172.17.0.1`:
+
+<ImageContainer image={img9} style="width: 70%; height: auto;" alt="Screenshot of a command being chained to the host." desc="Ooops." />
+
+Answer: `22,80`
+
+### Question 10
+
+> What is the root flag?
+
+We login with the credentials and get the root flag:
+
+<ImageContainer image={img10} style="width: 70%; height: auto;" alt="Screenshot of an SSH session." desc="We got 'em." />
+
+Answer: `THM{47C61A0FA8738BA77308A8A600F88E4B}`

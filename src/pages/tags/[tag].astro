@@ -1,0 +1,63 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import MainBody from '../../layouts/MainBody.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getPublishedPosts } from '../../utils/collections';
+
+export async function getStaticPaths() {
+	const [posts] = await Promise.all([
+		getPublishedPosts()
+	]);
+
+	const tagged: Record<string, { posts: typeof posts; }> = {};
+
+	for (const post of posts) {
+		for (const tag of post.data.keywords ?? []) {
+			tagged[tag] ??= { posts: [] };
+			tagged[tag].posts.push(post);
+		}
+	}
+
+	return Object.entries(tagged).map(([tag, entries]) => ({
+		params: { tag },
+		props: {
+			tag,
+			posts: entries.posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+		},
+	}));
+}
+
+const { tag, posts } = Astro.props;
+const years = [...new Set(posts.map((p) => p.data.pubDate.getFullYear()))].sort((a, b) => 0 - (a > b ? 1 : -1));
+---
+<style lang="scss">
+	.year-section {
+		h2, h3 {
+			text-align: center;
+		}
+
+		hr {
+			margin: 1rem 0 !important;
+		}
+	}
+</style>
+<MainBody title={`${tag} | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
+	<h2 class="my-0 year-section text-center">{tag}</h2>
+	<hr class="my-2" />
+	{
+		years.map(y =>
+		<h3 class="my-0 year-section text-center">{y}</h3>
+		<hr class="my-2" />
+		<section>
+			<div class="d-flex flex-column">
+				{
+					posts.filter((post) => post.data.pubDate.getFullYear() == y).map((post) =>
+						<PostCard {...post} />
+					)
+				}
+			</div>
+		</section>
+		<hr class="my-3" />
+		)
+	}
+</MainBody>

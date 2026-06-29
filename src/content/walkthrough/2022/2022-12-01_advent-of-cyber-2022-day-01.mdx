@@ -1,0 +1,38 @@
+---
+title: "Advent of Cyber 2022 - Day 1"
+description: "Walkthrough - AoC 2022 - Day 1 - \"Someone's coming to Town\""
+pubDate: 'Dec 01 2022'
+readingTime: 2
+platform: TryHackMe
+platformLink: https://tryhackme.com/room/adventofcyber4
+category: "Blue Team: Frameworks"
+---
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+
+import img1 from '../../../assets/images/walkthrough/thm/aoc-2022/day01/1.png'
+import img2 from '../../../assets/images/walkthrough/thm/aoc-2022/day01/2.png'
+import img3 from '../../../assets/images/walkthrough/thm/aoc-2022/day01/3.png'
+import imgFinal from '../../../assets/images/walkthrough/thm/aoc-2022/day01/final.png'
+
+This challenge took the shape of an interactive game, where one had to build up puzzles that describe the Unified Kill Chain (read more about the UKC <ExternalLink url="https://www.unifiedkillchain.com" text="here" />).
+
+<ImageContainer image={img1} style="width: 70%; height: auto;" alt="A puzzle with (in order, left to right, top to bottom), the following: Reconnaissance, Weaponisation, Delivery, Social Engineering, Exploitation, Persistence, Defense Evasion, Command and Control" desc="The first puzzle." />
+
+<ImageContainer image={img2} style="width: 70%; height: auto;" alt="A puzzle with (in order, left to right, top to bottom), the following: Pivoting, Discovery, Privilege Escalation, Execution, Credential Access, Lateral Movement" desc="The second puzzle." />
+
+<ImageContainer image={img3} style="width: 70%; height: auto;" alt="A puzzle with (in order, left to right, top to bottom), the following: Access, Collection, Exfiltration, Impact, Objectives" desc="The third puzzle." />
+
+<ImageContainer image={imgFinal} style="width: 70%; height: auto;" alt="A flag, and the name and likeness of the baddie" desc="The game is finished, revealing this years' baddie." />
+
+### Question 1
+
+> Who is the adversary that attacked Santa's network this year?
+
+Answer: `The Bandit Yeti`
+
+### Question 2
+
+> What's the flag that they left behind?
+
+Answer: `THM{IT'S A Y3T1 CHR1$TMA$}`

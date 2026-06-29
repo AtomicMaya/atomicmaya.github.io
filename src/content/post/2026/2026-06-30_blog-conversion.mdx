@@ -1,0 +1,239 @@
+---
+title: "making this blog less of a pain to write to"
+description: "the tale of a full technology migration so i don't have to edit 12 files to publish a single blogpost"
+pubDate: 'Jun 30 2026'
+readingTime: 11
+keywords:
+- Personal
+- Development
+- Technical
+---
+import LocalLink from '../../../components/stub/link/LocalLink.astro'
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+import FediLink from '../../../components/stub/link/FediLink.astro'
+import BlueskyLink from '../../../components/stub/link/BlueskyLink.astro'
+import TwitterLink from '../../../components/stub/link/TwitterLink.astro'
+import GithubLink from '../../../components/stub/link/GithubLink.astro'
+
+import CodeContainer from '../../../components/stub/CodeContainer.astro'
+import ImageContainer from '../../../components/stub/ImageContainer.astro'
+
+import img_oldskin from '../../../assets/images/post/2026/2026-06-30_blog-conversion/old.png'
+import img_newskin from '../../../assets/images/post/2026/2026-06-30_blog-conversion/new.png'
+
+
+as of today (-ish), this blog no longer runs on the same technology stack as before, and this is a good thing.
+
+what started out as a cute project involving Angular pre-rendered static site generation ended up with me in edition hell, where i was having to make many small edits across the entire project in order to even be able to produce a single blogpost.
+
+this wasn't exactly technical debt because i'd mostly written these facilities in order to make changes quite surgical and keep some amount of structure.
+but after 50-60 posts it became hard to maintain.
+
+#### a hellhole of my own making
+
+for each new post i had to:
+
+first create a folder called `$ROOT/src/app/content/post/$YEAR/YYMMDD-$TITLE` and
+
+* add a typescript file `$ROOT/src/app/content/post/$YEAR/YYMMDD-$TITLE/$TITLE.ts` and populate it
+* add an html file `$ROOT/src/app/content/post/$YEAR/YYMMDD-$TITLE/$TITLE.html` and populate it
+* (optional) add an scss file `$ROOT/src/app/content/post/$YEAR/YYMMDD-$TITLE/$TITLE.scss` and populate it
+
+then i had to load the component in `$ROOT/src/app/submodules/app-$YEAR.module.ts` to have the app be aware of the post
+
+<CodeContainer title="app-2025.module.ts">
+```
+import { Dec2025_OnceMoreToBSidesLondon_Component } from
+  "../content/post/2025/251217-once-more-to-bsides-london/once-more-to-bsides-london.component";
+
+@NgModule({
+  declarations: [
+    Jan2025Goingto38c3Component,
+    Feb2025MayaDoesAnInfrastrukturComponent,
+    Apr2025HackGlasgowComponent,
+    May2025_TripToMontreal_Component,
+    Jul2025_SemesterInReview_Component,
+    Aug2025_WHY2025_Component,
+    Sep2025_SmallInternet_Component,
+    Dec2025_OnceMoreToBSidesLondon_Component
+  ],
+  ...
+})
+```
+</CodeContainer>
+
+i would then add the metadata to the post definition in `$ROOT/src/app/routing/app-$YEAR-post-routing.module.ts` and crosslink it to the component
+
+<CodeContainer title="app-2025-post-routing.module.ts">
+```typescript
+{
+  path: '2025_12_17+once-more-to-bsides-london',
+  component: Dec2025_OnceMoreToBSidesLondon_Component,
+  data: {
+    title: 'once more to BSides London',
+    authors: [authorList['AtomicMaya']],
+    description: 'going to bsides london to help out and hang out',
+    tags: [TAG_CONFERENCE, TAG_CHAOS],
+    date: [2025, 12, 17],
+    readingTime: 3
+  }
+},
+```
+</CodeContainer>
+
+i would then make sure my post was written and working nicely.
+
+then to build the static render of my posts, i had to add the path to my post to `$ROOT/static.paths.ts`
+
+<CodeContainer title="static.paths.ts">
+```typescript
+export const ROUTES = [
+  /* Generic routes */
+  '/',
+  '/whoami/',
+  '/posts/',
+  '/calendar/',
+
+  /* ... */
+  '/post/2025/2025_11_15+things-ive-been-up-to/',
+  '/post/2025/2025_12_17+once-more-to-bsides-london/',
+
+  /* ... */
+];
+```
+</CodeContainer>
+
+and then in order to make the various features like RSS work, i had to feed it to my handwritten rss file:
+
+<CodeContainer title="rss.xml">
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AtomicMaya's Blog at the end of the universe</title>
+    <link>https://www.atomicmaya.me</link>
+    <description>A blog talking all things infosec, IoT, development and personal</description>
+    <!-- 2025 -->
+    <item>
+      <title>once more to BSides London</title>
+      <link>https://atomicmaya.me/post/2025/2025_12_17%2Bonce-more-to-bsides-london/index.html</link>
+      <description>going to bsides london to help out and hang out</description>
+      <guid>https://atomicmaya.me/post-2025-10</guid>
+      <pubDate>Wed, 17 Dec 2025 12:00:00 GMT</pubDate>
+    </item>
+    <!-- ... -->
+  </channel>
+</rss>
+];
+```
+</CodeContainer>
+
+and then i would run a very cursed command that would pre-render the site, which i would then double check by just running `python3 -m http.server` on the build location, before then committing, pushing, and then running `git subtree push --prefix dist/atomicmayame/browser/ origin gh-pages` to upload it all to GitHub, spawning the deployment of the website.
+
+#### moving away from this mess
+
+so as you can see, i didn't really want to keep up with this mess after 5 years of maintaining it, and this basically meant that writing a blog post became a significant chore.
+
+and that would motivate me going forward to finding a framework which had complex routing, actual scripting for where i really needed it, and hopefully where i had no need to mess about with hand-writing all of my posts in raw html because, as fun as that was, it lost its novelty around years 2 or 3.
+
+and after window shopping for some frameworks, i landed on <ExternalLink url="https://astro.build/" text="Astro" /> (also on <GithubLink url="https://github.com/withastro/astro" text="GitHub" />).
+what really sold me on astro was the native introduction of multilevel routing even for static site generation.
+
+an example of this is this post: the URL is `$BASE_DOMAIN/post/2026/2026-06-30_blog-conversion`
+
+in Angular i needed to load an `app-2026-post-routing.module.ts` and an `app-2026.module.ts` (if i wanted to preserve my sanity and not put everything in the main module) and then the entire actual component that comprises the blog post.
+
+#### new conventions...
+
+with astro, i define a collection in `src/content.config.ts`, and i write a singular file in `src/pages/post/[...slug].astro` and it recognizes the [...slug] as a "long" path, and then maps that against the slug in the collection, which itself maps the path to my post's mdx file in `src/content/post/2026/2026-06-30_blog-conversion.mdx`, which in its frontmatter contains all of the relevant metadata.
+
+this looks a bit like this:
+
+<CodeContainer title="content.config.ts">
+```typescript
+const posts = defineCollection({
+	// Load Markdown and MDX files in the `src/content/post/` directory.
+	loader: glob({ base: './src/content/post', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.optional(z.string()),
+			// Transform string to Date object
+			pubDate: z.coerce.date(),
+			updatedDate: z.coerce.date().optional(),
+			readingTime: z.optional(z.number()),
+			image: z.optional(image()),
+			keywords: z.optional(z.array(z.string())),
+			wip: z.optional(z.boolean()),
+		}),
+});
+```
+</CodeContainer>
+
+<CodeContainer title="[...slug].astro">
+```typescript
+---
+import { type CollectionEntry, render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import { getPublishedPosts } from '../../utils/collections';
+
+export async function getStaticPaths() {
+	const posts = await getPublishedPosts();
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'posts'>;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<BlogPost {...post.data}>
+	<Content />
+</BlogPost>
+```
+</CodeContainer>
+
+<CodeContainer title="2026-06-30_blog-conversion.mdx">
+```mdx
+---
+title: "making this blog less of a pain to write to"
+description: "the tale of a full technology migration so i don't have to edit 12 files to publish a single blogpost"
+pubDate: 'Jun 30 2026'
+readingTime: 10
+keywords:
+- Personal
+- Development
+---
+import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
+```
+</CodeContainer>
+
+*i realize that last code block was extremely meta, intentionally so*
+
+things like `<BlogPost {...post.data}><Content /></BlogPost>` are just other components, with `BlogPost` being a component which itself invokes and wraps its content in `MainBody` (the core layout of the site), and renders the content of the markdown file in `<Content />`.
+
+#### ... and old aesthetics
+
+even though i'm using a new framework, i'm majorly maintaining my design guidelines and the aesthetics that i originally talked about in my 2021 post about website design choices (which you can read here <LocalLink url="/post/2021/2021-01-23_website-design-choices" text="here" />), as well as the small internet aesthetic that i've described and adhered to in a blog post about how i feel like content is inauthentic these days (which you can read <LocalLink url="/post/2025/2025-09-27_returning-this-silly-little-blog-to-the-era-of-small-internet" text="here" />).
+
+i've made a few minimal changes, namely on the `/posts` index page, where before there was a complicated and janky post "card" system, and is now a more aesthetically minimalistic 2 line card.
+
+<ImageContainer style="width: 90%; height: auto;" image={img_oldskin} alt="a screenshot of the old /posts index on my blog" desc="going from jank..." />
+
+<ImageContainer style="width: 90%; height: auto;" image={img_newskin} alt="a screenshot of the new /posts index on my blog, post conversion" desc="... to mildly less jank" />
+
+i've also fixed some of the iconography, and slowly started dropping the full "atomicmaya" handle, which, although is a part of my identity, is a product of a world i'm not as invested or involved in anymore (although i'm not against that changing, it just isn't the *current* meta).
+
+#### quality of life stuff
+
+for me this migration makes everything so much easier, because going forward i just need to create whatever new .mdx file i want in the relevant year folder (e.g. `2026-07-05_lecturing-4-years-in.mdx`, but ✨ *spoilers* ✨), and the rest is automagically handled (unless i want a new fancy component or something).
+
+it took me about 2.5 months on-and-off to do this conversion, starting in April of 2026 and finishing right about when this post was published.
+
+this brought the total active line count from `18483` to `12186` as of today (and the former number did not include any of the 2026 posts), which to me is significant improvement in my quality of life and the ease for me to actually post.
+
+the one small fuckup is that i've had to move the url of my posts from `2026/2026-06-30+blog-conversion` to `2026/2026-06-30+blog-conversion` because astro was being annoyed at url canonicalization, but that is something i think i and my prospective 3 readers can excuse (if you can't, i would offer reaching out via a contact form, but i don't make one available, so uhmmm, tough luck, i guess),
