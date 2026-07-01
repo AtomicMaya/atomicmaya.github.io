@@ -1,6 +1,7 @@
 // @ts-check
 
 import mdx from '@astrojs/mdx';
+import { unified } from '@astrojs/markdown-remark';
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links";
 import { defineConfig, fontProviders, sharpImageService } from 'astro/config';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -43,25 +44,27 @@ export default defineConfig({
         },
     ],
     markdown: {
-        rehypePlugins: [
-            rehypeSlug,
-            rehypeAstroRelativeMarkdownLinks,
-            [
-                rehypeAutolinkHeadings,
-                {
-                    behavior: 'prepend',
-                    content: {
-                        type: 'text',
-                        value: '',
+        processor: unified({
+            rehypePlugins: [
+                rehypeSlug,
+                rehypeAstroRelativeMarkdownLinks,
+                [
+                    rehypeAutolinkHeadings,
+                    {
+                        behavior: 'prepend',
+                        content: {
+                            type: 'text',
+                            value: '',
+                        },
+                        headingProperties: {
+                            className: ['anchor'],
+                        },
+                        properties: {
+                            className: ['anchor-link'],
+                        },
                     },
-                    headingProperties: {
-                        className: ['anchor'],
-                    },
-                    properties: {
-                        className: ['anchor-link'],
-                    },
-                },
+                ],
             ],
-        ],
+        }),
     },
 });
