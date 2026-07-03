@@ -60,7 +60,7 @@
           shellHook = ''
             echo "Installing dependencies..."
             export PATH="$PWD/node_modules/.bin/:$PATH"
-            npm install
+            npm install --legacy-peer-deps
             echo "Dependencies installed."
             echo ""
             echo "🚀 Astro development environment!"
