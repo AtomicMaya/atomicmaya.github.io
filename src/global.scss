@@ -156,52 +156,60 @@ a.content-link {
 }
 
 details {
-  border: 1px solid #404040;
-  border-radius: 6px;
-  padding: 0.75em 1em;
-  margin: 1em 0;
-  background: #242424;
-  color: #e0e0e0;
+    border: 1px solid #404040;
+    border-radius: 6px;
+    padding: 0.75em 1em;
+    margin: 1em 0;
+    background: #242424;
+    color: #e0e0e0;
 }
 
 details summary {
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0.25em 0;
-  outline: none;
-  list-style: none;
-  color: #f0f0f0;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.25em 0;
+    outline: none;
+    list-style: none;
+    color: #f0f0f0;
 }
 
 details summary::-webkit-details-marker {
-  display: none;
+    display: none;
 }
 
 /* custom triangle marker */
 details summary::before {
-  content: "▶";
-  display: inline-block;
-  margin-right: 0.5em;
-  font-size: 0.8em;
-  color: #888;
-  transition: transform 0.2s ease;
+    content: "▶";
+    display: inline-block;
+    margin-right: 0.5em;
+    font-size: 0.8em;
+    color: #888;
+    transition: transform 0.2s ease;
 }
 
 details[open] summary::before {
-  transform: rotate(90deg);
-  color: #aaa;
+    transform: rotate(90deg);
+    color: #aaa;
 }
 
 /* style the revealed content */
 details[open] {
-  background: #2d2d2d;
-  border-color: #555;
+    background: #2d2d2d;
+    border-color: #555;
 }
 
 details > *:not(summary) {
-  margin-top: 0.5em;
+    margin-top: 0.5em;
 }
 
 hr {
     margin: 2rem 0 !important;
+}
+
+article {
+    h4,
+    h5,
+    h6 {
+        margin-top: 1.5rem;
+    }
 }
