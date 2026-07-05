@@ -40,6 +40,7 @@
             echo ""
             echo "Pushing to subtree"
             git subtree push --prefix dist/ origin gh-pages
+            git subtree push --prefix dist/ github gh-pages
           else
             set -e
             echo ""
