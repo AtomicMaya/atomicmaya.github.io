@@ -116,6 +116,11 @@ export const other88x31List: EightyEightThirtyOne[] = [
         url: 'https://fediring.net'
     },
     {
+        image: 'https://glastonledburyshire-on-severn-gov.uk/badge.gif',
+        alt: "glastonledburyshire-on-severn.gif",
+        url: 'https://glastonledburyshire-on-severn-gov.uk'
+    },
+    {
         image: '/assets/images/88x31/glauca.gif',
         alt: "Glauca Digital button",
         url: 'https://glauca.digital'

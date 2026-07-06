@@ -20,6 +20,107 @@ import LinkedinLink from '../../../components/stub/link/LinkedinLink.astro'
 import CodeContainer from '../../../components/stub/CodeContainer.astro'
 import ImageContainer from '../../../components/stub/ImageContainer.astro'
 
-import img_wireguarddiagram from '../../../assets/images/post/2026/2026-05-26_what-the-heck-is-an-uwu-space/diagram-wireguard.png'
+import img_devicev1 from '../../../assets/images/post/2026/2026-07-29_retrospectives-that-time-i-helped-track-genevas-pollution/device_v1.jpg'
+import img_academiafnfmodel from '../../../assets/images/post/2026/2026-07-29_retrospectives-that-time-i-helped-track-genevas-pollution/academia_fnfmodel.png'
+import img_academiasiobjectives from '../../../assets/images/post/2026/2026-07-29_retrospectives-that-time-i-helped-track-genevas-pollution/academia_siobjectives.png'
+import img_academiausecases from '../../../assets/images/post/2026/2026-07-29_retrospectives-that-time-i-helped-track-genevas-pollution/academia_usecases.png'
+import img_academiauserstory2 from '../../../assets/images/post/2026/2026-07-29_retrospectives-that-time-i-helped-track-genevas-pollution/academia_userstory2.png'
 
-this is my first post in the category that i will dub "<LocalLink url="/tags/Retrospectives" text="Retrospectives" />", and which will cover stuff i did ages ago, which i still find cool to have done, but never got around to posting about, either because it predates this blog, or because said stuff was taking so much of my time that i didn't want to *also* write about it in a blogpost.
+in this first iteration of the <LocalLink url="/tags/Retrospectives/" text="Retrospectives" />, i wanted to discuss something i did ages ago and still find cool that i was involved in, but never got around to posting on this blog, either because it happened before this blog existed, or because i didn't have time to post about it then.
+
+---
+
+#### the backstory
+
+so, how did i end up involved in a project to track Geneva's pollution?
+
+back in 2019, as i had just finished with the spring semester of my first year in the BSc of Information Systems and Services Science at the University of Geneva's "Centre Universitaire d'Informatique" (<ExternalLink url="https://iss.unige.ch" text="Institute of Information Service Science" />), i was spending some of my summer holidays in the FacLab (my faculty's makerspace).
+
+the <ExternalLink url="https://faclab.unige.ch" text="FacLab" /> was this place that took over my faculty building's old cafeteria in the year preceeding, and where i very quickly got involved and started volunteering. 
+it would also informally become my office for a few years, and i would have a permanent desk there until my departure in early 2023.
+
+there, i would meet <TwitterLink url="https://twitter.com/EmmanuelToast" text='Emmanuel' />, who was doing his PhD at the same faculty, and we ended up exchanging a bit and he ended up nerding out about IoT devices and his homebrew project, and that he was workshopping it at sustainability hackathons across Geneva (such as the ones by the United Nations on Sustainable Development Goals).
+
+one thing my faculty offered as an option was to do an "internship" and have that count for academic credits, and this was contingent on writing an internship report... so Emmanuel and myself asked our faculty if i could do an internship at this small non-profit called ACME LogAir that was founded by him and another PhD student, in order to get me some credits for helping them out, and in order for them to get access to a software engineering resource.
+
+---
+
+#### what were we working with?
+
+so the original prototype was a small STM32 board that was wired to about 7 other things in a mess of tiny wires:
+
+<ImageContainer image={img_devicev1} style="width: auto; height: 400px;" alt="picture of an stm32 board connected to a variety of components. there is a laser cut acrylic storage box in the background, and the stm32 board has a lit LED" desc="so-called blinkenlights (ignore the wiring)" />
+
+this little thing had the following components:
+
+* it had a battery
+* it had a particulate matter (PM) sensor of 4 different granularities (PM1, PM2.5, PM5 and PM10)
+* it had a GPS
+* it had a temperature sensor
+* it had a humidity sensor
+* it had a pressure sensor
+* and the STM32 which had BLE support
+
+the BLE component had a simple wire contract with two data types:
+
+- a header (bytestring) containing the device name, the various sensor serial numbers, sent at contract being and once every so often to prevent drift.
+- a packet (bytestring) with the following data items:
+  - device ID
+  - packet timestamp
+  - device position (latitude, longitude, altitude, speed, heading)
+  - environmental values (temperature, pressure, relative humidity)
+  - PM values (PM1, PM2.5, PM5 and PM10)
+
+one of the drivers behind this project was Open Science, which meant that collecting the data was good, but being able to share the data was better.
+
+---
+
+#### how does academia fit in, and how i worked with that constraint
+
+i mentioned this also was for academic credits, which meant i had to spend some time formalising the process beforehand rather than formalising it as i was approaching relevant milestones.
+
+in university we'd spent some time learning about functional and non-functional requirements, user-stories, use cases and information systems objectives, which were processes i applied to this project.
+
+so of course we had user stories, ...
+
+<details>
+    <summary>Expand to view image</summary>
+    <ImageContainer image={img_academiauserstory2} style="width: 50%; height: auto;" alt="screenshot of a user story, with a picture sourced from this person does not exist, a a headline ('Jess P, Environmental Sciences University Student'), a bio and a scenario about why they would want this data" desc="the environment is good, says environment studier" />
+</details>
+
+... a use case analysis, ...
+
+<details>
+    <summary>Expand to view image</summary>
+    <ImageContainer image={img_academiausecases} style="width: 50%; height: auto;" alt="a diagram showing a variety of use cases, from the viewpoint of a user vs. that of an aggregator" desc="ah yes, that's what someone would want to use this for" />
+</details>
+
+... an information systems objectives analysis, ...
+
+<details>
+    <summary>Expand to view image</summary>
+    <ImageContainer image={img_academiasiobjectives} style="width: 70%; height: auto;" alt="a diagram showing information systems objectives" desc="what should this actually do?" />¨
+</details>
+
+... and a functional / non-functional requirements analysis.
+
+<details>
+    <summary>Expand to view image</summary>
+    <ImageContainer image={img_academiafnfmodel} style="width: 70%; height: auto;" alt="a diagram showing both functional and non-functional systems requirements" desc="gotta love a (good) diagram" />
+</details>
+
+(please excuse how jank and unpolished these diagrams and supporting documents are, they were made in 2020)
+
+these were very useful to at least make sure Emmanuel and myself were on the same wavelength (which we were).
+
+---
+
+#### prototyping!
+
+so we had a concept of what it should do, but we had no idea what it should actually look like.
+
+the main requirements from before that were brought up were:
+
+- read local device data (over time)
+- plot data on a map
+- allow people to 

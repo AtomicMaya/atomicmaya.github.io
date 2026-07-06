@@ -102,7 +102,7 @@ const post = Astro.props;
         {post.data.keywords && (post.data.keywords as string[]).map((e) => (<a class="card-tag p-2 mx-1" href={"/tags/" + encodeURI(e) + "/"}><span>{e}</span></a>))}
       </div>
       <div class="d-flex flex-row justify-content-end">
-        <a class="small card-read-more" href={`/post/${post.id}`}>&gt;&gt;&gt; Read More {post.data.readingTime && (<span>({post.data.readingTime} min.)</span>)}</a        >
+        <a class="small card-read-more" href={`/post/${post.id}/`}>&gt;&gt;&gt; Read More {post.data.readingTime && (<span>({post.data.readingTime} min.)</span>)}</a        >
       </div>
     </div>
   </div>
