@@ -139,13 +139,13 @@ and that would motivate me going forward to finding a framework which had comple
 and after window shopping for some frameworks, i landed on <ExternalLink url="https://astro.build/" text="Astro" /> (also on <GithubLink url="https://github.com/withastro/astro" text="GitHub" />).
 what really sold me on astro was the native introduction of multilevel routing even for static site generation.
 
-an example of this is this post: the URL is `$BASE_DOMAIN/post/2026/2026-06-30_blog-conversion`
+an example of this is this post: the URL is `$BASE_DOMAIN/post/2026/2026-06-30_blog-conversion/`
 
 in Angular i needed to load an `app-2026-post-routing.module.ts` and an `app-2026.module.ts` (if i wanted to preserve my sanity and not put everything in the main module) and then the entire actual component that comprises the blog post.
 
 #### new conventions...
 
-with astro, i define a collection in `src/content.config.ts`, and i write a singular file in `src/pages/post/[...slug].astro` and it recognizes the [...slug] as a "long" path, and then maps that against the slug in the collection, which itself maps the path to my post's mdx file in `src/content/post/2026/2026-06-30_blog-conversion.mdx`, which in its frontmatter contains all of the relevant metadata.
+with astro, i define a collection in `src/content.config.ts`, and i write a singular file in `src/pages/post/[...slug].astro` and it recognizes the `[...slug]` as a "long" path, and then maps that against the slug in the collection, which itself maps the path to my post's mdx file in `src/content/post/2026/2026-06-30_blog-conversion.mdx`, which in its frontmatter contains all of the relevant metadata.
 
 this looks a bit like this:
 
@@ -207,6 +207,7 @@ readingTime: 10
 keywords:
 - Personal
 - Development
+- Technical
 ---
 import ExternalLink from '../../../components/stub/link/ExternalLink.astro'
 ```
@@ -236,4 +237,4 @@ it took me about 2.5 months on-and-off to do this conversion, starting in April 
 
 this brought the total active line count from `18483` to `12186` as of today (and the former number did not include any of the 2026 posts), which to me is significant improvement in my quality of life and the ease for me to actually post.
 
-the one small fuckup is that i've had to move the url of my posts from `2026/2026-06-30+blog-conversion` to `2026/2026-06-30+blog-conversion` because astro was being annoyed at url canonicalization, but that is something i think i and my prospective 3 readers can excuse (if you can't, i would offer reaching out via a contact form, but i don't make one available, so uhmmm, tough luck, i guess),
+the one small fuckup is that i've had to move the url of my posts from `2026/2026-06-30+blog-conversion` to `2026/2026-06-30_blog-conversion` because astro was being annoyed at url canonicalization, but that is something i think i and my prospective 3 readers can excuse (if you can't, i would offer reaching out via a contact form, but i don't make one available, so uhmmm, tough luck, i guess),
