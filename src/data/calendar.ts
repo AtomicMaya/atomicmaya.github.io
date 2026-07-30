@@ -7,6 +7,7 @@ export interface CalendarItem {
 
 export const CalendarData: CalendarItem[] = [
   {eventName: "40c3", location: "Hamburg, Germany", startDate: new Date("2026-12-27T02:00:00"), endDate: new Date("2026-12-30T02:00:00")},
+  {eventName: "Mega Knowledge Camp 2026", location: "Saarbrücken, Germany", startDate: new Date("2026-09-25T02:00:00"), endDate: new Date("2026-09-27T02:00:00")},
   {eventName: "MRMCD 2026", location: "Darmstadt, Germany", startDate: new Date("2026-09-11T02:00:00"), endDate: new Date("2026-09-13T02:00:00")},
 	{eventName: "Hack Glasgow", location: "Glasgow, Scotland", startDate: new Date("2026-08-15T02:00:00")},
 	{eventName: "Electromagnetic Field (EMF 2026)", location: "Eastnor Castle Deer Park, United Kingdom", startDate: new Date("2026-07-16T02:00:00"), endDate: new Date("2026-07-19T02:00:00")},
