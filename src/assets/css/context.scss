@@ -35,6 +35,15 @@
   ngx-tweet {
     width: 90%;
   }
+
+  .media-container img.media-img {
+    width: 90% !important;
+    height: auto !important;
+  }
+
+  details {
+    padding: 0.5em 0.6em !important;
+  }
 }
 
 @media screen and (max-width: 400px) {

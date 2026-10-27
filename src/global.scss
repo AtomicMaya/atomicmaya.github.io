@@ -162,6 +162,9 @@ details {
     margin: 1em 0;
     background: #242424;
     color: #e0e0e0;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
 }
 
 details summary {

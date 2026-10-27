@@ -7,13 +7,17 @@ interface Props {
     alt: string;
     desc?: string;
     nodesc?: boolean;
-    style: string;
+    style?: string;
+    class?: string;
 }
 
-const { image, desc, nodesc, alt, style } = Astro.props;
+const { image, desc, nodesc, alt, style, class: className } = Astro.props;
+
+// default sizing (see containers.scss): landscape -> 90% width, portrait -> bounded height
+const orientation = image.width >= image.height ? 'landscape' : 'portrait';
 ---
 
 <div class='media-container mb-3'>
-  <Image src={image} style={style} alt={alt} />
+  <Image src={image} class:list={['media-img', orientation, className]} style={style} alt={alt} />
   {!nodesc && <span class="small text-center mt-1"><caption><em>{desc ?? alt}</em></caption></span>}
 </div>

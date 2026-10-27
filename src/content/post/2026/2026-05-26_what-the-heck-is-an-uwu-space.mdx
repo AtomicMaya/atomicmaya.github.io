@@ -70,7 +70,7 @@ good question, thanks so much for asking.
 in my exact use case, i decided to go with the "jump host" technique, which involves getting a very cheap VPS, making that the DNS target for all of the relevant domains, and running <GithubLink url="https://github.com/caddyserver/caddy" text="caddy" /> in order to route traffic over a homebrew wireguard solution which not only bridged the jumphost but forced all of the IPv4 traffic through the jumphost.
 this ends up looking a bit like this (the jumphost is `uwu-jump` and our VM on crunchy is `uwu-crunchy`):
 
-<ImageContainer style="width: 90%; height: auto" image={img_wireguarddiagram} alt="" desc="" />
+<ImageContainer image={img_wireguarddiagram} alt="" desc="" />
 
 now, a reader familiar with wireguard configs would know that wireguard doesn't natively do all of these funky force-traffic through an interface shenanigans, so how did we go about it?
 

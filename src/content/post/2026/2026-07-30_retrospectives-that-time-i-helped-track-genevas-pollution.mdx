@@ -98,7 +98,7 @@ most of this post contains images and data pulled from my internship report, whi
 
 so the original prototype was a small STM32 board that was wired to about 7 other things in a mess of tiny wires:
 
-<ImageContainer image={img_devicev1} style="width: auto; height: 400px;" alt="picture of an stm32 board connected to a variety of components. there is a laser cut acrylic storage box in the background, and the stm32 board has a lit LED" desc="so-called blinkenlights (ignore the wiring)" />
+<ImageContainer image={img_devicev1} alt="picture of an stm32 board connected to a variety of components. there is a laser cut acrylic storage box in the background, and the stm32 board has a lit LED" desc="so-called blinkenlights (ignore the wiring)" />
 
 this little thing had the following components:
 
@@ -149,7 +149,7 @@ so of course we had user stories, ...
 
 <details>
     <summary>expand to view image</summary>
-    <ImageContainer image={img_siobjectives} style="width: 70%; height: auto;" alt="a diagram showing information systems objectives" desc="what should this actually do?" />¨
+    <ImageContainer image={img_siobjectives} style="width: 70%; height: auto;" alt="a diagram showing information systems objectives" desc="what should this actually do?" />
 </details>
 
 ... and a functional / non-functional requirements analysis.
@@ -217,14 +217,14 @@ so this brought me to the first digital prototype, which i made using <ExternalL
 
 and because i was bored (this was during the onset of COVID, where we were ordered to isolate), i even made a mostly functional paper prototype.
 
-<ImageContainer image={img_paperdata} style="width: auto; height: 400px;" alt="picture of a paper styled interface showing the design of the data pane" desc="paper! now with (doom) scrolling" />
+<ImageContainer image={img_paperdata} alt="picture of a paper styled interface showing the design of the data pane" desc="paper! now with (doom) scrolling" />
 
 <details>
     <summary>expand to see more pictures of the paper prototype</summary>
-    <ImageContainer image={img_paperadmin} style="width: auto; height: 400px;" alt="picture of a paper styled interface showing the design of the admin pane" desc="various info about server status, battery status, storage status, etc." />
-    <ImageContainer image={img_papersettings} style="width: auto; height: 400px;" alt="picture of a paper styled interface showing the design of the settings pane" desc="now with the ability to control your infomation" />
-    <ImageContainer image={img_paperbluetooth} style="width: auto; height: 400px;" alt="picture of a paper styled interface showing the design of the bluettoh pane" desc="now with the ability to connect to a bluetooth device" />
-    <ImageContainer image={img_papermap} style="width: auto; height: 400px;" alt="picture of a paper styled interface showing the design of the map pane" desc="now with the ability to show you where you are (and maybe other things)" />
+    <ImageContainer image={img_paperadmin} alt="picture of a paper styled interface showing the design of the admin pane" desc="various info about server status, battery status, storage status, etc." />
+    <ImageContainer image={img_papersettings} alt="picture of a paper styled interface showing the design of the settings pane" desc="now with the ability to control your infomation" />
+    <ImageContainer image={img_paperbluetooth} alt="picture of a paper styled interface showing the design of the bluettoh pane" desc="now with the ability to connect to a bluetooth device" />
+    <ImageContainer image={img_papermap} alt="picture of a paper styled interface showing the design of the map pane" desc="now with the ability to show you where you are (and maybe other things)" />
 </details>
 
 shortly after this i moved on to a second digital prototype, which ended up looking a bit like this:
@@ -253,7 +253,7 @@ this was relatively successful, as the table below summarizes:
 
 the database evolved through 3 iterations, going from a raw dump of data into the database, to a database schema that had change tracking, to a schema that included an attempt at ensuring that the data could only be accessed in its entirety by the people having uploaded it themselves.
 
-<ImageContainer image={img_dbv2} style="width: auto; height: 350px;" alt="schema of the final database" desc="this isn't exactly what i would call secure, but it worked" />
+<ImageContainer image={img_dbv2} alt="schema of the final database" desc="this isn't exactly what i would call secure, but it worked" />
 
 once i had a db schema, i needed to figure out how the data would in fact be communicated between the API, the database, and the various users, which led to the following schema.
 
@@ -273,23 +273,23 @@ because we wanted ease of deployment and the ability to actually write a cross-p
 
 the implementation strategy was to first validate the framework on a technical basis, such as whether it could process BLE data, whether it could ask for permissions or whether it could display graphs, before making the app look nicer.
 
-<ImageContainer image={img_appgraph} style="width: auto; height: 400px;" alt="screenshot of a phone displaying the app showing data graphs" desc="this is very much barebones, i promise" />
+<ImageContainer image={img_appgraph} alt="screenshot of a phone displaying the app showing data graphs" desc="this is very much barebones, i promise" />
 
 <details>
     <summary>expand to see more screenshots of the app</summary>
-    <ImageContainer image={img_appbtconnect} style="width: auto; height: 400px;" alt="screenshot of a phone displaying the app showing a bluetooth connection screen" desc="connect to this non suspicious device, please" />
-    <ImageContainer image={img_appbasedata} style="width: auto; height: 400px;" alt="screenshot of a phone displaying the app showing connected data collectors" desc="'Do whatever' is very demo coded" />
+    <ImageContainer image={img_appbtconnect} alt="screenshot of a phone displaying the app showing a bluetooth connection screen" desc="connect to this non suspicious device, please" />
+    <ImageContainer image={img_appbasedata} alt="screenshot of a phone displaying the app showing connected data collectors" desc="'Do whatever' is very demo coded" />
 </details>
 
 anyways, this all looks supremely jank, and therefore i decided to change some of the layouts to attempt (and probably fail) to follow neumorphic design rules
 
-<ImageContainer image={img_appneumorphicdata} style="width: auto; height: 400px;" alt="screenshot of a phone displaying the app showing data graphs" desc="this is somewhat less barebones and somewhat more useable, i guess" />
+<ImageContainer image={img_appneumorphicdata} alt="screenshot of a phone displaying the app showing data graphs" desc="this is somewhat less barebones and somewhat more useable, i guess" />
 
 <details>
     <summary>expand to see more screenshots of the app</summary>
-    <ImageContainer image={img_appneumorphicprompt} style="width: auto; height: 400px;" alt="screenshot of a phone displaying the app showing the first run privacy options" desc="choose your (data's) destiny!" />
-    <ImageContainer image={img_appneumorphicoversight} style="width: auto; height: 400px;" alt="screenshot of a phone displaying the app showing the 'oversight' pane" desc="oversight on all the happenings :)" />
-    <ImageContainer image={img_appneumorphicprefs} style="width: auto; height: 400px;" alt="screenshot of a phone displaying the app showing a preferences menu" desc="all the preferences!" />
+    <ImageContainer image={img_appneumorphicprompt} alt="screenshot of a phone displaying the app showing the first run privacy options" desc="choose your (data's) destiny!" />
+    <ImageContainer image={img_appneumorphicoversight} alt="screenshot of a phone displaying the app showing the 'oversight' pane" desc="oversight on all the happenings :)" />
+    <ImageContainer image={img_appneumorphicprefs} alt="screenshot of a phone displaying the app showing a preferences menu" desc="all the preferences!" />
 </details>
 
 ---
@@ -344,4 +344,4 @@ this project did however solidify my take that i am very much not a fan of mobil
 it's been a long time since i've worked or even looked at this project, but as far as i can see, it slowly got dropped as the various involved parties went on in life, with me having to do my bachelor's thesis and starting my master's afterwards, with Emmanuel having to focus on his PhD and with the other person involved finishing her PhD and moving back to Brazil.
 this is simply the way of things
 
-in the meantime, Geneva's public transport authority has had a few flagship projects deploying pollution sensors at their bus stops and on some of their busses, which has also helped shape some of the local politics.
+in the meantime, Geneva's public transport authority has had a few flagship projects deploying pollution sensors at their bus stops and on some of their busses, which has also helped shape some of the local politics.

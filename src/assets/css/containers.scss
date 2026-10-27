@@ -14,6 +14,22 @@
     margin: 0 auto;
     max-width: 100%;
   }
+
+  // default ImageContainer sizing, overridden by an inline style
+  img.media-img.landscape {
+    width: 90%;
+    height: auto;
+  }
+
+  img.media-img.portrait {
+    width: auto;
+    height: 500px;
+  }
+
+  // let wide code blocks scroll inside their frame instead of sizing to their content
+  > .expressive-code {
+    width: 100%;
+  }
 }
 
 .center {

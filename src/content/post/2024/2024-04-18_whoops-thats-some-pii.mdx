@@ -143,7 +143,7 @@ So, one short <ExternalLink url='https://www.apachefriends.org/index.html' text=
 
 The database itself had a few interesting tidbits at first glance, namely the following tables:
 
-<ImageContainer image={img_columns} style="width: 90%; height: auto;" alt='A screenshot of the existing database columns' desc='The database columns' />
+<ImageContainer image={img_columns} alt='A screenshot of the existing database columns' desc='The database columns' />
 
 From there, I saw two declinations of tables: the `castlecore_*` tables - which to me felt like the former were the internal tables - versus the others - being the more "public facing" datasets (as in, to populate the website).
 
@@ -172,7 +172,7 @@ And these weren't *just* small or local companies either, as notable "heavy hitt
 - Honeywell International (<ExternalLink url='https://honeywell.com' text='link' />)
 - etc.
 
-<ImageContainer image={img_ohno} style="width: 90%; height: auto;" alt="A screenshot of the redacted user-vendor list" desc='Welp' />
+<ImageContainer image={img_ohno} alt="A screenshot of the redacted user-vendor list" desc='Welp' />
 
 <em>===<br/>It's important for me to state at this stage, that all of the partners listed above are publicly listed on <ExternalLink url='https://castle.ca/' text='Castle Building Centres Group Ltd.' />'s own website, on the "Partners" page (see <ExternalLink url='https://castle.ca/partners' text='here' />).<br/>===</em><br/><br/>
 
@@ -197,17 +197,17 @@ As soon as I saw that this dataset was online, and even more importantly, that a
 
 Thankfully, the `users` table had a very handy `permission` column, which very quickly gave me the list of administrators and their email addresses.
 
-<ImageContainer image={img_admins} style="width: 90%; height: auto;" alt="A screenshot of the users table, filtering only the administrators" desc='Genuinely helpful for the disclosure, much appreciated' />
+<ImageContainer image={img_admins} alt="A screenshot of the users table, filtering only the administrators" desc='Genuinely helpful for the disclosure, much appreciated' />
 
 So I, in my infinite wisdom (*sarcasm*), on a Friday at 18:00-ish local time on the 31st of March 2023, decided to email all these lovely folk the following:
 
-<ImageContainer image={img_email1} style="width: 90%; height: auto;" alt="A screenshot of an email" desc='Bilingual, twice the words, about as much communication' />
+<ImageContainer image={img_email1} alt="A screenshot of an email" desc='Bilingual, twice the words, about as much communication' />
 
 To their credit, they responded within 30 minutes, with the following email, seemingly indicating that a botched cron job of some sort wasn't purging the bucket on backup.
 
 So I checked to see that this was fixed, and rightly enough, I no longer had access to the bucket.
 
-<ImageContainer image={img_email2} style="width: 90%; height: auto;" alt="A screenshot of an email" desc='A positive response! Huzzah!' />
+<ImageContainer image={img_email2} alt="A screenshot of an email" desc='A positive response! Huzzah!' />
 
 Job done! (But not entirely for them...)
 
@@ -215,7 +215,7 @@ Given the nature of the data, I did mention to them that they should probably re
 
 At this time, I have no idea whether they did, as the following email was our last correspondence.
 
-<ImageContainer image={img_email3} style="width: 90%; height: auto;" alt="A screenshot of an email" desc='"Please comply with relevant legislation 🥺👉👈"' />
+<ImageContainer image={img_email3} alt="A screenshot of an email" desc='"Please comply with relevant legislation 🥺👉👈"' />
 
 ---
 
