@@ -56,6 +56,11 @@ export const friend88x31List: EightyEightThirtyOne[] = [
         url: 'https://wolfyja.de/'
     },
     {
+        image: '/assets/images/88x31/commanderred_xyz.png',
+        alt: "commanderred's button",
+        url: 'https://commanderred.xyz/'
+    },
+    {
         image: '/assets/images/88x31/byte_at_awawa_club.jpg',
         alt: "enby flag with 'Byte' written on it, and a botsona with purple visor and hair cables",
         url: 'https://byte.at.awawa.club'
